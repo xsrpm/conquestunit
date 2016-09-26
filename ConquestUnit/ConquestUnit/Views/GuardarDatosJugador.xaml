@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="ConquestUnit.Views.GuardarDatosJugador"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConquestUnit.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="txtTitulo" HorizontalAlignment="Left" Margin="194,38,0,0" TextWrapping="Wrap" Text="Bienvenido a Risk" VerticalAlignment="Top"/>
+        <Image x:Name="imgFoto" HorizontalAlignment="Left" Height="100" Margin="210,88,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/DefaultUser.png" Width="100" Tapped="imgFoto_Tapped"/>
+        <TextBlock x:Name="txtIngreseNombre" HorizontalAlignment="Left" Margin="210,218,0,0" TextWrapping="Wrap" Text="Ingrese su nombre:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="194,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="236,330,0,0" VerticalAlignment="Top" Tapped="btnGuardar_Tapped"/>
+        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="236,388,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>
+    </Grid>
+</Page>

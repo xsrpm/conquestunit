@@ -1,0 +1,151 @@
+﻿using DataAccess.Model;
+using SynapseSDK;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Util;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
+using Windows.Networking;
+using Windows.Storage.Streams;
+using Windows.UI.Core;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Navigation;
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace ConquestUnit.Views
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class JugadorEnEspera : Page
+    {
+        Mesa objMesa;
+        public JugadorEnEspera()
+        {
+            this.InitializeComponent();
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                objMesa = (Mesa)e.Parameter;
+                lblMesaId.Text = objMesa.MesaID;
+            }
+
+            if (App.objJugador != null)
+            {
+                if (App.objJugador.Nombre != null)
+                {
+                    lblNombreJugador.Text = lblNombreJugador.Text + " " + App.objJugador.Nombre;
+                    lblNombre.Text = App.objJugador.Nombre;
+                }
+                if (App.objJugador.Imagen != null)
+                {
+                    BitmapImage bimgBitmapImage = new BitmapImage();
+                    IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
+                    bimgBitmapImage.SetSource(fileStream);
+                    imgFoto.Source = bimgBitmapImage;
+                }
+            }
+            IniciarSDK();
+        }
+
+        private async void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //Notificar a la mesa que se está saliendo de la espera
+            if (objMesa!=null)
+                await App.objSDK.UnicastPing(new HostName(objMesa.Ip),
+                            Constantes.JugadorSaleMesa + Constantes.SEPARADOR +
+                            App.objJugador.Ip);
+            App.objSDK.setObjMetodoReceptorString = null;
+
+            this.Frame.Navigate(typeof(ElegirMesa));
+        }
+
+        private void MiMetodoReceptorJugadorEsperaHelper(string strIp, string strMensaje)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
+                {
+                    #region La mesa indica se cierra
+                    if (strMensaje.Trim().Contains(Constantes.MesaIndicaSeCierra))
+                    {
+                        Helper.MensajeOk("La mesa se ha cerrado :(");
+                        this.Frame.Navigate(typeof(ElegirMesa));
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+                return;
+            }
+        }
+
+        #region Conexion SynapseSDK
+        private void IniciarSDK()
+        {
+            try
+            {
+                App.UIDispatcher = this.Dispatcher;
+                App.objSDK = MainCore.getInstance(Constantes.MULTICAST_ADDRESS, Constantes.MULTICAST_SERVICE_PORT, Constantes.UNICAST_SERVICE_PORT, Constantes.STREAM_SERVICE_PORT, MiMetodoReceptorJugadorEspera, Constantes.DELAY);
+                int cont = 0;
+                while (!App.objSDK.SocketIsConnected && cont < 3)
+                {
+                    App.objSDK.TearDownSockets();
+                    App.objSDK.InitializeSockets();
+                    cont++;
+                }
+
+                if (App.objSDK.SocketIsConnected)
+                {
+                    App.objJugador.Ip = App.objSDK.MyIP.ToString();
+                    App.objSDK.setObjMetodoReceptorString = MiMetodoReceptorJugadorEspera;
+                }
+                else
+                {
+                    //No hay conexión
+                    string strMensaje = "Lo sentimos, no se pudo establecer la conexión vía Wi-Fi. Intente nuevamente.";
+                    Helper.MensajeOk(strMensaje);
+                    this.Frame.Navigate(typeof(ElegirMesa));
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+            }
+        }
+
+        public async void MiMetodoReceptorJugadorEspera(string strIp, string strMessage)
+        {
+            try
+            {
+                await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    MiMetodoReceptorJugadorEsperaHelper(strIp, strMessage);
+                });
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+            }
+        }
+        #endregion
+    }
+}
