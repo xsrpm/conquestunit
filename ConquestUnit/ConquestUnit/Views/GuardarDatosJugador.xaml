@@ -36,7 +36,7 @@
         </VisualStateManager.VisualStateGroups>
         <StackPanel x:Name="myStackPanel" Height="300" VerticalAlignment="Top">
             <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="Bienvenido a Risk" VerticalAlignment="Top" Margin="40"/>
-            <Image x:Name="imgFoto" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/DefaultUser.png" Tapped="imgFoto_Tapped"/>
+            <Image x:Name="imgFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="128" Source="ms-appx:///Assets/Images/user128x128.png" Tapped="imgFoto_Tapped"/>
         </StackPanel>
         <RelativePanel x:Name="myRelativePanel" Margin="0,300,0,0" >
             <TextBlock x:Name="txtIngreseNombre"  RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" TextWrapping="Wrap" Text="Ingresa su nombre"/>

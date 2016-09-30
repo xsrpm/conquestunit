@@ -125,7 +125,22 @@
     <None Include="ConquestUnit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\DefaultUser.png" />
+    <Content Include="Assets\Images\info16x16.png" />
+    <Content Include="Assets\Images\info20x20.png" />
+    <Content Include="Assets\Images\info24x24.png" />
+    <Content Include="Assets\Images\info32x32.png" />
+    <Content Include="Assets\Images\info48x48.png" />
+    <Content Include="Assets\Images\info64x64.png" />
+    <Content Include="Assets\Images\logo128x128.png" />
+    <Content Include="Assets\Images\logo300x300.png" />
+    <Content Include="Assets\Images\user128x128.png" />
+    <Content Include="Assets\Images\user16x16.png" />
+    <Content Include="Assets\Images\user20x20.png" />
+    <Content Include="Assets\Images\user24x24.png" />
+    <Content Include="Assets\Images\user256x256.png" />
+    <Content Include="Assets\Images\user32x32.png" />
+    <Content Include="Assets\Images\user48x48.png" />
+    <Content Include="Assets\Images\user64x64.png" />
     <Content Include="Assets\table.png" />
     <Content Include="lib\SynapseSDK.dll" />
     <Content Include="Properties\Default.rd.xml" />

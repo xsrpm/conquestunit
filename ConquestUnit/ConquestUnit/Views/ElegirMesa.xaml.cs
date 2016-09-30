@@ -74,6 +74,10 @@ namespace ConquestUnit.Views
                 else
                     strBytes = Constantes.SIN_IMAGEN;
 
+                btnUnirme.Visibility = Visibility.Collapsed;
+                prConectando.Visibility = Visibility.Visible;
+                prConectando.IsActive = true;
+                lblConectando.Visibility = Visibility.Visible;
                 if (dispositivos != null)
                 {
                     foreach (var objDevice in dispositivos)
@@ -93,6 +97,10 @@ namespace ConquestUnit.Views
                         //    strBytes);
                     }
                 }
+                prConectando.Visibility = Visibility.Collapsed;
+                prConectando.IsActive = false;
+                lblConectando.Visibility = Visibility.Collapsed;
+                btnUnirme.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
@@ -116,6 +124,8 @@ namespace ConquestUnit.Views
                         //mensaje[2] => objMesa.MesaID
                         if (mensaje.Length != 3)
                             return;
+
+                        prConectando.IsActive = false;
 
                         //Reenviar a la pantalla de Jugador esperando el inicio del juego
                         Mesa objMesa = new Mesa();

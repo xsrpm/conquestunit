@@ -42,7 +42,7 @@
         </StackPanel>
         <StackPanel x:Name="myStackPanel2" Height="200"  Orientation="Horizontal" Margin="0,200,0,240" >
             <Image x:Name="imgElegirMesa" Height="100"  Width="100" HorizontalAlignment="Center"  VerticalAlignment="Center"  Source="ms-appx:///Assets/table.png" Tapped="imgElegirMesa_Tapped"/>
-            <Image x:Name="imgElegirJugador"  Height="100" Width="100" HorizontalAlignment="Center"  VerticalAlignment="Center" Source="ms-appx:///Assets/DefaultUser.png" Tapped="imgElegirJugador_Tapped"/>
+            <Image x:Name="imgElegirJugador"  Height="100" Width="100" HorizontalAlignment="Center"  VerticalAlignment="Center" Source="ms-appx:///Assets/Images/user128x128.png" Tapped="imgElegirJugador_Tapped"/>
         </StackPanel>
         <RelativePanel x:Name="myRelativePanel"  Margin="0,400,0,0"  >
 

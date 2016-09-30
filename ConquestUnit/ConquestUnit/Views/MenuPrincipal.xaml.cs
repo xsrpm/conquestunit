@@ -42,7 +42,7 @@ namespace ConquestUnit.Views
             RevisarConexionSDK();
         }
 
-        private void btnEditar_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        private void imgJugador_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(GuardarDatosJugador), typeof(MenuPrincipal));
         }

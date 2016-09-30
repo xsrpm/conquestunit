@@ -41,7 +41,7 @@
             <Image x:Name="imgLogo" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/StoreLogo.png"/>
             <TextBlock x:Name="lblCodigo"  HorizontalAlignment="Center"   VerticalAlignment="Top"  Margin="5" TextWrapping="Wrap" Text="Codigo de mesa"/>
             <TextBlock x:Name="lblMesaId"   HorizontalAlignment="Center"  VerticalAlignment="Top"  Margin="5" TextWrapping="Wrap" Text="0000" FontSize="48"/>
-            <Image x:Name="imgFoto" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/DefaultUser.png"/>
+            <Image x:Name="imgFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="128" Source="ms-appx:///Assets/Images/user128x128.png"/>
         </StackPanel>
         <RelativePanel x:Name="myRelativePanel" Margin="0,400,0,0" >
             <TextBlock x:Name="lblNombre"  RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" TextWrapping="Wrap" Text="Nombre"/>
