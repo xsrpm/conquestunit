@@ -27,5 +27,8 @@ namespace Util
         #endregion
 
         public static string SIN_IMAGEN = "Ninguno";
+
+        public enum FasesDeJuego { Despliegue, Ataque, Fortificación };
+        public enum ResultadoBatalla { Victoria,Derrota };
     }
 }

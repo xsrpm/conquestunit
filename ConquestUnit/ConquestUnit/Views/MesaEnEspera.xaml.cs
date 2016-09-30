@@ -88,6 +88,12 @@ namespace ConquestUnit.Views
                         if (objMesa.JugadoresConectados.Count >= 4)
                             return;
 
+                        //Notificar al nuevo jugador que se ha unido a la mesa
+                        await App.objSDK.UnicastPing(new HostName(mensaje[2]),
+                            Constantes.ConfirmacionUnirseMesa + Constantes.SEPARADOR +
+                            objMesa.Ip + Constantes.SEPARADOR +
+                            objMesa.MesaID);
+
                         //Agregar al jugador a la mesa
                         var jugador = new Jugador();
                         jugador.Ip = mensaje[2];
@@ -101,12 +107,6 @@ namespace ConquestUnit.Views
 
                         //Mostrar datos de los jugadores en pantalla
                         MostrarDatosJugadoresEnPantalla();
-
-                        //Notificar al nuevo jugador que se ha unido a la mesa
-                        await App.objSDK.UnicastPing(new HostName(jugador.Ip),
-                            Constantes.ConfirmacionUnirseMesa + Constantes.SEPARADOR +
-                            objMesa.Ip + Constantes.SEPARADOR +
-                            objMesa.MesaID);
                     }
                     #endregion
                     #region Jugador se retira
@@ -146,7 +146,7 @@ namespace ConquestUnit.Views
 
         private async void MostrarDatosJugadoresEnPantalla()
         {
-            Uri uri = new Uri("ms-appx:///Assets/DefaultUser.png");
+            Uri uri = new Uri("ms-appx:///Assets/Images/user128x128.png");
             BitmapImage defaultImage = new BitmapImage(uri);
             Jugador jugador;
             if (objMesa.JugadoresConectados.Count >= 1)

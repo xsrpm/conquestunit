@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    public class Class1
+    public class Despliegue
     {
+        
+
     }
 }

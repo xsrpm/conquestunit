@@ -8,11 +8,43 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Left" Margin="269,32,0,0" TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top"/>
+        <!--<TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Left" Margin="269,32,0,0" TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top"/>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="164,48,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/StoreLogo.png"/>
         <TextBlock x:Name="lblTexto" HorizontalAlignment="Left" Margin="164,164,0,0" TextWrapping="Wrap" Text="Ingresa el código de la mesa" VerticalAlignment="Top"/>
         <TextBox x:Name="txtMesaId" HorizontalAlignment="Left" Margin="117,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" FontSize="36" TextAlignment="Center"/>
         <Button x:Name="btnUnirme" Content="Unirme" HorizontalAlignment="Left" Margin="184,304,0,0" VerticalAlignment="Top" Tapped="btnUnirme_Tapped" />
-        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="180,341,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>
+        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="180,341,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="phoneState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="tabletState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel x:Name="myStackPanel" Height="300" VerticalAlignment="Top">
+            <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top" Margin="40"/>
+            <Image x:Name="imgJugador" HorizontalAlignment="Center" VerticalAlignment="Top" Width="128" Source="ms-appx:///Assets/Images/user128x128.png"/>
+        </StackPanel>
+        <RelativePanel x:Name="myRelativePanel" Margin="0,300,0,0" >
+            <TextBlock x:Name="lblTexto"  RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" TextWrapping="Wrap" Text="Ingresa el código de la mesa"/>
+            <TextBox x:Name="txtMesaId" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="lblTexto" Margin="20" TextWrapping="Wrap" Text="" Width="225" FontSize="36" TextAlignment="Center"/>
+            <Button x:Name="btnUnirme" Content="Unirme" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="txtMesaId" Margin="20" Tapped="btnUnirme_Tapped"/>
+            <ProgressRing x:Name="prConectando" IsActive="False" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="txtMesaId" Width="20" Height="20" Margin="10" Visibility="Collapsed"/>
+            <TextBlock x:Name="lblConectando" Text="Conectando..." RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="prConectando" Visibility="Collapsed"/>
+            <Button x:Name="btnRegresar" Content="Regresar" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="btnUnirme" Margin="20" Tapped="btnRegresar_Tapped"/>
+        </RelativePanel>
     </Grid>
 </Page>
