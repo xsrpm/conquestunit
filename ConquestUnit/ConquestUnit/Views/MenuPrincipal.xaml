@@ -18,7 +18,7 @@
             <VisualStateGroup>
                 <VisualState x:Name="phoneState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="0"/>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
@@ -27,38 +27,49 @@
                 </VisualState>
                 <VisualState x:Name="tabletState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="720"/>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
-                        <!--<Setter Target="myStackPanel2.Orientation" Value=""></Setter>-->
+                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Images/user64x64.png"></Setter>
+                        <Setter Target="imgJugador.Width" Value="68"></Setter>
+                        <Setter Target="imgJugador.Height" Value="68"></Setter>
+                        <Setter Target="btnJugar.(Grid.Row)" Value="4"></Setter>
+                        <Setter Target="btnComoJugar.(Grid.Row)" Value="4"></Setter>
+                        <Setter Target="btnCreditos.(Grid.Row)" Value="4"></Setter>
+                        <Setter Target="btnComoJugar.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="btnCreditos.(Grid.Column)" Value="2"></Setter>
+                        <Setter Target="txtBienvenido.FontSize" Value="50"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel x:Name="myStackPanel" Height="320" VerticalAlignment="Top">
-            <!--<Button x:Name="btnEditar" Content="Editar mi Info" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="20" Width="Auto" Tapped="btnEditar_Tapped"/>-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
                 <TextBlock x:Name="txtBienvenido" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="14" VerticalAlignment="Top" />
                 <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="48" Height="48" Source="ms-appx:///Assets/Images/user48x48.png" Tapped="imgJugador_Tapped"/>
             </StackPanel>
             <Image x:Name="imgInfo" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-10,20,10" Height="48" Width="48" Source="ms-appx:///Assets/Images/info48x48.png"/>
-            <!--<TextBlock x:Name="txtBienvenido" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top" Margin="40"/>-->
             <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Images/logo128x128.png"/>
-            <!--<Rectangle x:Name="Rect1"  Height="20" Width="Auto"/>
-            <Button x:Name="btnJugar" Content="Jugar" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnJugar_Click" />
-            <Rectangle x:Name="Rect2"  Height="20" Width="Auto"/>
-            <Button x:Name="btnComoJugar" Content="Como Jugar" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
-            <Rectangle x:Name="Rect3"  Height="20" Width="Auto"/>
-            <Button x:Name="btnCreditos" Content="Creditos" HorizontalAlignment="Center"  VerticalAlignment="Top"/>-->
         </StackPanel>
-        <RelativePanel x:Name="myStackPanel2" Margin="0,320,0,0" >
+        <Grid x:Name="myGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <Button x:Name="btnJugar" Content="Jugar" RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" Tapped="btnJugar_Tapped" />
+            <Button x:Name="btnJugar" Content="Jugar" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1"  Grid.Row="3" Margin="20" />
+            <Button x:Name="btnComoJugar" Content="Como Jugar"  HorizontalAlignment="Center" VerticalAlignment="Top"   Grid.Column="1" Grid.Row="4" Margin="20"  Tapped="btnJugar_Tapped"/>
+            <Button x:Name="btnCreditos" Content="Creditos"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Margin="20" />
 
-            <Button x:Name="btnComoJugar" Content="Como Jugar"  RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="btnJugar" Margin="20" />
-
-            <Button x:Name="btnCreditos" Content="Creditos"   RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="btnComoJugar"  Margin="20" />
-        </RelativePanel>
+        </Grid>
     </Grid>
 </Page>
