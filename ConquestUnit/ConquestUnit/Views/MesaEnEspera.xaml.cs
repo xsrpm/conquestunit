@@ -46,6 +46,11 @@ namespace ConquestUnit.Views
             IniciarSDK();
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+        }
+
         private void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Helper.MensajeOk("El juego se iniciará...!!!");

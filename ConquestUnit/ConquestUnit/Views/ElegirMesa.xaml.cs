@@ -46,17 +46,22 @@ namespace ConquestUnit.Views
             IniciarSDK();
         }
 
-        private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        private void imgJugador_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (App.DetectPlatform() == Platform.WindowsPhone)
-            {
-                this.Frame.Navigate(typeof(MenuPrincipal));
-            }
-            else
-            {
-                this.Frame.Navigate(typeof(SeleccionarRol));
-            }
+            this.Frame.Navigate(typeof(GuardarDatosJugador), typeof(ElegirMesa));
         }
+
+        //private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        //{
+        //    if (App.DetectPlatform() == Platform.WindowsPhone)
+        //    {
+        //        this.Frame.Navigate(typeof(MenuPrincipal));
+        //    }
+        //    else
+        //    {
+        //        this.Frame.Navigate(typeof(SeleccionarRol));
+        //    }
+        //}
 
         private async void btnUnirme_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -74,9 +79,10 @@ namespace ConquestUnit.Views
                 else
                     strBytes = Constantes.SIN_IMAGEN;
 
-                btnUnirme.Visibility = Visibility.Collapsed;
-                prConectando.Visibility = Visibility.Visible;
+                txtMesaId.IsEnabled = false;
+                btnUnirme.IsEnabled = false;
                 prConectando.IsActive = true;
+                prConectando.Visibility = Visibility.Visible;
                 lblConectando.Visibility = Visibility.Visible;
                 if (dispositivos != null)
                 {
@@ -97,10 +103,11 @@ namespace ConquestUnit.Views
                         //    strBytes);
                     }
                 }
-                prConectando.Visibility = Visibility.Collapsed;
                 prConectando.IsActive = false;
+                prConectando.Visibility = Visibility.Collapsed;
                 lblConectando.Visibility = Visibility.Collapsed;
-                btnUnirme.Visibility = Visibility.Visible;
+                btnUnirme.IsEnabled = true;
+                txtMesaId.IsEnabled = true;
             }
             catch (Exception ex)
             {

@@ -40,6 +40,11 @@ namespace ConquestUnit.Views
             }
         }
 
+        private void imgJugador_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(GuardarDatosJugador), typeof(SeleccionarRol));
+        }
+
         private void imgElegirMesa_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MesaEnEspera));

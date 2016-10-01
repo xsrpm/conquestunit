@@ -8,14 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <!--<TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Left" Margin="286,10,0,0" TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top"/>
-        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="164,10,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/StoreLogo.png"/>
-        <TextBlock x:Name="lblTexto" HorizontalAlignment="Left" Margin="164,115,0,0" TextWrapping="Wrap" Text="Código de mesa" VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblMesaId" HorizontalAlignment="Left" Margin="160,135,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" FontSize="48"/>
-        <Image x:Name="imgFoto" HorizontalAlignment="Left" Height="100" Margin="160,204,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/DefaultUser.png" Width="100"/>
-        <TextBlock x:Name="lblTextoEsperando" HorizontalAlignment="Left" Margin="128,324,0,0" TextWrapping="Wrap" Text="Esperando el inicio del juego..." VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblNombre" HorizontalAlignment="Left" Margin="173,304,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top"/>
-        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="168,355,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>-->
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="phoneState">
@@ -26,27 +18,46 @@
                         <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
                     </VisualState.Setters>
                 </VisualState>
-                <VisualState x:Name="tabletState">
+                <VisualState x:Name="pcState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="720"/>
+                        <AdaptiveTrigger MinWindowWidth="1280" MinWindowHeight="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
+                        <Setter Target="lblNombreJugador.FontSize" Value="35"></Setter>
+                        <!--<Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Images/user64x64.png"></Setter>
+                        <Setter Target="imgJugador.Width" Value="64"></Setter>
+                        <Setter Target="imgJugador.Height" Value="64"></Setter>-->
+                        <Setter Target="imgLogo.Margin" Value="0,-10,0,0"></Setter>
+                        <Setter Target="imgLogo.Width" Value="150"></Setter>
+                        <Setter Target="imgLogo.Height" Value="150"></Setter>
+                        <Setter Target="lblCodigo.FontSize" Value="35"></Setter>
+                        <Setter Target="lblMesaId.FontSize" Value="50"></Setter>
+                        <Setter Target="myStackPanel.Height" Value="540"></Setter>
+                        <Setter Target="myRelativePanel.Margin" Value="0,510,0,0"></Setter>
+                        <Setter Target="lblNombre.FontSize" Value="35"></Setter>
+                        <Setter Target="lblTextoEsperando.FontSize" Value="35"></Setter>
+                        <Setter Target="btnRegresar.Height" Value="60"></Setter>
+                        <Setter Target="btnRegresar.Width" Value="130"></Setter>
+                        <Setter Target="btnRegresar.Margin" Value="0,25,0,0"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel x:Name="myStackPanel" Height="400" VerticalAlignment="Top">
-            <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="Bienvenido" VerticalAlignment="Top" Margin="20"/>
-            <Image x:Name="imgLogo" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/StoreLogo.png"/>
-            <TextBlock x:Name="lblCodigo"  HorizontalAlignment="Center"   VerticalAlignment="Top"  Margin="5" TextWrapping="Wrap" Text="Codigo de mesa"/>
-            <TextBlock x:Name="lblMesaId"   HorizontalAlignment="Center"  VerticalAlignment="Top"  Margin="5" TextWrapping="Wrap" Text="0000" FontSize="48"/>
-            <Image x:Name="imgFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="128" Source="ms-appx:///Assets/Images/user128x128.png"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
+                <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5"/>
+                <!--<Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Images/user32x32.png" Tapped="imgJugador_Tapped"/>-->
+            </StackPanel>
+            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="100" Source="ms-appx:///Assets/Images/logo128x128.png"/>
+            <TextBlock x:Name="lblCodigo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" TextWrapping="Wrap" Text="Codigo de mesa"/>
+            <TextBlock x:Name="lblMesaId" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" TextWrapping="Wrap" Text="0000" FontSize="35"/>
+            <Image x:Name="imgFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,0" Height="128" Width="128" Source="ms-appx:///Assets/Images/user128x128.png"/>
         </StackPanel>
         <RelativePanel x:Name="myRelativePanel" Margin="0,400,0,0" >
-            <TextBlock x:Name="lblNombre"  RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" TextWrapping="Wrap" Text="Nombre"/>
-            <TextBlock x:Name="lblTextoEsperando"  RelativePanel.AlignHorizontalCenterWithPanel ="True"  VerticalAlignment="Top"  Margin="20" TextWrapping="Wrap" RelativePanel.Below="lblNombre" Text="Esperando el inicio del juego.."/>
-            <Button x:Name="btnRegresar" Content="Regresar" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="lblTextoEsperando" Margin="20" Tapped="btnRegresar_Tapped"/>
+            <TextBlock x:Name="lblNombre" RelativePanel.AlignHorizontalCenterWithPanel="True" VerticalAlignment="Top" Margin="0,-5,0,0" TextWrapping="Wrap" Text="Nombre"/>
+            <TextBlock x:Name="lblTextoEsperando" RelativePanel.AlignHorizontalCenterWithPanel="True" VerticalAlignment="Top" Margin="0,10,0,0" TextWrapping="Wrap" RelativePanel.Below="lblNombre" Text="Esperando el inicio del juego.."/>
+            <Button x:Name="btnRegresar" Content="Regresar" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="lblTextoEsperando" Width="105" Height="40" Margin="0,10,0,0" Tapped="btnRegresar_Tapped"/>
         </RelativePanel>
     </Grid>
 </Page>

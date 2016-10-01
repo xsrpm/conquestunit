@@ -61,13 +61,11 @@ namespace ConquestUnit.Views
                     imgFoto.Source = bimgBitmapImage;
                 }
             }
-            else
-            {
-                if (App.DetectPlatform() == Platform.WindowsPhone || paginaRedirect.Equals(typeof(ElegirMesa)))
-                {
-                    btnRegresar.Visibility = Visibility.Collapsed;
-                }
-            }
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
         }
 
         private async void imgFoto_Tapped(object sender, TappedRoutedEventArgs e)
@@ -125,9 +123,9 @@ namespace ConquestUnit.Views
             }
         }
 
-        private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(paginaRedirect);
-        }
+        //private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(paginaRedirect);
+        //}
     }
 }

@@ -63,6 +63,11 @@ namespace ConquestUnit.Views
             IniciarSDK();
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+        }
+
         private async void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Notificar a la mesa que se está saliendo de la espera
