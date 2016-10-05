@@ -99,6 +99,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ConquestUnitGame.xaml.cs">
+      <DependentUpon>ConquestUnitGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConquestUnitMando.xaml.cs">
+      <DependentUpon>ConquestUnitMando.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ElegirMesa.xaml.cs">
       <DependentUpon>ElegirMesa.xaml</DependentUpon>
     </Compile>
@@ -125,23 +131,46 @@
     <None Include="ConquestUnit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Images\info16x16.png" />
-    <Content Include="Assets\Images\info20x20.png" />
-    <Content Include="Assets\Images\info24x24.png" />
-    <Content Include="Assets\Images\info32x32.png" />
-    <Content Include="Assets\Images\info48x48.png" />
-    <Content Include="Assets\Images\info64x64.png" />
-    <Content Include="Assets\Images\logo128x128.png" />
-    <Content Include="Assets\Images\logo300x300.png" />
-    <Content Include="Assets\Images\user128x128.png" />
-    <Content Include="Assets\Images\user16x16.png" />
-    <Content Include="Assets\Images\user20x20.png" />
-    <Content Include="Assets\Images\user24x24.png" />
-    <Content Include="Assets\Images\user256x256.png" />
-    <Content Include="Assets\Images\user32x32.png" />
-    <Content Include="Assets\Images\user48x48.png" />
-    <Content Include="Assets\Images\user64x64.png" />
+    <Content Include="Assets\Images\active32x32.png" />
+    <Content Include="Assets\Images\Icons\back128x128.png" />
+    <Content Include="Assets\Images\Icons\back16x16.png" />
+    <Content Include="Assets\Images\Icons\back20x20.png" />
+    <Content Include="Assets\Images\Icons\back24x24.png" />
+    <Content Include="Assets\Images\Icons\back32x32.png" />
+    <Content Include="Assets\Images\Icons\back48x48.png" />
+    <Content Include="Assets\Images\Icons\back64x64.png" />
+    <Content Include="Assets\Images\Icons\info16x16.png" />
+    <Content Include="Assets\Images\Icons\info20x20.png" />
+    <Content Include="Assets\Images\Icons\info24x24.png" />
+    <Content Include="Assets\Images\Icons\info32x32.png" />
+    <Content Include="Assets\Images\Icons\info48x48.png" />
+    <Content Include="Assets\Images\Icons\info64x64.png" />
+    <Content Include="Assets\Images\Icons\logo128x128.png" />
+    <Content Include="Assets\Images\Icons\logo300x300.png" />
+    <Content Include="Assets\Images\inactive32x32.png" />
+    <Content Include="Assets\Images\Mando\Abajo.png" />
+    <Content Include="Assets\Images\Mando\Arriba.png" />
+    <Content Include="Assets\Images\Mando\BotonA.png" />
+    <Content Include="Assets\Images\Mando\BotonB.png" />
+    <Content Include="Assets\Images\Mando\BotonX.png" />
+    <Content Include="Assets\Images\Mando\BotonY.png" />
+    <Content Include="Assets\Images\Mando\Derecha.png" />
+    <Content Include="Assets\Images\Mando\Izquierda.png" />
+    <Content Include="Assets\Images\selector.png" />
+    <Content Include="Assets\Images\Icons\user128x128.png" />
+    <Content Include="Assets\Images\Icons\user16x16.png" />
+    <Content Include="Assets\Images\Icons\user20x20.png" />
+    <Content Include="Assets\Images\Icons\user24x24.png" />
+    <Content Include="Assets\Images\Icons\user256x256.png" />
+    <Content Include="Assets\Images\Icons\user32x32.png" />
+    <Content Include="Assets\Images\Icons\user48x48.png" />
+    <Content Include="Assets\Images\Icons\user64x64.png" />
+    <Content Include="Assets\Mapa\Mapa China.png" />
     <Content Include="Assets\table.png" />
+    <Content Include="Assets\Unidades\China\Unidad Amarillo.png" />
+    <Content Include="Assets\Unidades\China\Unidad Azul.png" />
+    <Content Include="Assets\Unidades\China\Unidad Rojo.png" />
+    <Content Include="Assets\Unidades\China\Unidad Verde.png" />
     <Content Include="lib\SynapseSDK.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -160,6 +189,14 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConquestUnitGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConquestUnitMando.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ElegirMesa.xaml">
       <SubType>Designer</SubType>
@@ -190,6 +227,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{c2cab0a1-53a2-442a-94a1-3884d143b210}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{b786a06b-ace6-4cf1-8915-5d4d88e21432}</Project>
+      <Name>DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameLogic\GameLogic.csproj">
       <Project>{e45a206b-e3fa-45eb-9e01-d61d50be1041}</Project>

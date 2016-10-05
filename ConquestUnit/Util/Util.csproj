@@ -115,9 +115,9 @@
     <EmbeddedResource Include="Properties\Util.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{c2cab0a1-53a2-442a-94a1-3884d143b210}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{b786a06b-ace6-4cf1-8915-5d4d88e21432}</Project>
+      <Name>DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

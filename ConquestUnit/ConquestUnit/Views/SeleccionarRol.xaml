@@ -29,13 +29,27 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel x:Name="myStackPanel" Height="430" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
-                <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" FontSize="35" Padding="5"/>
-                <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="64" Source="ms-appx:///Assets/Images/user64x64.png" Tapped="imgJugador_Tapped"/>
-            </StackPanel>
-            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-100,0,0" Width="256" Height="256" Source="ms-appx:///Assets/Images/logo300x300.png"/>
+            <Grid x:Name="headerGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*" />
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="20" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0">
+                    <Button x:Name="btnAtras" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="64" Tapped="btnAtras_Tapped">
+                        <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Images/Icons/back64x64.png" Stretch="UniformToFill"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
+                    <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" FontSize="35" Padding="5"/>
+                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="64" Source="ms-appx:///Assets/Images/Icons/user64x64.png" Tapped="imgJugador_Tapped"/>
+                </StackPanel>
+            </Grid>
+            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-90,0,0" Width="256" Height="256" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>
         </StackPanel>
-        <StackPanel x:Name="myRelativePanel" Margin="0,275,0,0" HorizontalAlignment="Center" Orientation="Vertical">
+        <StackPanel x:Name="myRelativePanel" Margin="0,280,0,0" HorizontalAlignment="Center" Orientation="Vertical">
             <TextBlock x:Name="lblTexto" Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" />
             <StackPanel Orientation="Horizontal">
                 <StackPanel Padding="50">
@@ -43,7 +57,7 @@
                     <TextBlock x:Name="lblMesa" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Mesa" FontSize="35"/>
                 </StackPanel>
                 <StackPanel Padding="50">
-                    <Image x:Name="imgElegirJugador" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Images/user256x256.png" Tapped="imgElegirJugador_Tapped"/>
+                    <Image x:Name="imgElegirJugador" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Tapped="imgElegirJugador_Tapped"/>
                     <TextBlock x:Name="lblJugador" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Jugador" FontSize="35"/>
                 </StackPanel>
             </StackPanel>

@@ -109,12 +109,6 @@
   <ItemGroup>
     <Compile Include="ConquestUnitContext.cs" />
     <Compile Include="DataInitialize.cs" />
-    <Compile Include="Model\Juego.cs" />
-    <Compile Include="Model\Jugador.cs" />
-    <Compile Include="Model\Mesa.cs" />
-    <Compile Include="Model\Opcion.cs" />
-    <Compile Include="Model\Pregunta.cs" />
-    <Compile Include="Model\Territorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\DataAccess.rd.xml" />
   </ItemGroup>
@@ -126,7 +120,12 @@
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{b786a06b-ace6-4cf1-8915-5d4d88e21432}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

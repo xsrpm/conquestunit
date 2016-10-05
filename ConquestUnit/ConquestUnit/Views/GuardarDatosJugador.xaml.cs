@@ -1,4 +1,4 @@
-﻿using ConquestUnit.Model;
+﻿using DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +12,7 @@ using Windows.Foundation.Metadata;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Windows.System;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -50,6 +51,7 @@ namespace ConquestUnit.Views
             {
                 if (App.objJugador.Nombre != null)
                 {
+                    lblNombreJugador.Text = "Bienvenido " + App.objJugador.Nombre;
                     txtNombre.Text = App.objJugador.Nombre;
                 }
                 if (App.objJugador.Imagen != null)
@@ -58,14 +60,30 @@ namespace ConquestUnit.Views
                     bimgBitmapImage = new BitmapImage();
                     IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(fotoBytes);
                     bimgBitmapImage.SetSource(fileStream);
+                    imgJugador.Source = bimgBitmapImage;
                     imgFoto.Source = bimgBitmapImage;
                 }
+                else
+                {
+                    Uri uri = new Uri("ms-appx:///Assets/Images/Icons/logo128x128.png");
+                    BitmapImage logoImage = new BitmapImage(uri);
+                    imgJugador.Source = logoImage;
+                }
             }
-        }
-
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+            else
+            {
+                if (App.DetectPlatform() == Platform.WindowsPhone)
+                {
+                    Uri uri = new Uri("ms-appx:///Assets/Images/Icons/logo128x128.png");
+                    BitmapImage logoImage = new BitmapImage(uri);
+                    imgJugador.Source = logoImage;
+                    btnAtras.Visibility = Visibility.Collapsed;
+                }
+                if (paginaRedirect == typeof(ElegirMesa))
+                {
+                    btnAtras.Visibility = Visibility.Collapsed;
+                }
+            }
         }
 
         private async void imgFoto_Tapped(object sender, TappedRoutedEventArgs e)
@@ -90,6 +108,7 @@ namespace ConquestUnit.Views
                     bimgBitmapImage.SetSource(fileStream);
                     imgFoto.Source = bimgBitmapImage;
                 }
+                btnGuardar.Focus(FocusState.Programmatic);
             }
             catch (Exception ex)
             {
@@ -123,9 +142,18 @@ namespace ConquestUnit.Views
             }
         }
 
-        //private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    this.Frame.Navigate(paginaRedirect);
-        //}
+        private void btnAtras_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(paginaRedirect);
+        }
+
+        private void txtNombre_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Enter)
+            {
+                txtNombre.IsEnabled = false;
+                txtNombre.IsEnabled = true;
+            }
+        }
     }
 }

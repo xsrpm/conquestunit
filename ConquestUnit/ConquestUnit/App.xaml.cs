@@ -1,5 +1,4 @@
 ﻿using ConquestUnit.Views;
-using ConquestUnit.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +20,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
 using SynapseSDK;
+using DataModel;
 
 namespace ConquestUnit
 {
@@ -68,7 +68,6 @@ namespace ConquestUnit
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
-                rootFrame.Navigated += OnNavigated;
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
@@ -79,15 +78,6 @@ namespace ConquestUnit
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
-
-                // Register a handler for BackRequested events and set the
-                // visibility of the Back button
-                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
-
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                    rootFrame.CanGoBack ?
-                    AppViewBackButtonVisibility.Visible :
-                    AppViewBackButtonVisibility.Collapsed;
             }
 
             if (e.PrelaunchActivated == false)
@@ -110,7 +100,7 @@ namespace ConquestUnit
                     }
                     else
                     {
-                        rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
+                        rootFrame.Navigate(typeof(ConquestUnitGame), e.Arguments);
                     }
                 }
                 // Ensure the current window is active
@@ -128,15 +118,6 @@ namespace ConquestUnit
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
-        private void OnNavigated(object sender, NavigationEventArgs e)
-        {
-            // Each time a navigation event occurs, update the Back button's visibility
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                ((Frame)sender).CanGoBack ?
-                AppViewBackButtonVisibility.Visible :
-                AppViewBackButtonVisibility.Collapsed;
-        }
-
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
         /// without knowing whether the application will be terminated or resumed with the contents
@@ -149,17 +130,6 @@ namespace ConquestUnit
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
-        }
-
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            if (rootFrame.CanGoBack)
-            {
-                e.Handled = true;
-                rootFrame.GoBack();
-            }
         }
 
         public static Platform DetectPlatform()

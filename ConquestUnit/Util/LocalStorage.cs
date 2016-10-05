@@ -1,8 +1,8 @@
-﻿using ConquestUnit.Model;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Windows.Storage;
 using System.Runtime.InteropServices.WindowsRuntime;
+using DataModel;
 
 namespace Util
 {

@@ -1,7 +1,7 @@
 ﻿using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
 
-namespace ConquestUnit.Model
+namespace DataModel
 {
     public class Opcion
     {

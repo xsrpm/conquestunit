@@ -1,6 +1,6 @@
-﻿using SQLite.Net;
+﻿using DataModel;
+using SQLite.Net;
 using System.IO;
-using ConquestUnit.Model;
 
 namespace ConquestUnit
 {

@@ -1,8 +1,11 @@
 ﻿using SynapseSDK;
 using System;
 using Util;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation.Metadata;
 using Windows.Storage.Streams;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
@@ -21,6 +24,13 @@ namespace ConquestUnit.Views
         public MenuPrincipal()
         {
             this.InitializeComponent();
+
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+
+            ApplicationViewTitleBar formattableTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+            formattableTitleBar.ButtonBackgroundColor = Colors.Transparent;
+            CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)

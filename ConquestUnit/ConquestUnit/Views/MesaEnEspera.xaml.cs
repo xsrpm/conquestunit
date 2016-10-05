@@ -1,11 +1,12 @@
-﻿using ConquestUnit.Model;
-using DataAccess.Model;
+﻿using DataModel;
 using SynapseSDK;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using Util;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -32,37 +33,58 @@ namespace ConquestUnit.Views
     /// </summary>
     public sealed partial class MesaEnEspera : Page
     {
-        //MainCore objSDK;
-        Mesa objMesa;
+        // Parametrizacion del mapa seleccionado
+        string Mapa_Elegido;
+        Juego objJuego;
+        //private Timer timer;
+        //private int intervaloTimer;
 
         public MesaEnEspera()
         {
             this.InitializeComponent();
             btnJugar.IsEnabled = false;
+            // http://stackoverflow.com/questions/12796148/working-with-system-threading-timer-in-c-sharp
+            //intervaloTimer = 1000 * 3;
+            //timer = new Timer(timerCallback, null, intervaloTimer, Timeout.Infinite);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            Mapa_Elegido = Constantes.MAPA_CHINA;
             IniciarSDK();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        private async void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
-        }
+            // Definir los turnos de los jugadores,
+            // los cuales será igual a la lista de jugadores de la mesa
+            // pero en desorden
+            GameLogic.LogicaInicio.InicializarTurnos(objJuego);
 
-        private void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Helper.MensajeOk("El juego se iniciará...!!!");
+            // Repartir los territorios
+            GameLogic.LogicaInicio.InicializarTerritorios(objJuego);
+            GameLogic.LogicaInicio.RepartirTerritorio(objJuego);
+            GameLogic.LogicaInicio.RepartirUnidadesEnTerritorios(objJuego);
+
+            //Notificar a los jugadores el inicio del juego y quien comienza
+            foreach (var item in objJuego.JugadoresConectados)
+                await App.objSDK.UnicastPing(new HostName(item.Ip),
+                            Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
+                            objJuego.JugadoresConectados[0].Ip);
+
+            //Redirigir al juego
+            objJuego.TurnoActual = 0;
+            this.Frame.Navigate(typeof(ConquestUnitGame), objJuego);
         }
 
         private async void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Notificar a los dispositivos que se está cerrando la mesa
-            foreach (var item in objMesa.JugadoresConectados)
+            foreach (var item in objJuego.JugadoresConectados)
                 await App.objSDK.UnicastPing(new HostName(item.Ip),
-                            Constantes.MesaIndicaSeCierra + Constantes.SEPARADOR);
-
+                            Constantes.MesaIndicaSeCierra);
+            App.objSDK.setObjMetodoReceptorString = null;
+            //timer.Change(Timeout.Infinite, Timeout.Infinite);
             this.Frame.Navigate(typeof(SeleccionarRol));
         }
 
@@ -86,18 +108,19 @@ namespace ConquestUnit.Views
                             return;
 
                         //Verificar que es la mesa seleccionada
-                        if (mensaje[1] != objMesa.MesaID)
+                        if (mensaje[1] != objJuego.JuegoID)
                             return;
 
                         //Verificar que la mesa no esté llena
-                        if (objMesa.JugadoresConectados.Count >= 4)
+                        if (objJuego.JugadoresConectados.Count >= 4)
                             return;
 
                         //Notificar al nuevo jugador que se ha unido a la mesa
                         await App.objSDK.UnicastPing(new HostName(mensaje[2]),
                             Constantes.ConfirmacionUnirseMesa + Constantes.SEPARADOR +
-                            objMesa.Ip + Constantes.SEPARADOR +
-                            objMesa.MesaID);
+                            objJuego.Ip + Constantes.SEPARADOR +
+                            objJuego.JuegoID + Constantes.SEPARADOR +
+                            objJuego.TipoMapa);
 
                         //Agregar al jugador a la mesa
                         var jugador = new Jugador();
@@ -108,7 +131,7 @@ namespace ConquestUnit.Views
 
                         //Validar jugador no se ha unido aún
                         if (!ValidaJugadorExistexIP(jugador.Ip))
-                            objMesa.JugadoresConectados.Add(jugador);
+                            objJuego.JugadoresConectados.Add(jugador);
 
                         //Mostrar datos de los jugadores en pantalla
                         MostrarDatosJugadoresEnPantalla();
@@ -126,22 +149,22 @@ namespace ConquestUnit.Views
 
                         //Eliminar al jugador de la mesa
                         var ipJugadorRetirado = mensaje[1];
-                        for (int i = 0; i < objMesa.JugadoresConectados.Count; i++)
+                        for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
                         {
-                            if (objMesa.JugadoresConectados[i].Ip.Equals(ipJugadorRetirado))
+                            if (objJuego.JugadoresConectados[i].Ip.Equals(ipJugadorRetirado))
                             {
-                                objMesa.JugadoresConectados.RemoveAt(i);
+                                objJuego.JugadoresConectados.RemoveAt(i);
                                 break;
                             }
                         }
-                        
+
                         //Mostrar datos de los jugadores en pantalla
                         MostrarDatosJugadoresEnPantalla();
                     }
                     #endregion
                 }
                 //Habilitar o deshabilitar el boton de Jugar
-                btnJugar.IsEnabled = (objMesa.JugadoresConectados.Count >= 2 ? true : false);
+                btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
             }
             catch (Exception ex)
             {
@@ -151,12 +174,12 @@ namespace ConquestUnit.Views
 
         private async void MostrarDatosJugadoresEnPantalla()
         {
-            Uri uri = new Uri("ms-appx:///Assets/Images/user128x128.png");
+            Uri uri = new Uri("ms-appx:///Assets/Images/Icons/user128x128.png");
             BitmapImage defaultImage = new BitmapImage(uri);
             Jugador jugador;
-            if (objMesa.JugadoresConectados.Count >= 1)
+            if (objJuego.JugadoresConectados.Count >= 1)
             {
-                jugador = objMesa.JugadoresConectados[0];
+                jugador = objJuego.JugadoresConectados[0];
                 if (!lblIpJugador1.Text.Equals(jugador.Ip))
                 {
                     lblIpJugador1.Text = jugador.Ip;
@@ -176,9 +199,9 @@ namespace ConquestUnit.Views
                 imgJugador1.Source = defaultImage;
                 lblJugador1.Text = "Esperando...";
             }
-            if (objMesa.JugadoresConectados.Count >= 2)
+            if (objJuego.JugadoresConectados.Count >= 2)
             {
-                jugador = objMesa.JugadoresConectados[1];
+                jugador = objJuego.JugadoresConectados[1];
                 if (!lblIpJugador2.Text.Equals(jugador.Ip))
                 {
                     lblIpJugador2.Text = jugador.Ip;
@@ -198,9 +221,9 @@ namespace ConquestUnit.Views
                 imgJugador2.Source = defaultImage;
                 lblJugador2.Text = "Esperando...";
             }
-            if (objMesa.JugadoresConectados.Count >= 3)
+            if (objJuego.JugadoresConectados.Count >= 3)
             {
-                jugador = objMesa.JugadoresConectados[2];
+                jugador = objJuego.JugadoresConectados[2];
                 if (!lblIpJugador3.Text.Equals(jugador.Ip))
                 {
                     lblIpJugador3.Text = jugador.Ip;
@@ -220,9 +243,9 @@ namespace ConquestUnit.Views
                 imgJugador3.Source = defaultImage;
                 lblJugador3.Text = "Esperando...";
             }
-            if (objMesa.JugadoresConectados.Count >= 4)
+            if (objJuego.JugadoresConectados.Count >= 4)
             {
-                jugador = objMesa.JugadoresConectados[3];
+                jugador = objJuego.JugadoresConectados[3];
                 if (!lblIpJugador4.Text.Equals(jugador.Ip))
                 {
                     lblIpJugador4.Text = jugador.Ip;
@@ -248,7 +271,7 @@ namespace ConquestUnit.Views
         {
             try
             {
-                foreach (var objJugador in objMesa.JugadoresConectados)
+                foreach (var objJugador in objJuego.JugadoresConectados)
                 {
                     if (objJugador.Ip.Equals(strIp))
                         return true;
@@ -279,14 +302,14 @@ namespace ConquestUnit.Views
 
                 if (App.objSDK.SocketIsConnected)
                 {
-                    objMesa = new Mesa();
-                    objMesa.Ip = App.objSDK.MyIP.ToString();
+                    objJuego = new Juego(Mapa_Elegido);
+                    objJuego.Ip = App.objSDK.MyIP.ToString();
                     //GENERAR NUMERO UNICO DE LA MESA
                     var numeroMesa = App.objSDK.MyIP.ToString().Split('.');
                     if (numeroMesa.Length == 4)
                     {
-                        objMesa.MesaID = numeroMesa[2] + numeroMesa[3];
-                        lblCodigoMesa.Text = objMesa.MesaID;
+                        objJuego.JuegoID = numeroMesa[2] + numeroMesa[3];
+                        lblCodigoMesa.Text = objJuego.JuegoID;
                     }
                     App.objSDK.setObjMetodoReceptorString = MiMetodoReceptorMesaEspera;
                 }
@@ -320,5 +343,60 @@ namespace ConquestUnit.Views
             }
         }
         #endregion
+
+        //public async void timerCallback(object state)
+        //{
+        //    // do some work not connected with UI
+        //    Stopwatch watch = new Stopwatch();
+        //    watch.Start();
+        //    App.objSDK.clearDeviceCollection();
+        //    await App.objSDK.MulticastPing();
+        //    await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+        //    {
+        //        //lblTexto.Text = Guid.NewGuid().ToString() + "/" + listaDevices.Count + "/";
+        //        //foreach (var item in listaDevices)
+        //        //{
+        //        //    lblTexto.Text += (("-") + item.IP);
+        //        //}
+        //        if (objJuego.JugadoresConectados.Count > 0)
+        //        {
+        //            // do some work on UI here;
+        //            var huboCambio = false;
+        //            var listaDevices = App.objSDK.getDeviceCollection();
+
+        //            foreach (var dispositivo in listaDevices)
+        //            {
+        //                for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
+        //                {
+        //                    if (objJuego.JugadoresConectados[i].Ip.Equals(dispositivo.IP))
+        //                    {
+        //                        objJuego.JugadoresConectados.RemoveAt(i);
+        //                        huboCambio = true;
+        //                        break;
+        //                    }
+        //                }
+        //                if (objJuego.JugadoresConectados.Count == 0)
+        //                {
+        //                    break;
+        //                }
+        //            }
+        //            if (huboCambio)
+        //            {
+        //                //Mostrar datos de los jugadores en pantalla
+        //                MostrarDatosJugadoresEnPantalla();
+        //                //Habilitar o deshabilitar el boton de Jugar
+        //                btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
+        //            }
+        //            //lblTexto.Text = "Conectados: ";
+        //            //foreach (var item in objJuego.JugadoresConectados)
+        //            //{
+        //            //lblTexto.Text = lblTexto.Text + "-" + item.Nombre;
+        //            //}
+
+        //        }
+        //        // lblTexto.Text = Guid.NewGuid().ToString();
+        //    });
+        //    timer.Change(Math.Max(0, intervaloTimer - (int)watch.ElapsedMilliseconds), Timeout.Infinite);
+        //}
     }
 }

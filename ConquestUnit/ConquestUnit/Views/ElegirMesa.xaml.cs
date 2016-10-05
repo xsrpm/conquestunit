@@ -1,4 +1,4 @@
-﻿using DataAccess.Model;
+﻿using DataModel;
 using SynapseSDK;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
 using Windows.Networking;
+using Windows.Storage.Streams;
+using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -18,6 +20,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -34,13 +37,20 @@ namespace ConquestUnit.Views
             this.InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             if (App.objJugador != null)
             {
                 if (App.objJugador.Nombre != null)
                 {
                     lblNombreJugador.Text = lblNombreJugador.Text + " " + App.objJugador.Nombre;
+                }
+                if (App.objJugador.Imagen != null)
+                {
+                    BitmapImage bimgBitmapImage = new BitmapImage();
+                    IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
+                    bimgBitmapImage.SetSource(fileStream);
+                    imgJugador.Source = bimgBitmapImage;
                 }
             }
             IniciarSDK();
@@ -51,20 +61,25 @@ namespace ConquestUnit.Views
             this.Frame.Navigate(typeof(GuardarDatosJugador), typeof(ElegirMesa));
         }
 
-        //private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    if (App.DetectPlatform() == Platform.WindowsPhone)
-        //    {
-        //        this.Frame.Navigate(typeof(MenuPrincipal));
-        //    }
-        //    else
-        //    {
-        //        this.Frame.Navigate(typeof(SeleccionarRol));
-        //    }
-        //}
+        private void btnAtras_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (App.DetectPlatform() == Platform.WindowsPhone)
+            {
+                this.Frame.Navigate(typeof(MenuPrincipal));
+            }
+            else
+            {
+                this.Frame.Navigate(typeof(SeleccionarRol));
+            }
+        }
 
         private async void btnUnirme_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            txtMesaId.IsEnabled = false;
+            btnUnirme.IsEnabled = false;
+            prConectando.IsActive = true;
+            prConectando.Visibility = Visibility.Visible;
+            lblConectando.Visibility = Visibility.Visible;
             try
             {
                 string mesaSeleccionada = txtMesaId.Text;
@@ -79,11 +94,6 @@ namespace ConquestUnit.Views
                 else
                     strBytes = Constantes.SIN_IMAGEN;
 
-                txtMesaId.IsEnabled = false;
-                btnUnirme.IsEnabled = false;
-                prConectando.IsActive = true;
-                prConectando.Visibility = Visibility.Visible;
-                lblConectando.Visibility = Visibility.Visible;
                 if (dispositivos != null)
                 {
                     foreach (var objDevice in dispositivos)
@@ -103,16 +113,16 @@ namespace ConquestUnit.Views
                         //    strBytes);
                     }
                 }
-                prConectando.IsActive = false;
-                prConectando.Visibility = Visibility.Collapsed;
-                lblConectando.Visibility = Visibility.Collapsed;
-                btnUnirme.IsEnabled = true;
-                txtMesaId.IsEnabled = true;
             }
             catch (Exception ex)
             {
                 Helper.MensajeOk(ex.Message);
             }
+            prConectando.IsActive = false;
+            prConectando.Visibility = Visibility.Collapsed;
+            lblConectando.Visibility = Visibility.Collapsed;
+            btnUnirme.IsEnabled = true;
+            txtMesaId.IsEnabled = true;
         }
 
         public void MiMetodoReceptorSeleccionMesaHelper(string strIp, string strMensaje)
@@ -129,15 +139,16 @@ namespace ConquestUnit.Views
                         //mensaje[0] => Acción (ConfirmacionUnirseMesa)
                         //mensaje[1] => objMesa.Ip
                         //mensaje[2] => objMesa.MesaID
-                        if (mensaje.Length != 3)
+                        //mensaje[3] => objMesa.TipoMapa
+                        if (mensaje.Length != 4)
                             return;
 
                         prConectando.IsActive = false;
 
                         //Reenviar a la pantalla de Jugador esperando el inicio del juego
-                        Mesa objMesa = new Mesa();
+                        Juego objMesa = new Juego(mensaje[3]);
                         objMesa.Ip = mensaje[1];
-                        objMesa.MesaID = mensaje[2];
+                        objMesa.JuegoID = mensaje[2];
 
                         this.Frame.Navigate(typeof(JugadorEnEspera), objMesa);
                     }
@@ -205,5 +216,14 @@ namespace ConquestUnit.Views
             }
         }
         #endregion
+
+        private void txtMesaId_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Enter)
+            {
+                txtMesaId.IsEnabled = false;
+                txtMesaId.IsEnabled = true;
+            }
+        }
     }
 }

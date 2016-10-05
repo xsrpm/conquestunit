@@ -1,8 +1,6 @@
 ﻿using SQLite.Net.Attributes;
-using SQLiteNetExtensions.Attributes;
-using System.Collections.Generic;
 
-namespace ConquestUnit.Model
+namespace DataModel
 {
     public class Pregunta
     {

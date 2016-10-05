@@ -1,6 +1,4 @@
-﻿
-
-using ConquestUnit.Model;
+﻿using DataModel;
 using System.Collections.Generic;
 
 namespace ConquestUnit

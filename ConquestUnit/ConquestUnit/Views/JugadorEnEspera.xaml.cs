@@ -1,4 +1,4 @@
-﻿using DataAccess.Model;
+﻿using DataModel;
 using SynapseSDK;
 using System;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace ConquestUnit.Views
     /// </summary>
     public sealed partial class JugadorEnEspera : Page
     {
-        Mesa objMesa;
+        Juego objMesa;
         public JugadorEnEspera()
         {
             this.InitializeComponent();
@@ -41,8 +41,8 @@ namespace ConquestUnit.Views
         {
             if (e.Parameter != null)
             {
-                objMesa = (Mesa)e.Parameter;
-                lblMesaId.Text = objMesa.MesaID;
+                objMesa = (Juego)e.Parameter;
+                lblMesaId.Text = objMesa.JuegoID;
             }
 
             if (App.objJugador != null)
@@ -57,21 +57,17 @@ namespace ConquestUnit.Views
                     BitmapImage bimgBitmapImage = new BitmapImage();
                     IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
                     bimgBitmapImage.SetSource(fileStream);
+                    imgJugador.Source = bimgBitmapImage;
                     imgFoto.Source = bimgBitmapImage;
                 }
             }
             IniciarSDK();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
-        }
-
-        private async void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void btnAtras_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Notificar a la mesa que se está saliendo de la espera
-            if (objMesa!=null)
+            if (objMesa != null)
                 await App.objSDK.UnicastPing(new HostName(objMesa.Ip),
                             Constantes.JugadorSaleMesa + Constantes.SEPARADOR +
                             App.objJugador.Ip);
@@ -89,8 +85,25 @@ namespace ConquestUnit.Views
                     #region La mesa indica se cierra
                     if (strMensaje.Trim().Contains(Constantes.MesaIndicaSeCierra))
                     {
-                        Helper.MensajeOk("La mesa se ha cerrado :(");
+                        Helper.MensajeOk("La mesa se ha cerrado");
                         this.Frame.Navigate(typeof(ElegirMesa));
+                    }
+                    #endregion
+                    #region La mesa que el juega ha iniciado
+                    else if (strMensaje.Trim().Contains(Constantes.MesaIndicaJuegoInicia))
+                    {
+                        // Inicio del juego
+                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
+                        //mensaje[0] => Acción (MesaIndicaJuegoInicia)
+                        //mensaje[1] => objJugador.Ip primer turno
+                        if (mensaje.Length != 2)
+                            return;
+
+                        //Verificar si es el jugador del primer turno
+                        if (mensaje[1].Equals(App.objJugador.Ip))
+                            this.Frame.Navigate(typeof(ConquestUnitMando), true);
+                        else
+                            this.Frame.Navigate(typeof(ConquestUnitMando), false);
                     }
                     #endregion
                 }
