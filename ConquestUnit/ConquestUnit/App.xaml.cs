@@ -100,7 +100,7 @@ namespace ConquestUnit
                     }
                     else
                     {
-                        rootFrame.Navigate(typeof(ConquestUnitGame), e.Arguments);
+                        rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
                     }
                 }
                 // Ensure the current window is active

@@ -3,6 +3,7 @@ using System;
 using Util;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation.Metadata;
+using Windows.Graphics.Display;
 using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.ViewManagement;
@@ -35,6 +36,7 @@ namespace ConquestUnit.Views
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
             if (App.objJugador != null)
             {
                 if (App.objJugador.Nombre != null)

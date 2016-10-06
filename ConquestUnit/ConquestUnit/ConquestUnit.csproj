@@ -150,10 +150,10 @@
     <Content Include="Assets\Images\inactive32x32.png" />
     <Content Include="Assets\Images\Mando\Abajo.png" />
     <Content Include="Assets\Images\Mando\Arriba.png" />
-    <Content Include="Assets\Images\Mando\BotonA.png" />
-    <Content Include="Assets\Images\Mando\BotonB.png" />
-    <Content Include="Assets\Images\Mando\BotonX.png" />
-    <Content Include="Assets\Images\Mando\BotonY.png" />
+    <Content Include="Assets\Images\Mando\BotonCirculo.png" />
+    <Content Include="Assets\Images\Mando\BotonCuadrado.png" />
+    <Content Include="Assets\Images\Mando\BotonEquis.png" />
+    <Content Include="Assets\Images\Mando\BotonTriangulo.png" />
     <Content Include="Assets\Images\Mando\Derecha.png" />
     <Content Include="Assets\Images\Mando\Izquierda.png" />
     <Content Include="Assets\Images\selector.png" />

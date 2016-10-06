@@ -9,6 +9,7 @@ using Util;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Graphics.Display;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
@@ -44,6 +45,7 @@ namespace ConquestUnit.Views
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
             //Pagina a redireccionar
             if (e.Parameter != null)
                 paginaRedirect = (Type)e.Parameter;

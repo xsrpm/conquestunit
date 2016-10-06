@@ -8,6 +8,73 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image x:Name="imgActivo" HorizontalAlignment="Left" Height="100" Margin="50" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/Images/inactive32x32.png"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*" />
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".1*"/>
+            <ColumnDefinition Width=".3*"/>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width=".3*"/>
+            <ColumnDefinition Width=".1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="panelEncendido" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom">
+            <Image x:Name="imgActivo" Height="32" Width="32" Source="ms-appx:///Assets/Images/inactive32x32.png"/>
+        </StackPanel>
+
+        <Grid x:Name="panelDireccional" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".3*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btnArriba" Height="50" Width="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Tapped="btnArriba_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/Arriba.png"/>
+            </Button>
+            <Button x:Name="btnIzquierda" Height="50" Width="50" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Tapped="btnIzquierda_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/Izquierda.png"/>
+            </Button>
+            <Button x:Name="btnAbajo" Height="50" Width="50" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Tapped="btnAbajo_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/Abajo.png"/>
+            </Button>
+            <Button x:Name="btnDerecha" Height="50" Width="50" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Tapped="btnDerecha_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/Derecha.png"/>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="panelComandos" Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnTriangulo" Height="50" Width="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Tapped="btnTriangulo_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png"/>
+            </Button>
+            <Button x:Name="btnCuadrado" Height="50" Width="50" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Tapped="btnCuadrado_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png"/>
+            </Button>
+            <Button x:Name="btnEquis" Height="50" Width="50" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Tapped="btnEquis_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
+            </Button>
+            <Button x:Name="btnCirculo" Height="50" Width="50" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Tapped="btnCirculo_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

@@ -9,6 +9,7 @@ using Util;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
@@ -39,10 +40,12 @@ namespace ConquestUnit.Views
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
             if (e.Parameter != null)
             {
                 objMesa = (Juego)e.Parameter;
                 lblMesaId.Text = objMesa.JuegoID;
+                App.objJugador.IpMesaConectada = objMesa.Ip;
             }
 
             if (App.objJugador != null)

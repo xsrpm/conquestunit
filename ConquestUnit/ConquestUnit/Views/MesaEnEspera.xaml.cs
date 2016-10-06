@@ -11,6 +11,7 @@ using Util;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
@@ -50,6 +51,7 @@ namespace ConquestUnit.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
             Mapa_Elegido = Constantes.MAPA_CHINA;
             IniciarSDK();
         }

@@ -44,8 +44,22 @@ namespace Util
         public static string MesaIndicaJuegoInicia = "MesaIndicaJuegoInicia";
         #endregion
 
-        #region Mensajes de JUEGO
+        #region Mensajes de Juego
+        public static string MesaConumicaHABILITARControles = "MesaConumicaHABILITARControles";
+        public static string MesaConumicaDESHABILITARControles = "MesaConumicaDESHABILITARControles";
+        public static string JugadorPresionaBoton = "JugadorPresionaBoton";
+        public struct Controles
+        {
+            public const int ARRIBA = 0;
+            public const int DERECHA = 1;
+            public const int ABAJO = 2;
+            public const int IZQUIERDA = 3;
 
+            public const int CUADRADO = 4;
+            public const int CIRCULO = 5;
+            public const int TRIANGULO = 6;
+            public const int EQUIS = 7;
+        }
         #endregion
 
         public static string SIN_IMAGEN = "Ninguno";

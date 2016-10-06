@@ -15,6 +15,7 @@ namespace DataModel
         public string Color { get; set; }
         //Para saber si el jugador está conectado
         public bool Conectado { get; set; }
+        public string IpMesaConectada { get; set; }
         public Jugador()
         {
             Conectado = true;

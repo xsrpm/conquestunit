@@ -1,7 +1,10 @@
 ﻿using DataModel;
+using SynapseSDK;
 using System;
 using System.Linq;
 using Util;
+using Windows.Graphics.Display;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -32,6 +35,8 @@ namespace ConquestUnit.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+
             objJuego = new Juego(Constantes.MAPA_CHINA);
             // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
             var jugador1 = new Jugador() { Conectado = true, Ip = "192.168.0.4", Nombre = "Roy" };
@@ -52,6 +57,7 @@ namespace ConquestUnit.Views
             GameLogic.LogicaInicio.RepartirUnidadesEnTerritorios(objJuego);
 
             Inicializar();
+            IniciarSDK();
         }
 
         public void Inicializar()
@@ -221,5 +227,78 @@ namespace ConquestUnit.Views
                 ActualizarNumeroUnidadesInfo();
             }
         }
+
+        private void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
+                {
+                    #region El jugador ha presiona una tecla
+                    if (strMensaje.Trim().Contains(Constantes.JugadorPresionaBoton))
+                    {
+                        //Verificar que es el jugador en turno
+                        //Verificar que boton ha presionado
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+                return;
+            }
+        }
+
+        #region Conexion SynapseSDK
+        private void IniciarSDK()
+        {
+            try
+            {
+                App.UIDispatcher = this.Dispatcher;
+                App.objSDK = MainCore.getInstance(Constantes.MULTICAST_ADDRESS, Constantes.MULTICAST_SERVICE_PORT, Constantes.UNICAST_SERVICE_PORT, Constantes.STREAM_SERVICE_PORT, MiMetodoReceptorMesaJuego, Constantes.DELAY);
+                int cont = 0;
+                while (!App.objSDK.SocketIsConnected && cont < 3)
+                {
+                    App.objSDK.TearDownSockets();
+                    App.objSDK.InitializeSockets();
+                    cont++;
+                }
+
+                if (App.objSDK.SocketIsConnected)
+                {
+                    App.objJugador.Ip = App.objSDK.MyIP.ToString();
+                    App.objSDK.setObjMetodoReceptorString = MiMetodoReceptorMesaJuego;
+                }
+                else
+                {
+                    //No hay conexión
+                    string strMensaje = "Lo sentimos, no se pudo establecer la conexión vía Wi-Fi. Intente nuevamente.";
+                    Helper.MensajeOk(strMensaje);
+                    this.Frame.Navigate(typeof(SeleccionarRol));
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+            }
+        }
+
+        public async void MiMetodoReceptorMesaJuego(string strIp, string strMessage)
+        {
+            try
+            {
+                await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    MiMetodoReceptorMesaJuegoHelper(strIp, strMessage);
+                });
+            }
+            catch (Exception ex)
+            {
+                Helper.MensajeOk(ex.Message);
+            }
+        }
+        #endregion
     }
 }
