@@ -12,6 +12,7 @@ namespace DataModel
         //public string FasedeJuegoActual;
         //public List<int> NFichasParaDesplegar;
         public int FaseActual { get; set; }
+        public int AccionActual { get; set; }
 
         public string JuegoID { get; set; }
         public string Ip { get; set; }

@@ -79,7 +79,7 @@ namespace ConquestUnit.Views
             ActualizarNumeroUnidadesInfo();
 
             objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
-            //objJuego.FaseActual = Constantes.AccionJuego.DESPLEGAR;
+            objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
 
             //blanco,equis,circulo,arriba,abajo
             BlancoGridVisibilidad = new Windows.UI.Xaml.Visibility[9, 5] {
@@ -213,7 +213,7 @@ namespace ConquestUnit.Views
 
         private void BotonX_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (objJuego.FaseActual == Constantes.FaseJuego.DESPLIEGUE)
+            if (objJuego.AccionActual == Constantes.AccionJuego.DESPLEGAR)
             {
                 objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas += 1;
                 ((TextBlock)this.FindName("UnidadCantidad" + objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Text =
