@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Design\projectGuides.guides" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,8 @@
     <None Include="ConquestUnit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\correcto2.png" />
+    <Content Include="Assets\Images\correcto.png" />
     <Content Include="Assets\Images\active32x32.png" />
     <Content Include="Assets\Images\Icons\back128x128.png" />
     <Content Include="Assets\Images\Icons\back16x16.png" />
@@ -165,6 +168,7 @@
     <Content Include="Assets\Images\Icons\user32x32.png" />
     <Content Include="Assets\Images\Icons\user48x48.png" />
     <Content Include="Assets\Images\Icons\user64x64.png" />
+    <Content Include="Assets\Images\incorrecto.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
     <Content Include="Assets\table.png" />
     <Content Include="Assets\Unidades\China\Unidad Amarillo.png" />
