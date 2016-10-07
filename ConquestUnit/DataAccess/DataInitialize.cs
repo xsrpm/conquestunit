@@ -5,54 +5,41 @@ namespace ConquestUnit
 {
     public static class DataInitialize
     {
+        static int npregunta;
+        static int nopcion;
+
         public static void Initialize(ConquestUnitContext context)
         {
-            //PREGUNTAS
-            var pregunta1 = new Pregunta() { PreguntaId = 1, TextoPregunta = "¿Cuál es tu nombre?" };
-            var pregunta2 = new Pregunta() { PreguntaId = 2, TextoPregunta = "¿Cuál es tu Edad?" };
-            var pregunta3 = new Pregunta() { PreguntaId = 3, TextoPregunta = "¿Cuál es tu Apellido?" };
-            //if (context.Listar<Pregunta>().FirstOrDefault() != null)
-            //{
-            context.conn.InsertOrReplace(pregunta1);
-            context.conn.InsertOrReplace(pregunta2);
-            context.conn.InsertOrReplace(pregunta3);
-            //}
-            //OPCIONES
-            var opcion1 = new Opcion() { OpcionId = 1, TextoOpcion = "opcion 1", EsRespuesta = false, PreguntaId = 1 };
-            var opcion2 = new Opcion() { OpcionId = 2, TextoOpcion = "opcion 2", EsRespuesta = false, PreguntaId = 1 };
-            var opcion3 = new Opcion() { OpcionId = 3, TextoOpcion = "opcion 3", EsRespuesta = true, PreguntaId = 1 };
-            var opcion4 = new Opcion() { OpcionId = 4, TextoOpcion = "opcion 4", EsRespuesta = false, PreguntaId = 1 };
-            var opcion5 = new Opcion() { OpcionId = 5, TextoOpcion = "opcion 5", EsRespuesta = false, PreguntaId = 2 };
-            var opcion6 = new Opcion() { OpcionId = 6, TextoOpcion = "opcion 6", EsRespuesta = false, PreguntaId = 2 };
-            var opcion7 = new Opcion() { OpcionId = 7, TextoOpcion = "opcion 7", EsRespuesta = true, PreguntaId = 2 };
-            var opcion8 = new Opcion() { OpcionId = 8, TextoOpcion = "opcion 8", EsRespuesta = false, PreguntaId = 2 };
-            var opcion9 = new Opcion() { OpcionId = 9, TextoOpcion = "opcion 3", EsRespuesta = false, PreguntaId = 3 };
-            var opcion10 = new Opcion() { OpcionId = 10, TextoOpcion = "opcion 5", EsRespuesta = false, PreguntaId = 3 };
-            var opcion11 = new Opcion() { OpcionId = 11, TextoOpcion = "opcion 8", EsRespuesta = true, PreguntaId = 3 };
-            var opcion12 = new Opcion() { OpcionId = 12, TextoOpcion = "opcion 2", EsRespuesta = false, PreguntaId = 3 };
-            //if (context.Listar<Opcion>().FirstOrDefault() != null)
-            //{
-            context.conn.InsertOrReplace(opcion1);
-            context.conn.InsertOrReplace(opcion2);
-            context.conn.InsertOrReplace(opcion3);
-            context.conn.InsertOrReplace(opcion4);
-            context.conn.InsertOrReplace(opcion5);
-            context.conn.InsertOrReplace(opcion6);
-            context.conn.InsertOrReplace(opcion7);
-            context.conn.InsertOrReplace(opcion8);
-            context.conn.InsertOrReplace(opcion9);
-            context.conn.InsertOrReplace(opcion10);
-            context.conn.InsertOrReplace(opcion11);
-            context.conn.InsertOrReplace(opcion12);
+            npregunta = 0;
+            nopcion = 0;
 
-            //pregunta1.Opciones = new List<Opcion>() { opcion1, opcion2, opcion3, opcion4 };
-            //pregunta2.Opciones = new List<Opcion>() { opcion5, opcion6, opcion7, opcion8 };
-            //pregunta3.Opciones = new List<Opcion>() { opcion9, opcion10, opcion11, opcion12 };
+            InsertarPregunta("¿Que ingiere una planta ademas de  luz solar, agua y nutrients de la tierra para usar en la fotosintesis ?",
+                "Dioxido de Carbono", "Tierra", "Oxigeno", "Insectos", context);
+            InsertarPregunta("En el futbol, ¿Quien puede anotar goles?",
+                "Todos ellos", "Los mediocampistas", "Los delanteros", "Los defenzas", context);
+            InsertarPregunta("¿Que futbolista es apodado como \"Bad Boy\"?",
+                "Wayne Rooney", "Theo Walcott", "Nani", "Ryan Giggs", context);
+            InsertarPregunta("¿Quien mató a su padre para casarse con su madre?",
+                "Edipo Rey", "Homero", "Aristoteles", "Pericles", context);
+            InsertarPregunta("¿Como se le denomina al O3?",
+                "Ozono", "Oxigeno molecular", "Monoxido", "Oxigeno", context);
+            InsertarPregunta("¿Cual es el lago navegable ubicado a mayor altitud?",
+                "El lago Titicana", "El lago Yanganuco", "Ninguno de ellos", "El lago Salado", context);
+            InsertarPregunta("¿Quien es la entrenadora de volleyball de Perú que se caracteriza por el uso de palabras soeces a sus deportistas?",
+                "Natalia Málaga", "Zenaida Uribe", "Nadine Heredia", "Rocio Miranda", context);
+            InsertarPregunta("¿Cual fue la guerra relámpago?",
+                "Cuando Hitler invadió Polonia", "La guerra de 1943 en la que hubo un relampago", "Fue un fenomeno natural", "Cuando Stalin invadió Alemania en 2 dias", context);
+        }
 
-            //context.conn.Update(pregunta1);
-            //context.conn.Update(pregunta2);
-            //context.conn.Update(pregunta3);
-            //}
+        private static void InsertarPregunta(string pregunta, string opcioncorrecta, string otraopcion1, string otraopcion2, string otraopcion3, ConquestUnitContext context)
+        {
+            npregunta++;
+            context.conn.InsertOrReplace(new Pregunta() { PreguntaId = npregunta, TextoPregunta = pregunta });
+            context.conn.InsertOrReplace(new Opcion() { OpcionId = ++nopcion, TextoOpcion = opcioncorrecta, EsRespuesta = true, PreguntaId = npregunta });
+            context.conn.InsertOrReplace(new Opcion() { OpcionId = ++nopcion, TextoOpcion = otraopcion1, EsRespuesta = false, PreguntaId = npregunta });
+            context.conn.InsertOrReplace(new Opcion() { OpcionId = ++nopcion, TextoOpcion = otraopcion2, EsRespuesta = false, PreguntaId = npregunta });
+            context.conn.InsertOrReplace(new Opcion() { OpcionId = ++nopcion, TextoOpcion = otraopcion3, EsRespuesta = false, PreguntaId = npregunta });
         }
     }
+    
 }
