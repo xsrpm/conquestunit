@@ -235,7 +235,10 @@
                     <TextBlock x:Name="UnidadCantidad4" Text="0" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,2,4" HorizontalAlignment="Right" Height="14" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
                 </Grid> 
                 
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090">
+                <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="30" Margin="0" />
+                <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="50" Margin="0,30,0,0" />
+                
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*"/>
                 <RowDefinition Height="268*"/>

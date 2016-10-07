@@ -13,6 +13,7 @@ namespace DataModel
         public int NUnidadesDeplegadas { get; set; }
         public string ColorUnidades { get; set; }
         public string ImagenUnidades { get; set; }
+        public int NroRegion { get; set; }
         //public Windows.UI.Xaml.Shapes.Path[] Fronteras { get; set; }
 
         public string IpJugadorPropietario { get; set; }

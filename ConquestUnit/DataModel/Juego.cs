@@ -8,11 +8,21 @@ namespace DataModel
 {
     public class Juego
     {
-        public int TurnoActual { get; set; }
         //public string FasedeJuegoActual;
         //public List<int> NFichasParaDesplegar;
         public int FaseActual { get; set; }
         public int AccionActual { get; set; }
+        public int TurnoActual { get; set; }
+        public string IpJugadorTurnoActual { get; set; }
+
+        #region Despliegue
+        public int UnidadesDisponiblesParaDesplegar { get; set; }
+        #endregion
+        #region Ataque
+        public string IpJugadorDefiende { get; set; }
+        #endregion
+        #region Fortificacion
+        #endregion
 
         public string JuegoID { get; set; }
         public string Ip { get; set; }

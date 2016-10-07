@@ -45,6 +45,11 @@ namespace ConquestUnit.Views
                     Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
                     BitmapImage logoImage = new BitmapImage(uri);
                     imgActivo.Source = logoImage;
+                    HabilitarControles();
+                }
+                else
+                {
+                    DeshabilitarControles();
                 }
             }
             IniciarSDK();

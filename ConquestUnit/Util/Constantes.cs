@@ -95,33 +95,12 @@ namespace Util
             public const int FORTIFICAR = 8;
         }
 
-        //#region Territorios China
-        //public static List<Territorio> TerritoriosChina = new List<Territorio>(){
-        //    new Territorio() { TerritorioId = 1, NombreTerritorio="Huijiang", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 2, NombreTerritorio="Tibet", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 3, NombreTerritorio="Qinghai", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 4, NombreTerritorio="Sichuan", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 5, NombreTerritorio="Yunnan", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 6, NombreTerritorio="Guizhou", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 7, NombreTerritorio="Uliassutai", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 8, NombreTerritorio="Mongolia", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 9, NombreTerritorio="Gansu", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 10, NombreTerritorio="Shaanxi", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 11, NombreTerritorio="Shanxi", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 12, NombreTerritorio="Hubei", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 13, NombreTerritorio="Heilongjiang", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 14, NombreTerritorio="Jilin", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 15, NombreTerritorio="Shengjing", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 16, NombreTerritorio="Zhili", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 17, NombreTerritorio="Shandong", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 18, NombreTerritorio="Menan", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 19, NombreTerritorio="Guangxi", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 20, NombreTerritorio="Hunan", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 21, NombreTerritorio="Ilangxi", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 22, NombreTerritorio="Fcohou", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 23, NombreTerritorio="Zhelang", NUnidadesDeplegadas = 0 },
-        //    new Territorio() { TerritorioId = 24, NombreTerritorio="Anhu", NUnidadesDeplegadas = 0 }
-        //};
-        //#endregion
+        #region NroUnidades
+        public static int BonoUnidadesBaseParaDespliegue = 2;
+        public static int BonoTerritoriosRegion1 = 4;
+        public static int BonoTerritoriosRegion2 = 3;
+        public static int BonoTerritoriosRegion3 = 2;
+        public static int BonoTerritoriosRegion4 = 3;
+        #endregion
     }
 }

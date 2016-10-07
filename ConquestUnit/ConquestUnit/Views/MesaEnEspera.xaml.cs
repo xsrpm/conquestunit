@@ -58,6 +58,7 @@ namespace ConquestUnit.Views
 
         private async void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            btnJugar.IsEnabled = false;
             // Definir los turnos de los jugadores,
             // los cuales será igual a la lista de jugadores de la mesa
             // pero en desorden
@@ -74,8 +75,10 @@ namespace ConquestUnit.Views
                             Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
                             objJuego.JugadoresConectados[0].Ip);
 
+            //Definir la fase inicial del juego
+            GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
+            
             //Redirigir al juego
-            objJuego.TurnoActual = 0;
             this.Frame.Navigate(typeof(ConquestUnitGame), objJuego);
         }
 

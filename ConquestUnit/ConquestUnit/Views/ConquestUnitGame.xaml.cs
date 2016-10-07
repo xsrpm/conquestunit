@@ -37,6 +37,19 @@ namespace ConquestUnit.Views
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
+            ////COMENTAR PARA PRUEBA
+            if (e.Parameter != null)
+            {
+                objJuego = (Juego)e.Parameter;
+            }
+            else
+            {
+                Helper.MensajeOk("No se pudo iniciar el juego.");
+            }
+            ////
+
+            ///DESCOMENTAR PARA PRUEBA
+            /*
             objJuego = new Juego(Constantes.MAPA_CHINA);
             // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
             var jugador1 = new Jugador() { Conectado = true, Ip = "192.168.0.4", Nombre = "Roy" };
@@ -55,7 +68,10 @@ namespace ConquestUnit.Views
             GameLogic.LogicaInicio.InicializarTerritorios(objJuego);
             GameLogic.LogicaInicio.RepartirTerritorio(objJuego);
             GameLogic.LogicaInicio.RepartirUnidadesEnTerritorios(objJuego);
-
+            //Definir la fase inicial del juego
+            GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
+            */
+            ///
             Inicializar();
             IniciarSDK();
         }
@@ -83,6 +99,7 @@ namespace ConquestUnit.Views
                 DibujarUnidadesTerritorioEnElMapa(objJuego.Territorios[i]);
             }
             ActualizarNumeroUnidadesInfo();
+            ActualizarNumeroUnidadesParaDespliegue();
 
             objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
             objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
@@ -202,6 +219,12 @@ namespace ConquestUnit.Views
             }
         }
 
+        public void ActualizarNumeroUnidadesParaDespliegue()
+        {
+            GameLogic.DespliegueLogic.UnidadesDisponiblesDesplegarJugadorTurnoActual(objJuego);
+            txtNroUnidadesParaDespliegue.Text = objJuego.UnidadesDisponiblesParaDesplegar.ToString();
+        }
+
         private void BotonA_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
@@ -237,8 +260,82 @@ namespace ConquestUnit.Views
                     #region El jugador ha presiona una tecla
                     if (strMensaje.Trim().Contains(Constantes.JugadorPresionaBoton))
                     {
+                        // Se recibe la confirmación de parte de la mesa que se unido satisfactoriamente
+                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
+                        //mensaje[0] => Acción (JugadorPresionaBoton)
+                        //mensaje[1] => objJugador.Ip
+                        //mensaje[2] => botonPresionado
+                        if (mensaje.Length != 3)
+                            return;
+
                         //Verificar que es el jugador en turno
+                        //Si no está en turno, verificar que no está respondiendo pregunta
+                        if (!objJuego.IpJugadorTurnoActual.Equals(mensaje[1]) && !objJuego.IpJugadorDefiende.Equals(mensaje[1]))
+                        {
+                            return;
+                        }
+
                         //Verificar que boton ha presionado
+                        int botonPresionado = int.Parse(mensaje[2]);
+
+                        #region DESPLIEGUE
+                        if (objJuego.FaseActual == Constantes.FaseJuego.DESPLIEGUE)
+                        {
+                            //Boton direccional
+                            if (botonPresionado >= 0 && botonPresionado <= 3)
+                            {
+                                MoverTerritorio(botonPresionado);
+                            }
+                            else if (botonPresionado==Constantes.Controles.EQUIS)
+                            {
+                                //Verificar que el jugador tiene unidades para desplegar
+
+                                //Verificar que el territorio perteneza al jugador
+                                if (!objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                {
+                                    return;
+                                }
+
+                                objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas += 1;
+                                ((TextBlock)this.FindName("UnidadCantidad" + objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Text =
+                                    objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas.ToString();
+                                objJuego.UnidadesDisponiblesParaDesplegar--;
+                                ActualizarNumeroUnidadesInfo();
+                                txtNroUnidadesParaDespliegue.Text = objJuego.UnidadesDisponiblesParaDesplegar.ToString();
+
+                                //Si el jugador se queda sin unidades para desplegar, cambiar fase y acción
+                                if (objJuego.UnidadesDisponiblesParaDesplegar==0)
+                                {
+                                    objJuego.FaseActual = Constantes.FaseJuego.ATAQUE;
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
+                                    Helper.MensajeOk("Termino la fase de despliegue");
+                                }
+                            }
+                            else if (botonPresionado == Constantes.Controles.CIRCULO)
+                            {
+                                //El jugador está pidiendo terminar la fase de Despliegue y pasar a Ataque
+                                objJuego.FaseActual = Constantes.FaseJuego.ATAQUE;
+                                objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
+                                Helper.MensajeOk("Solicitaste terminar la fase de despliegue");
+                            }
+                        }
+                        #endregion
+                        #region ATAQUE
+                        else if (objJuego.FaseActual == Constantes.FaseJuego.ATAQUE)
+                        {
+
+                        }
+                        #endregion
+                        #region FORTIFICACION
+                        else if (objJuego.FaseActual == Constantes.FaseJuego.FORTIFICACION)
+                        {
+                            //Boton direccional
+                            if (botonPresionado > 0 && botonPresionado <= 3)
+                            {
+                                MoverTerritorio(botonPresionado);
+                            }
+                        }
+                        #endregion
                     }
                     #endregion
                 }
@@ -267,7 +364,6 @@ namespace ConquestUnit.Views
 
                 if (App.objSDK.SocketIsConnected)
                 {
-                    App.objJugador.Ip = App.objSDK.MyIP.ToString();
                     App.objSDK.setObjMetodoReceptorString = MiMetodoReceptorMesaJuego;
                 }
                 else
