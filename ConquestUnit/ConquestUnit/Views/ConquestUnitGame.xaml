@@ -201,138 +201,244 @@
                     </Grid>
                 </Grid>
                 <Button x:Name="BotonA" Margin="1094,181,-1094,-181" Tapped="BotonA_Tapped">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonA.png" Height="50" Width="50"/>
+                    <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png" Height="50" Width="50"/>
                 </Button>
                 <Button x:Name="BotonB" Margin="1189,181,-1189,-181" Tapped="BotonB_Tapped">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonB.png" Height="50" Width="50"/>
+                    <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png" Height="50" Width="50"/>
                 </Button>
                 <Button x:Name="BotonX" Margin="1094,253,-1094,-253" Tapped="BotonX_Tapped">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonX.png" Height="50" Width="50"/>
+                    <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Height="50" Width="50"/>
                 </Button>
                 <Button x:Name="BotonY" Margin="1189,252,-1189,-252" Tapped="BotonY_Tapped">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonY.png" Height="50" Width="50"/>
+                    <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" Height="50" Width="50"/>
                 </Button>
                 <!---->
                 
-                <Grid x:Name="UnidadGrid1" Height="63" Margin="90,189,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55">
-                    <Image x:Name="Unidad1" Margin="0,0,0,8" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                    <Ellipse x:Name="UnidadElipse1" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="18" VerticalAlignment="Bottom" Width="18"/>
-                    <TextBlock x:Name="UnidadCantidad1" Text="0" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,2,4" HorizontalAlignment="Right" Height="14" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
-                </Grid>
-                <Grid x:Name="UnidadGrid2" Height="63" Margin="90,252,0,-63" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55">
-                    <Image x:Name="Unidad2" Margin="0,0,0,8" Source="ms-appx:///Assets/Unidades/China/Unidad Verde.png" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                    <Ellipse x:Name="UnidadElipse2" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="18" VerticalAlignment="Bottom" Width="18"/>
-                    <TextBlock x:Name="UnidadCantidad2" Text="0" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,2,4" HorizontalAlignment="Right" Height="14" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
-                </Grid>
-                <Grid x:Name="UnidadGrid3" Height="63" Margin="90,326,0,-137" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55">
-                    <Image x:Name="Unidad3" Margin="0,0,0,8" Source="ms-appx:///Assets/Unidades/China/Unidad Azul.png" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                    <Ellipse x:Name="UnidadElipse3" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="18" VerticalAlignment="Bottom" Width="18"/>
-                    <TextBlock x:Name="UnidadCantidad3" Text="0" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,2,4" HorizontalAlignment="Right" Height="14" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
-                </Grid>
-                <Grid x:Name="UnidadGrid4" Height="63" Margin="90,399,0,-210" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55">
-                    <Image x:Name="Unidad5" Margin="0,0,0,8" Source="ms-appx:///Assets/Unidades/China/Unidad Amarillo.png" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                    <Ellipse x:Name="UnidadElipse4" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="18" VerticalAlignment="Bottom" Width="18"/>
-                    <TextBlock x:Name="UnidadCantidad4" Text="0" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,2,4" HorizontalAlignment="Right" Height="14" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
-                </Grid> 
-                
-                <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="30" Margin="0" />
-                <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="50" Margin="0,30,0,0" />
-                
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" Visibility="Collapsed">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="15*"/>
-                <RowDefinition Height="268*"/>
-            </Grid.RowDefinitions>
-            <Rectangle x:Name="FondoBatalla" Fill="White" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.RowSpan="2" Opacity="0.875" d:IsLocked="True"/>
-            <Grid x:Name="DefensorGrid" HorizontalAlignment="Right" Width="265" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2">
-                <Rectangle x:Name="DefensorFondo" Fill="#FFAAA600" Opacity="0.55"/>
-                <Image x:Name="DefensorFoto" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Width="200"/>
-                <ProgressBar Margin="0,220,0,0" Value="50" VerticalAlignment="Top" Height="28" HorizontalAlignment="Right" Width="265" Background="#33FFFFFF" Foreground="#FF00D714"/>
-                <TextBlock x:Name="DefensorPuntosTituloTXT" Margin="0,281,20,239" TextWrapping="Wrap" Text="Puntos" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="210" d:LayoutOverrides="TopPosition, BottomPosition"/>
-                <TextBlock x:Name="TropaDefensorTXT" HorizontalAlignment="Left" Height="32" Margin="0,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" Width="60" FontSize="22"/>
-                <TextBlock x:Name="NTropasDefensorTXT" Height="68" Margin="0,55,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" FontSize="48" TextAlignment="Center" RenderTransformOrigin="0.276,0.559" HorizontalAlignment="Left" Width="63"/>
-            <TextBlock x:Name="textBlock_Copy1" Margin="0,332,104,0" TextWrapping="Wrap" Text="10" FontSize="48" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
-            </Grid>
-            <Grid x:Name="CabeceraGrid" Height="126" Margin="265,-30,265,0" VerticalAlignment="Top" Grid.Row="1" d:LayoutOverrides="LeftPosition, RightPosition">
-                <TextBlock x:Name="AtaqueBatallaTXT" Height="32" Margin="231,0,233,0" TextWrapping="Wrap" Text="ATAQUE" VerticalAlignment="Top" FontSize="24" d:LayoutOverrides="LeftPosition, RightPosition"/>
-                <Grid x:Name="PrimeraLineaGrid" Margin="144,37,161,0" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition, TopPosition, BottomPosition">
+                <!--BOTONES FASES-->
+                <Grid Margin="15">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="142*"/>
-                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="txtPrimeraLinea" Height="32" TextWrapping="Wrap" Text="Primera Linea" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" Margin="65,0,37,0" d:LayoutOverrides="LeftPosition, RightPosition"/>
-                    <TextBlock x:Name="txtComboAtk" Margin="51,32,0,0" TextWrapping="Wrap" Text="5" FontSize="36" TextAlignment="Center" RenderTransformOrigin="1.043,0.72" HorizontalAlignment="Left" Width="46" Height="47" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
-                    <Grid x:Name="LeftArrowBatallaGrid" HorizontalAlignment="Left" Height="28" Margin="28.666,44.333,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" d:LayoutOverrides="HorizontalAlignment">
-                        <Grid.RenderTransform>
-                            <CompositeTransform Rotation="90"/>
-                        </Grid.RenderTransform>
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="LeftArrowBatallaCircleButton" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z M2,16 C2,8.28 2,23.72 2,16 z" Margin="0,0,0,0.056" UseLayoutRounding="False" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="LeftArrowBatallaButton" Data="M23.374,13.08 C23.24,13.024 23.098,13.001 22.955,13.005 L9.013,13.005 C8.126,12.981 7.633,14.075 8.271,14.707 L15.27,21.606 C15.656,21.988 16.313,21.988 16.699,21.606 L23.69,14.714 C24.207,14.221 24.034,13.346 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 z" Margin="5.666,9.747,5.638,6.628" UseLayoutRounding="False" Stretch="Fill" StrokeThickness="0" Fill="#FFCFC6C6" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnFaseDespliegue" Content="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Background="Gray"/>
+                    <Button x:Name="btnFaseAtaque" Content="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Background="Gray"/>
+                    <Button x:Name="btnFaseFortificacion" Content="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Background="Gray"/>
+
+                    <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="20" />
+                        <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="20" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+                <StackPanel Margin="15,550,0,0" Orientation="Horizontal">
+                    
+                    <Button x:Name="btnTerminarFase" Content="      Terminar Fase" Background="Gray" />
+                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="30" Height="30" Margin="-235,0,0,0"/>
+                </StackPanel>
+
+                <!--JUGADORES-->
+                <Grid Margin="1150,100,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--Jugador1-->
+                    <Grid x:Name="UnidadGrid1" Background="Red" Grid.Column="0" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="Jugador1Nombre" Text="Cesar" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador1Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador1Territorios"  Text="Territorios: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador1Continentes"  Text="Continentes: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador1Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                        </StackPanel>
                     </Grid>
-                    <Grid x:Name="RightArrowBatallaGrid" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Margin="86.333,44.333,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Grid.RenderTransform>
-                            <CompositeTransform Rotation="-90"/>
-                        </Grid.RenderTransform>
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="RightArrowBatallaCircleButton" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z M30,16 C30,23.72 30,8.28 30,16 z" UseLayoutRounding="False" Stretch="Fill" Height="27.944" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" Margin="0,-0.667,0,0"/>
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="RightArrowBatallaButton" Data="M23.374,13.08 C23.24,13.024 23.098,13.001 22.955,13.005 L9.013,13.005 C8.126,12.981 7.633,14.075 8.271,14.707 L15.27,21.606 C15.656,21.988 16.313,21.988 16.699,21.606 L23.69,14.714 C24.207,14.221 24.034,13.346 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 z" Margin="5.666,9.747,5.638,6.628" UseLayoutRounding="False" Stretch="Fill" StrokeThickness="0" Fill="#FFCFC6C6" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                    <!--Jugador2-->
+                    <Grid x:Name="UnidadGrid2" Background="Green" Grid.Column="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="Jugador2Nombre" Text="Roy" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador2Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Verde.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador2Territorios"  Text="Territorios: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador2Continentes"  Text="Continentes: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador2Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                        </StackPanel>
                     </Grid>
-                    <Grid x:Name="XButtonGrid_Copy" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" Margin="135,44,0,0" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33">
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton1" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
-                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton1" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
+                    <!--Jugador3-->
+                    <Grid x:Name="UnidadGrid3" Background="Blue" Grid.Column="0" Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador3Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Azul.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador3Territorios"  Text="Territorios: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador3Continentes"  Text="Continentes: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador3Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                        </StackPanel>
                     </Grid>
-                    <TextBlock x:Name="AtacarBatallaTXT" TextWrapping="Wrap" Text="Atacar" TextAlignment="Center" FontSize="22" Margin="165,40,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+                    <!--Jugador4-->
+                    <Grid x:Name="UnidadGrid4" Background="Yellow" Grid.Column="0" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador4Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Amarillo.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador4Territorios"  Text="Territorios: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock x:Name="lblJugador4Continentes"  Text="Continentes: " FontSize="13"/>
+                            <TextBlock x:Name="Jugador4Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid x:Name="PreguntaGrid" Margin="265,0" Height="435" VerticalAlignment="Bottom" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="46*"/>
-                    <RowDefinition Height="63*"/>
-                </Grid.RowDefinitions>
-                <TextBlock x:Name="PreguntaTituloTXT" HorizontalAlignment="Left" Height="31" Margin="16,10,0,0" TextWrapping="Wrap" Text="Pregunta:" VerticalAlignment="Top" Width="99" FontSize="20"/>
-                <TextBlock x:Name="PreguntaTXT" Margin="16,46,42,74" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnfd fk sdkhfds sdkfh dfd f j kskf dhhvh sksdfhsdkjfhd jkfhds kjh sdk dskdhdkjksf hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdjkfhdjkfhsdkjfhsdk jfhsdjkfhwufhjkfhsdkfhkjdsfhsdkjfdjkf we" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                <TextBlock x:Name="OpcionesTituloTXT" HorizontalAlignment="Left" Margin="16,132,0,10" TextWrapping="Wrap" Text="Opciones:" Width="99" FontSize="20" d:LayoutOverrides="HorizontalAlignment, TopPosition, BottomPosition"/>
-            <Canvas x:Name="Opcion1Canvas" Height="48" Margin="16,-5,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                <Grid x:Name="XButtonGrid_Copy1" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33" Canvas.Top="10" Canvas.Left="10">
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton2" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton2" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
+                <!---->
+                
+                <!--BATALLA-->
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="268*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle x:Name="FondoBatalla" Fill="White" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.RowSpan="2" Opacity="0.875" d:IsLocked="True"/>
+                    <Grid x:Name="DefensorGrid" HorizontalAlignment="Right" Width="265" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2">
+                        <Rectangle x:Name="DefensorFondo" Fill="#FFAAA600" Opacity="0.55"/>
+                        <Image x:Name="DefensorFoto" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Width="200"/>
+                        <ProgressBar Margin="0,220,0,0" Value="50" VerticalAlignment="Top" Height="28" HorizontalAlignment="Right" Width="265" Background="#33FFFFFF" Foreground="#FF00D714"/>
+                        <TextBlock x:Name="DefensorPuntosTituloTXT" Margin="0,281,20,239" TextWrapping="Wrap" Text="Puntos" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="210" d:LayoutOverrides="TopPosition, BottomPosition"/>
+                        <TextBlock x:Name="TropaDefensorTXT" HorizontalAlignment="Left" Height="32" Margin="0,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" Width="60" FontSize="22"/>
+                        <TextBlock x:Name="NTropasDefensorTXT" Height="68" Margin="0,55,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" FontSize="48" TextAlignment="Center" RenderTransformOrigin="0.276,0.559" HorizontalAlignment="Left" Width="63"/>
+                        <TextBlock x:Name="InvasorPuntosDefensaTXT" Margin="0,332,104,0" TextWrapping="Wrap" Text="10" FontSize="48" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+                    </Grid>
+                    <Grid x:Name="CabeceraGrid" Height="126" Margin="265,-30,265,0" VerticalAlignment="Top" Grid.Row="1" d:LayoutOverrides="LeftPosition, RightPosition">
+                        <TextBlock x:Name="AtaqueBatallaTXT" Height="32" Margin="231,0,233,0" TextWrapping="Wrap" Text="ATAQUE" VerticalAlignment="Top" FontSize="24" d:LayoutOverrides="LeftPosition, RightPosition"/>
+                        <Grid x:Name="PrimeraLineaGrid" Margin="144,37,161,0" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition, TopPosition, BottomPosition">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="142*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="txtPrimeraLinea" Height="32" TextWrapping="Wrap" Text="Combo de Ataque" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" Margin="0,0,0,0" d:LayoutOverrides="LeftPosition, RightPosition"/>
+                            <TextBlock x:Name="txtComboAtk" Margin="51,32,0,0" TextWrapping="Wrap" Text="1" FontSize="36" TextAlignment="Center" RenderTransformOrigin="1.043,0.72" HorizontalAlignment="Left" Width="46" Height="47" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+                            <Grid x:Name="LeftArrowBatallaGrid" HorizontalAlignment="Left" Height="28" Margin="28.666,44.333,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" d:LayoutOverrides="HorizontalAlignment">
+                                <Grid.RenderTransform>
+                                    <CompositeTransform Rotation="90"/>
+                                </Grid.RenderTransform>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="LeftArrowBatallaCircleButton" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z M2,16 C2,8.28 2,23.72 2,16 z" Margin="0,0,0,0.056" UseLayoutRounding="False" Stretch="Fill" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="LeftArrowBatallaButton" Data="M23.374,13.08 C23.24,13.024 23.098,13.001 22.955,13.005 L9.013,13.005 C8.126,12.981 7.633,14.075 8.271,14.707 L15.27,21.606 C15.656,21.988 16.313,21.988 16.699,21.606 L23.69,14.714 C24.207,14.221 24.034,13.346 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 z" Margin="5.666,9.747,5.638,6.628" UseLayoutRounding="False" Stretch="Fill" StrokeThickness="0" Fill="#FFCFC6C6" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                            </Grid>
+                            <Grid x:Name="RightArrowBatallaGrid" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Margin="86.333,44.333,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                                <Grid.RenderTransform>
+                                    <CompositeTransform Rotation="-90"/>
+                                </Grid.RenderTransform>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="RightArrowBatallaCircleButton" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z M30,16 C30,23.72 30,8.28 30,16 z" UseLayoutRounding="False" Stretch="Fill" Height="27.944" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" Margin="0,-0.667,0,0"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="RightArrowBatallaButton" Data="M23.374,13.08 C23.24,13.024 23.098,13.001 22.955,13.005 L9.013,13.005 C8.126,12.981 7.633,14.075 8.271,14.707 L15.27,21.606 C15.656,21.988 16.313,21.988 16.699,21.606 L23.69,14.714 C24.207,14.221 24.034,13.346 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 C23.24,13.025 23.74,13.228 23.374,13.08 z" Margin="5.666,9.747,5.638,6.628" UseLayoutRounding="False" Stretch="Fill" StrokeThickness="0" Fill="#FFCFC6C6" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                            </Grid>
+                            <Grid x:Name="XButtonGrid_Copy" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" Margin="135,44,0,0" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33">
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton1" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton1" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
+                            </Grid>
+                            <TextBlock x:Name="AtacarBatallaTXT" TextWrapping="Wrap" Text="Atacar" TextAlignment="Center" FontSize="22" Margin="165,40,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="PreguntaGrid" Margin="265,0" Height="435" VerticalAlignment="Bottom" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="46*"/>
+                            <RowDefinition Height="63*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="PreguntaTituloTXT" HorizontalAlignment="Left" Height="31" Margin="16,10,0,0" TextWrapping="Wrap" Text="Pregunta:" VerticalAlignment="Top" Width="99" FontSize="20"/>
+                        <TextBlock x:Name="PreguntaTXT" Margin="16,46,42,74" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnfd fk sdkhfds sdkfh dfd f j kskf dhhvh sksdfhsdkjfhd jkfhds kjh sdk dskdhdkjksf hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdjkfhdjkfhsdkjfhsdk jfhsdjkfhwufhjkfhsdkfhkjdsfhsdkjfdjkf we" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+                        <TextBlock x:Name="OpcionesTituloTXT" HorizontalAlignment="Left" Margin="16,132,0,10" TextWrapping="Wrap" Text="Opciones:" Width="99" FontSize="20" d:LayoutOverrides="HorizontalAlignment, TopPosition, BottomPosition"/>
+                        <Canvas x:Name="Opcion1Canvas" Height="48" Margin="16,-5,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
+                            <Grid x:Name="XButtonGrid_Copy1" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33" Canvas.Top="10" Canvas.Left="10">
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton2" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton2" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
+                            </Grid>
+                            <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
+                            <Image x:Name="CorrectoImage" Height="27" Canvas.Left="487" Source="ms-appx:///Assets/Images/correcto2.png" Stretch="Fill" Canvas.Top="11" Width="30"/>
+                        </Canvas>
+                        <Grid x:Name="Opcion2Canvas" Height="48" Margin="16,46,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFCCCA76">
+                            <Grid x:Name="OButtonGrid_Copy" Width="33" Height="28" Canvas.Top="6" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OCircleButton1" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton1" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
+                            </Grid>
+                            <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
+                            <Image x:Name="IncorrectoImage" Height="36" Canvas.Left="487" Source="ms-appx:///Assets/Images/incorrecto.png" Stretch="Fill" Canvas.Top="6" Width="36" HorizontalAlignment="Right" Margin="0,2,6,10" d:LayoutOverrides="Width"/>
+                        </Grid>
+                        <Grid x:Name="Opcion3Canvas" Margin="16,94,19,109" Grid.Row="1" BorderBrush="#FF1D1B1B">
+                            <Grid x:Name="XButtonGrid_Copy2" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33" Canvas.Top="9" Margin="10,10,0,0">
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton3" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton3" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
+                            </Grid>
+                            <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431" Foreground="#FF191313"/>
+                        </Grid>
+                        <Grid x:Name="Opcion4Canvas" Height="48" Margin="16,0,19,61" Grid.Row="1" VerticalAlignment="Bottom">
+                            <Grid x:Name="OButtonGrid_Copy1" Width="33" Height="28" Canvas.Top="9" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OCircleButton2" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton2" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
+                            </Grid>
+                            <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2" Opacity="0.99">
+                        <Rectangle x:Name="InvasorFondo" Fill="#FFE78383" Opacity="0.55"/>
+                        <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>
+                        <ProgressBar Height="31" Value="30" Margin="0,220,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="264" Background="#33FFFFFF" Foreground="Red"/>
+                        <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Left" Margin="24,282,0,238" TextWrapping="Wrap" Text="Puntos" Width="200" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" d:LayoutOverrides="TopPosition, BottomPosition"/>
+                        <TextBlock x:Name="NTropasInvasorTXT" Height="68" Margin="201,57,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="48" HorizontalAlignment="Left" Width="63" TextAlignment="Center"/>
+                        <TextBlock x:Name="TropaInvasorTXT" Height="32" Margin="189,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="76" TextAlignment="Center"/>
+                        <TextBlock x:Name="InvasorPuntosAtaque1TXT" HorizontalAlignment="Left" Height="66" Margin="43,333,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="55" FontSize="48"/>
+                        <TextBlock x:Name="InvasorPuntosAtaque2TXT" Height="67" Margin="103,332,0,0" TextWrapping="Wrap" Text="(10)" VerticalAlignment="Top" FontSize="48" Foreground="Red" HorizontalAlignment="Left" Width="83"/>
+                    </Grid>
                 </Grid>
-                <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
-            <Image x:Name="CorrectoImage" Height="27" Canvas.Left="487" Source="ms-appx:///Assets/Images/correcto2.png" Stretch="Fill" Canvas.Top="11" Width="30"/>
-            </Canvas>
-            <Grid x:Name="Opcion2Canvas" Height="48" Margin="16,46,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFCCCA76">
-                <Grid x:Name="OButtonGrid_Copy" Width="33" Height="28" Canvas.Top="6" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OCircleButton1" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton1" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
-                </Grid>
-                <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
-                <Image x:Name="IncorrectoImage" Height="36" Canvas.Left="487" Source="ms-appx:///Assets/Images/incorrecto.png" Stretch="Fill" Canvas.Top="6" Width="36" HorizontalAlignment="Right" Margin="0,2,6,10" d:LayoutOverrides="Width"/>
-            </Grid>
-            <Grid x:Name="Opcion3Canvas" Margin="16,94,19,109" Grid.Row="1" BorderBrush="#FF1D1B1B">
-                <Grid x:Name="XButtonGrid_Copy2" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33" Canvas.Top="9" Margin="10,10,0,0">
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XCircleButton3" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="XButton3" Fill="#FF213BC1" Data="M 64.000001 54.96949 58.630508 60.203387 41.084746 42.657626 23.945765 59.796608 18.847461 54.96949 35.986443 37.694916 18.711868 20.284747 23.945765 15.322036 41.22034 32.596611 58.630508 15.05085 63.728811 20.149154 46.047457 37.559322 Z" Margin="7.888,5.771,7.697,0" UseLayoutRounding="False" Stretch="Fill" Height="17.007" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True"/>
-                </Grid>
-                <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431" Foreground="#FF191313"/>
-            </Grid>
-            <Grid x:Name="Opcion4Canvas" Height="48" Margin="16,0,19,61" Grid.Row="1" VerticalAlignment="Bottom">
-                <Grid x:Name="OButtonGrid_Copy1" Width="33" Height="28" Canvas.Top="9" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OCircleButton2" Fill="#FF251605" Data="M16,0 C7.164,0 0,7.164 0,16 C0,24.837 7.164,32 16,32 C24.837,32 32,24.837 32,16 C32,7.164 24.837,0 16,0 z" UseLayoutRounding="False" Stretch="Fill" Margin="0,0,0,0.056" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" d:IsLocked="True"/>
-                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton2" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
-                </Grid>
-                <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnf" Height="48" Canvas.Left="51" Width="431"/>
-            </Grid>
-            </Grid>
-            <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2" Opacity="0.99">
-                <Rectangle x:Name="InvasorFondo" Fill="#FFE78383" Opacity="0.55"/>
-                <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>
-                <ProgressBar Height="31" Value="30" Margin="0,220,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="264" Background="#33FFFFFF" Foreground="Red"/>
-                <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Left" Margin="24,282,0,238" TextWrapping="Wrap" Text="Puntos" Width="200" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" d:LayoutOverrides="TopPosition, BottomPosition"/>
-                <TextBlock x:Name="NTropasInvasorTXT" Height="68" Margin="201,57,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="48" HorizontalAlignment="Left" Width="63" TextAlignment="Center"/>
-                <TextBlock x:Name="TropaInvasorTXT" Height="32" Margin="189,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="76" TextAlignment="Center"/>
-                <TextBlock x:Name="InvasorPuntosAtaque1TXT" HorizontalAlignment="Left" Height="66" Margin="43,333,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="55" FontSize="48"/>
-                <TextBlock x:Name="InvasorPuntosAtaque2TXT" Height="67" Margin="103,332,0,0" TextWrapping="Wrap" Text="(10)" VerticalAlignment="Top" FontSize="48" Foreground="Red" HorizontalAlignment="Left" Width="83"/>
-            </Grid>
-        </Grid>
+                <!---->
      
             </RelativePanel>
             

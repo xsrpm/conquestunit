@@ -114,6 +114,10 @@
     <EmbeddedResource Include="Properties\GameLogic.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{C2CAB0A1-53A2-442A-94A1-3884D143B210}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataModel\DataModel.csproj">
       <Project>{b786a06b-ace6-4cf1-8915-5d4d88e21432}</Project>
       <Name>DataModel</Name>

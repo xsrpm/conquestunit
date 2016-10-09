@@ -67,13 +67,13 @@ namespace Util
         public enum FasesDeJuego { Despliegue, Ataque, Fortificación };
         public enum ResultadoBatalla { Victoria, Derrota };
 
-        public struct MoverTerritorio
-        {
-            public const int ARRIBA = 0;
-            public const int DERECHA = 1;
-            public const int ABAJO = 2;
-            public const int IZQUIERDA = 3;
-        }
+        //public struct MoverTerritorio
+        //{
+        //    public const int ARRIBA = 0;
+        //    public const int DERECHA = 1;
+        //    public const int ABAJO = 2;
+        //    public const int IZQUIERDA = 3;
+        //}
 
         public struct FaseJuego
         {
@@ -87,7 +87,7 @@ namespace Util
             public const int DESPLEGAR = 0;
             public const int ELEGIRORIGENATK = 1;
             public const int ELEGIRDESTINOATK = 2;
-            public const int ATACAR = 3;
+            public const int CONFIRMARATAQUE = 3;
             public const int BATALLA = 4;
             public const int MOVERTROPAS = 5;
             public const int ELEGIRORIGENFOR = 6;

@@ -95,12 +95,12 @@ namespace ConquestUnit
                         }
                         else
                         {
-                            rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
+                            rootFrame.Navigate(typeof(ElegirMesa), e.Arguments);
                         }
                     }
                     else
                     {
-                        rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
+                        rootFrame.Navigate(typeof(MesaEnEspera), e.Arguments);
                     }
                 }
                 // Ensure the current window is active
