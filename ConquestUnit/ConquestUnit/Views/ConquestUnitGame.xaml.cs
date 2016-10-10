@@ -2,14 +2,17 @@
 using SynapseSDK;
 using System;
 using System.Linq;
+using System.Threading;
 using Util;
 using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Storage.Streams;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
@@ -30,9 +33,31 @@ namespace ConquestUnit.Views
 
         Windows.UI.Xaml.Visibility[,] BlancoGridVisibilidad;
 
+        private Timer timerInicioBatalla;
+        private int? contadorInicioTimer;
+        private bool inicioBatalla;
+        private Timer timerDuracionBatalla;
+        private int? contadorSegDuracionTimer;
+        private int? contadorMilDuracionTimer;
+        //private DateTime horaInicioTimer;
+        private int? respuestaAtacante;
+        private int? respuestaDefensor;
+
+        private float puntosAtacante;
+        private float puntosDefensor;
+
         public ConquestUnitGame()
         {
             this.InitializeComponent();
+
+            //DispatcherTimer timer = new DispatcherTimer();
+            //timer.Interval = TimeSpan.FromSeconds(1);
+            //timer.Tick += timer_Tick;
+            //timer.Start();
+            //timer.Tick 
+            timerInicioBatalla = new Timer(timerInicioBatallaCallback, null, Timeout.Infinite, Timeout.Infinite);
+            timerDuracionBatalla = new Timer(timerDuracionBatallaCallback, null, Timeout.Infinite, Timeout.Infinite);
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -85,6 +110,7 @@ namespace ConquestUnit.Views
 
         public void Inicializar()
         {
+            BatallaGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
             Territorio = new Windows.UI.Xaml.Shapes.Path[24, 4]
             {
@@ -157,21 +183,12 @@ namespace ConquestUnit.Views
             //TerrSelec.Opacity = 1;
         }
 
-        public void MostrarBlanco()
-        {
-            Blanco.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 0];
-            XButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 1];
-            OButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 2];
-            DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 3];
-            UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 4];
-        }
-
         public async void DibujarJugadores()
         {
             for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
             {
-                ((TextBlock)FindName("Jugador" + (i + 1) + "Nombre")).Text=objJuego.JugadoresConectados[i].Nombre;
-                if (objJuego.JugadoresConectados[i].Imagen!=null)
+                ((TextBlock)FindName("Jugador" + (i + 1) + "Nombre")).Text = objJuego.JugadoresConectados[i].Nombre;
+                if (objJuego.JugadoresConectados[i].Imagen != null)
                 {
                     BitmapImage bimgBitmapImage = new BitmapImage();
                     IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(objJuego.JugadoresConectados[i].Imagen);
@@ -256,8 +273,26 @@ namespace ConquestUnit.Views
             AtacarBatallaTXT.Visibility = Visibility.Visible;
             //Area Pregunta
             PreguntaGrid.Visibility = Visibility.Collapsed;
+            txtTimerOpciones.Visibility = Visibility.Collapsed;
+            Opcion1Canvas.Visibility = Visibility.Collapsed;
+            Opcion2Canvas.Visibility = Visibility.Collapsed;
+            Opcion3Canvas.Visibility = Visibility.Collapsed;
+            Opcion4Canvas.Visibility = Visibility.Collapsed;
+            Opcion1Canvas.Background = new SolidColorBrush(Colors.Transparent);
+            Opcion2Canvas.Background = new SolidColorBrush(Colors.Transparent);
+            Opcion3Canvas.Background = new SolidColorBrush(Colors.Transparent);
+            Opcion4Canvas.Background = new SolidColorBrush(Colors.Transparent);
+            Opcion1Correcto.Visibility = Visibility.Collapsed;
+            Opcion2Correcto.Visibility = Visibility.Collapsed;
+            Opcion3Correcto.Visibility = Visibility.Collapsed;
+            Opcion4Correcto.Visibility = Visibility.Collapsed;
+            Opcion1Incorrecto.Visibility = Visibility.Collapsed;
+            Opcion2Incorrecto.Visibility = Visibility.Collapsed;
+            Opcion3Incorrecto.Visibility = Visibility.Collapsed;
+            Opcion4Incorrecto.Visibility = Visibility.Collapsed;
             //Area Atacante
             var atacante = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorTurnoActual).First();
+            AtacanteNombreTXT.Text = atacante.Nombre;
             InvasorFondo.Fill = Convertidor.GetSolidColorBrush(atacante.Color);
             if (atacante.Imagen != null)
             {
@@ -272,6 +307,7 @@ namespace ConquestUnit.Views
             InvasorPuntosAtaque2TXT.Visibility = Visibility.Collapsed;
             //Area Defensor
             var defensor = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First();
+            DefensorNombreTXT.Text = defensor.Nombre;
             DefensorFondo.Fill = Convertidor.GetSolidColorBrush(defensor.Color);
             if (defensor.Imagen != null)
             {
@@ -292,7 +328,117 @@ namespace ConquestUnit.Views
             AtacarBatallaTXT.Visibility = Visibility.Collapsed;
 
             PreguntaGrid.Visibility = Visibility.Visible;
+            txtTimerOpciones.Visibility = Visibility.Visible;
+            puntosAtacante = 0;
+            puntosDefensor = 0;
+            contadorInicioTimer = null;
+            contadorSegDuracionTimer = null;
+            contadorMilDuracionTimer = null;
+            inicioBatalla = false;
+            respuestaAtacante = null;
+            respuestaDefensor = null;
             CargarNuevaPregunta();
+            timerInicioBatalla.Change(0, 1000 * 1);
+        }
+
+        public async void timerInicioBatallaCallback(object sender)
+        {
+            if (contadorInicioTimer == null)
+            {
+                contadorInicioTimer = 3;
+            }
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                // do some work on UI here;
+                if (contadorInicioTimer == 3)
+                {
+                    txtTimerOpciones.Text = "Preparados...";
+                }
+                else if (contadorInicioTimer == 2)
+                {
+                    txtTimerOpciones.Text = "Listos...";
+                }
+                else if (contadorInicioTimer == 1)
+                {
+                    txtTimerOpciones.Text = "A responder...!!!";
+                }
+                if (contadorInicioTimer <= 0)
+                {
+                    timerInicioBatalla.Change(Timeout.Infinite, Timeout.Infinite);
+                    contadorInicioTimer = null;
+                    MostrarOpciones();
+                }
+                else
+                {
+                    contadorInicioTimer--;
+                }
+            });
+        }
+
+        public async void timerDuracionBatallaCallback(object sender)
+        {
+            if (contadorSegDuracionTimer == null)
+            {
+                contadorSegDuracionTimer = 10;
+                contadorMilDuracionTimer = 0;
+            }
+            if (respuestaAtacante != null && puntosAtacante!=0)
+            {
+                puntosAtacante = float.Parse(contadorSegDuracionTimer.ToString() + "." + contadorMilDuracionTimer.ToString());
+            }
+            if (respuestaDefensor != null && puntosDefensor != 0)
+            {
+                puntosDefensor = float.Parse(contadorSegDuracionTimer.ToString() + "." + contadorMilDuracionTimer.ToString());
+            }
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                // do some work on UI here;
+                txtTimerOpciones.Text = contadorSegDuracionTimer.ToString() + "." + contadorMilDuracionTimer.ToString();
+                if (contadorMilDuracionTimer == 0)
+                {
+                    contadorMilDuracionTimer = 9;
+                    contadorSegDuracionTimer--;
+                }
+                else
+                {
+                    contadorMilDuracionTimer--;
+                }
+
+                if (contadorSegDuracionTimer < 0)
+                {
+                    timerDuracionBatalla.Change(Timeout.Infinite, Timeout.Infinite);
+                    contadorSegDuracionTimer = null;
+                    contadorMilDuracionTimer = null;
+                    //Mostrar puntuaciones de los jugadores
+                    //Verificar quien tuvo la respuesta correcta y acreditar los puntos
+                    InvasorPuntosAtaque1TXT.Text = puntosAtacante.ToString();
+                    InvasorPuntosDefensaTXT.Text = puntosDefensor.ToString();
+
+                    for (int i = 0; i < objJuego.Opciones.Count; i++)
+                    {
+                        if (objJuego.Opciones[i].EsRespuesta)
+                        {
+                            ((Image)FindName("Opcion" + (i + 1) + "Correcto")).Visibility = Visibility.Visible;
+                            break;
+                        }
+                    }
+                    Helper.MensajeOk("Acabo la batalla.Puntos sin validaar respuesta correcta.");
+
+                }
+            });
+        }
+
+        public void MostrarOpciones()
+        {
+            //txtTimerOpciones.Visibility = Visibility.Collapsed;
+            Opcion1Canvas.Visibility = Visibility.Visible;
+            Opcion2Canvas.Visibility = Visibility.Visible;
+            Opcion3Canvas.Visibility = Visibility.Visible;
+            Opcion4Canvas.Visibility = Visibility.Visible;
+            inicioBatalla = true;
+            //INICIAR EL TIMER DE PREGUNTA//
+            timerDuracionBatalla.Change(0, 100);
+            //Helper.MensajeOk("ESTAMOS EN BATALLA!!!");
         }
 
         public void CargarNuevaPregunta()
@@ -304,6 +450,8 @@ namespace ConquestUnit.Views
             {
                 ((TextBlock)FindName("Opcion" + (i + 1) + "TXT")).Text = opciones[i].TextoOpcion;
             }
+            objJuego.Pregunta = pregunta;
+            objJuego.Opciones = opciones;
         }
 
         public void ModificarComboAtaque(int direccion)
@@ -337,7 +485,7 @@ namespace ConquestUnit.Views
             }
         }
 
-        private void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
+        private async void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
         {
             try
             {
@@ -346,6 +494,7 @@ namespace ConquestUnit.Views
                     #region El jugador ha presiona una tecla
                     if (strMensaje.Trim().Contains(Constantes.JugadorPresionaBoton))
                     {
+                        #region Se recibe el mensaje (boton presionado)
                         // Se recibe la confirmación de parte de la mesa que se unido satisfactoriamente
                         var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (JugadorPresionaBoton)
@@ -363,7 +512,7 @@ namespace ConquestUnit.Views
 
                         //Verificar que boton ha presionado
                         int botonPresionado = int.Parse(mensaje[2]);
-
+                        #endregion
                         #region DESPLIEGUE
                         if (objJuego.FaseActual == Constantes.FaseJuego.DESPLIEGUE)
                         {
@@ -398,7 +547,6 @@ namespace ConquestUnit.Views
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                     btnFaseDespliegue.IsEnabled = false;
                                     btnFaseAtaque.IsEnabled = true;
-                                    Helper.MensajeOk("Termino la fase de despliegue");
                                 }
                             }
                             else if (botonPresionado == Constantes.Controles.TRIANGULO)
@@ -408,7 +556,6 @@ namespace ConquestUnit.Views
                                 objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                 btnFaseDespliegue.IsEnabled = false;
                                 btnFaseAtaque.IsEnabled = true;
-                                Helper.MensajeOk("Solicitaste terminar la fase de despliegue");
                             }
                         }
                         #endregion
@@ -515,23 +662,68 @@ namespace ConquestUnit.Views
                                 //Se confirma el ataque
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
+                                    await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
+                                        Constantes.MesaConumicaHABILITARControles);
                                     IniciarBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.BATALLA;
                                 }
                                 //Se cancela el ataque
                                 else if (botonPresionado == Constantes.Controles.CIRCULO)
                                 {
-                                    BatallaGrid.Visibility = Visibility.Collapsed;
-                                    objJuego.TerritorioOrigenAtaque = null;
+                                    //El jugador cancela la seleccion se destino de ataque
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
                                     objJuego.TerritorioDestinoAtaque = null;
+                                    BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
                                 }
                             }
                             #endregion
                             #region BATALLAAAAAAAAAA
-                            else if (objJuego.AccionActual == Constantes.AccionJuego.CONFIRMARATAQUE)
+                            else if (objJuego.AccionActual == Constantes.AccionJuego.BATALLA)
                             {
-                                Helper.MensajeOk("ESTAMOS EN BATALLA!!!");
+                                if (inicioBatalla)
+                                {
+                                    //El jugador aún no responde la pregunta
+                                    if (mensaje[1] == objJuego.IpJugadorTurnoActual)
+                                        if (respuestaAtacante != null)
+                                            return;
+                                    else
+                                        if (respuestaDefensor != null)
+                                            return;
+                                    //Guardar la respuesta del jugador
+                                    if (botonPresionado == Constantes.Controles.TRIANGULO)
+                                    {
+                                        Opcion1Canvas.Background = Convertidor.GetSolidColorBrush(objJuego.JugadoresConectados.Where(x => x.Ip == mensaje[1]).First().Color);
+                                        if (mensaje[1] == objJuego.IpJugadorTurnoActual)
+                                            respuestaAtacante = 0;
+                                        else
+                                            respuestaDefensor = 0;
+                                    }
+                                    if (botonPresionado == Constantes.Controles.CUADRADO)
+                                    {
+                                        Opcion2Canvas.Background = Convertidor.GetSolidColorBrush(objJuego.JugadoresConectados.Where(x => x.Ip == mensaje[1]).First().Color);
+                                        if (mensaje[1] == objJuego.IpJugadorTurnoActual)
+                                            respuestaAtacante = 1;
+                                        else
+                                            respuestaDefensor = 1;
+                                    }
+                                    if (botonPresionado == Constantes.Controles.CIRCULO)
+                                    {
+                                        Opcion3Canvas.Background = Convertidor.GetSolidColorBrush(objJuego.JugadoresConectados.Where(x => x.Ip == mensaje[1]).First().Color);
+                                        if (mensaje[1] == objJuego.IpJugadorTurnoActual)
+                                            respuestaAtacante = 2;
+                                        else
+                                            respuestaDefensor = 2;
+                                    }
+                                    if (botonPresionado == Constantes.Controles.EQUIS)
+                                    {
+                                        Opcion4Canvas.Background = Convertidor.GetSolidColorBrush(objJuego.JugadoresConectados.Where(x => x.Ip == mensaje[1]).First().Color);
+                                        if (mensaje[1] == objJuego.IpJugadorTurnoActual)
+                                            respuestaAtacante = 3;
+                                        else
+                                            respuestaDefensor = 3;
+                                    }
+                                }
                             }
                             #endregion
                         }
@@ -539,7 +731,7 @@ namespace ConquestUnit.Views
                         #region FORTIFICACION
                         else if (objJuego.FaseActual == Constantes.FaseJuego.FORTIFICACION)
                         {
-                            
+
                         }
                         #endregion
                     }
@@ -656,5 +848,14 @@ namespace ConquestUnit.Views
             }
         }
         #endregion
+
+        public void MostrarBlanco()
+        {
+            Blanco.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 0];
+            XButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 1];
+            OButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 2];
+            DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 3];
+            UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 4];
+        }
     }
 }
