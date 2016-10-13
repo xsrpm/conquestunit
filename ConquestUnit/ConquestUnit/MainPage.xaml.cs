@@ -35,13 +35,13 @@ namespace ConquestUnit
         {
             try
             {
-                var pregunta = App.context.Obtener<Pregunta>(Convert.ToInt32(txtId.Text));
-                var opciones = App.context.Listar<Opcion>().Where(x => x.PreguntaId == pregunta.PreguntaId).ToList();
-                txtResultado.Text = pregunta.TextoPregunta + "\n";
-                for (int i = 0; i < opciones.Count; i++)
-                {
-                    txtResultado.Text += opciones[i].TextoOpcion + "\n";
-                }
+                //var pregunta = App.context.Obtener<Pregunta>(Convert.ToInt32(txtId.Text));
+                //var opciones = App.context.Listar<Opcion>().Where(x => x.PreguntaId == pregunta.PreguntaId).ToList();
+                //txtResultado.Text = pregunta.TextoPregunta + "\n";
+                //for (int i = 0; i < opciones.Count; i++)
+                //{
+                //    txtResultado.Text += opciones[i].TextoOpcion + "\n";
+                //}
             }
             catch (Exception ex)
             {

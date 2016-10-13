@@ -394,41 +394,41 @@
                             <RowDefinition Height="63*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="PreguntaTituloTXT" HorizontalAlignment="Left" Height="31" Margin="16,10,0,0" TextWrapping="Wrap" Text="Pregunta:" VerticalAlignment="Top" Width="99" FontSize="20"/>
-                        <TextBlock x:Name="PreguntaTXT" Margin="16,46,42,74" TextWrapping="Wrap" Text="jsdfjad sdfk  sdf sdfsdf dssdknf dsnsdnfj sfdk sdjvds fdbhds sdf kdhf sdfb sdb hsdkbhkbfkadsnf kjsdnfd fk sdkhfds sdkfh dfd f j kskf dhhvh sksdfhsdkjfhd jkfhds kjh sdk dskdhdkjksf hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdjkfhdjkfhsdkjfhsdk jfhsdjkfhwufhjkfhsdkfhkjdsfhsdkjfdjkf we" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
-                        <TextBlock x:Name="OpcionesTituloTXT" HorizontalAlignment="Left" Margin="16,132,0,10" TextWrapping="Wrap" Text="Opciones:" Width="99" FontSize="20" d:LayoutOverrides="HorizontalAlignment, TopPosition, BottomPosition"/>
+                        <TextBlock x:Name="PreguntaTXT" Margin="16,46,42,74" TextWrapping="Wrap" FontSize="20" Text="hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdj kfhdjkfhsdkjfhsdk asfasdf we"/>
+                        <TextBlock x:Name="OpcionesTituloTXT" HorizontalAlignment="Left" Margin="16,132,0,10" TextWrapping="Wrap" Text="Opciones:" Width="99" FontSize="20"/>
                         <!--OPCIONES-->
                         <TextBlock x:Name="txtTimerOpciones" Text="3.00" FontSize="40" HorizontalAlignment="Center" Margin="0,120,0,0"/>
-                        <Grid x:Name="Opcion1Canvas" Margin="16,-5,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <Grid x:Name="Opcion1Boton" Width="33" Height="28" Canvas.Top="6" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
-                                <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png"/>
-                            </Grid>
+                        <Grid x:Name="Opcion1Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,5,0,0" Grid.Row="1">
+                            <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png"/>
+                        </Grid>
+                        <Grid x:Name="Opcion1Canvas" Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
                             <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Opcion 1 Texto" VerticalAlignment="Center" Height="48" Canvas.Left="51" Width="431"/>
-                            <Image x:Name="Opcion1Correcto" Height="27" Width="30" Source="ms-appx:///Assets/Images/correcto2.png" HorizontalAlignment="Right"/>
-                            <Image x:Name="Opcion1Incorrecto" Height="27" Width="30" Source="ms-appx:///Assets/Images/incorrecto.png" HorizontalAlignment="Right"/>
+                            <Rectangle x:Name="Opcion1Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
+                            <Rectangle x:Name="Opcion1Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
-                        <Grid x:Name="Opcion2Canvas" Margin="16,45,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFCCCA76">
-                            <Grid x:Name="Opcion2Boton" Width="33" Height="28" Canvas.Top="6" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
-                                <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png"/>
-                            </Grid>
+                        <Grid x:Name="Opcion2Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,55,19,0" Grid.Row="1">
+                            <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png"/>
+                        </Grid>
+                        <Grid x:Name="Opcion2Canvas" Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFCCCA76">
                             <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Opcion 2 Texto" Height="48" Canvas.Left="51" Width="431"/>
-                            <Image x:Name="Opcion2Correcto" Height="27" Width="30" Source="ms-appx:///Assets/Images/correcto2.png" HorizontalAlignment="Right"/>
-                            <Image x:Name="Opcion2Incorrecto" Height="27" Width="30" Source="ms-appx:///Assets/Images/incorrecto.png" HorizontalAlignment="Right"/>
+                            <Rectangle x:Name="Opcion2Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
+                            <Rectangle x:Name="Opcion2Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
-                        <Grid x:Name="Opcion3Canvas" Margin="16,95,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <Grid x:Name="Opcion3Boton" Height="28" VerticalAlignment="Top" Tapped="XButtonGrid_Tapped" RenderTransformOrigin="0.515,0.518" HorizontalAlignment="Left" Width="33" Canvas.Top="9" Margin="10,10,0,0">
-                                <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
-                            </Grid>
+                        <Grid x:Name="Opcion3Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,19,0" Grid.Row="1">
+                            <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
+                        </Grid>
+                        <Grid x:Name="Opcion3Canvas" Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
                             <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Opcion 3 Texto" Height="48" Canvas.Left="51" Width="431" Foreground="#FF191313"/>
-                            <Image x:Name="Opcion3Correcto" Height="27" Width="30" Source="ms-appx:///Assets/Images/correcto2.png" HorizontalAlignment="Right"/>
-                            <Image x:Name="Opcion3Incorrecto" Height="27" Width="30" Source="ms-appx:///Assets/Images/incorrecto.png" HorizontalAlignment="Right"/>
+                            <Rectangle x:Name="Opcion3Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
+                            <Rectangle x:Name="Opcion3Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
-                        <Grid x:Name="Opcion4Canvas" Height="48" Margin="16,145,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <Grid x:Name="Opcion4Boton" Width="33" Height="28" Canvas.Top="9" HorizontalAlignment="Left" Margin="10,10,0,10" d:LayoutOverrides="Width">
-                                <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
-                            </Grid>
+                        <Grid x:Name="Opcion4Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,19,0" Grid.Row="1">
+                            <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
+                        </Grid>
+                        <Grid x:Name="Opcion4Canvas" Height="48" Margin="60,145,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
                             <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Opcion 4 Texto" Height="48" Canvas.Left="51" Width="431"/>
-                            <Image x:Name="Opcion4Correcto" Height="27" Width="30" Source="ms-appx:///Assets/Images/correcto2.png" HorizontalAlignment="Right"/>
-                            <Image x:Name="Opcion4Incorrecto" Height="27" Width="30" Source="ms-appx:///Assets/Images/incorrecto.png" HorizontalAlignment="Right"/>
+                            <Rectangle x:Name="Opcion4Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
+                            <Rectangle x:Name="Opcion4Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
                         <!---->
                     </Grid>

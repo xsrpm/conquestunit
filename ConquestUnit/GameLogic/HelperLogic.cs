@@ -50,13 +50,13 @@ namespace GameLogic
         public static Pregunta ObtenerPreguntaAleatoria(ConquestUnitContext context)
         {
             Helper.IntUtil.Random(1, 101);
-            var preguntas = context.Listar<Pregunta>();
+            var preguntas = context.conn.Table<Pregunta>();
             return preguntas.ElementAt(Helper.IntUtil.Random(0, preguntas.Count()));
         }
 
         public static List<Opcion> ObtenerOpciones(ConquestUnitContext context, int idPregunta)
         {
-            var opciones = context.Listar<Opcion>().Where(x => x.PreguntaId == idPregunta).ToList();
+            var opciones = context.conn.Table<Opcion>().Where(x => x.PreguntaId == idPregunta).ToList();
             Helper.Shuffle(opciones);
             return opciones;
         }

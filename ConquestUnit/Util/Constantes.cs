@@ -29,6 +29,9 @@ namespace Util
         public static string ColorJug4 = "#D9C086";
         #endregion
 
+        public static string ColorCorrecto = "#1EFF00";
+        public static string ColorIncorrecto = "#FF0000";
+
         #region Asset Imagenes Unidades Jugadores
         public static string UnidadJug1 = "ms-appx:///Assets/Unidades/China/Unidad Rojo.png";
         public static string UnidadJug2 = "ms-appx:///Assets/Unidades/China/Unidad Verde.png";
