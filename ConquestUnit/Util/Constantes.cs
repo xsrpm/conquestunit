@@ -23,14 +23,14 @@ namespace Util
         public static string MAPA_CHINA = "CHINA";
 
         #region Color Jugadores
-        public static string ColorJug1 = "#E7A383";
-        public static string ColorJug2 = "#CCCA76";
-        public static string ColorJug3 = "#B3BFB3";
-        public static string ColorJug4 = "#D9C086";
+        public static string ColorJug1 = "#00B81010";
+        public static string ColorJug2 = "#00508B10";
+        public static string ColorJug3 = "#002E507E";
+        public static string ColorJug4 = "#00BBC60E";
         #endregion
 
-        public static string ColorCorrecto = "#1EFF00";
-        public static string ColorIncorrecto = "#FF0000";
+        public static string ColorCorrecto = "#0000FF00";
+        public static string ColorIncorrecto = "#00FF0000";
 
         #region Asset Imagenes Unidades Jugadores
         public static string UnidadJug1 = "ms-appx:///Assets/Unidades/China/Unidad Rojo.png";
@@ -63,20 +63,20 @@ namespace Util
             public const int TRIANGULO = 6;
             public const int EQUIS = 7;
         }
+
+        public struct MensajesResultadoBatalla
+        {
+            public const string GanaAtacante = "Has ganado la batalla.";
+            public const string GanaAtacanteTerritorio = "Has ganado la batalla. Despliega tus unidades.";
+            public const string AtacanteResponderaSegundaPregunta = "Perdiste, pero aun puedes ganar.";
+
+            public const string PierdeAtacante = "Perdiste el ataque.";
+            public const string GanaDefensor = "Defendiste tu territorio satisfactoriamente.";
+            public const string PierdeDefensor = "No lograste defender tu territorio.";
+        }
         #endregion
 
         public static string SIN_IMAGEN = "Ninguno";
-
-        public enum FasesDeJuego { Despliegue, Ataque, Fortificación };
-        public enum ResultadoBatalla { Victoria, Derrota };
-
-        //public struct MoverTerritorio
-        //{
-        //    public const int ARRIBA = 0;
-        //    public const int DERECHA = 1;
-        //    public const int ABAJO = 2;
-        //    public const int IZQUIERDA = 3;
-        //}
 
         public struct FaseJuego
         {
@@ -91,11 +91,16 @@ namespace Util
             public const int ELEGIRORIGENATK = 1;
             public const int ELEGIRDESTINOATK = 2;
             public const int CONFIRMARATAQUE = 3;
-            public const int BATALLA = 4;
-            public const int MOVERTROPAS = 5;
-            public const int ELEGIRORIGENFOR = 6;
-            public const int ELEGIRDESTINOFOR = 7;
-            public const int FORTIFICAR = 8;
+            public const int BATALLA_PRIMERA_PREGUNTA = 4;
+            public const int CONFIRMAR_INICIO_SEGUNDA_PREGUNTA = 5;
+            public const int BATALLA_SEGUNDA_PREGUNTA = 6;
+            public const int DECIDIR_CONTINUAR_ATAQUE = 7;
+            public const int CONFIRMAR_INICIO_MOVERTROPAS = 8;
+            public const int MOVERTROPAS = 9;
+            public const int TERMINAR_ATAQUE = 10;
+            public const int ELEGIRORIGENFOR = 11;
+            public const int ELEGIRDESTINOFOR = 12;
+            public const int FORTIFICAR = 13;
         }
 
         #region NroUnidades

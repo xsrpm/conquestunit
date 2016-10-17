@@ -49,7 +49,6 @@ namespace GameLogic
 
         public static Pregunta ObtenerPreguntaAleatoria(ConquestUnitContext context)
         {
-            Helper.IntUtil.Random(1, 101);
             var preguntas = context.conn.Table<Pregunta>();
             return preguntas.ElementAt(Helper.IntUtil.Random(0, preguntas.Count()));
         }
