@@ -54,15 +54,27 @@ namespace Util
         public struct Controles
         {
             public const int ARRIBA = 0;
-            public const int DERECHA = 1;
-            public const int ABAJO = 2;
-            public const int IZQUIERDA = 3;
+            public const int ARRIBADERECHA = 1;
+            public const int DERECHA = 2;
+            public const int ABAJODERECHA = 3;
+            public const int ABAJO = 4;
+            public const int ABAJOIZQUIERDA = 5;
+            public const int IZQUIERDA = 6;
+            public const int ARRIBAIZQUIERDA = 7;
 
-            public const int CUADRADO = 4;
-            public const int CIRCULO = 5;
-            public const int TRIANGULO = 6;
-            public const int EQUIS = 7;
+            public const int CUADRADO = 8;
+            public const int CIRCULO = 9;
+            public const int TRIANGULO = 10;
+            public const int EQUIS = 11;
         }
+
+        public struct Region
+        {
+            public const int REGION1 = 1;
+            public const int REGION2 = 2;
+            public const int REGION3 = 3;
+            public const int REGION4 = 4;
+        } 
 
         public struct MensajesResultadoBatalla
         {

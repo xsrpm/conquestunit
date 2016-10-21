@@ -107,19 +107,35 @@ namespace ConquestUnit.Views
         {
             BatallaGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
-            Territorio = new Windows.UI.Xaml.Shapes.Path[24, 4]
+            Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
             {
-                {Uliassutai,Qinghai,Tibet,null },{Huijiang,Sichuan,Yunnan,null },{Gansu,Sichuan,Tibet,Huijiang},
-                {Gansu,Hubei,Yunnan,Tibet},{Sichuan,Guizhou,null,null },{Sichuan,Hunan,Guangxi,Yunnan },
+                {Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
+                {Huijiang,Qinghai,Sichuan,Yunnan,null,null,null,null },//Tibet
+                {Gansu,Gansu,Gansu,Sichuan,Tibet,Tibet,Tibet,Huijiang},//Qinghai
+                {Gansu,Shaanxi,Hubei,Guizhou,Yunnan,Yunnan,Tibet,Qinghai},//Sichuan
+                {Sichuan,Sichuan,Guizhou,Guangxi,null,null,null,Tibet },//Yunnan
+                {Sichuan,Sichuan,Hunan,Guangxi,Guangxi,Yunnan,Yunnan,Sichuan },//Guizhou
 
-                {null,Heilongjiang,Mongolia,Huijiang },{Uliassutai,Jilin,Gansu,Huijiang },{Mongolia,Shaanxi,Sichuan,Qinghai},
-                {Mongolia,Shanxi,Sichuan,Gansu },{Mongolia,Zhili,Menan,Shaanxi },{Menan,Anhu,Hunan,Sichuan },
+                {null,Heilongjiang,Heilongjiang,Mongolia,Mongolia,Huijiang,Huijiang,null },//Uliassutai
+                {Uliassutai,Heilongjiang,Zhili,Shanxi,Shaanxi,Gansu,Uliassutai,Uliassutai },//Mongolia
+                {Mongolia,Mongolia,Shaanxi,Sichuan,Qinghai,Qinghai,Qinghai,Huijiang},//Gansu
+                {Mongolia,Shanxi,Menan,Hubei,Sichuan,Sichuan,Gansu,Gansu },//Shaanxi
+                {Mongolia,Zhili,Zhili,Menan,Menan,Shaanxi,Shaanxi,Mongolia },//Shanxi
+                { Menan,Anhu,Anhu,Ilangxi,Hunan,Sichuan,Sichuan,Shaanxi },//Hubei
 
-                {null,Jilin,Mongolia,Uliassutai },{Heilongjiang,null,Shengjing,Mongolia },{Jilin,Mongolia,Zhili,Zhili },
-                {Mongolia,Shengjing,Shandong,Shanxi },{Zhili,null,Menan,Zhili },{Zhili,Shandong,Hubei,Shaanxi },
+                { null,null,Jilin,Jilin,Mongolia,Uliassutai,Uliassutai,null },//Heilongjiang
+                { Heilongjiang,null,null,null,null,Shengjing,Mongolia,Heilongjiang },//Jilin
+                { Mongolia,Jilin,null,null,null,null,Zhili,Zhili },//Shengjing
+                { Mongolia,Mongolia,Shengjing,Shandong,Menan,Shaanxi,Shanxi,Mongolia },//Zhili
+                { null,null,null,null,null,Menan,Zhili,Zhili },//Shandong
+                { Zhili,Shandong,Anhu,Anhu,Hubei,Hubei,Shaanxi,Shanxi },//Menan
 
-                {Guizhou,Hunan,null,Yunnan},{Hubei,Ilangxi,Guangxi,Guizhou },{Anhu,Fcohou,null,Hunan },
-                {Zhelang,null,null,Ilangxi },{Anhu,null,Fcohou,Anhu },{Menan,Zhelang,Ilangxi,Hubei }
+                { Guizhou,Hunan,null,null,null,null,Yunnan,Guizhou},//Guangxi
+                { Hubei,Hubei,Ilangxi,null,Guangxi,Guangxi,Guizhou,Sichuan },//Hunan
+                { Anhu,Zhelang,Fcohou,Fcohou,null,null,Hunan,Hubei },//Ilangxi
+                { Zhelang,Zhelang,null,null,null,null,Ilangxi,Ilangxi },//Fcohou
+                { null,null,null,null,Fcohou,Fcohou,Ilangxi,Anhu },//Zhelang
+                { null,null,null,Zhelang,Ilangxi,Hubei,Menan,Menan }//Anhu
             };
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();
@@ -1236,7 +1252,7 @@ namespace ConquestUnit.Views
 
         private void BtnIzq_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            MoverTerritorio(Constantes.Controles.IZQUIERDA);
+           MoverTerritorio(Constantes.Controles.IZQUIERDA);
         }
 
         private void BtnDer_Tapped(object sender, TappedRoutedEventArgs e)
@@ -1247,6 +1263,26 @@ namespace ConquestUnit.Views
         private void BtnAba_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MoverTerritorio(Constantes.Controles.ABAJO);
+        }
+
+        private void BtnArrIzq_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MoverTerritorio(Constantes.Controles.ARRIBAIZQUIERDA);
+        }
+
+        private void BtnArrDer_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MoverTerritorio(Constantes.Controles.ARRIBADERECHA);
+        }
+
+        private void BtnAbaIzq_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MoverTerritorio(Constantes.Controles.ABAJOIZQUIERDA);
+        }
+
+        private void BtnAbaDer_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MoverTerritorio(Constantes.Controles.ABAJODERECHA);
         }
 
         private void XButtonGrid_Tapped(object sender, TappedRoutedEventArgs e)
@@ -1288,5 +1324,7 @@ namespace ConquestUnit.Views
             DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 3];
             UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 4];
         }
+
+        
     }
 }
