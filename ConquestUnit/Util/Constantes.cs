@@ -23,14 +23,14 @@ namespace Util
         public static string MAPA_CHINA = "CHINA";
 
         #region Color Jugadores
-        public static string ColorJug1 = "#00B81010";
-        public static string ColorJug2 = "#00508B10";
-        public static string ColorJug3 = "#002E507E";
-        public static string ColorJug4 = "#00BBC60E";
+        public static string ColorJug1 = "#FFB81010";
+        public static string ColorJug2 = "#FF508B10";
+        public static string ColorJug3 = "#FF2E507E";
+        public static string ColorJug4 = "#FFBBC60E";
         #endregion
 
-        public static string ColorCorrecto = "#0000FF00";
-        public static string ColorIncorrecto = "#00FF0000";
+        public static string ColorCorrecto = "#FF00FF00";
+        public static string ColorIncorrecto = "#FFFF0000";
 
         #region Asset Imagenes Unidades Jugadores
         public static string UnidadJug1 = "ms-appx:///Assets/Unidades/China/Unidad Rojo.png";

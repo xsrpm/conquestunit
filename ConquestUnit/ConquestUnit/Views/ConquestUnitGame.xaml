@@ -358,8 +358,8 @@
                         <TextBlock x:Name="TropaDefensorTXT" HorizontalAlignment="Left" Height="32" Margin="0,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" Width="60" FontSize="22"/>
                         <TextBlock x:Name="NTropasDefensorTXT" Height="68" Margin="0,55,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" FontSize="48" TextAlignment="Center" RenderTransformOrigin="0.276,0.559" HorizontalAlignment="Left" Width="63"/>
                         <TextBlock x:Name="InvasorPuntosDefensaTXT" Margin="0,332,104,0" TextWrapping="Wrap" Text="10" FontSize="48" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
-                        <RelativePanel x:Name="PanelMensajeJugador2" Grid.Column="1" Width="265" Height="100" Margin="0,0,0,50" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
-                            <TextBlock x:Name="txtMensajeJugador2" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" />
+                        <RelativePanel x:Name="PanelMensajeJugadorDefensor" Grid.Column="1" Width="265" Height="100" Margin="0,0,0,50" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
+                            <TextBlock x:Name="txtMensajeJugadorDefensor" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" />
                             <!--<TextBlock x:Name="txtContinuarJugador2" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                             <Image Width="33" Height="28" Margin="0,0,50,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>-->
                         </RelativePanel>
@@ -437,7 +437,10 @@
                         </Grid>
                         <!---->
                     </Grid>
-                    <Grid x:Name="MoverTropasGrid" Margin="265,0" Height="435" Grid.Row="1">
+                    <Grid x:Name="MoverTropasGrid" Margin="300,0,300,0" Height="350" Grid.Row="1" BorderBrush="Black" BorderThickness="1,1,1,1">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Azure" />
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -448,12 +451,28 @@
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
-                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Moviendo Unidades" VerticalAlignment="Top" FontSize="24"/>
-                        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Desde" VerticalAlignment="Top" FontSize="24"/>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Moviendo Unidades" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBlack"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Desde" VerticalAlignment="Bottom" FontSize="24"/>
+                        <TextBlock x:Name="MoverUnidadesTerritorioOrigen" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tibet" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="MoverUnidadesTerritorioOrigenNUnidades" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center" />
+                            <Image x:Name="MoverUnidadesImgIzquierda" Source="ms-appx:///Assets/Images/Mando/Izquierda.png" Width="50" Height="50" />
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hacia" VerticalAlignment="Bottom" FontSize="24"/>
+                        <TextBlock x:Name="MoverUnidadesTerritorioDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+                        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock TextWrapping="Wrap" Text="+" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                            <TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image x:Name="MoverUnidadesImgDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />
+                            <TextBlock x:Name="MoverUnidadesTerritorioDestinoNUnidades" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Text="Presiona       para confirmar" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
-                    
+
                     <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2" Opacity="0.99">
                         <Rectangle x:Name="InvasorFondo" Fill="#FFE78383" Opacity="0.55"/>
                         <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>

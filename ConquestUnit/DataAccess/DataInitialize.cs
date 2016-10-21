@@ -580,6 +580,371 @@ namespace ConquestUnit
                             "Detective", "Policía", "Médico", "Bombero", context);
             InsertarPregunta("¿Qué animal son los polacos en la novela gráfica sobre el Holocausto nazi ‘Maus’?",
                             "Cerdos", "Ratones", "Gatos", "Perros", context);
+            InsertarPregunta("¿Quién escribió ‘ El modulor’?",
+                "Corbusier", "Aristófanes ", "Curant", "Tom Jones", context);
+            InsertarPregunta("¿A qué músico argentino lo apodaban ” El Flaco”?",
+                            "Luis Alberto Spinetta", "Gustavo Cerati", "Carlos Alberto García", "Carlos Solari", context);
+            InsertarPregunta("¿Cómo se llama el arte japones de la papiroflexia?",
+                            "Origami", "Haiku", "Ikebana", "Ukiyo-e", context);
+            InsertarPregunta("¿Quién dirigió la película 'Lo Que El Viento Se Llevó'?",
+                            "Victor Fleming", "Alfblack Hitchcock", "Orson Walles", "Clark Gable", context);
+            InsertarPregunta("¿De dónde era Diego Velázquez?",
+                            "Sevilla", "Madrid", "Murcia", "Toledo", context);
+            InsertarPregunta("¿Quién es el autor de” 20 poemas de amor y una canción desesperada”?",
+                            "Pablo Neruda", "Amado Nervo", "Eduardo Mitre", "Nicanor Parra", context);
+            InsertarPregunta("¿Quién escribió la trilogía “Los Juegos del Hambre”?",
+                            "Suzanne Collins", "John Green", "Rick Riordan", "Stephenie Meyer", context);
+            InsertarPregunta("¿Quién es el guitarrista de la banda de rock ” Chickenfoot”?",
+                            "Joe Satriani", "Steve Vai", "Slash", "Nuno Bettencourt", context);
+            InsertarPregunta("¿Quién se comió a Garbancito según el cuento popular? ",
+                            "Un Buey", "Un gigante", "Una ballena", "Un lobo", context);
+            InsertarPregunta("¿Cuál es la autora de” Lo que el viento se llevó”?",
+                            "Margaret Mitchell", "Maruja Torres", "Jane Austen", "Emily Broté", context);
+            InsertarPregunta("¿Quién escribió ” Abaddón el Exterminador”?",
+                            "Ernesto Sabato", "Gabriel García Márquez", "José Luis Borges", "Mario Vargas Llosa", context);
+            InsertarPregunta("¿Con qué nombre pasó la historia Michelangelo Merisi?",
+                            "Caravaggio", "Miguel Ángel", "Da Vinci", "Masaccio", context);
+            InsertarPregunta("¿Cómo se llama el perro de Obélix?",
+                            "Ideafix", "Panoramix", "Milú", "Indiofix", context);
+            InsertarPregunta("¿A qué generación pertenece García Lorca?",
+                            "Del 27", "De 2001", "Siglo de oro", "Ninguna", context);
+            InsertarPregunta("¿Cuántos capítulos tiene el Corán?",
+                            "114", "60", "25", "120", context);
+            InsertarPregunta("¿Dónde podemos ver el museo Domus?",
+                            "La Coruña", "Madrid", "San Sebastián", "Murcia", context);
+            InsertarPregunta("¿Quién es el autor de “El amor en los tiempos de cólera",
+                            "Gabriel García Márquez", "Carlos Cuahutemoc Sánchez", "Og Mandino", "Julio Verne", context);
+            InsertarPregunta("¿Con qué escritor del Siglo de Oro estuvo enfrentado Luis de Góngora?",
+                            "Quevedo", "Lope de Vega", "Rosalía de Castro", "Calderón de la Barca", context);
+            InsertarPregunta("¿Quién escribió la novela “María”?",
+                            "Jorge Isaacs", "Mario Vargas Llosa", "Gabriel García Márquez", "Isabel Allende", context);
+            InsertarPregunta("¿Cómo se llama la restauradora del Ecce Homo de Borja?",
+                            "Cecilia Giménez Sueco", "Lucía Giménez Sueco", "María Giménez Sueco", "Celia Giménez Sueco", context);
+            InsertarPregunta("¿Qué animal quería ser domesticado por El Principito? ",
+                            "Un zorro", "Un perro", "Un gato", "Un lobo", context);
+            InsertarPregunta("¿Qué artista aparece retratado en “Las Meninas”?",
+                            "Velázquez", "Miguel Ángel", "Sorolla", "Goya", context);
+            InsertarPregunta("¿De qué novela de Fiodor M. Dostoyevski es protagonista Raskolnikov?",
+                            "Crimen y Castigo", "El Jugador", "El Idiota", "Los Demonios", context);
+            InsertarPregunta("¿Una fábula es un cuento que finaliza con una enseñanza que se llama…",
+                            "Moraleja", "Refrán", "Poesía", "Adivinanza", context);
+            #endregion
+
+            #region Ciencia
+            InsertarPregunta("¿Cuál de las siguientes enfermedades ataca al hígado?",
+                "Hepatitis", "Diabetes", "Artrósis", "Cifoescoliosis", context);
+            InsertarPregunta("¿Cómo tomarías la sustancia alucinógena natural llamada ayahuasca?",
+                            "Ingerida", "Inyectada", "Esnifada", "Inhalada", context);
+            InsertarPregunta("¿Cuál es la función principal del intestino grueso? ",
+                            "La absorción de agua", "La digestión química de alimentos", "La digestión mecánica de los alimentos", "La absorción de nutrientes", context);
+            InsertarPregunta("¿Qué hay en la boca del estómago?",
+                            "El cardías", "El píloro", "Los ácidos gástricos", "El epilón mayor", context);
+            InsertarPregunta("¿Qué cambio de estado ocurre en la sublimación?",
+                            "De sólido a gaseoso", "De sólido a líquido", "De gaseoso a líquido", "De líquido a solido", context);
+            InsertarPregunta("¿Qué órgano del cuerpo humano produce la bilis?",
+                            "Hígado", "Páncreas", "Intestino delgado", "Riñón", context);
+            InsertarPregunta("¿De qué color es la sangre de los peces?",
+                            "Rojo", "Verde oscuro", "Marrón oscuro", "Azul", context);
+            InsertarPregunta("¿Cuál de los siguientes órganos NO es parte del sistema inmunológico?",
+                            "Esófago", "Médula ósea", "Bazo", "Timo", context);
+            InsertarPregunta("¿De dónde de saca la sacarina?",
+                            "Del carbón", "Del azúcar", "Del aceite de girasol", "Del azufre", context);
+            InsertarPregunta("¿Cuántas caras tiene un icosaedro?",
+                            "20", "16", "8", "24", context);
+            InsertarPregunta("¿Qué contiene el cactus llamado peyote?",
+                            "Mescalina", "LSD ", "Salvia", "Salvia", context);
+            InsertarPregunta("¿Qué se altera cuando nos damos un golpe en la cabeza que nos hace “ver las estrellas”?",
+                            "El nervio óptico", "El hipotálamo", "El bulbo raquídeo", "La pituitaria", context);
+            InsertarPregunta("¿Cuál es el cérvido de mayor tamaño?",
+                            "El alce", "El corzo", "El ciervo", "El pudu", context);
+            InsertarPregunta("¿Qué es el calostro?",
+                            "La primera leche materna", " Un hueso de la espina dorsal", "Una hormona", "Una parte del intestino grueso", context);
+            InsertarPregunta("¿Cuál es el hueso más pequeño del cuerpo?",
+                            "El estribo", "El yunque", "La falange", "Ninguna es correcta", context);
+            InsertarPregunta("Dónde vive el delfín rosado?",
+                            "En Brasil", "En Oceanía", "Solo en aguas cálidas", "Solo en aguas muy frías", context);
+            InsertarPregunta("¿Qué estudia la ictiología?",
+                            "Los peces", "Los insectos", "Las erupciones cutáneas", "Las rocas", context);
+            InsertarPregunta("¿Cuál es el mamífero más grande conocido hasta la actualidad?",
+                            "Ballena Azul", "Cachalote", "Elefante", "Rinoceronte", context);
+            InsertarPregunta("¿Qué es un equino?",
+                            "Un caballo", "Una vaca", "Un antílope", "Una oveja", context);
+            InsertarPregunta("¿Qué causa furor en Internet?",
+                            "Los gatos", "Los ratones", "Los gansos", "Los cangrejos", context);
+            InsertarPregunta("¿Con qué otro nombre se conoce el ciclo del agua?",
+                            "Ciclo hidrológico", "Ciclo natural", "Ciclo hidropónico", "Ciclo acuoso", context);
+            InsertarPregunta("¿En qué parte del cuerpo tienen rayas el okapi?",
+                            "Las patas", "La cabeza", "El torso", "No tiene rayas", context);
+            InsertarPregunta("¿Cuántas cavidades estomacales tiene una vaca?",
+                            "Cuatro", "Una", "Dos", "Tres", context);
+            InsertarPregunta("¿Por qué los cocodrilos mantienen la boca abierta durante largo rato?",
+                            "Para calentarse", "Para hacer la digestión", "Para beber agua", "Por si se cuela algo que puedan comerse", context);
+            InsertarPregunta("¿Dónde están los meniscos?",
+                            "En las rodillas", "En los codos", "En la punta del pie", "En el peroné", context);
+            InsertarPregunta("¿Qué función cumplen los bigotes del gato?",
+                            "Son un órgano táctil", "Son un órgano auditivo", "Son un órgano olfativo", "Son de adorno", context);
+            InsertarPregunta("¿Qué hace la cochinilla de la humedad si la tocamos?",
+                            "Se enrolla", "Pica", "Corre", "Se muere", context);
+            InsertarPregunta("¿Qué es lo que transforma la leche en yogur?",
+                            "Una bacteria", "Un virus", "Un musgo", "El tiempo", context);
+            InsertarPregunta("¿Con qué abren las ostras las nutrias de mar?",
+                            "Con una piedra", "Con un palo", "Con los dientes", "Con las uñas", context);
+            InsertarPregunta("Qué tipo de mamífero es un conejo?",
+                            "Lagomorfo", "Roedor", "Marsupial", "Equino", context);
+            InsertarPregunta("¿Cuántos rayos gamma hay en una neurona?",
+                            "Ninguno", "De dos a tres", "Uno", "Dos", context);
+            InsertarPregunta("¿Qué es Plutón?",
+                            "Un satélite", "Un planeta", "Un plutoide", "Ninguna es correcta", context);
+            InsertarPregunta("¿En qué lugar del cuerpo se produce la insulina?",
+                            "Páncreas", "Hígado", "Intestino", "Riñon", context);
+            InsertarPregunta("¿Cómo se llama a los electrones que se encuentran en la última capa del átomo",
+                            "Electrones de valencia", "Isotopos", "Iones", "Electrones", context);
+            InsertarPregunta("¿Cómo se llama a la sensibilidad dolorosa de los sonidos?",
+                            "Hiperacusia", "Hipocusia", "Micropsia", "Hipoalgesia", context);
+            InsertarPregunta("¿Cuál de estas blackes sociales es de ámbito laboral?",
+                            "LinkedIn", "Facebook", "Tuenti", "Jobfire", context);
+            InsertarPregunta("¿Cómo se llama la parte de la estructura de una cúpula que la sostiene?",
+                            "Tambor", "Nervaduras", "Contrafuerte", "Ninguna", context);
+            InsertarPregunta("¿Cómo se llama el nivel más alto de la marea?",
+                            "Pleamar", "Bajamar", "Repunte", "Estacionario", context);
+            InsertarPregunta("¿Cómo debería estar una persona para que le fuera practicada una autopsia?",
+                            "Muerta", "Sedada", "En coma", "Dormida", context);
+            InsertarPregunta("¿Con que parte del cuerpo hacen el zumbido las abejas?",
+                            "Con las alas", "Con las patas", "Con la boca", "Con las antenas", context);
+            InsertarPregunta("¿Cómo se llama el incremento en el volumen,fluidez o frecuencia de las deposiciones?",
+                            "Diarrea", "Estreñimiento", "Hemorroides", "Diverticulosis", context);
+            InsertarPregunta("¿Cómo se mide la fuerza del viento en el mar?",
+                            "Nudos", "Pies", "Zancada", "Kilómetros por hora", context);
+            InsertarPregunta("¿Cúal es el órgano que tiene como única función el placer?",
+                            "Clítoris", "Vulva", "Pene", "Testículos", context);
+            InsertarPregunta("¿Qué droga de diseño,también conocida como MDMA, es análoga a la metanfetamina?",
+                            "Éxtasis", "Polvo de ángel", "Crack", "Popper", context);
+            InsertarPregunta("¿Qué son las enzimas?",
+                            "Proteínas", "Células", "Glúcidos", "Hadas", context);
+            InsertarPregunta("¿Con qué suele arreglarse un diente con caries?",
+                            "Empaste", "Extrayéndolo", "Limpieza bucal", "Ortodoncia", context);
+            InsertarPregunta("¿Cuál es la ciencia que estudia la aplicación de la informática y las comunicaciones al hogar?",
+                            "Domótica", "Robótica", "Casática", "Autología", context);
+            InsertarPregunta("¿Qué es el gavial (Gavialis gangeticus)? ",
+                            "Cocodrilo", "Hipopótamo", "Serpiente", "Tiburón", context);
+            InsertarPregunta("¿Qué sonido hace un elefante?",
+                            "Baritan", "Brugen", "Gruñen", "Gritan", context);
+            InsertarPregunta("¿Cuál es la fórmula química del agua?",
+                            "H2O", "HO2", "HO", "Agu", context);
+            InsertarPregunta("¿Cuál es el símbolo de Bromo?",
+                            "Br", "B", "Bh", "No es un elemento,es un compuesto", context);
+            InsertarPregunta("¿Cuáles son los efectos de la prolactina?",
+                            "Producción de leche", "Crecimiento del cabello", "Ayuda al parto", "Ninguna de las anteriores", context);
+            InsertarPregunta("¿Qué compuesto químico es el componente activo de los pimientos picantes?",
+                            "Capsaicina", "Celobiosa", "Galactosa", "Glucosa", context);
+            InsertarPregunta("¿En qué parte del cuerpo se encuentra el tendón de Aquiles?",
+                            "En el tobillo", "En el  brazo", "En la espalda", "En la rodilla", context);
+            InsertarPregunta("¿Cuál es el símbolo del Sodio?",
+                            "Na", "Mn", "Li", "Au", context);
+            InsertarPregunta(" ¿Cuál es el nombre común del ácido ascórbico? ",
+                            "Vitamina C", "Ácido cítrico", "Vitamina B6", "Vitamina B12", context);
+            InsertarPregunta("¿Cómo se llama la página web más famosa del mundo en la que se puede visualizar videos de todo tipo?",
+                            "YouTube", "CineTube", "Glooge", "VideoTube", context);
+            InsertarPregunta("¿Qué sustancias se liberan en una combustión completa?",
+                            "Dióxido de carbono y agua", "Monóxido de carbono y agua", "Solamente agua", "Carbono, oxígeno y agua", context);
+            InsertarPregunta("¿Cómo se llama el sistema operativo con el que trabajan los teléfonos HTC ,LG, Samsung?",
+                            "Android", "iOS", "Microsoft", "Windows", context);
+            InsertarPregunta("¿Qué tipo de músculos realizan los movimientos voluntarios?",
+                            "Estriados ", "Lisos", "Gordos", "Gruesos", context);
+            InsertarPregunta("¿Qué son los “julios”?",
+                            "Magnitud para el calor del sol", "El mes más frío del invierno", "El mes más frío del invierno", "El mes más caluroso del verano", context);
+            InsertarPregunta("¿Cuál es la raíz cuadrada del 169?",
+                            "13", "15", "14", "17", context);
+            InsertarPregunta("¿De cuál de estas plantas se extrae la marihuana?",
+                            "Cannabis", "Amapola", "Girasol", "Violeta africana", context);
+            InsertarPregunta("¿Cuál es el mineral más duro del planeta?",
+                            "Diamante", "Adamantio", "Cuarzo", "Mármol", context);
+            InsertarPregunta("¿Qué dedo del pie tiene generalmente la uña más grande?",
+                            "Dedo Gordo", "Dedo Meñique", "Dedo Anular", "Dedo Indice", context);
+            InsertarPregunta("¿Cuál es la fuente de energía más utilizada en la actualidad?",
+                            "Petróleo", "Carbón", "Biomasa", "Energía nuclear", context);
+            InsertarPregunta("¿Qué sustancia libera el Sistema Parasimpático?",
+                            "Acetilcolina", "Adrenalina", "Noradrenalina", "Serotonina", context);
+            InsertarPregunta("¿Qué hueso se encuentra en el pene de la mayoría de mamíferos?",
+                            "Báculo", "Peniforme", "Pitoideo", "Ninguno", context);
+            InsertarPregunta("¿Qué marca creó en 2007 el primer iPhone?",
+                            "Apple", "Nokia", "Android", "Mac", context);
+            InsertarPregunta("¿Cuántos lóbulos tiene la glándula tiroides?",
+                            "2", "3", "0", "1", context);
+            InsertarPregunta("¿Qué nombre recibe la persona que no tiene melanina en los melanocitos de la piel?",
+                            "Albina", "Despigmentada", "Amelanínica", "Hipomelanínica", context);
+            InsertarPregunta("¿Qué metal es líquido a temperatura ambiente?",
+                            "Mercurio", "Hierro", "Wolframio", "Niquel", context);
+            InsertarPregunta("¿Cómo se denomina la ciencia que estudia la naturaleza,las leyes y distribución de fenómenos meteorológicos?",
+                            "Meteorología", "Biología", "Fenomenología", "Tiempología", context);
+            InsertarPregunta("¿Que se opera en una rinoplastia",
+                            "La nariz", "El pecho", "Liposucción", "Plasta de rinoceronte", context);
+            InsertarPregunta("¿Cuál es el contrario de la palabra “digital”?",
+                            "Analógico", "Dactiloscópico", "Entendido", "Técnico", context);
+            InsertarPregunta("¿Cuántos son los dientes de leche?",
+                            "20", "10", "15", "25", context);
+            InsertarPregunta("¿Cuánto pesa aproximadamente un bebé elefante al nacer?",
+                            "Entre 70 y 100 kilos", "Entre 120 y 150 kilos", "Entre 50 y 70 kilos", "Entre 100 y 120 kilos", context);
+            InsertarPregunta("¿Cuál de los siguientes nombres de compuestos representa al TNT? ",
+                            "Trinitrotolueno", "Trinitrobenceno", "Trinitrofenol", "Trinitroglicerina", context);
+            InsertarPregunta("¿Cómo se llama el trastorno  alimenticio donde la pérdida de apetito es causada por un miedo morboso a la obesidad?",
+                            "Anorexia", "Bulimia", "Megarexia", "Vigorexia", context);
+            InsertarPregunta(" ¿Para qué sirve la prueba del carbono 14?",
+                            "Deducir la edad de un material", "Calcular los quilates del oro", "Calcular los electrones de un átomo", "Galvanizar un metal", context);
+            InsertarPregunta(" ¿Qué animal representa al Sistema Operativo Linux?",
+                            "Pingüino", "Panda", "León", "Leopardo", context);
+            InsertarPregunta("¿Qué son los triglicéridos?",
+                            "Lípidos", "Glúcidos", "Proteínas", "Vitaminas", context);
+            InsertarPregunta("¿Qué es la hemofobia?",
+                            "", "Miedo al agua", "Miedo a las alturas", "Ninguna es correcta", context);
+            InsertarPregunta("¿Cuál es el nombre del compuesto cuya fórmula es H2SO4?",
+                            "Ácido sulfúrico", "Ácido sulfuroso", "Ácido sulfhídrico", "Anhídrido sulfuroso", context);
+            InsertarPregunta("¿Qué líquido almacenan los cactus?",
+                            "Agua", "Savia", "Vino", "Néctar", context);
+            InsertarPregunta("¿El músculo que realiza una función contraria a otro es su…",
+                            "Ipsilateral", "Agonista", "Antagonista", "Contralateral", context);
+            InsertarPregunta("¿Cuál es la combinación de las teclas que copia texto en un PC?",
+                            "ctrl + c", "ctrl + p", "ctrl + q", "ctrl + v", context);
+            InsertarPregunta("¿Qué significa ARN?",
+                            "Ácido Ribonucleico", "Ácido Rico en Nucleo", "Ácido Desoxirribonucleico", "Antena Rosa y Numerada", context);
+            InsertarPregunta("¿Cómo se conoce el ingrediente psicoactivo de la marihuana?",
+                            "THC", "LHC", "LSD", "PHP", context);
+            InsertarPregunta("¿Cuántos centímetros cúbicos tiene un litro?",
+                            "1000", "100", "10", "1", context);
+            InsertarPregunta("¿Cómo se llama la rama de las matemáticas en que los números son representados por letras y símbolos?",
+                            "Álgebra", "Adición", "Geometría", "Topología", context);
+            InsertarPregunta("¿Cuántos hidrógenos tiene la molécula de metano?",
+                            "4", "10", "6", "8", context);
+            InsertarPregunta("¿Cuál es el animal que tiene la presión más alta?",
+                            "Jirafa", "Conejo", "Serpiente", "Jirafa", context);
+            InsertarPregunta("¿De qué color es el sudor de los hipopótamos?",
+                            "Rojizo", "Amarillo", "Azul", "Verde", context);
+            InsertarPregunta("¿Cómo se llama el líquido que expulsan los recién nacidos en lugar de las heces durante los primeros días?",
+                            "Meconio", "Placenta ", "Politu", "Frutenio", context);
+            InsertarPregunta("¿Cuál es la planta más conocida que tiene propiedades cicatrizantes,limpiadoras y regeneradoras?",
+                            "Aloe Vera", "Quínoa", "Alcachofa", "Eneldo", context);
+            InsertarPregunta("¿Cómo se llama el movimiento que realiza la Tierra alrededor del Sol?",
+                            "Traslación", "Rotación", "La Tierra no se mueve", "Órbita", context);
+            InsertarPregunta("¿Qué órgano del cuerpo es el más dañado por el consumo excesivo de alcohol?",
+                            "Hígado", "Cerebro", "Estómago", "Corazón", context);
+            InsertarPregunta("¿Qué es el ciclo de Krebs?",
+                            "Ciclo del ácido cítrico", "Ciclo del colesterol", "Producción de hormonas", "No existe tal cosa", context);
+            InsertarPregunta("¿Cómo se llama la cresta que hace el labio debajo de la nariz?",
+                            "Surco nasolabial", "Geme", "Axila", "Glabella", context);
+            InsertarPregunta("¿Qué son la morfina y la heroína?",
+                            "Opiáceos", "Anfetaminas", "Cannabis", "Estimulantes", context);
+            InsertarPregunta("¿Qué sustancia permite realizar la fotosíntesis?",
+                            "Clorofila", "Savia", "Cloroformo", "Agua", context);
+            InsertarPregunta("¿Cuál es el único nervio que no pasa por el tálamo?",
+                            "Nervio Olfativo", "Nervio Vago", "Nervio Ciático", "Nervio Óptico", context);
+            InsertarPregunta("¿Qué hace un procastinador?",
+                            "Pospone sus actividades", "Es hiperactivo", "Presume sus logros", "Se obsesiona con el sexo", context);
+            InsertarPregunta("¿Qué función tienen las manchas de la jirafa?",
+                            "Sacar el calor", "Ahuyentar a los depredadores", "Atraer", "Ninguna", context);
+            InsertarPregunta("¿Qué articulación une el fémur con la tibia?",
+                            "Rodilla", "Muñeca", "Codo", "Tobillo", context);
+            InsertarPregunta("¿Cuántos colores tenía la primera tarjeta gráfica? ",
+                            "2", "1", "8", "16", context);
+            InsertarPregunta("¿Dónde llevan los cocodrilos a sus crías?",
+                            "En la boca", "En la barriga", "En la cabeza", "En la espalda", context);
+            InsertarPregunta("¿Cómo se denomina el sulfato de calcio, cuando se usa para escribir?",
+                            "Tiza", "Grafito", "Lápiz", "Tinta", context);
+            InsertarPregunta("¿Cuánto es la raíz cuadrada de 625?",
+                            "25", "11", "26", "12", context);
+            InsertarPregunta("¿Cuántas veces se calcula que latirá el corazón a lo largo de toda la vida de una persona? ",
+                            "4.000 millones", "2 millones", "1.500 millones", "1.000 millones", context);
+            InsertarPregunta("¿Quién postuló la ley del principio de inercia?",
+                            "Isaac Newton", "Albert Einstein", "Víctor Alvarado", "John kennedy", context);
+            InsertarPregunta("¿En qué año falleció Steve Jobs?",
+                            "2011", "2007", "2009", "2008", context);
+            InsertarPregunta("¿El déficit de qué vitamina produce raquitismo?",
+                            "D", "A", "E", "C", context);
+            InsertarPregunta("¿Cómo se llama el estado vital en que la persona actúa conforme a estímulos e intereses  ajenos, creyendo que le son propios?",
+                            "Alienación", "Tangencialidad", "Perseveración", "Ilogicidad", context);
+            InsertarPregunta("¿Qué estudia el herpetólogo?",
+                            "Reptiles y viboras", "Los herpes", "Los gusanos", "Los virus", context);
+            InsertarPregunta("¿Dónde se almacena la información genética del ser humano? ",
+                "ADN", "ADM", "ADÑ", "ARN", context);
+            InsertarPregunta("¿Cuál de los siguientes números es mayor? ",
+                            "El número Pi", "El número e", "El número aíreo", "El cero", context);
+            InsertarPregunta("¿Qué nervio es el VII par craneal?",
+                            "Nervio facial", "Nervio abducens", "Nervio glosofaríngeo", "Nervio hipogloso", context);
+            InsertarPregunta("¿Cómo se llama la técnica consistente en descender la temperatura del cuerpo humano por debajo de -190ºC?",
+                            "Criogenización", "Congelación", "Shock", "Solidificación", context);
+            InsertarPregunta(" ¿Qué hay que ponerle a un vidrio para convertirlo en un espejo?",
+                            "Aluminio", "Mercurio", "Plomo", "Yodo", context);
+            InsertarPregunta("¿Qué es un bit?",
+                            "La unidad más pequeña de almacenamiento", "La escala musical que tiene un tiempo", "Un remix de algún dj.", "Bassic interface conection", context);
+            InsertarPregunta("¿Cuántas alas tiene una pulga?",
+                            "Ninguna", "Dos", "Una", "Cuatro", context);
+            InsertarPregunta("¿Cómo se conoce comúnmente al compuesto químico NaCI?",
+                            "Sal", "Azúcar", "Leche", "Pimienta", context);
+            InsertarPregunta("¿Qué son los leucocitos?",
+                            "Glóbulos blancos", "Glóbulos rojos", "Glóbulos azules", "Glóbulos negros", context);
+            InsertarPregunta("¿Qué significan las siglas ADN?",
+                            "Ácido desoxirribonucleico", "Antigénico de Dieteninol", "Ácido Diosferoniclostico", "Antigénico Disfetinoleno", context);
+            InsertarPregunta("¿Por qué tipo de elementos están formadas las sales binarias?",
+                            "Oxígeno e hidrogeno", "Un metal y un no metal", "Oxígeno y un metal", "Hidrógeno y un no metal", context);
+            InsertarPregunta("¿Cuál es el componente principal del chocolate?",
+                            "Cacao", "Leche", "Azúcar", "Chocolate", context);
+            InsertarPregunta("¿Cuál es el músculo causante del espasmo muscular “Torticolis”?",
+                            "Esternocleidomastoideo", "Complexo Mayor", "Esplenio de la cabeza", "Occipito frontal", context);
+            InsertarPregunta("¿Cómo se conoce el virus del SIDA?",
+                            "VIH", "VPH", "ARN", "HBV", context);
+            InsertarPregunta("¿Cuántas células de esperma fabrican los testículos de un hombre al día?",
+                            "10 millones", "5 millones", "2", "36,267", context);
+            InsertarPregunta("¿Por qué compuesto químico está formada la lavandina? ",
+                            "Hipoclorito de Sodio", "Cloruro de Sodio", "Perclorato de Aluminio", "Yoduro de Cobre", context);
+            InsertarPregunta("¿Quién fue el inventor de la bombilla?",
+                            "Edison", "Janssen", "Fahrenheit", "Newton", context);
+            InsertarPregunta("¿En matemáticas, ¿qué es 3,14?",
+                            "Pi", "Rho", "Xi", "Chi", context);
+            InsertarPregunta("¿Cuál de los siguientes NO forma parte de un ordenador personal?",
+                            "Microondas", "Teclado", "Ratón", "Monitor", context);
+            InsertarPregunta("¿Cuántos grados Kelvin son 0 grados Celsius?",
+                            "273,15", "283,15", "100", "10", context);
+            InsertarPregunta("¿Qué nombre tiene el portátil más ligero, en peso, de Apple?",
+                            "MacBook Air", "MacBook Light", "MacBook Slim", "MacBook Lite¿Quién es considerado el padre de la genética?", context);
+            InsertarPregunta("¿Quién es considerado el padre de la genética?",
+                            "Gregor Mendel", "Aristóteles", "Hugo de Vries", "Eric Von Tschermak", context);
+            InsertarPregunta("¿Cuál de estas fases NO es una de las fases de la división celular?",
+                            "Rinofase", "Profase", "Metafase", "Anafase", context);
+            InsertarPregunta("¿En cuántos lóbulos se divide el pulmón derecho?",
+                            "Tres", "Cuatro ", "Ninguno", "Dos", context);
+            InsertarPregunta("¿Qué son los pugs?",
+                            "Una raza de perro", "Una comida", "Un lugar", "Una tradicion regional", context);
+            InsertarPregunta("¿Qué mamífero volador le resulta fácil cazar?",
+                            "Murciélagos", "Mariposas", "Lagartos", "Águilas", context);
+            InsertarPregunta("¿Cómo se llama el registro gráfico de la activa eléctrica del cerebro?",
+                            "Electroencefalograma", "Electrocardiograma", "Electrocerebrograma", "Electroconductancia", context);
+            InsertarPregunta("¿A partir de qué nivel de inteligencia se puede considerar que alguien es un genio?",
+                            "140", "90", "100", "190", context);
+            InsertarPregunta("¿Qué es la levadura?",
+                            "Un hongo", "Una planta", "Una raíz", "Un animal", context);
+            InsertarPregunta("¿El pulso de qué arteria se usa para comprobar la muerte de una persona?",
+                            "Carótida", "Femoral ", "Vertebral", "Radial", context);
+            InsertarPregunta("¿Cómo se llama la enfermedad por la que una persona cree infundadamente que padece alguna enfermedad grave?",
+                            "Hipocondría", "Aburrimiento", "Melancolía", "Neurastenia", context);
+            InsertarPregunta("¿Cuánto es la raíz cuadrada del 121?",
+                            "11", "13", "10", "21", context);
+            InsertarPregunta("¿Cuántas Leyes de Mendel hay?",
+                            "3", "2", "4", "No hay leyes de Mendel", context);
+            InsertarPregunta("Qué parte del cuerpo humano puede tener un soplo?",
+                            "Corazón", "Pulmón", "Oído", "Colon", context);
+            InsertarPregunta("¿Cómo se llama la arteria principal del cuerpo humano?",
+                            "Aorta", "Carótida", "Yugular", "Subclavia", context);
+            InsertarPregunta("¿Quién fue el Inventor de la dinamita?",
+                            "Alfblack Nobel", "Heisenberg", "Antony Stark", "Walter White", context);
+            InsertarPregunta(" ¿Con qué nombre se conoce la energía producida por las partículas en movimiento?",
+                            "Energía Cinética", "Energía Potencial", "Energía Solar ", "Energía Eólica", context);
+            InsertarPregunta("¿Cómo llamamos a una lesión térmica o química de los tejidos?",
+                            "Quemadura", "Inflamación", "Úlcera", "Hernia", context);
+            InsertarPregunta("¿Cuál es la distribución de Linux más usada?",
+                            "Ubunto", "Debian", "Mint", "Fedora", context);
+            InsertarPregunta("¿Qué droga de las denominadas ‘blandas’ es útil en el tratamiento del dolor?",
+                            "Marihuana", "Anfetamina", "Cafeína", "Cocaína", context);
+            InsertarPregunta("¿Cómo llamamos a la inflamación de la piel?",
+                            "Dermatitis", "Urticaria", "Acné", "Psoriasis", context);
             #endregion
 
             GuardarPreguntasOpciones(context);
