@@ -350,7 +350,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Dónde se inventó el tenis de mesa?",
                             "Inglaterra", "China", "Japón", "Korea del Sur", context);
             InsertarPregunta("¿Qué jugador francés ha ganado un balón de oro mientras jugaba en Italia?",
-                            "Zidane", "Zidane", "Ribery", "Maradona", context);
+                            "Zidane", "Thuram", "Ribery", "Maradona", context);
             InsertarPregunta("Qué país es campeón del mundo de balonmano masculino del 2013?",
                             "España", "Hungria", "Alemania", "Francia", context);
             InsertarPregunta("¿Cómo se llama el primer sueco que jugó en el FC Barcelona?",

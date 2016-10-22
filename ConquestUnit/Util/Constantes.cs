@@ -27,6 +27,11 @@ namespace Util
         public static string ColorJug2 = "#FF508B10";
         public static string ColorJug3 = "#FF2E507E";
         public static string ColorJug4 = "#FFBBC60E";
+
+        public static string ColorJug1Inactivo = "#AFB81010";
+        public static string ColorJug2Inactivo = "#AF508B10";
+        public static string ColorJug3Inactivo = "#AF2E507E";
+        public static string ColorJug4Inactivo = "#AFBBC60E";
         #endregion
 
         public static string ColorCorrecto = "#FF00FF00";
@@ -86,6 +91,15 @@ namespace Util
             public const string GanaDefensor = "Defendiste tu territorio satisfactoriamente.";
             public const string PierdeDefensor = "No lograste defender tu territorio.";
         }
+
+        public struct MensajesConfirmarContinuar
+        {
+            public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
+            public const string DespliegueConfirmar = "¿Desea concluir la fase de Despliegue?";
+
+            //public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
+            public const string AtaqueConfirmar = "¿Desea concluir la fase de Ataque?";
+        }
         #endregion
 
         public static string SIN_IMAGEN = "Ninguno";
@@ -100,6 +114,8 @@ namespace Util
         public struct AccionJuego
         {
             public const int DESPLEGAR = 0;
+            public const int DESPLEGAR_FIN_DESPLIGUE_CONFIRMAR = 14;
+            public const int DESPLEGAR_FIN_DESPLIGUE_CONTINUAR = 15;
             public const int ELEGIRORIGENATK = 1;
             public const int ELEGIRDESTINOATK = 2;
             public const int CONFIRMARATAQUE = 3;
@@ -110,6 +126,7 @@ namespace Util
             public const int CONFIRMAR_INICIO_MOVERTROPAS = 8;
             public const int MOVERTROPAS = 9;
             public const int TERMINAR_ATAQUE = 10;
+            public const int ATAQUE_FIN_ATAQUE_CONTINUAR = 15;
             public const int ELEGIRORIGENFOR = 11;
             public const int ELEGIRDESTINOFOR = 12;
             public const int FORTIFICAR = 13;

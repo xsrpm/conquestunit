@@ -152,7 +152,11 @@
     <Content Include="Assets\Images\Icons\logo300x300.png" />
     <Content Include="Assets\Images\inactive32x32.png" />
     <Content Include="Assets\Images\Mando\Abajo.png" />
+    <Content Include="Assets\Images\Mando\AbajoDerecha.png" />
+    <Content Include="Assets\Images\Mando\AbajoIzquierda.png" />
     <Content Include="Assets\Images\Mando\Arriba.png" />
+    <Content Include="Assets\Images\Mando\ArribaDerecha.png" />
+    <Content Include="Assets\Images\Mando\ArribaIzquierda.png" />
     <Content Include="Assets\Images\Mando\BotonCirculo.png" />
     <Content Include="Assets\Images\Mando\BotonCuadrado.png" />
     <Content Include="Assets\Images\Mando\BotonEquis.png" />

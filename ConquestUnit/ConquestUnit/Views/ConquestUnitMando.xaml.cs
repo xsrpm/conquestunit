@@ -214,5 +214,25 @@ namespace ConquestUnit.Views
             btnCirculo.IsEnabled = false;
             btnEquis.IsEnabled = false;
         }
+
+        private void btnArribaIzquierda_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            EnviarBotonPresionadoMesa(Constantes.Controles.ARRIBAIZQUIERDA);
+        }
+
+        private void btnArribaDerecha_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            EnviarBotonPresionadoMesa(Constantes.Controles.ARRIBADERECHA);
+        }
+
+        private void btnAbajoIzquierda_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            EnviarBotonPresionadoMesa(Constantes.Controles.ABAJOIZQUIERDA);
+        }
+
+        private void btnAbajoDerecha_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            EnviarBotonPresionadoMesa(Constantes.Controles.ABAJODERECHA);
+        }
     }
 }

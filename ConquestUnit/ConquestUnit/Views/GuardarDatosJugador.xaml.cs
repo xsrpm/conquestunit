@@ -155,6 +155,7 @@ namespace ConquestUnit.Views
             {
                 txtNombre.IsEnabled = false;
                 txtNombre.IsEnabled = true;
+                btnGuardar_Tapped(null, null);
             }
         }
     }

@@ -224,7 +224,7 @@
                 <!---->
                 
                 <!--BOTONES FASES-->
-                <Grid Margin="15">
+                <Grid Margin="500,20,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
@@ -243,11 +243,69 @@
                         <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="20" FontWeight="Bold" />
                     </StackPanel>
                 </Grid>
-                <StackPanel Margin="15,550,0,0" Orientation="Horizontal">
+                
+                <!--Mensaje Continuar-->
+                <Grid Name="MensajeContinuar" Margin="435,300,0,0" Background="White" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Conquest Unit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtMensajeContinuar" Text="Se terminaron las unidades por desplegar" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para continuar" Grid.Column="0" Grid.Row="2"/>
+                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Grid.Column="0" Grid.Row="2"/>
+                </Grid>
+
+                <!--Mensaje Continuar-->
+                <Grid Name="MensajeContinuarCancelar" Margin="435,300,0,0" Background="White" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Conquest Unit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtMensajeContinuarCancelar" Text="¿Está seguro que desea continuar?" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para continuar" Grid.Column="0" Grid.Row="2"/>
+                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Grid.Column="0" Grid.Row="2"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para cancelar" Grid.Column="0" Grid.Row="3"/>
+                    <Image Width="25" Height="25" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" Grid.Column="0" Grid.Row="3"/>
+                </Grid>
+
+                <!--INFO Territorio Seleccionado-->
+                <Grid Margin="10,20,0,0" Background="White" BorderBrush="Black" BorderThickness="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125" />
+                        <ColumnDefinition Width="75" />
+                        <ColumnDefinition Width="75" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Territorio" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="#Unidades" Grid.Column="1" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="Dueño" Grid.Column="2" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoTexto" Text="Huijiang" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoUnidades" Text="3" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoPropietario" Text="Cesar" Grid.Column="2" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Rectangle x:Name="MapaTerritorioSeleccionadoColor" Grid.Column="3" Grid.Row="1" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+                
+                <RelativePanel Margin="15,550,0,0">
 
                     <Button x:Name="btnTerminarFase" Content="      Terminar Fase" Background="Gray" />
-                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="30" Height="30" Margin="-235,0,0,0"/>
-                </StackPanel>
+                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="30" Height="30" Margin="2,0,0,0"/>
+                </RelativePanel>
 
                 <!--JUGADORES-->
                 <Grid Margin="1150,100,0,0">
@@ -261,7 +319,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <!--Jugador1-->
-                    <Grid x:Name="UnidadGrid1" Background="Red" Grid.Column="0" Grid.Row="0">
+                    <Grid x:Name="UnidadGrid1" Background="#AFB81010" Grid.Column="0" Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -283,7 +341,7 @@
                         </StackPanel>
                     </Grid>
                     <!--Jugador2-->
-                    <Grid x:Name="UnidadGrid2" Background="Green" Grid.Column="0" Grid.Row="1">
+                    <Grid x:Name="UnidadGrid2" Background="#AF508B10" Grid.Column="0" Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -305,7 +363,7 @@
                         </StackPanel>
                     </Grid>
                     <!--Jugador3-->
-                    <Grid x:Name="UnidadGrid3" Background="Blue" Grid.Column="0" Grid.Row="2">
+                    <Grid x:Name="UnidadGrid3" Background="#AF2E507E" Grid.Column="0" Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -327,7 +385,7 @@
                         </StackPanel>
                     </Grid>
                     <!--Jugador4-->
-                    <Grid x:Name="UnidadGrid4" Background="Yellow" Grid.Column="0" Grid.Row="3">
+                    <Grid x:Name="UnidadGrid4" Background="#AFBBC60E" Grid.Column="0" Grid.Row="3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -352,7 +410,7 @@
                 <!---->
                 
                 <!--BATALLA-->
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" d:IsHidden="True">
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" d:IsHidden="False">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="15*"/>
                         <RowDefinition Height="268*"/>
@@ -360,7 +418,8 @@
                     <Rectangle x:Name="FondoBatalla" Fill="White" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.RowSpan="2" Opacity="0.875" d:IsLocked="True"/>
                     <Grid x:Name="DefensorGrid" HorizontalAlignment="Right" Width="265" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2">
                         <Rectangle x:Name="DefensorFondo" Fill="#FFAAA600" Opacity="0.55"/>
-                        <Image x:Name="DefensorFoto" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Width="200"/>
+                        <Image x:Name="DefensorFoto" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Height="150" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                        <TextBlock x:Name="DefensorTerritorioNombreTXT" Margin="0,160,0,0" Text="Ulusatua" FontSize="35" HorizontalAlignment="Center"/>
                         <TextBlock x:Name="DefensorNombreTXT" Margin="0,210,0,0" Text="Cesar" FontSize="40" HorizontalAlignment="Center"/>
                         <!--<ProgressBar Margin="0,250,0,0" Value="50" VerticalAlignment="Top" Height="28" HorizontalAlignment="Right" Width="265" Background="#33FFFFFF" Foreground="#FF00D714"/>-->
                         <TextBlock x:Name="DefensorPuntosTituloTXT" Margin="0,281,20,239" TextWrapping="Wrap" Text="Puntos" FontWeight="Bold" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="210" d:LayoutOverrides="TopPosition, BottomPosition"/>
@@ -373,7 +432,7 @@
                             <Image Width="33" Height="28" Margin="0,0,50,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>-->
                         </RelativePanel>
                     </Grid>
-                    <Grid x:Name="CabeceraGrid" Height="126" Margin="265,-30,265,0" VerticalAlignment="Top" Grid.Row="1" Visibility="Collapsed">
+                    <Grid x:Name="CabeceraGrid" Height="126" Margin="265,-30,265,0" VerticalAlignment="Top" Grid.Row="1" Visibility="Visible">
                         <TextBlock x:Name="AtaqueBatallaTXT" Height="32" Margin="231,0,233,0" TextWrapping="Wrap" Text="ATAQUE" VerticalAlignment="Top" FontSize="24" d:LayoutOverrides="LeftPosition, RightPosition"/>
                         <Grid x:Name="PrimeraLineaGrid" Margin="144,37,161,0">
                             <Grid.ColumnDefinitions>
@@ -402,13 +461,13 @@
                             <TextBlock x:Name="AtacarBatallaTXT" TextWrapping="Wrap" Text="Atacar" TextAlignment="Center" FontSize="22" Margin="165,40,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
                         </Grid>
                     </Grid>
-                    <Grid x:Name="PreguntaGrid" Margin="265,0" Height="435" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Collapsed">
+                    <Grid x:Name="PreguntaGrid" Margin="265,0" Height="435" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Visible">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="46*"/>
                             <RowDefinition Height="63*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="PreguntaTituloTXT" HorizontalAlignment="Left" Height="31" Margin="16,10,0,0" TextWrapping="Wrap" Text="Pregunta:" VerticalAlignment="Top" Width="99" FontSize="20"/>
-                        <TextBlock x:Name="PreguntaTXT" Margin="16,46,42,74" TextWrapping="Wrap" FontSize="20" Text="hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdj kfhdjkfhsdkjfhsdk asfasdf we"/>
+                        <TextBlock x:Name="PreguntaTXT" Margin="10,40,10,60" TextWrapping="Wrap" FontSize="20" Text="hksdkfhd hksdkfhd hksdkfhd fnfks ksdfjdhfshf jhskjfhsdfhdj kfhdjkfhsdkjfhsdk asfasdf we"/>
                         <TextBlock x:Name="OpcionesTituloTXT" HorizontalAlignment="Left" Margin="16,132,0,10" TextWrapping="Wrap" Text="Opciones:" Width="99" FontSize="20"/>
                         <!--OPCIONES-->
                         <TextBlock x:Name="txtTimerOpciones" Text="3.00" FontSize="40" HorizontalAlignment="Center" Margin="0,120,0,0"/>
@@ -416,7 +475,7 @@
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png"/>
                         </Grid>
                         <Grid x:Name="Opcion1Canvas" Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Opcion 1 Texto" VerticalAlignment="Center" Height="48" Canvas.Left="51" Width="431"/>
+                            <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Opcion 1 Texto" VerticalAlignment="Center" Width="431" FontSize="17"/>
                             <Rectangle x:Name="Opcion1Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion1Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
@@ -424,7 +483,7 @@
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png"/>
                         </Grid>
                         <Grid x:Name="Opcion2Canvas" Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFCCCA76">
-                            <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Opcion 2 Texto" Height="48" Canvas.Left="51" Width="431"/>
+                            <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Opcion 2 Texto" VerticalAlignment="Center" Width="431" FontSize="17"/>
                             <Rectangle x:Name="Opcion2Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion2Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
@@ -432,7 +491,7 @@
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
                         </Grid>
                         <Grid x:Name="Opcion3Canvas" Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Opcion 3 Texto" Height="48" Canvas.Left="51" Width="431" Foreground="#FF191313"/>
+                            <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Opcion 3 Texto" VerticalAlignment="Center" Width="431" FontSize="17"/>
                             <Rectangle x:Name="Opcion3Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion3Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
@@ -440,13 +499,13 @@
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
                         </Grid>
                         <Grid x:Name="Opcion4Canvas" Height="48" Margin="60,145,19,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE7A383">
-                            <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Opcion 4 Texto" Height="48" Canvas.Left="51" Width="431"/>
+                            <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Opcion 4 Texto" VerticalAlignment="Center" Width="431" FontSize="17"/>
                             <Rectangle x:Name="Opcion4Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion4Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
                         <!---->
                     </Grid>
-                    <Grid x:Name="MoverTropasGrid" Margin="300,0,300,0" Height="350" Grid.Row="1" BorderBrush="Black" BorderThickness="1,1,1,1">
+                    <Grid x:Name="MoverTropasGrid" Margin="300,0,300,0" Height="350" Grid.Row="1" BorderBrush="Black" BorderThickness="1,1,1,1" Visibility="Collapsed">
                         <Grid.Resources>
                             <SolidColorBrush x:Key="brush" Color="Azure" />
                         </Grid.Resources>
@@ -471,8 +530,8 @@
                         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hacia" VerticalAlignment="Bottom" FontSize="24"/>
                         <TextBlock x:Name="MoverUnidadesTerritorioDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
                         <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock TextWrapping="Wrap" Text="+" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
-                            <TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                            <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                            <!--<TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>-->
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image x:Name="MoverUnidadesImgDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />
@@ -484,7 +543,8 @@
 
                     <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2" Opacity="0.99">
                         <Rectangle x:Name="InvasorFondo" Fill="#FFE78383" Opacity="0.55"/>
-                        <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>
+                        <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>
+                        <TextBlock x:Name="AtacanteTerritorioNombreTXT" Margin="0,160,0,0" Text="Tibet" FontSize="35" HorizontalAlignment="Center"/>
                         <TextBlock x:Name="AtacanteNombreTXT" Margin="0,210,0,0" Text="Cesar" FontSize="40" HorizontalAlignment="Center"/>
                         <!--<ProgressBar Height="31" Value="30" Margin="0,220,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="264" Background="#33FFFFFF" Foreground="Red"/>-->
                         <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Left" Margin="24,282,0,238" FontWeight="Bold" TextWrapping="Wrap" Text="Puntos" Width="200" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype"/>
@@ -492,17 +552,22 @@
                         <TextBlock x:Name="TropaInvasorTXT" Height="32" Margin="189,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="76" TextAlignment="Center"/>
                         <TextBlock x:Name="InvasorPuntosAtaque1TXT" HorizontalAlignment="Left" Height="66" Margin="43,333,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="55" FontSize="48"/>
                         <TextBlock x:Name="InvasorPuntosAtaque2TXT" Height="67" Margin="103,332,0,0" TextWrapping="Wrap" Text="(10)" VerticalAlignment="Top" FontSize="48" Foreground="Red" HorizontalAlignment="Left" Width="83"/>
-                        <RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Column="1" Width="265" Height="130" Margin="0,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
+                        <!--<RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Column="1" Width="265" Height="130" Margin="0,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
                             <TextBlock x:Name="txtMensajeJugadorAtacante" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" />
                             <TextBlock x:Name="txtContinuarJugadorAtacante" Margin="0,0,0,40" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                             <Image Width="33" x:Name="imgContinuarJugadorAtacante" Height="28" Margin="0,0,50,40" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
                             <TextBlock x:Name="txtCancelarJugadorAtacante" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para cancelar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                             <Image Width="33" x:Name="imgCancelarJugadorAtacante" Height="28" Margin="0,0,45,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
-                        </RelativePanel>
+                        </RelativePanel>-->
                     </Grid>
+                    <RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Row="1" Width="560" Height="140" Margin="0,-30,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock x:Name="txtMensajeJugadorAtacante" Margin="0,10,0,0" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="txtContinuarJugadorAtacante" Margin="0,0,0,40" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                        <Image Width="33" x:Name="imgContinuarJugadorAtacante" Height="28" Margin="0,0,50,40" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
+                        <TextBlock x:Name="txtCancelarJugadorAtacante" Margin="0,0,0,5" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para cancelar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                        <Image Width="33" x:Name="imgCancelarJugadorAtacante" Height="28" Margin="0,0,45,5" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
+                    </RelativePanel>
                 </Grid>
-               
-
 
                 <!---->
      

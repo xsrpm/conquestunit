@@ -36,18 +36,30 @@
                 <ColumnDefinition Width=".3*"/>
                 <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
-            
+
+            <Button x:Name="btnArribaIzquierda" Height="50" Width="50" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Tapped="btnArribaIzquierda_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/ArribaIzquierda.png"/>
+            </Button>
             <Button x:Name="btnArriba" Height="50" Width="50" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Tapped="btnArriba_Tapped">
                 <Image Source="ms-appx:///Assets/Images/Mando/Arriba.png"/>
             </Button>
+            <Button x:Name="btnArribaDerecha" Height="50" Width="50" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Tapped="btnArribaDerecha_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/ArribaDerecha.png"/>
+            </Button>
             <Button x:Name="btnIzquierda" Height="50" Width="50" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Tapped="btnIzquierda_Tapped">
                 <Image Source="ms-appx:///Assets/Images/Mando/Izquierda.png"/>
+            </Button>
+            <Button x:Name="btnAbajoIzquierda" Height="50" Width="50" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Tapped="btnAbajoIzquierda_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/ABajoIzquierda.png"/>
             </Button>
             <Button x:Name="btnAbajo" Height="50" Width="50" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Tapped="btnAbajo_Tapped">
                 <Image Source="ms-appx:///Assets/Images/Mando/Abajo.png"/>
             </Button>
             <Button x:Name="btnDerecha" Height="50" Width="50" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Tapped="btnDerecha_Tapped">
                 <Image Source="ms-appx:///Assets/Images/Mando/Derecha.png"/>
+            </Button>
+            <Button x:Name="btnAbajoDerecha" Height="50" Width="50" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnAbajoDerecha_Tapped">
+                <Image Source="ms-appx:///Assets/Images/Mando/AbajoDerecha.png"/>
             </Button>
         </Grid>
 

@@ -49,8 +49,8 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*" />
-                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".2*" />
+                    <ColumnDefinition Width=".8*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Margin="20" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0">
                     <Button x:Name="btnAtras" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="32" Tapped="btnAtras_Tapped">

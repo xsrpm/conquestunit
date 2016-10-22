@@ -13,6 +13,7 @@ namespace DataModel
         public string Ip { get; set; }
         public string ImagenUnidades { get; set; }
         public string Color { get; set; }
+        public string ColorInactivo { get; set; }
         //Para saber si el jugador está conectado
         public bool Conectado { get; set; }
         public string IpMesaConectada { get; set; }

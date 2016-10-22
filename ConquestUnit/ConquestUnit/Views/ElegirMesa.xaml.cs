@@ -225,6 +225,7 @@ namespace ConquestUnit.Views
             {
                 txtMesaId.IsEnabled = false;
                 txtMesaId.IsEnabled = true;
+                btnUnirme_Tapped(null, null);
             }
         }
     }
