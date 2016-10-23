@@ -23,15 +23,15 @@ namespace Util
         public static string MAPA_CHINA = "CHINA";
 
         #region Color Jugadores
-        public static string ColorJug1 = "#FFB81010";
-        public static string ColorJug2 = "#FF508B10";
-        public static string ColorJug3 = "#FF2E507E";
-        public static string ColorJug4 = "#FFBBC60E";
+        public static string ColorJug1 = "FFB81010";
+        public static string ColorJug2 = "FF508B10";
+        public static string ColorJug3 = "FF2E507E";
+        public static string ColorJug4 = "FFBBC60E";
 
-        public static string ColorJug1Inactivo = "#AFB81010";
-        public static string ColorJug2Inactivo = "#AF508B10";
-        public static string ColorJug3Inactivo = "#AF2E507E";
-        public static string ColorJug4Inactivo = "#AFBBC60E";
+        public static string ColorJug1Inactivo = "AFB81010";
+        public static string ColorJug2Inactivo = "AF508B10";
+        public static string ColorJug3Inactivo = "AF2E507E";
+        public static string ColorJug4Inactivo = "AFBBC60E";
         #endregion
 
         public static string ColorCorrecto = "#FF00FF00";

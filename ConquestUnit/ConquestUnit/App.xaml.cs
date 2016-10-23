@@ -103,7 +103,7 @@ namespace ConquestUnit
                     }
                     else
                     {
-                        rootFrame.Navigate(typeof(MesaEnEspera), e.Arguments);
+                        rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
                     }
                 }
                 // Ensure the current window is active
