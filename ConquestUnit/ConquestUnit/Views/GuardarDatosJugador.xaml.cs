@@ -79,11 +79,11 @@ namespace ConquestUnit.Views
                     Uri uri = new Uri("ms-appx:///Assets/Images/Icons/logo128x128.png");
                     BitmapImage logoImage = new BitmapImage(uri);
                     imgJugador.Source = logoImage;
-                    btnAtras.Visibility = Visibility.Collapsed;
+                    PanelRegresar.Visibility = Visibility.Collapsed;
                 }
                 if (paginaRedirect == typeof(ElegirMesa))
                 {
-                    btnAtras.Visibility = Visibility.Collapsed;
+                    PanelRegresar.Visibility = Visibility.Collapsed;
                 }
             }
         }
@@ -110,7 +110,8 @@ namespace ConquestUnit.Views
                     bimgBitmapImage.SetSource(fileStream);
                     imgFoto.Source = bimgBitmapImage;
                 }
-                btnGuardar.Focus(FocusState.Programmatic);
+                //btnGuardar.Focus(FocusState.Programmatic);
+                lblTexto.Focus(FocusState.Programmatic);
             }
             catch (Exception ex)
             {
