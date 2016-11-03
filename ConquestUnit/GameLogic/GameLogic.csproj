@@ -107,10 +107,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtaqueLogic.cs" />
     <Compile Include="DespliegueLogic.cs" />
     <Compile Include="HelperLogic.cs" />
     <Compile Include="LogicaInicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TurnoLogic.cs" />
     <EmbeddedResource Include="Properties\GameLogic.rd.xml" />
   </ItemGroup>
   <ItemGroup>

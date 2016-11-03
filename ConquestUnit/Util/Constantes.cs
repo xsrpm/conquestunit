@@ -99,6 +99,9 @@ namespace Util
 
             //public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
             public const string AtaqueConfirmar = "¿Desea concluir la fase de Ataque?";
+
+            public const string FortificarContinuar = "Termino la fase de ataque. Termino tu turno.";
+            public const string FortificarConfirmar = "¿Desea concluir la fase de Fortificacion?";
         }
         #endregion
 
@@ -114,22 +117,25 @@ namespace Util
         public struct AccionJuego
         {
             public const int DESPLEGAR = 0;
-            public const int DESPLEGAR_FIN_DESPLIGUE_CONFIRMAR = 14;
-            public const int DESPLEGAR_FIN_DESPLIGUE_CONTINUAR = 15;
-            public const int ELEGIRORIGENATK = 1;
-            public const int ELEGIRDESTINOATK = 2;
-            public const int CONFIRMARATAQUE = 3;
-            public const int BATALLA_PRIMERA_PREGUNTA = 4;
-            public const int CONFIRMAR_INICIO_SEGUNDA_PREGUNTA = 5;
-            public const int BATALLA_SEGUNDA_PREGUNTA = 6;
-            public const int DECIDIR_CONTINUAR_ATAQUE = 7;
-            public const int CONFIRMAR_INICIO_MOVERTROPAS = 8;
-            public const int MOVERTROPAS = 9;
-            public const int TERMINAR_ATAQUE = 10;
-            public const int ATAQUE_FIN_ATAQUE_CONTINUAR = 15;
-            public const int ELEGIRORIGENFOR = 11;
-            public const int ELEGIRDESTINOFOR = 12;
-            public const int FORTIFICAR = 13;
+            public const int DESPLEGAR_FIN_DESPLIGUE_CONFIRMAR = 1;
+            public const int DESPLEGAR_FIN_DESPLIGUE_CONTINUAR = 2;
+            public const int ELEGIRORIGENATK = 3;
+            public const int ELEGIRDESTINOATK = 4;
+            public const int CONFIRMARATAQUE = 5;
+            public const int BATALLA_PRIMERA_PREGUNTA = 6;
+            public const int CONFIRMAR_INICIO_SEGUNDA_PREGUNTA = 7;
+            public const int BATALLA_SEGUNDA_PREGUNTA = 8;
+            public const int DECIDIR_CONTINUAR_ATAQUE = 9;
+            public const int CONFIRMAR_INICIO_MOVERTROPAS = 10;
+            public const int MOVERTROPAS = 11;
+            public const int TERMINAR_ATAQUE = 12;
+            public const int ATAQUE_FIN_ATAQUE_CONTINUAR = 13;
+            public const int ELEGIRORIGENFOR = 14;
+            public const int ELEGIRDESTINOFOR = 15;
+            public const int CONFIRMAR_FORTIFICACION = 16;
+            public const int FORTIFICAR = 17;
+            public const int FORTIFICAR_FIN_CONFIRMAR = 18;
+            public const int FORTIFICAR_FIN_CONTINUAR = 19;
         }
 
         #region NroUnidades

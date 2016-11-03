@@ -20,12 +20,14 @@ namespace DataModel
         #endregion
         #region Ataque
         public string IpJugadorDefiende { get; set; }
-        public Territorio TerritorioOrigenAtaque { get; set; }
-        public Territorio TerritorioDestinoAtaque { get; set; }
+        public Territorio TerritorioAtaqueOrigen { get; set; }
+        public Territorio TerritorioAtaqueDestino { get; set; }
         public Pregunta Pregunta { get; set; }
         public List<Opcion> Opciones { get; set; }
         #endregion
         #region Fortificacion
+        public Territorio TerritorioFortificacionOrigen { get; set; }
+        public Territorio TerritorioFortificacionDestino { get; set; }
         #endregion
 
         public string JuegoID { get; set; }

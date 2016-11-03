@@ -169,14 +169,14 @@ namespace ConquestUnit.Views
         public void ActualizarDespuesDeBatalla()
         {
             //Mapa
-            var territorio = objJuego.Territorios[objJuego.TerritorioOrigenAtaque.TerritorioId];
+            var territorio = objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId];
             Uri uri = new Uri(territorio.ImagenUnidades);
             BitmapImage imagenUnidad = new BitmapImage(uri);
             ((Image)this.FindName("Unidad" + territorio.NombreTerritorio)).Source = imagenUnidad;
             ((Ellipse)this.FindName("UnidadElipse" + territorio.NombreTerritorio)).Fill = Convertidor.GetSolidColorBrush(territorio.ColorUnidades);
             ((TextBlock)this.FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
 
-            territorio = objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId];
+            territorio = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId];
             uri = new Uri(territorio.ImagenUnidades);
             imagenUnidad = new BitmapImage(uri);
             ((Image)this.FindName("Unidad" + territorio.NombreTerritorio)).Source = imagenUnidad;
@@ -321,7 +321,7 @@ namespace ConquestUnit.Views
             //Area combo de Ataque
             txtComboAtk.Text = "1";
             LeftArrowBatallaGrid.Visibility = Visibility.Collapsed;
-            if (objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas > 1 && objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas != 2)
+            if (objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas > 1 && objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas != 2)
             {
                 RightArrowBatallaGrid.Visibility = Visibility.Visible;
             }
@@ -357,7 +357,7 @@ namespace ConquestUnit.Views
             PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
             txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
             imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-            AtacanteTerritorioNombreTXT.Text = objJuego.TerritorioOrigenAtaque.NombreTerritorio;
+            AtacanteTerritorioNombreTXT.Text = objJuego.TerritorioAtaqueOrigen.NombreTerritorio;
             AtacanteNombreTXT.Text = atacante.Nombre;
             InvasorFondo.Fill = Convertidor.GetSolidColorBrush(atacante.Color);
             if (atacante.Imagen != null)
@@ -367,14 +367,14 @@ namespace ConquestUnit.Views
                 bimgBitmapImage.SetSource(fileStream);
                 InvasorFoto.Source = bimgBitmapImage;
             }
-            NTropasInvasorTXT.Text = objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas.ToString();
+            NTropasInvasorTXT.Text = objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas.ToString();
             InvasorPuntosAtaque1TXT.Text = "0";
             InvasorPuntosAtaque2TXT.Text = "(0)";
             InvasorPuntosAtaque2TXT.Visibility = Visibility.Collapsed;
             //Area Defensor
             var defensor = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First();
             PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
-            DefensorTerritorioNombreTXT.Text = objJuego.TerritorioDestinoAtaque.NombreTerritorio;
+            DefensorTerritorioNombreTXT.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             DefensorNombreTXT.Text = defensor.Nombre;
             DefensorFondo.Fill = Convertidor.GetSolidColorBrush(defensor.Color);
             if (defensor.Imagen != null)
@@ -384,7 +384,7 @@ namespace ConquestUnit.Views
                 bimgBitmapImage.SetSource(fileStream);
                 DefensorFoto.Source = bimgBitmapImage;
             }
-            NTropasDefensorTXT.Text = objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas.ToString();
+            NTropasDefensorTXT.Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
             InvasorPuntosDefensaTXT.Text = "0";
         }
 
@@ -420,13 +420,13 @@ namespace ConquestUnit.Views
             CabeceraGrid.Visibility = Visibility.Collapsed;
             PreguntaGrid.Visibility = Visibility.Collapsed;
             MoverTropasGrid.Visibility = Visibility.Visible;
-            MoverUnidadesTerritorioOrigen.Text = objJuego.TerritorioOrigenAtaque.NombreTerritorio;
-            MoverUnidadesTerritorioOrigenNUnidades.Text = (objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas - 1).ToString();
-            MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioDestinoAtaque.NombreTerritorio;
+            MoverUnidadesTerritorioOrigen.Text = objJuego.TerritorioAtaqueOrigen.NombreTerritorio;
+            MoverUnidadesTerritorioOrigenNUnidades.Text = (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas - 1).ToString();
+            MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             MoverUnidadesTerritorioDestinoNUnidades.Text = "1";
             //MoverUnidadesNUnidades.Text = "1";
             MoverUnidadesImgIzquierda.Visibility = Visibility.Collapsed;
-            if (objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas <= 2)
+            if (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas <= 2)
             {
                 MoverUnidadesImgDerecha.Visibility = Visibility.Collapsed;
             }
@@ -469,7 +469,7 @@ namespace ConquestUnit.Views
                 MoverUnidadesImgIzquierda.Visibility = Visibility.Visible;
                 MoverUnidadesImgDerecha.Visibility = Visibility.Collapsed;
             }
-            else if (unidadesOrigen == objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas - 1)
+            else if (unidadesOrigen == objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas - 1)
             {
                 MoverUnidadesImgIzquierda.Visibility = Visibility.Collapsed;
                 MoverUnidadesImgDerecha.Visibility = Visibility.Visible;
@@ -567,14 +567,14 @@ namespace ConquestUnit.Views
                     //Gano el atacante
                     if (puntosAtacante > puntosDefensor)
                     {
-                        objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
-                        NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas.ToString();
-                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioDestinoAtaque.NombreTerritorio)).Text = objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas.ToString();
+                        objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
+                        NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas.ToString();
+                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
                         //Mostrar el mensaje de victoria del Atacante
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
                         PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
                         txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
-                        if (objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas == 0)
+                        if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
                             txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.GanaAtacanteTerritorio;
                             objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_INICIO_MOVERTROPAS;
@@ -640,14 +640,14 @@ namespace ConquestUnit.Views
                     //Gano el atacante
                     if (puntosAtacante > puntosDefensor)
                     {
-                        objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
-                        NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas.ToString();
-                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioDestinoAtaque.NombreTerritorio)).Text = objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas.ToString();
+                        objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
+                        NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas.ToString();
+                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
                         //Mostrar el mensaje de victoria del Atacante
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
                         PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
                         txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
-                        if (objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas == 0)
+                        if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
                             txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.GanaAtacanteTerritorio;
                             objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_INICIO_MOVERTROPAS;
@@ -663,15 +663,15 @@ namespace ConquestUnit.Views
                     //Gano el defensor
                     else
                     {
-                        objJuego.Territorios[objJuego.TerritorioOrigenAtaque.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
-                        NTropasInvasorTXT.Text = objJuego.Territorios[objJuego.TerritorioOrigenAtaque.TerritorioId].NUnidadesDeplegadas.ToString();
-                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioOrigenAtaque.NombreTerritorio)).Text = objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas.ToString();
+                        objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
+                        NTropasInvasorTXT.Text = objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas.ToString();
+                        ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueOrigen.NombreTerritorio)).Text = objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas.ToString();
                         //Mostrar el mensaje de victoria del DEFENSOR
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
                         txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.PierdeAtacante;
                         PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
                         txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.GanaDefensor;
-                        if (objJuego.Territorios[objJuego.TerritorioOrigenAtaque.TerritorioId].NUnidadesDeplegadas <= 1)
+                        if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas <= 1)
                         {
                             objJuego.AccionActual = Constantes.AccionJuego.TERMINAR_ATAQUE;
                         }
@@ -743,13 +743,13 @@ namespace ConquestUnit.Views
             }
             else if (direccion == Constantes.Controles.DERECHA)
             {
-                if (comboActual + 1 > objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas || comboActual + 1 >= objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas)
+                if (comboActual + 1 > objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas || comboActual + 1 >= objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas)
                 {
                     return;
                 }
                 txtComboAtk.Text = (comboActual + 1).ToString();
                 LeftArrowBatallaGrid.Visibility = Visibility.Visible;
-                if (comboActual + 2 > objJuego.TerritorioDestinoAtaque.NUnidadesDeplegadas || comboActual + 2 >= objJuego.TerritorioOrigenAtaque.NUnidadesDeplegadas)
+                if (comboActual + 2 > objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas || comboActual + 2 >= objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas)
                 {
                     RightArrowBatallaGrid.Visibility = Visibility.Collapsed;
                 }
@@ -788,6 +788,75 @@ namespace ConquestUnit.Views
         public void DesmarcarTerritorio(Path territorio)
         {
             territorio.Fill = null;//new SolidColorBrush(Colors.Transparent);
+        }
+
+        public void IniciarFortificacion()
+        {
+            FortificacionGrid.Visibility = Visibility.Visible;
+            FortiNombreOrigen.Text = objJuego.TerritorioFortificacionOrigen.NombreTerritorio;
+            FortiNroUnidadesOrigen.Text = objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas.ToString();
+            FortiNombreDestino.Text = objJuego.TerritorioFortificacionDestino.NombreTerritorio;
+            FortiNroUnidadesDestino.Text = objJuego.TerritorioFortificacionDestino.NUnidadesDeplegadas.ToString();
+            FortiIzquierda.Visibility = Visibility.Collapsed;
+            FortiDerecha.Visibility = Visibility.Visible;
+        }
+
+        public void ModificarCantidadUnidadesMover(int direccion)
+        {
+            int unidadesOrigen = int.Parse(FortiNroUnidadesOrigen.Text);
+            int unidadesDestino = int.Parse(FortiNroUnidadesDestino.Text);
+            if (direccion == Constantes.Controles.IZQUIERDA)
+            {
+                if (unidadesOrigen + 1 > objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas)
+                {
+                    return;
+                }
+                FortiNroUnidadesOrigen.Text = (unidadesOrigen + 1).ToString();
+                FortiNroUnidadesDestino.Text = (unidadesDestino - 1).ToString();
+                unidadesOrigen++;
+                unidadesDestino--;
+            }
+            else if (direccion == Constantes.Controles.DERECHA)
+            {
+                if (unidadesOrigen - 1 <= 0)
+                {
+                    return;
+                }
+                FortiNroUnidadesOrigen.Text = (unidadesOrigen - 1).ToString();
+                FortiNroUnidadesDestino.Text = (unidadesDestino + 1).ToString();
+                unidadesOrigen--;
+                unidadesDestino++;
+            }
+            if (unidadesOrigen==1)
+            {
+                FortiIzquierda.Visibility = Visibility.Visible;
+                FortiDerecha.Visibility = Visibility.Collapsed;
+            }
+            else if (unidadesOrigen == objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas)
+            {
+                FortiIzquierda.Visibility = Visibility.Collapsed;
+                FortiDerecha.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                FortiIzquierda.Visibility = Visibility.Visible;
+                FortiDerecha.Visibility = Visibility.Visible;
+            }
+        }
+
+        public void ActualizarDespuesDeFortificacion()
+        {
+            //Aca actualizar las unidades e fortificaocn
+            var territorio = objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId];
+            ((TextBlock)this.FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
+
+            territorio = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId];
+            ((TextBlock)this.FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
+        }
+
+        public void IniciarSiguienteTurno()
+        {
+            //Desactivar y activar controles del jugador que le toca
         }
 
         private async void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
@@ -926,8 +995,8 @@ namespace ConquestUnit.Views
                                     }
 
                                     //Marcar territorio como origen ataque
-                                    objJuego.TerritorioOrigenAtaque = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
-                                    objJuego.TerritorioDestinoAtaque = null;
+                                    objJuego.TerritorioAtaqueOrigen = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
+                                    objJuego.TerritorioAtaqueDestino = null;
                                     //TerrSelec.Opacity = 1;
                                     MarcarTerritorio(TerrSelec);
 
@@ -961,13 +1030,14 @@ namespace ConquestUnit.Views
                                         return;
                                     }
 
-                                    //Verificar que el territorio es colindante con origen ataque
-                                    //////////////////////////////////////Por verificar//////////////////////////////////////////////////////////////////////////////
-
+                                    if (!GameLogic.AtaqueLogic.TerritorioSePuedeAtacar(Territorio, objJuego.TerritorioAtaqueOrigen.TerritorioId, TerrSelec))
+                                    {
+                                        return;
+                                    }
 
                                     //Se marca como territorio destino ataque
-                                    objJuego.TerritorioDestinoAtaque = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
-                                    objJuego.IpJugadorDefiende = objJuego.TerritorioDestinoAtaque.IpJugadorPropietario;
+                                    objJuego.TerritorioAtaqueDestino = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
+                                    objJuego.IpJugadorDefiende = objJuego.TerritorioAtaqueDestino.IpJugadorPropietario;
 
                                     //Comienza la batalla
                                     objJuego.AccionActual = Constantes.AccionJuego.CONFIRMARATAQUE;
@@ -979,8 +1049,8 @@ namespace ConquestUnit.Views
                                     //El jugador cancela la seleccion se destino de ataque
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                     //((Path)FindName(objJuego.TerritorioOrigenAtaque.NombreTerritorio)).Opacity = 0;
-                                    DesmarcarTerritorio((Path)FindName(objJuego.TerritorioOrigenAtaque.NombreTerritorio));
-                                    objJuego.TerritorioOrigenAtaque = null;
+                                    DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
+                                    objJuego.TerritorioAtaqueOrigen = null;
                                 }
                                 else if (botonPresionado == Constantes.Controles.TRIANGULO)
                                 {
@@ -1015,7 +1085,7 @@ namespace ConquestUnit.Views
                                     //El jugador cancela el inicio del ataque
                                     ActualizarDespuesDeBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
-                                    objJuego.TerritorioDestinoAtaque = null;
+                                    objJuego.TerritorioAtaqueDestino = null;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
                                 }
@@ -1183,17 +1253,17 @@ namespace ConquestUnit.Views
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
                                     int unidadesMover = int.Parse(MoverUnidadesTerritorioDestinoNUnidades.Text);
-                                    objJuego.Territorios[objJuego.TerritorioOrigenAtaque.TerritorioId].NUnidadesDeplegadas -= unidadesMover;
-                                    objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NUnidadesDeplegadas += unidadesMover;
-                                    var jugador = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.TerritorioOrigenAtaque.IpJugadorPropietario).First();
-                                    objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].ColorUnidades = jugador.Color;
-                                    objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].ImagenUnidades = jugador.ImagenUnidades;
-                                    objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].IpJugadorPropietario = jugador.Ip;
-                                    objJuego.Territorios[objJuego.TerritorioDestinoAtaque.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas -= unidadesMover;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas += unidadesMover;
+                                    var jugador = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.TerritorioAtaqueOrigen.IpJugadorPropietario).First();
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ColorUnidades = jugador.Color;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidades;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].IpJugadorPropietario = jugador.Ip;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
                                     ActualizarDespuesDeBatalla();
 
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
-                                    objJuego.TerritorioDestinoAtaque = null;
+                                    objJuego.TerritorioAtaqueDestino = null;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
                                 }
@@ -1212,7 +1282,7 @@ namespace ConquestUnit.Views
                                     //El jugador decide finalizar el ataque
                                     ActualizarDespuesDeBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
-                                    objJuego.TerritorioDestinoAtaque = null;
+                                    objJuego.TerritorioAtaqueDestino = null;
                                     //PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
@@ -1225,11 +1295,11 @@ namespace ConquestUnit.Views
                                 if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
                                     //Se termina el ataque ya que el Atacante solo tiene 1 unidad en el territorio
-                                    DesmarcarTerritorio((Path)FindName(objJuego.TerritorioOrigenAtaque.NombreTerritorio));
+                                    DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
                                     ActualizarDespuesDeBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
-                                    objJuego.TerritorioOrigenAtaque = null;
-                                    objJuego.TerritorioDestinoAtaque = null;
+                                    objJuego.TerritorioAtaqueOrigen = null;
+                                    objJuego.TerritorioAtaqueDestino = null;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
                                 }
@@ -1245,6 +1315,11 @@ namespace ConquestUnit.Views
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENFOR;
                                     btnFaseAtaque.IsEnabled = false;
                                     btnFaseFortificacion.IsEnabled = true;
+                                    if (objJuego.TerritorioAtaqueOrigen != null)
+                                    {
+                                        DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
+                                    }
+                                    objJuego.TerritorioAtaqueOrigen = null;
                                 }
                                 else if (botonPresionado == Constantes.Controles.CIRCULO)
                                 {
@@ -1261,13 +1336,172 @@ namespace ConquestUnit.Views
                             #region Fortificar - Elegir el Origen de la fortificacion
                             if (objJuego.AccionActual == Constantes.AccionJuego.ELEGIRORIGENFOR)
                             {
-                                Helper.MensajeOk("estamos en fortificacion origen!!!");
+                                //Boton direccional
+                                if (botonPresionado >= 0 && botonPresionado <= 7)
+                                {
+                                    MoverTerritorio(botonPresionado);
+                                }
+                                else if (botonPresionado == Constantes.Controles.EQUIS)
+                                {
+                                    //Verificar que el territorio perteneza al jugador
+                                    if (!objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                    {
+                                        return;
+                                    }
+
+                                    //Verificar que el origen tenga al menos 2 unidades
+                                    if (objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas < 2)
+                                    {
+                                        return;
+                                    }
+
+                                    //Marcar territorio como origen Fortificacion
+                                    objJuego.TerritorioFortificacionOrigen = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
+                                    objJuego.TerritorioFortificacionDestino = null;
+                                    //TerrSelec.Opacity = 1;
+                                    MarcarTerritorio(TerrSelec);
+
+                                    //Cambiar a accion elegir destino Fotificacion
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOFOR;
+                                }
+                                else if (botonPresionado == Constantes.Controles.TRIANGULO)
+                                {
+                                    //El jugador está pidiendo terminar la fase de Ataque y pasar a Fortificacion
+                                    //Mostrar el mensaje de confirmacion
+                                    auxAccionJuegoAnterior = Constantes.AccionJuego.ELEGIRORIGENFOR;
+                                    objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONFIRMAR;
+                                    txtMensajeContinuarCancelar.Text = Constantes.MensajesConfirmarContinuar.FortificarConfirmar;
+                                    MensajeContinuarCancelar.Visibility = Visibility.Visible;
+                                }
                             }
                             #endregion
                             #region Fortificar - Elegir el Destino de la fortificacion
                             else if (objJuego.AccionActual == Constantes.AccionJuego.ELEGIRDESTINOFOR)
                             {
-                                Helper.MensajeOk("estamos en fortificacion destino!!!");
+                                //Boton direccional -- solo se puede mover si el territorio a mover le pertenece al jugador en turno
+                                if (botonPresionado >= 0 && botonPresionado <= 7)
+                                {
+                                    var territorioASeleccionar = Territorio[Convert.ToInt32(TerrSelec.Tag), botonPresionado];
+                                    if (objJuego.Territorios[Convert.ToInt32(territorioASeleccionar.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                    {
+                                        MoverTerritorio(botonPresionado);
+                                    }
+                                }
+                                else if (botonPresionado == Constantes.Controles.EQUIS)
+                                {
+                                    //Verificar que el territorio perteneza al jugador
+                                    if (!objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                    {
+                                        return;
+                                    }
+
+                                    //Marcar territorio como destino Fortificacion
+                                    objJuego.TerritorioFortificacionDestino = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
+
+                                    //Cambiar a accion elegir destino Fotificacion
+                                    objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_FORTIFICACION;
+                                    IniciarFortificacion();
+                                }
+                                else if (botonPresionado == Constantes.Controles.CIRCULO)
+                                {
+                                    DesmarcarTerritorio((Path)FindName(objJuego.TerritorioFortificacionOrigen.NombreTerritorio));
+                                    objJuego.TerritorioFortificacionOrigen = null;
+                                    objJuego.TerritorioFortificacionDestino = null;
+
+                                    //Cambiar a accion elegir destino Fotificacion
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENFOR;
+                                }
+                                else if (botonPresionado == Constantes.Controles.TRIANGULO)
+                                {
+                                    //El jugador está pidiendo terminar la fase de Ataque y pasar a Fortificacion
+                                    //Mostrar el mensaje de confirmacion
+                                    auxAccionJuegoAnterior = Constantes.AccionJuego.ELEGIRDESTINOFOR;
+                                    objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONFIRMAR;
+                                    txtMensajeContinuarCancelar.Text = Constantes.MensajesConfirmarContinuar.FortificarConfirmar;
+                                    MensajeContinuarCancelar.Visibility = Visibility.Visible;
+                                }
+                            }
+                            #endregion
+                            #region Fortificar - Elegir el Destino de la fortificacion
+                            else if (objJuego.AccionActual == Constantes.AccionJuego.CONFIRMAR_FORTIFICACION)
+                            {
+                                //Boton direccional -- solo se puede mover si el territorio a mover le pertenece al jugador en turno
+                                if (botonPresionado == Constantes.Controles.IZQUIERDA || botonPresionado == Constantes.Controles.DERECHA)
+                                {
+                                    //Agregar o disminuir numero de undiades a mover
+                                    ModificarCantidadUnidadesMover(botonPresionado);
+                                }
+                                else if (botonPresionado == Constantes.Controles.EQUIS)
+                                {
+                                    //Confirmar el movimiento de unidades para fortificacion
+                                    int unidadesOrigen = int.Parse(FortiNroUnidadesOrigen.Text);
+                                    int unidadesDestino = int.Parse(FortiNroUnidadesDestino.Text);
+                                    objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId].NUnidadesDeplegadas = unidadesOrigen;
+                                    objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId].NUnidadesDeplegadas = unidadesDestino;
+                                    FortificacionGrid.Visibility = Visibility.Collapsed;
+
+                                    //Finalizar Truno
+                                    objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR;
+                                    txtMensajeContinuar.Text = Constantes.MensajesConfirmarContinuar.FortificarContinuar;
+                                    MensajeContinuar.Visibility = Visibility.Visible;
+                                }
+                                else if (botonPresionado == Constantes.Controles.CIRCULO)
+                                {
+                                    //Cancelar la fortificacion actual
+                                    FortificacionGrid.Visibility = Visibility.Collapsed;
+                                    objJuego.FaseActual = Constantes.FaseJuego.FORTIFICACION;
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOFOR;
+                                    objJuego.TerritorioFortificacionDestino = null;
+                                }
+                            }
+                            #endregion
+                            #region Fortificar - Mensaje de Continuar
+                            else if (objJuego.AccionActual == Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR)
+                            {
+                                if (botonPresionado == Constantes.Controles.EQUIS)
+                                {
+                                    ActualizarDespuesDeFortificacion();
+                                    MensajeContinuar.Visibility = Visibility.Collapsed;
+                                    objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
+                                    objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
+                                    btnFaseFortificacion.IsEnabled = false;
+                                    btnFaseDespliegue.IsEnabled = true;
+                                    if (objJuego.TerritorioFortificacionOrigen != null)
+                                    {
+                                        DesmarcarTerritorio((Path)FindName(objJuego.TerritorioFortificacionOrigen.NombreTerritorio));
+                                    }
+                                    objJuego.TerritorioFortificacionOrigen = null;
+                                    //Se acaba el turno del jugador
+                                    GameLogic.TurnoLogic.TerminarTurnoComenzarNuevoTurno(objJuego);
+                                    IniciarSiguienteTurno();
+                                }
+                            }
+                            #endregion
+                            #region Fortificar - Mensaje de Confirmar
+                            else if (objJuego.AccionActual == Constantes.AccionJuego.FORTIFICAR_FIN_CONFIRMAR)
+                            {
+                                if (botonPresionado == Constantes.Controles.EQUIS)
+                                {
+                                    ActualizarDespuesDeFortificacion();
+                                    MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
+                                    objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
+                                    objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
+                                    btnFaseFortificacion.IsEnabled = false;
+                                    btnFaseDespliegue.IsEnabled = true;
+                                    if (objJuego.TerritorioFortificacionOrigen != null)
+                                    {
+                                        DesmarcarTerritorio((Path)FindName(objJuego.TerritorioFortificacionOrigen.NombreTerritorio));
+                                    }
+                                    objJuego.TerritorioFortificacionOrigen = null;
+                                    //Se acaba el turno del jugador
+                                    GameLogic.TurnoLogic.TerminarTurnoComenzarNuevoTurno(objJuego);
+                                    IniciarSiguienteTurno();
+                                }
+                                else if (botonPresionado == Constantes.Controles.CIRCULO)
+                                {
+                                    MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
+                                    objJuego.AccionActual = auxAccionJuegoAnterior;
+                                }
                             }
                             #endregion
                         }

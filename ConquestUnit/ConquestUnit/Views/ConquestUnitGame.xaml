@@ -177,14 +177,14 @@
                 </Grid>
                 <!---->
 
-                <Button x:Name="BtnArr" Content="Arr" HorizontalAlignment="Left" Margin="63,221,-6,-181" VerticalAlignment="Top" Tapped="BtnArr_Tapped" Width="47"/>
+                <!--<Button x:Name="BtnArr" Content="Arr" HorizontalAlignment="Left" Margin="63,221,-6,-181" VerticalAlignment="Top" Tapped="BtnArr_Tapped" Width="47"/>
                 <Button x:Name="BtnIzq" Content="Izq" HorizontalAlignment="Left" Margin="15,262,-20,-174" VerticalAlignment="Top" Tapped="BtnIzq_Tapped" Width="45"/>
                 <Button x:Name="BtnDer" Content="Der" HorizontalAlignment="Left" Margin="115,262,-30,-174" VerticalAlignment="Top" Tapped="BtnDer_Tapped" Width="49"/>
                 <Button x:Name="BtnAba" Content="Aba" HorizontalAlignment="Left" Margin="63,299,0,-166" VerticalAlignment="Top" Tapped="BtnAba_Tapped"/>
                 <Button x:Name="BtnArrIzq" Content="ArI" HorizontalAlignment="Left" Margin="15,221,-26,-133" VerticalAlignment="Top" Width="45" Tapped="BtnArrIzq_Tapped"/>
                 <Button x:Name="BtnArrDer" Content="ArD" HorizontalAlignment="Left" Margin="115,221,-28,-133" VerticalAlignment="Top" Tapped="BtnArrDer_Tapped" Width="49"/>
                 <Button x:Name="BtnAbaIzq" Content="AbI" HorizontalAlignment="Left" Margin="15,299,-26,-211" VerticalAlignment="Top" Tapped="BtnAbaIzq_Tapped" Width="45"/>
-                <Button x:Name="BtnAbaDer" Content="AbD" HorizontalAlignment="Left" Margin="115,299,-130,-211" VerticalAlignment="Top" Tapped="BtnAbaDer_Tapped" Width="49"/>
+                <Button x:Name="BtnAbaDer" Content="AbD" HorizontalAlignment="Left" Margin="115,299,-130,-211" VerticalAlignment="Top" Tapped="BtnAbaDer_Tapped" Width="49"/>-->
                 
                 <!--BOTONES-->
                 <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Height="78" Margin="46,43,0,0" VerticalAlignment="Top" Width="121">
@@ -209,7 +209,7 @@
                         <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
                     </Grid>
                 </Grid>
-                <Button x:Name="BotonA" Margin="20,0,-20,-417" Tapped="BotonA_Tapped" VerticalAlignment="Bottom">
+                <!--<Button x:Name="BotonA" Margin="20,0,-20,-417" Tapped="BotonA_Tapped" VerticalAlignment="Bottom">
                     <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png" Height="50" Width="50"/>
                 </Button>
                 <Button x:Name="BotonB" Margin="97,0,-97,-418" Tapped="BotonB_Tapped" VerticalAlignment="Bottom">
@@ -220,7 +220,7 @@
                 </Button>
                 <Button x:Name="BotonY" Margin="97,0,-97,-489" Tapped="BotonY_Tapped" VerticalAlignment="Bottom">
                     <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" Height="50" Width="50"/>
-                </Button>
+                </Button>-->
                 <!---->
                 
                 <!--BOTONES FASES-->
@@ -569,6 +569,47 @@
                     </RelativePanel>
                 </Grid>
 
+                <!---->
+                
+                <!--FORTIFICACION-->
+                <Grid x:Name="FortificacionGrid" Margin="300,200,300,0" Height="400" Grid.Row="1" BorderBrush="Black" Background="White" BorderThickness="1,1,1,1" Visibility="Collapsed">
+                    <Grid.Resources>
+                        <SolidColorBrush x:Key="brush" Color="Azure" />
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Fortificación" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBlack"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Desde" VerticalAlignment="Bottom" FontSize="24"/>
+                    <TextBlock x:Name="FortiNombreOrigen" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tibet" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+                    <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="FortiNroUnidadesOrigen" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center" />
+                        <Image x:Name="FortiIzquierda" Source="ms-appx:///Assets/Images/Mando/Izquierda.png" Width="50" Height="50" />
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hacia" VerticalAlignment="Bottom" FontSize="24"/>
+                    <TextBlock x:Name="FortiNombreDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+                    <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                        <!--<TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>-->
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="FortiDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />
+                        <TextBlock x:Name="FortiNroUnidadesDestino" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Text="Presiona       para confirmar" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="Presiona        para cancelar" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
                 <!---->
      
             </RelativePanel>

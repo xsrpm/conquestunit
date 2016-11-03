@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/Phone/Fondo.jpg" />
+        </Grid.Background>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="phoneState">
@@ -23,11 +26,12 @@
                         <AdaptiveTrigger MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                        <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png"></Setter>
                         <Setter Target="txtBienvenido.FontSize" Value="35"></Setter>
-                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Images/Icons/user64x64.png"></Setter>
+                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"></Setter>
                         <Setter Target="imgJugador.Width" Value="64"></Setter>
                         <Setter Target="imgJugador.Height" Value="64"></Setter>
-                        <Setter Target="imgInfo.Source" Value="ms-appx:///Assets/Images/Icons/info64x64.png"></Setter>
+                        <Setter Target="imgInfo.Source" Value="ms-appx:///Assets/Pantallas/PC/IconoInformacion.png"></Setter>
                         <Setter Target="imgInfo.Width" Value="64"></Setter>
                         <Setter Target="imgInfo.Height" Value="64"></Setter>
                         <Setter Target="imgLogo.Margin" Value="0,-50,0,0"></Setter>
@@ -36,30 +40,34 @@
                         <Setter Target="myStackPanel.Height" Value="430"></Setter>
                         <Setter Target="btnJugar.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnJugar.VerticalAlignment" Value="Center"></Setter>
-                        <Setter Target="btnJugar.Height" Value="100"></Setter>
-                        <Setter Target="btnJugar.Width" Value="300"></Setter>
+                        <!--<Setter Target="btnJugar.Height" Value="100"></Setter>
+                        <Setter Target="btnJugar.Width" Value="300"></Setter>-->
                         <Setter Target="btnJugar.Margin" Value="0,0,0,-50"></Setter>
+                        <Setter Target="btnJugar.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonJugar.png"></Setter>
                         <Setter Target="btnComoJugar.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnComoJugar.(Grid.Column)" Value="0"></Setter>
-                        <Setter Target="btnComoJugar.Height" Value="100"></Setter>
-                        <Setter Target="btnComoJugar.Width" Value="300"></Setter>
+                        <!--<Setter Target="btnComoJugar.Height" Value="200"></Setter>-->
+                        <!--<Setter Target="btnComoJugar.Width" Value="330"></Setter>-->
                         <Setter Target="btnComoJugar.Margin" Value="0,0,0,-50"></Setter>
+                        <Setter Target="btnComoJugar.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonComoJugar.png"></Setter>
                         <Setter Target="btnCreditos.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnCreditos.(Grid.Column)" Value="2"></Setter>
                         <Setter Target="btnCreditos.VerticalAlignment" Value="Center"></Setter>
-                        <Setter Target="btnCreditos.Height" Value="100"></Setter>
-                        <Setter Target="btnCreditos.Width" Value="300"></Setter>
+                        <!--<Setter Target="btnCreditos.Height" Value="100"></Setter>
+                        <Setter Target="btnCreditos.Width" Value="300"></Setter>-->
                         <Setter Target="btnCreditos.Margin" Value="0,0,0,-50"></Setter>
+                        <Setter Target="btnCreditos.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonCreditos.png"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <!--<Image x:Name="Fondo" Source="ms-appx:///Assets/Pantallas/Phone/Fondo.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>-->
         <StackPanel x:Name="myStackPanel" Height="320" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
-                <TextBlock x:Name="txtBienvenido" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5"/>
-                <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Images/Icons/user32x32.png" Tapped="imgJugador_Tapped"/>
+                <TextBlock x:Name="txtBienvenido" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontFamily="Algerian"/>
+                <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png" Tapped="imgJugador_Tapped"/>
             </StackPanel>
-            <Image x:Name="imgInfo" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-10,20,10" Height="32" Width="32" Source="ms-appx:///Assets/Images/Icons/info32x32.png"/>
+            <Image x:Name="imgInfo" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-10,20,10" Height="32" Width="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoInformacion.png"/>
             <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>
         </StackPanel>
         <Grid x:Name="myGrid">
@@ -77,9 +85,13 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="btnJugar" Content="Jugar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="120" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
+            <!--<Button x:Name="btnJugar" Content="Jugar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="120" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
             <Button x:Name="btnComoJugar" Content="Como Jugar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="105" Grid.Column="1" Grid.Row="4"/>
-            <Button x:Name="btnCreditos" Content="Creditos" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="105" Grid.Column="1" Grid.Row="5"/>
+            <Button x:Name="btnCreditos" Content="Creditos" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="105" Grid.Column="1" Grid.Row="5"/>-->
+
+            <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonJugar.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
+            <Image x:Name="btnComoJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonComoJugar.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+            <Image x:Name="btnCreditos" Source="ms-appx:///Assets/Pantallas/Phone/BotonCreditos.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5"/>
 
         </Grid>
     </Grid>
