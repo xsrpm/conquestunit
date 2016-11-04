@@ -78,7 +78,7 @@ namespace ConquestUnit.Views
         private async void btnUnirme_Tapped(object sender, TappedRoutedEventArgs e)
         {
             txtMesaId.IsEnabled = false;
-            btnUnirme.IsEnabled = false;
+            btnUnirme.Visibility = Visibility.Collapsed;
             prConectando.IsActive = true;
             prConectando.Visibility = Visibility.Visible;
             lblConectando.Visibility = Visibility.Visible;
@@ -123,7 +123,7 @@ namespace ConquestUnit.Views
             prConectando.IsActive = false;
             prConectando.Visibility = Visibility.Collapsed;
             lblConectando.Visibility = Visibility.Collapsed;
-            btnUnirme.IsEnabled = true;
+            btnUnirme.Visibility = Visibility.Visible;
             txtMesaId.IsEnabled = true;
         }
 

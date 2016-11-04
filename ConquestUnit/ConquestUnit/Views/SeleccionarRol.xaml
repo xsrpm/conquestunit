@@ -67,7 +67,7 @@
                         <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Images/Icons/back32x32.png" Stretch="UniformToFill"/>
                     </Button>-->
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"/>
-                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="35" FontFamily="Calibri" />
+                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="Calibri" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="Algerian"/>
@@ -78,7 +78,7 @@
             <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-90,0,0" Width="256" Height="256" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>
         </StackPanel>
         
-        <StackPanel x:Name="myRelativePanel" Margin="0,350,0,0" HorizontalAlignment="Center" Orientation="Vertical">
+        <StackPanel x:Name="myRelativePanel" Margin="0,320,0,0" HorizontalAlignment="Center" Orientation="Vertical">
             <TextBlock x:Name="lblTexto" Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" FontFamily="Arial"/>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Padding="50">

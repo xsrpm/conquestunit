@@ -7,34 +7,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+        </Grid.Background>
         <StackPanel x:Name="myStackPanel" Height="300" VerticalAlignment="Top">
             <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/logo128x128.png"/>
-            <TextBlock x:Name="lblTexto" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Código de Mesa" FontSize="35" VerticalAlignment="Top"/>
-            <TextBlock x:Name="lblCodigoMesa" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" FontSize="45"/>
-            <TextBlock x:Name="lblInformacion" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Este es el código que deben utilizar los jugadores para unirse" FontSize="25" VerticalAlignment="Top"/>
+            <TextBlock x:Name="lblTexto" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="CÓDIGO DE MESA" FontSize="40" VerticalAlignment="Top" FontFamily="Arial"/>
+            <TextBlock x:Name="lblCodigoMesa" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" FontSize="60" FontFamily="Algerian"/>
+            <TextBlock x:Name="lblInformacion" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="CÓDIGO DE INGRESO PARA JUGADORES" FontSize="25" VerticalAlignment="Top" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel x:Name="myRelativePanel" Margin="0,300,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <StackPanel Padding="50">
-                    <Image x:Name="imgJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/user128x128.png"/>
-                    <TextBlock x:Name="lblJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." VerticalAlignment="Top"/>
+                    <Image x:Name="imgJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
+                    <TextBlock x:Name="lblJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="Algerian"/>
                 </StackPanel>
                 <StackPanel Padding="50">
-                    <Image x:Name="imgJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/user128x128.png"/>
-                    <TextBlock x:Name="lblJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." VerticalAlignment="Top"/>
+                    <Image x:Name="imgJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
+                    <TextBlock x:Name="lblJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="Algerian"/>
                 </StackPanel>
                 <StackPanel Padding="50">
-                    <Image x:Name="imgJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/user128x128.png"/>
-                    <TextBlock x:Name="lblJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." VerticalAlignment="Top"/>
+                    <Image x:Name="imgJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
+                    <TextBlock x:Name="lblJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="Algerian"/>
                 </StackPanel>
                 <StackPanel Padding="50">
-                    <Image x:Name="imgJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/user128x128.png"/>
-                    <TextBlock x:Name="lblJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." VerticalAlignment="Top"/>
+                    <Image x:Name="imgJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
+                    <TextBlock x:Name="lblJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="Algerian"/>
                 </StackPanel>
             </StackPanel>
-            <Button x:Name="btnJugar" Content="Jugar" Width="130" Height="60" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Top" Tapped="btnJugar_Tapped"/>
-            <Button x:Name="btnRegresar" Content="Cerrar Mesa" HorizontalAlignment="Center" Width="105" Height="50" Margin="0,0,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>
+            <!--<Button x:Name="btnJugar" Content="Jugar" Width="130" Height="60" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Top" Tapped="btnJugar_Tapped"/>-->
+            <!--<Button x:Name="btnRegresar" Content="Cerrar Mesa" HorizontalAlignment="Center" Width="105" Height="50" Margin="0,0,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>-->
+            <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/PC/BotonJugar.png" Width="150" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Top" Tapped="btnJugar_Tapped"/>
+            <Image x:Name="btnRegresar" Source="ms-appx:///Assets/Pantallas/PC/BotonCerrarMesa.png" HorizontalAlignment="Center" Width="105" Margin="0,0,0,0" VerticalAlignment="Top" Tapped="btnRegresar_Tapped"/>
         </StackPanel>
         <!--TEXTOS HELPER PARA ALMACENAR LA IP DE LOS JUGADORES-->
         <TextBlock x:Name="lblIpJugador1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="0.0.0.0" VerticalAlignment="Top" Visibility="Collapsed"/>

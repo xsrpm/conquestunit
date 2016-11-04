@@ -74,7 +74,7 @@
                         <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Images/Icons/back32x32.png" Stretch="UniformToFill"/>
                     </Button>-->
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/Phone/BotonRegresar.png"/>
-                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="10" FontFamily="Calibri" />
+                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="14" FontFamily="Calibri" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontFamily="Algerian"/>
@@ -86,9 +86,9 @@
         <RelativePanel x:Name="myRelativePanel" Margin="0,300,0,0">
             <TextBlock x:Name="lblTexto" RelativePanel.AlignHorizontalCenterWithPanel ="True" VerticalAlignment="Top" Margin="0,30,0,0" TextWrapping="Wrap" Text="Ingresa el código de la mesa" FontFamily="Arial"/>
             <Image x:Name="txtNombreImg" Source="ms-appx:///Assets/Pantallas/Phone/FondoNombre.png" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="lblTexto" Margin="0,10,0,0" Width="225"/>
-            <TextBox x:Name="txtMesaId" Text="140" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="lblTexto" Margin="0,10,0,0" TextWrapping="Wrap" Width="225" FontSize="30" Foreground="White" Background="Transparent" TextAlignment="Center" FontFamily="Algerian" KeyUp="txtMesaId_KeyUp"/>
+            <TextBox x:Name="txtMesaId" Text="" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="lblTexto" Margin="0,15,0,0" TextWrapping="Wrap" Width="225" FontSize="30" Foreground="White" Background="Transparent" TextAlignment="Center" FontFamily="Algerian" BorderBrush="Transparent" KeyUp="txtMesaId_KeyUp"/>
             <!--<Button x:Name="btnUnirme" Content="Unirme" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="txtMesaId" Margin="0,15,0,0" Width="105" Height="40" Tapped="btnUnirme_Tapped"/>-->
-            <Image x:Name="btnUnirme" Source="ms-appx:///Assets/Pantallas/Phone/BotonUnirme.png" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="txtMesaId" Margin="0,15,0,0" Width="105" Height="40" Tapped="btnUnirme_Tapped"/>
+            <Image x:Name="btnUnirme" Source="ms-appx:///Assets/Pantallas/Phone/BotonUnirme.png" RelativePanel.AlignHorizontalCenterWithPanel ="True" RelativePanel.Below="txtMesaId" Margin="0,15,0,0" Width="120" Tapped="btnUnirme_Tapped"/>
             <StackPanel RelativePanel.Below="btnUnirme" RelativePanel.AlignHorizontalCenterWithPanel="True">
                 <ProgressRing x:Name="prConectando" Width="20" Height="20" Margin="0,5,0,0" IsActive="False" Visibility="Visible"/>
                 <TextBlock x:Name="lblConectando" Text="Conectando..." Foreground="Gray" Visibility="Collapsed"/>
