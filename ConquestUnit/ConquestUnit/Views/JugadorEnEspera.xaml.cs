@@ -61,7 +61,7 @@ namespace ConquestUnit.Views
                     IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
                     bimgBitmapImage.SetSource(fileStream);
                     imgJugador.Source = bimgBitmapImage;
-                    imgFoto.Source = bimgBitmapImage;
+                    //imgFoto.Source = bimgBitmapImage;
                 }
             }
             IniciarSDK();

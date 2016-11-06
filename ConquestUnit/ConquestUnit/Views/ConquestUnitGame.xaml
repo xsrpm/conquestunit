@@ -176,15 +176,6 @@
                     <TextBlock x:Name="UnidadCantidadAnhu" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
                 </Grid>
                 <!---->
-
-                <!--<Button x:Name="BtnArr" Content="Arr" HorizontalAlignment="Left" Margin="63,221,-6,-181" VerticalAlignment="Top" Tapped="BtnArr_Tapped" Width="47"/>
-                <Button x:Name="BtnIzq" Content="Izq" HorizontalAlignment="Left" Margin="15,262,-20,-174" VerticalAlignment="Top" Tapped="BtnIzq_Tapped" Width="45"/>
-                <Button x:Name="BtnDer" Content="Der" HorizontalAlignment="Left" Margin="115,262,-30,-174" VerticalAlignment="Top" Tapped="BtnDer_Tapped" Width="49"/>
-                <Button x:Name="BtnAba" Content="Aba" HorizontalAlignment="Left" Margin="63,299,0,-166" VerticalAlignment="Top" Tapped="BtnAba_Tapped"/>
-                <Button x:Name="BtnArrIzq" Content="ArI" HorizontalAlignment="Left" Margin="15,221,-26,-133" VerticalAlignment="Top" Width="45" Tapped="BtnArrIzq_Tapped"/>
-                <Button x:Name="BtnArrDer" Content="ArD" HorizontalAlignment="Left" Margin="115,221,-28,-133" VerticalAlignment="Top" Tapped="BtnArrDer_Tapped" Width="49"/>
-                <Button x:Name="BtnAbaIzq" Content="AbI" HorizontalAlignment="Left" Margin="15,299,-26,-211" VerticalAlignment="Top" Tapped="BtnAbaIzq_Tapped" Width="45"/>
-                <Button x:Name="BtnAbaDer" Content="AbD" HorizontalAlignment="Left" Margin="115,299,-130,-211" VerticalAlignment="Top" Tapped="BtnAbaDer_Tapped" Width="49"/>-->
                 
                 <!--BOTONES-->
                 <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Height="78" Margin="46,43,0,0" VerticalAlignment="Top" Width="121">
@@ -209,18 +200,6 @@
                         <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="OButton" Fill="#FFB80D0D" StrokeThickness="1" Data="M 10 0 C 4.5 0 0 4.5 0 10 0 15.5 4.5 20 10 20 15.5 20 20 15.5 20 10 20 4.5 15.5 0 10 0 l 0 0 z m 0 18 C 5.6 18 2 14.4 2 10 2 5.6 5.6 2 10 2 c 4.4 0 8 3.6 8 8 0 4.4 -3.6 8 -8 8 l 0 0 z" Margin="6.333,3.333,-6.333,-3.333" UseLayoutRounding="False" d:IsLocked="True"/>
                     </Grid>
                 </Grid>
-                <!--<Button x:Name="BotonA" Margin="20,0,-20,-417" Tapped="BotonA_Tapped" VerticalAlignment="Bottom">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png" Height="50" Width="50"/>
-                </Button>
-                <Button x:Name="BotonB" Margin="97,0,-97,-418" Tapped="BotonB_Tapped" VerticalAlignment="Bottom">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png" Height="50" Width="50"/>
-                </Button>
-                <Button x:Name="BotonX" Margin="20,0,-20,-489" Tapped="BotonX_Tapped" VerticalAlignment="Bottom">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Height="50" Width="50"/>
-                </Button>
-                <Button x:Name="BotonY" Margin="97,0,-97,-489" Tapped="BotonY_Tapped" VerticalAlignment="Bottom">
-                    <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" Height="50" Width="50"/>
-                </Button>-->
                 <!---->
                 
                 <!--BOTONES FASES-->
@@ -234,13 +213,25 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Button x:Name="btnFaseDespliegue" Content="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Background="Gray"/>
-                    <Button x:Name="btnFaseAtaque" Content="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Background="Gray"/>
-                    <Button x:Name="btnFaseFortificacion" Content="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Background="Gray"/>
+                    <Button x:Name="btnFaseDespliegue" Content="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="Algerian">
+                        <Button.Background>
+                            <SolidColorBrush Color="#000000" Opacity="0.8"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnFaseAtaque" Content="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="Algerian">
+                        <Button.Background>
+                            <SolidColorBrush Color="#000000" Opacity="0.8"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnFaseFortificacion" Content="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Foreground="White" FontFamily="Algerian">
+                        <Button.Background>
+                            <SolidColorBrush Color="#000000" Opacity="0.8"/>
+                        </Button.Background>    
+                    </Button>
 
                     <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="20" />
-                        <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="20" FontWeight="Bold" />
+                        <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="20" FontFamily="Arial"/>
+                        <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="20" FontWeight="Bold" FontFamily="Arial" Foreground="#FF9E1D14"/>
                     </StackPanel>
                 </Grid>
                 
@@ -280,31 +271,48 @@
                 </Grid>
 
                 <!--INFO Territorio Seleccionado-->
-                <Grid Margin="10,20,0,0" Background="White" BorderBrush="Black" BorderThickness="1">
+                <Grid Margin="10,205,0,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="125" />
-                        <ColumnDefinition Width="75" />
-                        <ColumnDefinition Width="75" />
-                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Territorio" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
-                    <TextBlock Text="#Unidades" Grid.Column="1" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
-                    <TextBlock Text="Dueño" Grid.Column="2" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <Border Grid.Row="0" Grid.RowSpan="7">
+                        <Border.Background>
+                            <SolidColorBrush Color="#000000" Opacity="0.3" />
+                        </Border.Background>
+                    </Border>
+                    <TextBlock Text="TERRITORIO" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
+                    <TextBlock Text="#UNIDADES" Grid.Column="0" Grid.Row="2"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
+                    <TextBlock Text="DUEÑO" Grid.Column="0" Grid.Row="4"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
+                    <TextBlock Text="TURNO" Grid.Column="0" Grid.Row="7"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
 
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoTexto" Text="Huijiang" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoUnidades" Text="3" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoPropietario" Text="Cesar" Grid.Column="2" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    <Rectangle x:Name="MapaTerritorioSeleccionadoColor" Grid.Column="3" Grid.Row="1" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoTexto" Text="Huijiang" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoUnidades" Text="3" Grid.Column="0" Grid.Row="3"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoPropietario" Text="Cesar" Grid.Column="0" Grid.Row="5"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <Rectangle x:Name="MapaTerritorioSeleccionadoColor" Grid.Column="0" Grid.Row="6" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="JuegoJugadorTurnoActualNombre" Text="Cesar" Grid.Column="0" Grid.Row="8"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <Rectangle x:Name="JuegoJugadorTurnoActualColor" Grid.Column="0" Grid.Row="9" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
                 
-                <RelativePanel Margin="15,550,0,0">
+                <RelativePanel Margin="1150,650,0,0">
 
-                    <Button x:Name="btnTerminarFase" Content="      Terminar Fase" Background="Gray" />
-                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="30" Height="30" Margin="2,0,0,0"/>
+                    <Button x:Name="btnTerminarFase" Content="      Terminar&#x0a;          Fase" Foreground="White" FontFamily="Algerian">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.5" />
+                        </Button.Background>
+                    </Button>
+                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="25" Height="25" Margin="3,12,0,0"/>
                 </RelativePanel>
 
                 <!--JUGADORES-->
@@ -319,7 +327,10 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <!--Jugador1-->
-                    <Grid x:Name="UnidadGrid1" Background="#AFB81010" Grid.Column="0" Grid.Row="0">
+                    <Grid x:Name="UnidadGrid1" Grid.Column="0" Grid.Row="0" Padding="8">
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="UnidadGrid1Fondo" Color="#000000" Opacity="0.8" />
+                        </Grid.Background>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -329,19 +340,22 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador1Nombre" Text="Cesar" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <Image x:Name="Jugador1Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="Jugador1Nombre" Text="Cesar" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#B81010"/>
+                        <Image x:Name="Jugador1Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador1Territorios"  Text="Territorios: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="13" FontWeight="Bold" />
-                        </StackPanel>
+                            <TextBlock x:Name="lblJugador1Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#B81010"/>
+                        </StackPanel> 
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador1Continentes"  Text="Continentes: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador1Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                            <TextBlock x:Name="lblJugador1Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador1Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#B81010"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador2-->
-                    <Grid x:Name="UnidadGrid2" Background="#AF508B10" Grid.Column="0" Grid.Row="1">
+                    <Grid x:Name="UnidadGrid2" Grid.Column="0" Grid.Row="1" Padding="8">
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="UnidadGrid2Fondo" Color="#000000" Opacity="0.8" />
+                        </Grid.Background>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -351,19 +365,22 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador2Nombre" Text="Roy" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <Image x:Name="Jugador2Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Verde.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="Jugador2Nombre" Text="Roy" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#508A11"/>
+                        <Image x:Name="Jugador2Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador2Territorios"  Text="Territorios: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                            <TextBlock x:Name="lblJugador2Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#508A11"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador2Continentes"  Text="Continentes: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador2Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                            <TextBlock x:Name="lblJugador2Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador2Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#508A11"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador3-->
-                    <Grid x:Name="UnidadGrid3" Background="#AF2E507E" Grid.Column="0" Grid.Row="2">
+                    <Grid x:Name="UnidadGrid3" Grid.Column="0" Grid.Row="2" Padding="8">
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="UnidadGrid3Fondo" Color="#000000" Opacity="0.8" />
+                        </Grid.Background>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -373,19 +390,22 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <Image x:Name="Jugador3Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Azul.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#2E507E"/>
+                        <Image x:Name="Jugador3Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador3Territorios"  Text="Territorios: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                            <TextBlock x:Name="lblJugador3Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#2E507E"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador3Continentes"  Text="Continentes: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador3Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                            <TextBlock x:Name="lblJugador3Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador3Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#2E507E"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador4-->
-                    <Grid x:Name="UnidadGrid4" Background="#AFBBC60E" Grid.Column="0" Grid.Row="3">
+                    <Grid x:Name="UnidadGrid4" Grid.Column="0" Grid.Row="3" Padding="8">
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="UnidadGrid4Fondo" Color="#000000" Opacity="0.8" />
+                        </Grid.Background>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -395,41 +415,45 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <Image x:Name="Jugador4Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Unidades/China/Unidad Amarillo.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#BCC60F"/>
+                        <Image x:Name="Jugador4Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador4Territorios"  Text="Territorios: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="13" FontWeight="Bold" />
+                            <TextBlock x:Name="lblJugador4Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#BCC60F"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock x:Name="lblJugador4Continentes"  Text="Continentes: " FontSize="13"/>
-                            <TextBlock x:Name="Jugador4Continentes" Text="0" FontSize="13" FontWeight="Bold"/>
+                            <TextBlock x:Name="lblJugador4Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
+                            <TextBlock x:Name="Jugador4Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#BCC60F"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
                 <!---->
                 
                 <!--BATALLA-->
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="566" Margin="0,0,-1180,-646" VerticalAlignment="Bottom" Width="1090" d:IsHidden="True">
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="720" VerticalAlignment="Bottom" Width="1280" d:IsHidden="False">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/Pantallas/PC/FondoHumo.png" Opacity="0.6"/>
+                    </Grid.Background>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="15*"/>
                         <RowDefinition Height="268*"/>
                     </Grid.RowDefinitions>
-                    <Rectangle x:Name="FondoBatalla" Fill="White" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.RowSpan="2" Opacity="0.875" d:IsLocked="True"/>
+                    <!--<Image x:Name="FondoBatalla" Source="ms-appx:///Assets/Pantallas/PC/FondoHumo.png" Grid.RowSpan="2" Opacity="0.4"/>-->
                     <Grid x:Name="DefensorGrid" HorizontalAlignment="Right" Width="265" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2">
-                        <Rectangle x:Name="DefensorFondo" Fill="#FFAAA600" Opacity="0.55"/>
-                        <Image x:Name="DefensorFoto" Source="ms-appx:///Assets/Images/Icons/user256x256.png" Height="150" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
-                        <TextBlock x:Name="DefensorTerritorioNombreTXT" Margin="0,160,0,0" Text="Ulusatua" FontSize="35" HorizontalAlignment="Center"/>
-                        <TextBlock x:Name="DefensorNombreTXT" Margin="0,210,0,0" Text="Cesar" FontSize="40" HorizontalAlignment="Center"/>
-                        <!--<ProgressBar Margin="0,250,0,0" Value="50" VerticalAlignment="Top" Height="28" HorizontalAlignment="Right" Width="265" Background="#33FFFFFF" Foreground="#FF00D714"/>-->
-                        <TextBlock x:Name="DefensorPuntosTituloTXT" Margin="0,281,20,239" TextWrapping="Wrap" Text="Puntos" FontWeight="Bold" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype" HorizontalAlignment="Right" Width="210" d:LayoutOverrides="TopPosition, BottomPosition"/>
-                        <TextBlock x:Name="TropaDefensorTXT" HorizontalAlignment="Left" Height="32" Margin="0,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" Width="60" FontSize="22"/>
-                        <TextBlock x:Name="NTropasDefensorTXT" Height="68" Margin="0,55,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" FontSize="48" TextAlignment="Center" RenderTransformOrigin="0.276,0.559" HorizontalAlignment="Left" Width="63"/>
-                        <TextBlock x:Name="InvasorPuntosDefensaTXT" Margin="0,332,104,0" TextWrapping="Wrap" Text="10" FontSize="48" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.6" />
+                        </Grid.Background>
+                        <Image x:Name="DefensorFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Width="160" Height="150" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorBatalla.png"/>
+                        <TextBlock x:Name="TropaDefensorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="NTropasDefensorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0" Text="10" FontSize="48" TextAlignment="Center" FontWeight="Bold" Foreground="#FF508A11" FontFamily="Arial Narrow"/>
+                        <TextBlock x:Name="DefensorNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="DefensorPuntosTituloTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,70,0" Text="P." FontSize="48" Foreground="#FF508A11" FontFamily="Arial Narrow"/>
+                        <TextBlock x:Name="InvasorPuntosDefensaTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Text="0" FontSize="48" Foreground="White" FontFamily="Arial Narrow"/>
+                        <Rectangle x:Name="DefensorFondo" Fill="#FF508A11" VerticalAlignment="Bottom" Height="75" Opacity="0.6"/>
+                        <TextBlock x:Name="DefensorTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="HUIJIAN" FontSize="48" Foreground="White" FontFamily="Algerian"/>
+
                         <RelativePanel x:Name="PanelMensajeJugadorDefensor" Grid.Column="1" Width="265" Height="100" Margin="0,0,0,50" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
                             <TextBlock x:Name="txtMensajeJugadorDefensor" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" />
-                            <!--<TextBlock x:Name="txtContinuarJugador2" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                            <Image Width="33" Height="28" Margin="0,0,50,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>-->
                         </RelativePanel>
                     </Grid>
                     <Grid x:Name="CabeceraGrid" Height="126" Margin="265,-30,265,0" VerticalAlignment="Top" Grid.Row="1" Visibility="Visible">
@@ -531,7 +555,6 @@
                         <TextBlock x:Name="MoverUnidadesTerritorioDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
                         <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
-                            <!--<TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>-->
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image x:Name="MoverUnidadesImgDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />
@@ -541,26 +564,20 @@
                         <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
 
-                    <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2" Opacity="0.99">
-                        <Rectangle x:Name="InvasorFondo" Fill="#FFE78383" Opacity="0.55"/>
-                        <Image x:Name="InvasorFoto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" Source="ms-appx:///Assets/Images/Icons/user256x256.png"/>
-                        <TextBlock x:Name="AtacanteTerritorioNombreTXT" Margin="0,160,0,0" Text="Tibet" FontSize="35" HorizontalAlignment="Center"/>
-                        <TextBlock x:Name="AtacanteNombreTXT" Margin="0,210,0,0" Text="Cesar" FontSize="40" HorizontalAlignment="Center"/>
-                        <!--<ProgressBar Height="31" Value="30" Margin="0,220,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="264" Background="#33FFFFFF" Foreground="Red"/>-->
-                        <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Left" Margin="24,282,0,238" FontWeight="Bold" TextWrapping="Wrap" Text="Puntos" Width="200" TextAlignment="Center" FontSize="36" FontFamily="Palatino Linotype"/>
-                        <TextBlock x:Name="NTropasInvasorTXT" Height="68" Margin="201,57,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="48" HorizontalAlignment="Left" Width="63" TextAlignment="Center"/>
-                        <TextBlock x:Name="TropaInvasorTXT" Height="32" Margin="189,18,0,0" TextWrapping="Wrap" Text="Tropa" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="76" TextAlignment="Center"/>
-                        <TextBlock x:Name="InvasorPuntosAtaque1TXT" HorizontalAlignment="Left" Height="66" Margin="43,333,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="55" FontSize="48"/>
-                        <TextBlock x:Name="InvasorPuntosAtaque2TXT" Height="67" Margin="103,332,0,0" TextWrapping="Wrap" Text="(10)" VerticalAlignment="Top" FontSize="48" Foreground="Red" HorizontalAlignment="Left" Width="83"/>
-                        <!--<RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Column="1" Width="265" Height="130" Margin="0,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
-                            <TextBlock x:Name="txtMensajeJugadorAtacante" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" />
-                            <TextBlock x:Name="txtContinuarJugadorAtacante" Margin="0,0,0,40" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                            <Image Width="33" x:Name="imgContinuarJugadorAtacante" Height="28" Margin="0,0,50,40" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
-                            <TextBlock x:Name="txtCancelarJugadorAtacante" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para cancelar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                            <Image Width="33" x:Name="imgCancelarJugadorAtacante" Height="28" Margin="0,0,45,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
-                        </RelativePanel>-->
+                    <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.6" />
+                        </Grid.Background>
+                        <Image x:Name="InvasorFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Width="160" Height="150" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorBatalla.png"/>
+                        <TextBlock x:Name="TropaInvasorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="NTropasInvasorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0" Text="10" FontSize="48" TextAlignment="Center" FontWeight="Bold" Foreground="#FFB81010" FontFamily="Arial Narrow"/>
+                        <TextBlock x:Name="AtacanteNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,70,0" Text="P." FontSize="48" Foreground="#FFB81010" FontFamily="Arial Narrow"/>
+                        <TextBlock x:Name="InvasorPuntosAtaqueTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Text="0" FontSize="48" Foreground="White" FontFamily="Arial Narrow"/>
+                        <Rectangle x:Name="InvasorFondo" Fill="#FFB81010" VerticalAlignment="Bottom" Height="75" Opacity="0.6"/>
+                        <TextBlock x:Name="AtacanteTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="Tibet" FontSize="48" Foreground="White" FontFamily="Algerian"/>
                     </Grid>
-                    <RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Row="1" Width="560" Height="140" Margin="0,-30,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1">
+                    <RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Row="1" Width="560" Height="140" Margin="0,-30,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed">
                         <TextBlock x:Name="txtMensajeJugadorAtacante" Margin="0,10,0,0" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Has perdido aún tienes 1 oportunidad" TextAlignment="Center" FontSize="20" FontWeight="SemiBold"/>
                         <TextBlock x:Name="txtContinuarJugadorAtacante" Margin="0,0,0,40" RelativePanel.AlignBottomWithPanel="True" Text="Presiona       para continuar" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                         <Image Width="33" x:Name="imgContinuarJugadorAtacante" Height="28" Margin="0,0,50,40" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
@@ -599,7 +616,6 @@
                     <TextBlock x:Name="FortiNombreDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
                     <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
-                        <!--<TextBlock x:Name="MoverUnidadesNUnidades" TextWrapping="Wrap" Text="6" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>-->
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image x:Name="FortiDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />

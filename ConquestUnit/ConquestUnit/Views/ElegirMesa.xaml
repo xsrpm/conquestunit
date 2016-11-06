@@ -78,7 +78,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontFamily="Algerian"/>
-                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png"/>
+                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png" Tapped="imgJugador_Tapped"/>
                 </StackPanel>
             </Grid>
             <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,22,0,0" Width="200" Height="200" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>

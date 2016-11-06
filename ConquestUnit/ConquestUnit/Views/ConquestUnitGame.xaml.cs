@@ -368,9 +368,7 @@ namespace ConquestUnit.Views
                 InvasorFoto.Source = bimgBitmapImage;
             }
             NTropasInvasorTXT.Text = objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas.ToString();
-            InvasorPuntosAtaque1TXT.Text = "0";
-            InvasorPuntosAtaque2TXT.Text = "(0)";
-            InvasorPuntosAtaque2TXT.Visibility = Visibility.Collapsed;
+            InvasorPuntosAtaqueTXT.Text = "0";
             //Area Defensor
             var defensor = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First();
             PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
@@ -556,7 +554,7 @@ namespace ConquestUnit.Views
                         }
                     }
                     //Mostrar puntuaciones de los jugadores
-                    InvasorPuntosAtaque1TXT.Text = puntosAtacante.ToString();
+                    InvasorPuntosAtaqueTXT.Text = puntosAtacante.ToString();
                     InvasorPuntosDefensaTXT.Text = puntosDefensor.ToString();
 
                     //Desactivar los controles del defensor
@@ -635,7 +633,7 @@ namespace ConquestUnit.Views
                         }
                     }
                     //Mostrar puntuaciones de los jugadores
-                    InvasorPuntosAtaque1TXT.Text = puntosAtacante.ToString();
+                    InvasorPuntosAtaqueTXT.Text = puntosAtacante.ToString();
 
                     //Gano el atacante
                     if (puntosAtacante > puntosDefensor)
@@ -959,6 +957,8 @@ namespace ConquestUnit.Views
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                     btnFaseDespliegue.IsEnabled = false;
                                     btnFaseAtaque.IsEnabled = true;
+                                    lblUnidadesDesplegar.Visibility = Visibility.Collapsed;
+                                    txtNroUnidadesParaDespliegue.Visibility = Visibility.Collapsed;
                                 }
                                 else if (botonPresionado == Constantes.Controles.CIRCULO)
                                 {

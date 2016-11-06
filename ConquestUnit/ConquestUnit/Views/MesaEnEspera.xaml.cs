@@ -43,7 +43,7 @@ namespace ConquestUnit.Views
         public MesaEnEspera()
         {
             this.InitializeComponent();
-            btnJugar.IsEnabled = false;
+            btnJugar.Visibility = Visibility.Collapsed;//btnJugar.IsEnabled = false;
             // http://stackoverflow.com/questions/12796148/working-with-system-threading-timer-in-c-sharp
             //intervaloTimer = 1000 * 3;
             //timer = new Timer(timerCallback, null, intervaloTimer, Timeout.Infinite);
@@ -58,7 +58,7 @@ namespace ConquestUnit.Views
 
         private async void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            btnJugar.IsEnabled = false;
+            btnJugar.Visibility = Visibility.Collapsed; //btnJugar.IsEnabled = false;
             // Definir los turnos de los jugadores,
             // los cuales será igual a la lista de jugadores de la mesa
             // pero en desorden
@@ -77,7 +77,7 @@ namespace ConquestUnit.Views
 
             //Definir la fase inicial del juego
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
-            
+
             //Redirigir al juego
             this.Frame.Navigate(typeof(ConquestUnitGame), objJuego);
         }
@@ -169,7 +169,7 @@ namespace ConquestUnit.Views
                     #endregion
                 }
                 //Habilitar o deshabilitar el boton de Jugar
-                btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
+                btnJugar.Visibility = Visibility.Collapsed; //btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
             }
             catch (Exception ex)
             {

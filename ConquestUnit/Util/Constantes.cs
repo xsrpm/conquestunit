@@ -1,11 +1,4 @@
-﻿using DataModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Util
+﻿namespace Util
 {
     public static class Constantes
     {
@@ -24,9 +17,9 @@ namespace Util
 
         #region Color Jugadores
         public static string ColorJug1 = "FFB81010";
-        public static string ColorJug2 = "FF508B10";
+        public static string ColorJug2 = "FF508A11";
         public static string ColorJug3 = "FF2E507E";
-        public static string ColorJug4 = "FFBBC60E";
+        public static string ColorJug4 = "FFBBC60F";
 
         public static string ColorJug1Inactivo = "AFB81010";
         public static string ColorJug2Inactivo = "AF508B10";
