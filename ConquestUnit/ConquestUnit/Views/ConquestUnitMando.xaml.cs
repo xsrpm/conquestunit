@@ -42,9 +42,9 @@ namespace ConquestUnit.Views
                 var primerTurno = (bool)e.Parameter;
                 if (primerTurno)
                 {
-                    Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
-                    BitmapImage logoImage = new BitmapImage(uri);
-                    imgActivo.Source = logoImage;
+                    //Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
+                    //BitmapImage logoImage = new BitmapImage(uri);
+                    //imgActivo.Source = logoImage;
                     HabilitarControles();
                 }
                 else
@@ -183,9 +183,11 @@ namespace ConquestUnit.Views
 
         public void HabilitarControles()
         {
-            Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
-            BitmapImage image = new BitmapImage(uri);
-            imgActivo.Source = image;
+            //Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
+            //BitmapImage image = new BitmapImage(uri);
+            //imgActivo.Source = image;
+            lblTurno.Visibility = Visibility.Visible;
+            panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOACTIVO);
 
             btnArriba.IsEnabled = true;
             btnIzquierda.IsEnabled = true;
@@ -200,9 +202,11 @@ namespace ConquestUnit.Views
 
         public void DeshabilitarControles()
         {
-            Uri uri = new Uri("ms-appx:///Assets/Images/inactive32x32.png");
-            BitmapImage image = new BitmapImage(uri);
-            imgActivo.Source = image;
+            //Uri uri = new Uri("ms-appx:///Assets/Images/inactive32x32.png");
+            //BitmapImage image = new BitmapImage(uri);
+            //imgActivo.Source = image;
+            lblTurno.Visibility = Visibility.Collapsed;
+            panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOINACTIVO);
 
             btnArriba.IsEnabled = false;
             btnIzquierda.IsEnabled = false;
