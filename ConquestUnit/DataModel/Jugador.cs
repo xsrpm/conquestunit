@@ -11,7 +11,8 @@ namespace DataModel
         public string Nombre { get; set; }
         public byte[] Imagen { get; set; }
         public string Ip { get; set; }
-        public string ImagenUnidades { get; set; }
+        public string ImagenUnidad { get; set; }
+        public string ImagenUnidadAgrupadora { get; set; }
         public string Color { get; set; }
         public string ColorInactivo { get; set; }
         //Para saber si el jugador está conectado

@@ -371,7 +371,7 @@ namespace ConquestUnit.Views
             InvasorPuntosAtaqueTXT.Text = "0";
             //Area Defensor
             var defensor = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First();
-            PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
+            //PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
             DefensorTerritorioNombreTXT.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             DefensorNombreTXT.Text = defensor.Nombre;
             DefensorFondo.Fill = Convertidor.GetSolidColorBrush(defensor.Color);
@@ -413,7 +413,7 @@ namespace ConquestUnit.Views
             PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
             txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
             imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-            PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
+            //PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
             //Mostrar grilla de mover tropas!!!!!!!!!!!!!!!!!!!!!!!
             CabeceraGrid.Visibility = Visibility.Collapsed;
             PreguntaGrid.Visibility = Visibility.Collapsed;
@@ -570,8 +570,8 @@ namespace ConquestUnit.Views
                         ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
                         //Mostrar el mensaje de victoria del Atacante
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
-                        PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
-                        txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
+                        //PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
+                        //txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
                             txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.GanaAtacanteTerritorio;
@@ -643,8 +643,8 @@ namespace ConquestUnit.Views
                         ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
                         //Mostrar el mensaje de victoria del Atacante
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
-                        PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
-                        txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
+                        //PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
+                        //txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.PierdeDefensor;
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
                             txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.GanaAtacanteTerritorio;
@@ -667,8 +667,8 @@ namespace ConquestUnit.Views
                         //Mostrar el mensaje de victoria del DEFENSOR
                         PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
                         txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.PierdeAtacante;
-                        PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
-                        txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.GanaDefensor;
+                        //PanelMensajeJugadorDefensor.Visibility = Visibility.Visible;
+                        //txtMensajeJugadorDefensor.Text = Constantes.MensajesResultadoBatalla.GanaDefensor;
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas <= 1)
                         {
                             objJuego.AccionActual = Constantes.AccionJuego.TERMINAR_ATAQUE;
@@ -1257,7 +1257,7 @@ namespace ConquestUnit.Views
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas += unidadesMover;
                                     var jugador = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.TerritorioAtaqueOrigen.IpJugadorPropietario).First();
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ColorUnidades = jugador.Color;
-                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidades;
+                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidad;
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].IpJugadorPropietario = jugador.Ip;
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
                                     ActualizarDespuesDeBatalla();

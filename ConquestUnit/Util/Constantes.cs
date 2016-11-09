@@ -35,6 +35,10 @@
         public static string UnidadJug2 = "ms-appx:///Assets/Unidades/China/Unidad Verde.png";
         public static string UnidadJug3 = "ms-appx:///Assets/Unidades/China/Unidad Azul.png";
         public static string UnidadJug4 = "ms-appx:///Assets/Unidades/China/Unidad Amarillo.png";
+        public static string UnidadAgrupadoraJug1 = "ms-appx:///Assets/Unidades/China/IratoRojo.png";
+        public static string UnidadAgrupadoraJug2 = "ms-appx:///Assets/Unidades/China/IratoVerde.png";
+        public static string UnidadAgrupadoraJug3 = "ms-appx:///Assets/Unidades/China/IratoAzul.png";
+        public static string UnidadAgrupadoraJug4 = "ms-appx:///Assets/Unidades/China/IratoAmarillo.png";
         #endregion
 
         #region Mensajes para unirse a la mesa

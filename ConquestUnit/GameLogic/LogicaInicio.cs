@@ -17,25 +17,29 @@ namespace GameLogic
             {
                 juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
                 juego.JugadoresConectados[0].ColorInactivo = Constantes.ColorJug1Inactivo;
-                juego.JugadoresConectados[0].ImagenUnidades = Constantes.UnidadJug1;
+                juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1;
+                juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1;
             }
             if (juego.JugadoresConectados.Count >= 2)
             {
                 juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
                 juego.JugadoresConectados[1].ColorInactivo = Constantes.ColorJug2Inactivo;
-                juego.JugadoresConectados[1].ImagenUnidades = Constantes.UnidadJug2;
+                juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2;
+                juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2;
             }
             if (juego.JugadoresConectados.Count >= 3)
             {
                 juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
                 juego.JugadoresConectados[2].ColorInactivo = Constantes.ColorJug3Inactivo;
-                juego.JugadoresConectados[2].ImagenUnidades = Constantes.UnidadJug3;
+                juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3;
+                juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3;
             }
             if (juego.JugadoresConectados.Count >= 4)
             {
                 juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
                 juego.JugadoresConectados[3].ColorInactivo = Constantes.ColorJug4Inactivo;
-                juego.JugadoresConectados[3].ImagenUnidades = Constantes.UnidadJug4;
+                juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4;
+                juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4;
             }
         }
 
@@ -116,14 +120,14 @@ namespace GameLogic
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[0].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[0].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[0].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidad;
                             territoriosJug1++;
                             break;
                         case 2:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[1].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[1].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[1].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidad;
                             territoriosJug2++;
                             break;
                     }
@@ -167,21 +171,21 @@ namespace GameLogic
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[0].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[0].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[0].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidad;
                             territoriosJug1++;
                             break;
                         case 2:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[1].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[1].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[1].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidad;
                             territoriosJug2++;
                             break;
                         case 3:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[2].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[2].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[2].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[2].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[2].ImagenUnidad;
                             territoriosJug3++;
                             break;
                     }
@@ -237,28 +241,28 @@ namespace GameLogic
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[0].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[0].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[0].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[0].ImagenUnidad;
                             territoriosJug1++;
                             break;
                         case 2:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[1].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[1].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[1].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[1].ImagenUnidad;
                             territoriosJug2++;
                             break;
                         case 3:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[2].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[2].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[2].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[2].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[2].ImagenUnidad;
                             territoriosJug3++;
                             break;
                         case 4:
                             juego.Territorios[i].ColorUnidades = juego.JugadoresConectados[3].Color;
                             juego.Territorios[i].IpJugadorPropietario = juego.JugadoresConectados[3].Ip;
                             juego.Territorios[i].NombreJugadorPropietario = juego.JugadoresConectados[3].Nombre;
-                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[3].ImagenUnidades;
+                            juego.Territorios[i].ImagenUnidades = juego.JugadoresConectados[3].ImagenUnidad;
                             territoriosJug4++;
                             break;
                     }

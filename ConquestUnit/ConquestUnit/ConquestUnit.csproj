@@ -156,6 +156,7 @@
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirmeDisable.png" />
+    <Content Include="Assets\Pantallas\PC\IconoEspada.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorMapa.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorBatalla.png" />
     <Content Include="Assets\Pantallas\PC\FondoHumo.png" />
@@ -186,6 +187,10 @@
     <Content Include="Assets\SplashScreen.scale-150.png" />
     <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="Assets\table.png" />
+    <Content Include="Assets\Unidades\China\IratoAmarillo.png" />
+    <Content Include="Assets\Unidades\China\IratoAzul.png" />
+    <Content Include="Assets\Unidades\China\IratoRojo.png" />
+    <Content Include="Assets\Unidades\China\IratoVerde.png" />
     <Content Include="Assets\Unidades\China\Unidad Amarillo.png" />
     <Content Include="Assets\Unidades\China\Unidad Azul.png" />
     <Content Include="Assets\Unidades\China\Unidad Rojo.png" />
