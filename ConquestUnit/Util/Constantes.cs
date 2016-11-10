@@ -70,6 +70,9 @@
             public const int EQUIS = 11;
         }
 
+        public static string COLORMANDOACTIVO = "#FF01FE0F";
+        public static string COLORMANDOINACTIVO = "#FFFF0437";
+
         public struct Region
         {
             public const int REGION1 = 1;
