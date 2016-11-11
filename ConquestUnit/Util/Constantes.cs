@@ -7,6 +7,8 @@
         public static string SEPARADOR = ";#;#";
         public static string MessageDialogTitle = "Conquest Unit";
 
+        public static string IconoJugador = "ms-appx:///Assets/Pantallas/PC/RolJugador.png";
+
         public static string MULTICAST_ADDRESS = "239.10.2.78";
         public static string MULTICAST_SERVICE_PORT = "54330";
         public static string UNICAST_SERVICE_PORT = "22111";
@@ -144,6 +146,8 @@
         public static int BonoTerritoriosRegion2 = 3;
         public static int BonoTerritoriosRegion3 = 2;
         public static int BonoTerritoriosRegion4 = 3;
+
+        public static int UnidadesMinimasParaEvolucionar = 10;
         #endregion
     }
 }

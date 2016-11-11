@@ -1,27 +1,14 @@
 ﻿using DataModel;
 using SynapseSDK;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
 using Util;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -159,6 +146,7 @@ namespace ConquestUnit.Views
                             if (objJuego.JugadoresConectados[i].Ip.Equals(ipJugadorRetirado))
                             {
                                 objJuego.JugadoresConectados.RemoveAt(i);
+                                ((TextBlock)FindName("lblIpJugador" + (i + 1))).Text = "0.0.0.0";
                                 break;
                             }
                         }
@@ -169,7 +157,7 @@ namespace ConquestUnit.Views
                     #endregion
                 }
                 //Habilitar o deshabilitar el boton de Jugar
-                btnJugar.Visibility = Visibility.Collapsed; //btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
+                btnJugar.Visibility = Visibility.Visible; //btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
             }
             catch (Exception ex)
             {
@@ -179,7 +167,7 @@ namespace ConquestUnit.Views
 
         private async void MostrarDatosJugadoresEnPantalla()
         {
-            Uri uri = new Uri("ms-appx:///Assets/Images/Icons/user128x128.png");
+            Uri uri = new Uri(Constantes.IconoJugador);
             BitmapImage defaultImage = new BitmapImage(uri);
             Jugador jugador;
             if (objJuego.JugadoresConectados.Count >= 1)

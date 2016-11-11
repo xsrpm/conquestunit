@@ -21,6 +21,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
 using SynapseSDK;
 using DataModel;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace ConquestUnit
 {
@@ -72,6 +73,24 @@ namespace ConquestUnit
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
+                #region Set Frame.Background property in the App.xaml.cs
+                //http://www.reflectionit.nl/blog/2012/windows-8-xaml-tips-app-background-image
+                //http://stackoverflow.com/questions/12743355/screen-flashes-between-splash-and-extended-splash-in-windows-8-app
+                // Set the application background Image
+                string urlBackgroundImage = "ms-appx:///Assets/Pantallas/PC/Fondo.png";
+                if (DetectPlatform()==Platform.WindowsPhone)
+                {
+                    urlBackgroundImage = "ms-appx:///Assets/Pantallas/Phone/Fondo.jpg";
+                }
+                rootFrame.Background = new ImageBrush
+                {
+                    Stretch = Windows.UI.Xaml.Media.Stretch.UniformToFill,
+                    ImageSource = new BitmapImage { UriSource = new Uri(urlBackgroundImage) }
+                };
+                //Associate the frame with a SuspensionManager key
+                //SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
+                #endregion
+
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -90,21 +109,7 @@ namespace ConquestUnit
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    if (App.DetectPlatform() == Platform.WindowsPhone)
-                    {
-                        if (App.objJugador == null)
-                        {
-                            rootFrame.Navigate(typeof(GuardarDatosJugador), typeof(MenuPrincipal));
-                        }
-                        else
-                        {
-                            rootFrame.Navigate(typeof(ElegirMesa), e.Arguments);
-                        }
-                    }
-                    else
-                    {
-                        rootFrame.Navigate(typeof(MenuPrincipal), e.Arguments);
-                    }
+                    rootFrame.Navigate(typeof(Views.SplashScreen), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

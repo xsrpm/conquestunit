@@ -486,9 +486,9 @@
                         <Grid x:Name="Opcion1Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,5,0,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo.png"/>
                         </Grid>
-                        <Grid Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion1Canvas" Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush x:Name="Opcion1Canvas" Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Opcion 1 Texto" VerticalAlignment="Center" Width="431" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion1Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
@@ -497,9 +497,9 @@
                         <Grid x:Name="Opcion2Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,55,19,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado.png"/>
                         </Grid>
-                        <Grid Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion2Canvas" Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush x:Name="Opcion2Canvas" Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Opcion 2 Texto" VerticalAlignment="Center" Width="431" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion2Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
@@ -508,9 +508,9 @@
                         <Grid x:Name="Opcion3Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,105,19,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png"/>
                         </Grid>
-                        <Grid Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion3Canvas" Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush x:Name="Opcion3Canvas" Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Opcion 3 Texto" VerticalAlignment="Center" Width="431" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion3Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
@@ -519,9 +519,9 @@
                         <Grid x:Name="Opcion4Boton" Width="33" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,19,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis.png"/>
                         </Grid>
-                        <Grid Height="48" Margin="60,145,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion4Canvas" Height="48" Margin="60,145,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush x:Name="Opcion4Canvas" Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Opcion 4 Texto" VerticalAlignment="Center" Width="431" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion4Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />

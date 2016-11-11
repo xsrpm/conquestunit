@@ -69,7 +69,7 @@
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"/>
                     <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="Calibri" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2" Tapped="infoJugador_Tapped">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="Algerian"/>
                     <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="64" Source="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"/>
                 </StackPanel>

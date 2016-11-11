@@ -1,26 +1,16 @@
 ﻿using DataModel;
 using SynapseSDK;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Util;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -58,7 +48,7 @@ namespace ConquestUnit.Views
             IniciarSDK();
         }
 
-        private void imgJugador_Tapped(object sender, TappedRoutedEventArgs e)
+        private void infoJugador_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(GuardarDatosJugador), typeof(ElegirMesa));
         }
@@ -227,6 +217,24 @@ namespace ConquestUnit.Views
                 txtMesaId.IsEnabled = true;
                 btnUnirme_Tapped(null, null);
             }
+        }
+
+        private void txtMesaId_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key.ToString().Equals("Back"))
+            {
+                e.Handled = false;
+                return;
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (e.Key.ToString() == string.Format("Number{0}", i))
+                {
+                    e.Handled = false;
+                    return;
+                }
+            }
+            e.Handled = true;
         }
     }
 }
