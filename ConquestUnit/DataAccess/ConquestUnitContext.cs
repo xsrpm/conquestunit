@@ -39,31 +39,6 @@ namespace ConquestUnit
             return justCreated;
         }
 
-        //public int Insertar<T>(T obj)
-        //{
-        //    return conn.InsertOrReplace(obj, typeof(T));
-        //}
-
-        //public int Eliminar<T>(int objId)
-        //{
-        //    return conn.Delete<T>(objId);
-        //}
-
-        //public T Obtener<T>(int objId) where T : class
-        //{
-        //    return conn.Get<T>(objId);
-        //}
-
-        //public T Encontrar<T>(int objId) where T : class
-        //{
-        //    return conn.Find<T>(objId);
-        //}
-
-        //public TableQuery<T> Listar<T>() where T : class
-        //{
-        //    return conn.Table<T>();
-        //}
-
         private static bool TableExists<T>(SQLiteConnection connection)
         {
             //var cmd = connection.CreateCommand($"SELECT name FROM sqlite_master WHERE type='table' AND name='" + typeof(T).Name + "'");

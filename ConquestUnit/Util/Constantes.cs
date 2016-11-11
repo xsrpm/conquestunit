@@ -22,11 +22,6 @@
         public static string ColorJug2 = "FF508A11";
         public static string ColorJug3 = "FF2E507E";
         public static string ColorJug4 = "FFBBC60F";
-
-        public static string ColorJug1Inactivo = "AFB81010";
-        public static string ColorJug2Inactivo = "AF508B10";
-        public static string ColorJug3Inactivo = "AF2E507E";
-        public static string ColorJug4Inactivo = "AFBBC60E";
         #endregion
 
         public static string ColorCorrecto = "#FF00FF00";
@@ -72,8 +67,8 @@
             public const int EQUIS = 11;
         }
 
-        public static string COLORMANDOACTIVO = "#FF01FE0F";
-        public static string COLORMANDOINACTIVO = "#FFFF0437";
+        public static string COLORMANDOACTIVO = "FF01FE0F";
+        public static string COLORMANDOINACTIVO = "FFFF0437";
 
         public struct Region
         {
@@ -85,13 +80,17 @@
 
         public struct MensajesResultadoBatalla
         {
-            public const string GanaAtacante = "Has ganado la batalla.";
-            public const string GanaAtacanteTerritorio = "Has ganado la batalla. Despliega tus unidades.";
-            public const string AtacanteResponderaSegundaPregunta = "Perdiste, pero aun puedes ganar.";
+            public const string GANASTE = "GANASTA";
+            public const string DERROTA = "DERROTA";
 
-            public const string PierdeAtacante = "Perdiste el ataque.";
-            public const string GanaDefensor = "Defendiste tu territorio satisfactoriamente.";
-            public const string PierdeDefensor = "No lograste defender tu territorio.";
+            public const string CONTINUAR_ATAQUE = "¿CONTINUAR EL ATAQUE?";
+            public const string DESPLIEGA_UNIDADES = "DESPLIEGA TUS UNIDADES";
+            public const string RESPONDER_SIGUIENTE_PREGUNTA = "RESPONDER SIGUIENTE PREGUNTA";
+
+            //public const string AtacanteResponderaSegundaPregunta = "Perdiste, pero aun puedes ganar.";
+            //public const string PierdeAtacante = "Perdiste el ataque.";
+            //public const string GanaDefensor = "Defendiste tu territorio satisfactoriamente.";
+            //public const string PierdeDefensor = "No lograste defender tu territorio.";
         }
 
         public struct MensajesConfirmarContinuar
@@ -147,7 +146,7 @@
         public static int BonoTerritoriosRegion3 = 2;
         public static int BonoTerritoriosRegion4 = 3;
 
-        public static int UnidadesMinimasParaEvolucionar = 10;
+        public static int UnidadesMinimasParaEvolucionar = 5;
         #endregion
     }
 }

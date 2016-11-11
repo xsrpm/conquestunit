@@ -96,9 +96,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ConquestUnitGame.xaml.cs">
       <DependentUpon>ConquestUnitGame.xaml</DependentUpon>
@@ -141,29 +138,17 @@
     <Content Include="Assets\Images\Icons\logo128x128.png" />
     <Content Include="Assets\Images\Icons\logo300x300.png" />
     <Content Include="Assets\Images\inactive32x32.png" />
-    <Content Include="Assets\Images\Mando\Abajo.png" />
     <Content Include="Assets\Images\Mando\Abajo1.png" />
-    <Content Include="Assets\Images\Mando\AbajoDerecha.png" />
     <Content Include="Assets\Images\Mando\AbajoDerecha1.png" />
-    <Content Include="Assets\Images\Mando\AbajoIzquierda.png" />
     <Content Include="Assets\Images\Mando\AbajoIzquierda1.png" />
-    <Content Include="Assets\Images\Mando\Arriba.png" />
     <Content Include="Assets\Images\Mando\Arriba1.png" />
-    <Content Include="Assets\Images\Mando\ArribaDerecha.png" />
     <Content Include="Assets\Images\Mando\ArribaDerecha1.png" />
-    <Content Include="Assets\Images\Mando\ArribaIzquierda.png" />
     <Content Include="Assets\Images\Mando\ArribaIzquierda1.png" />
-    <Content Include="Assets\Images\Mando\BotonCirculo.png" />
     <Content Include="Assets\Images\Mando\BotonCirculo1.png" />
-    <Content Include="Assets\Images\Mando\BotonCuadrado.png" />
     <Content Include="Assets\Images\Mando\BotonCuadrado1.png" />
-    <Content Include="Assets\Images\Mando\BotonEquis.png" />
     <Content Include="Assets\Images\Mando\BotonEquis1.png" />
-    <Content Include="Assets\Images\Mando\BotonTriangulo.png" />
     <Content Include="Assets\Images\Mando\BotonTriangulo1.png" />
-    <Content Include="Assets\Images\Mando\Derecha.png" />
     <Content Include="Assets\Images\Mando\Derecha1.png" />
-    <Content Include="Assets\Images\Mando\Izquierda.png" />
     <Content Include="Assets\Images\Mando\Izquierda1.png" />
     <Content Include="Assets\Images\selector.png" />
     <Content Include="Assets\Images\incorrecto.png" />
@@ -222,10 +207,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ConquestUnitGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -173,16 +173,17 @@ namespace ConquestUnit.Views
 
         public void HabilitarControles()
         {
-            //Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
-            //BitmapImage image = new BitmapImage(uri);
-            //imgActivo.Source = image;
-            lblTurno.Visibility = Visibility.Visible;
+            lblTurno.Text = "TURNO";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOACTIVO);
 
             btnArriba.IsEnabled = true;
+            btnAbajoDerecha.IsEnabled = true;
             btnIzquierda.IsEnabled = true;
+            btnAbajoIzquierda.IsEnabled = true;
             btnAbajo.IsEnabled = true;
+            btnArribaDerecha.IsEnabled = true;
             btnDerecha.IsEnabled = true;
+            btnArribaIzquierda.IsEnabled = true;
 
             btnCuadrado.IsEnabled = true;
             btnTriangulo.IsEnabled = true;
@@ -192,16 +193,17 @@ namespace ConquestUnit.Views
 
         public void DeshabilitarControles()
         {
-            //Uri uri = new Uri("ms-appx:///Assets/Images/inactive32x32.png");
-            //BitmapImage image = new BitmapImage(uri);
-            //imgActivo.Source = image;
-            lblTurno.Visibility = Visibility.Collapsed;
+            lblTurno.Text = "";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOINACTIVO);
 
             btnArriba.IsEnabled = false;
+            btnAbajoDerecha.IsEnabled = false;
             btnIzquierda.IsEnabled = false;
+            btnAbajoIzquierda.IsEnabled = false;
             btnAbajo.IsEnabled = false;
+            btnArribaDerecha.IsEnabled = false;
             btnDerecha.IsEnabled = false;
+            btnArribaIzquierda.IsEnabled = false;
 
             btnCuadrado.IsEnabled = false;
             btnTriangulo.IsEnabled = false;

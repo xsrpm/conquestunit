@@ -1,9 +1,6 @@
 ﻿using DataModel;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Util;
 
 namespace GameLogic
@@ -16,28 +13,24 @@ namespace GameLogic
             if (juego.JugadoresConectados.Count >= 1)
             {
                 juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
-                juego.JugadoresConectados[0].ColorInactivo = Constantes.ColorJug1Inactivo;
                 juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1;
                 juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1;
             }
             if (juego.JugadoresConectados.Count >= 2)
             {
                 juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
-                juego.JugadoresConectados[1].ColorInactivo = Constantes.ColorJug2Inactivo;
                 juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2;
                 juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2;
             }
             if (juego.JugadoresConectados.Count >= 3)
             {
                 juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
-                juego.JugadoresConectados[2].ColorInactivo = Constantes.ColorJug3Inactivo;
                 juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3;
                 juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3;
             }
             if (juego.JugadoresConectados.Count >= 4)
             {
                 juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
-                juego.JugadoresConectados[3].ColorInactivo = Constantes.ColorJug4Inactivo;
                 juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4;
                 juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4;
             }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Shapes;
+﻿using Windows.UI.Xaml.Shapes;
 
 namespace GameLogic
 {
@@ -16,7 +11,7 @@ namespace GameLogic
                 var frontera = Territorios[idTerritorioOrigenAtaque, i];
                 if (frontera != null)
                 {
-                    if (TerritorioAtaqueDestino.Tag == frontera.Tag)
+                    if (TerritorioAtaqueDestino.Tag.ToString() == frontera.Tag.ToString())
                     {
                         return true;
                     }
