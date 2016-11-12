@@ -904,7 +904,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cuántos grados Kelvin son 0 grados Celsius?",
                             "273,15", "283,15", "100", "10", context);
             InsertarPregunta("¿Qué nombre tiene el portátil más ligero, en peso, de Apple?",
-                            "MacBook Air", "MacBook Light", "MacBook Slim", "MacBook Lite¿Quién es considerado el padre de la genética?", context);
+                            "MacBook Air", "MacBook Light", "MacBook Slim", "MacBook Lite", context);
             InsertarPregunta("¿Quién es considerado el padre de la genética?",
                             "Gregor Mendel", "Aristóteles", "Hugo de Vries", "Eric Von Tschermak", context);
             InsertarPregunta("¿Cuál de estas fases NO es una de las fases de la división celular?",

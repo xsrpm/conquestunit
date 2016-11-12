@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*" />
             <RowDefinition Height=".5*"/>
@@ -91,6 +94,6 @@
         </Grid>
         
         <Image x:Name="ms_appx____Assets_Images_Icons_logo128x128_png" Grid.Column="2" Margin="22,0,23,25" Grid.Row="2" Source="ms-appx:///Assets/Images/Icons/logo128x128.png" Stretch="Fill" d:LayoutOverrides="TopPosition, BottomPosition"/>
-
+        <Button x:Name="btnRegresar" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="btnRegresar_Tapped" Height="60" Content="Regresar" BorderThickness="1" FontSize="30" Background="Black" Foreground="White"/>
     </Grid>
 </Page>

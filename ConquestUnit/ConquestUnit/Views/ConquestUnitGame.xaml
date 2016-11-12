@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+        </Grid.Background>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -203,7 +206,7 @@
                 <!---->
                 
                 <!--BOTONES FASES-->
-                <Grid Margin="500,20,0,0">
+                <Grid Margin="500,10,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
@@ -213,17 +216,20 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Button x:Name="btnFaseDespliegue" Content="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="Algerian">
+                    <TextBlock Text="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="Black" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" VerticalAlignment="Center"/>
+                    <Button x:Name="btnFaseDespliegue" Content="Despliegue" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
                         <Button.Background>
                             <SolidColorBrush Color="#000000" Opacity="0.8"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnFaseAtaque" Content="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="Algerian">
+                    <TextBlock Text="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Foreground="Black" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" VerticalAlignment="Center"/>
+                    <Button x:Name="btnFaseAtaque" Content="Ataque" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
                         <Button.Background>
                             <SolidColorBrush Color="#000000" Opacity="0.8"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnFaseFortificacion" Content="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Foreground="White" FontFamily="Algerian">
+                    <TextBlock Text="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Foreground="Black" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" VerticalAlignment="Center"/>
+                    <Button x:Name="btnFaseFortificacion" Content="Fortificación" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
                         <Button.Background>
                             <SolidColorBrush Color="#000000" Opacity="0.8"/>
                         </Button.Background>
@@ -248,7 +254,7 @@
                     <TextBlock Text="Conquest Unit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <TextBlock x:Name="txtMensajeContinuar" Text="Se terminaron las unidades por desplegar" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para continuar" Grid.Column="0" Grid.Row="2"/>
-                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Grid.Column="0" Grid.Row="2"/>
+                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Grid.Column="0" Grid.Row="2"/>
                 </Grid>
 
                 <!--Mensaje Continuar-->
@@ -265,9 +271,9 @@
                     <TextBlock Text="Conquest Unit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <TextBlock x:Name="txtMensajeContinuarCancelar" Text="¿Está seguro que desea continuar?" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para continuar" Grid.Column="0" Grid.Row="2"/>
-                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Grid.Column="0" Grid.Row="2"/>
+                    <Image Width="25" Height="25" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Grid.Column="0" Grid.Row="2"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Presiona       para cancelar" Grid.Column="0" Grid.Row="3"/>
-                    <Image Width="25" Height="25" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" Grid.Column="0" Grid.Row="3"/>
+                    <Image Width="25" Height="25" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Grid.Column="0" Grid.Row="3"/>
                 </Grid>
 
                 <!--INFO Territorio Seleccionado-->
@@ -289,7 +295,7 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Grid.RowSpan="7">
                         <Border.Background>
-                            <SolidColorBrush Color="#000000" Opacity="0.3" />
+                            <SolidColorBrush Color="#000000" Opacity="0.4" />
                         </Border.Background>
                     </Border>
                     <TextBlock Text="TERRITORIO" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
@@ -297,22 +303,24 @@
                     <TextBlock Text="DUEÑO" Grid.Column="0" Grid.Row="4"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
                     <TextBlock Text="TURNO" Grid.Column="0" Grid.Row="7"  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Arial Narrow"/>
 
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoTexto" Text="Huijiang" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoUnidades" Text="3" Grid.Column="0" Grid.Row="3"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
-                    <TextBlock x:Name="MapaTerritorioSeleccionadoPropietario" Text="Cesar" Grid.Column="0" Grid.Row="5"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoTexto" Text="Huijiang" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoUnidades" Text="3" Grid.Column="0" Grid.Row="3"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White"/>
+                    <TextBlock x:Name="MapaTerritorioSeleccionadoPropietario" Text="Cesar" Grid.Column="0" Grid.Row="5"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White"/>
                     <Rectangle x:Name="MapaTerritorioSeleccionadoColor" Grid.Column="0" Grid.Row="6" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="JuegoJugadorTurnoActualNombre" Text="Cesar" Grid.Column="0" Grid.Row="8"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="White"/>
+                    <TextBlock x:Name="JuegoJugadorTurnoActualNombre" Text="Cesar" Grid.Column="0" Grid.Row="8"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White"/>
                     <Rectangle x:Name="JuegoJugadorTurnoActualColor" Grid.Column="0" Grid.Row="9" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
 
-                <Grid Margin="1150,650,0,0">
-
-                    <Button x:Name="btnTerminarFase" Content="      Terminar&#x0a;          Fase" Foreground="White" FontFamily="Algerian">
-                        <Button.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.5" />
-                        </Button.Background>
-                    </Button>
-                    <Image Source="ms-appx:////Assets/Images/Mando/BotonTriangulo.png" Width="25" Height="25" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Grid Margin="1130,650,0,0" Height="50">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5" />
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="90" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" x:Name="btnTerminarFase" Text="Terminar&#x0a;Fase" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Image Grid.Column="0" Source="ms-appx:////Assets/Images/Mando/BotonTriangulo1.png" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
 
                 <!--JUGADORES-->
@@ -340,15 +348,15 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador1Nombre" Text="Cesar" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#B81010"/>
+                        <TextBlock x:Name="Jugador1Nombre" Text="Cesar" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#B81010"/>
                         <Image x:Name="Jugador1Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador1Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#B81010"/>
+                            <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#B81010"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador1Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador1Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#B81010"/>
+                            <TextBlock x:Name="Jugador1Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#B81010"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador2-->
@@ -365,15 +373,15 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador2Nombre" Text="Roy" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#508A11"/>
+                        <TextBlock x:Name="Jugador2Nombre" Text="Roy" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#508A11"/>
                         <Image x:Name="Jugador2Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador2Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#508A11"/>
+                            <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#508A11"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador2Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador2Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#508A11"/>
+                            <TextBlock x:Name="Jugador2Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#508A11"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador3-->
@@ -390,15 +398,15 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#2E507E"/>
+                        <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#2E507E"/>
                         <Image x:Name="Jugador3Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador3Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#2E507E"/>
+                            <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#2E507E"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador3Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador3Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#2E507E"/>
+                            <TextBlock x:Name="Jugador3Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#2E507E"/>
                         </StackPanel>
                     </Grid>
                     <!--Jugador4-->
@@ -415,22 +423,22 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Algerian" Foreground="#BCC60F"/>
+                        <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#BCC60F"/>
                         <Image x:Name="Jugador4Imagen" Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador4Territorios"  Text="Territorios: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#BCC60F"/>
+                            <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#BCC60F"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador4Continentes"  Text="Continentes: " FontSize="13" FontFamily="Arial Narrow" Foreground="White"/>
-                            <TextBlock x:Name="Jugador4Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="Algerian" Foreground="#BCC60F"/>
+                            <TextBlock x:Name="Jugador4Continentes" Text="0" FontSize="13" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#BCC60F"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
                 <!---->
                 
                 <!--BATALLA-->
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="720" VerticalAlignment="Bottom" Width="1280" d:IsHidden="False">
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="720" VerticalAlignment="Bottom" Width="1280" d:IsHidden="True">
                     <Grid.Background>
                         <ImageBrush ImageSource="ms-appx:///Assets/Pantallas/PC/FondoHumo.png" Opacity="0.8"/>
                     </Grid.Background>
@@ -444,74 +452,74 @@
                             <SolidColorBrush Color="Black" Opacity="0.6" />
                         </Grid.Background>
                         <Image x:Name="DefensorFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Width="160" Height="150" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorBatalla.png"/>
-                        <TextBlock x:Name="TropaDefensorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="TropaDefensorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <TextBlock x:Name="NTropasDefensorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0" Text="10" FontSize="48" TextAlignment="Center" FontWeight="Bold" Foreground="#FF508A11" FontFamily="Arial Narrow"/>
-                        <TextBlock x:Name="DefensorNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="DefensorNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <TextBlock x:Name="DefensorPuntosTituloTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,70,0" Text="P." FontSize="48" Foreground="#FF508A11" FontFamily="Arial Narrow"/>
                         <TextBlock x:Name="InvasorPuntosDefensaTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Text="0" FontSize="48" Foreground="White" FontFamily="Arial Narrow"/>
                         <Rectangle x:Name="DefensorFondo" Fill="#FF508A11" VerticalAlignment="Bottom" Height="75" Opacity="0.6"/>
-                        <TextBlock x:Name="DefensorTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="HUIJIAN" FontSize="48" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="DefensorTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="HUIJIAN" FontSize="48" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                     </Grid>
-                    <Grid x:Name="CabeceraGrid" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Visibility="Collapsed">
+                    <Grid x:Name="CabeceraGrid" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Visibility="Visible">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="65" />
                             <RowDefinition Height="65" />
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="AtaqueBatallaTXT" Text="ATAQUE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="65" Grid.Row="0" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="AtaqueBatallaTXT" Text="ATAQUE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="65" Grid.Row="0" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <Image x:Name="imgComboAtk" Source="ms-appx:///Assets/Pantallas/PC/IconoEspada.png" Grid.Row="1" Width="225" Height="70" Margin="0,0,0,0"/>
                         <Rectangle Fill="Black" Grid.Row="1" Height="20" Width="145" VerticalAlignment="Bottom" HorizontalAlignment="Right" Opacity="0.6"/>
                         <TextBlock x:Name="txtPrimeraLinea" Grid.Row="1" Text="COMBO DE ATAQUE" FontSize="15" Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="White" FontFamily="Arial Narrow"/>
-                        <TextBlock x:Name="txtComboAtk" Text="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="txtComboAtk" Text="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <Image x:Name="LeftArrowBatallaGrid" Source="ms-appx:///Assets/Images/Mando/Izquierda1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Height="28" Width="33" Margin="0,0,50,0"/>
                         <Image x:Name="RightArrowBatallaGrid" Source="ms-appx:///Assets/Images/Mando/Derecha1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Height="28" Width="33" Margin="50,0,0,0"/>
-                        <Image x:Name="XButtonGrid_Copy" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" Height="28" HorizontalAlignment="Center" Margin="0,0,75,0" VerticalAlignment="Center" Grid.Row="3"/>
-                        <Rectangle Fill="Black" Grid.Row="3" Height="30" Width="105" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="60,0,0,0" Opacity="0.6"/>
-                        <TextBlock x:Name="AtacarBatallaTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ataque" FontSize="25" Margin="60,0,0,0" Foreground="White" FontFamily="Algerian" Grid.Row="3"/>
+                        <Image x:Name="XButtonGrid_Copy" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Height="35" Width="35" HorizontalAlignment="Center" Margin="0,0,75,0" VerticalAlignment="Center" Grid.Row="3"/>
+                        <Rectangle x:Name="AtacarBatallaTXTImg" Fill="Black" Grid.Row="3" Height="30" Width="105" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="60,0,0,0" Opacity="0.6"/>
+                        <TextBlock x:Name="AtacarBatallaTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ataque" FontSize="25" Margin="60,0,0,0" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Grid.Row="3"/>
                     </Grid>
-                    <Grid x:Name="PreguntaGrid" Margin="265,0" Height="435" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Collapsed">
+                    <Grid x:Name="PreguntaGrid" Margin="265,0" Height="460" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Visible">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="150" />
-                            <RowDefinition Height="270" />
+                            <RowDefinition Height="300" />
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Grid Grid.Row="0" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Grid.Background>
                                 <SolidColorBrush Color="Black" Opacity="0.6"/>
                             </Grid.Background>
-                            <TextBlock x:Name="PreguntaTXT" TextWrapping="Wrap" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="25" Text="hksdkfhd hksdkfhd hksdkfhd fnfks ksdfjdhfshf" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="PreguntaTXT" TextWrapping="Wrap" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Text="¿Quien es la entrenadora de volleyball de Perú que se caracteriza por el uso de palabras soeces a sus deportistas?" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
                         </Grid>
                         <!--OPCIONES-->
                         <Grid x:Name="Opcion1Boton" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo1.png"/>
                         </Grid>
-                        <Grid x:Name="Opcion1Canvas" Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion1Canvas" Height="48" Margin="60,-5,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush x:Name="Opcion1CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
-                            <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Opcion 1 Texto" VerticalAlignment="Center" Width="475" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion1Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion1Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
                         <Grid x:Name="Opcion2Boton" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,50,19,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado1.png"/>
                         </Grid>
-                        <Grid x:Name="Opcion2Canvas" Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion2Canvas" Height="48" Margin="60,45,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush x:Name="Opcion2CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
-                            <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Opcion 2 Texto" VerticalAlignment="Center" Width="475" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion2Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion2Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
                         <Grid x:Name="Opcion3Boton" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,100,19,0" Grid.Row="1">
                             <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png"/>
                         </Grid>
-                        <Grid x:Name="Opcion3Canvas" Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top">
+                        <Grid x:Name="Opcion3Canvas" Height="48" Margin="60,95,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush x:Name="Opcion3CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
-                            <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Opcion 3 Texto" VerticalAlignment="Center" Width="475" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion3Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion3Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
@@ -520,71 +528,35 @@
                         </Grid>
                         <Grid x:Name="Opcion4Canvas" Height="48" Margin="60,145,19,0" Grid.Row="1" VerticalAlignment="Top">
                             <Grid.Background>
-                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                                <SolidColorBrush x:Name="Opcion4CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
-                            <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Opcion 4 Texto" VerticalAlignment="Center" Width="475" FontSize="17" Foreground="White" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
                             <Rectangle x:Name="Opcion4Jugador1" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Red" />
                             <Rectangle x:Name="Opcion4Jugador2" Height="46" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Fill="Red" />
                         </Grid>
-                        <TextBlock x:Name="txtTimerOpciones" Text="3.00" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Algerian" Foreground="White" Grid.Row="1"/>
+                        <TextBlock x:Name="txtTimerOpciones" Text="3.00" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White" Grid.Row="1"/>
                         <!---->
                     </Grid>
-                    <Grid x:Name="MoverTropasGrid" Margin="300,0,300,0" Height="600" Grid.Row="1" Visibility="Visible">
-                        <Grid.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.8"/>
-                        </Grid.Background>
-                        <Grid.Resources>
-                            <SolidColorBrush x:Key="brush" Color="Azure" />
-                        </Grid.Resources>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Moviendo Unidades" VerticalAlignment="Center" FontSize="60" FontFamily="Algerian" Foreground="White"/>
-                        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="desde" VerticalAlignment="Bottom" FontSize="24" Foreground="White" FontWeight="Bold"/>
-                        <TextBlock x:Name="MoverUnidadesTerritorioOrigen" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tibet" VerticalAlignment="Center" FontSize="45" Foreground="White" FontFamily="Algerian"/>
-                        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock x:Name="MoverUnidadesTerritorioOrigenNUnidades" TextWrapping="Wrap" Text="2" FontSize="50" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Arial Narrow"/>
-                            <Image x:Name="MoverUnidadesImgIzquierda" Source="ms-appx:///Assets/Images/Mando/Izquierda1.png" Width="50" Height="50" />
-                        </StackPanel>
-                        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="hacia" VerticalAlignment="Bottom" FontSize="25" Foreground="White" FontWeight="Bold"/>
-                        <TextBlock x:Name="MoverUnidadesTerritorioDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="45" Foreground="White" FontFamily="Algerian"/>
-                        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock x:Name="MoverUnidadesTerritorioDestinoNUnidades" TextWrapping="Wrap" Text="2" FontSize="50" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Arial Narrow"/>
-                            <Image x:Name="MoverUnidadesImgDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha1.png" Width="50" Height="50" />
-                        </StackPanel>
-                        <TextBlock Grid.Column="0" Grid.Row="4" Margin="50,0,0,0" Grid.ColumnSpan="2" Text="Continuar" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="25" FontFamily="Arial Narrow" FontWeight="SemiBold"/>
-                        <Image Width="35" Height="35" Margin="0,0,100,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Grid>
+                    
 
                     <Grid x:Name="InvasorGrid" HorizontalAlignment="Left" Width="265" Grid.RowSpan="2">
                         <Grid.Background>
                             <SolidColorBrush Color="Black" Opacity="0.6" />
                         </Grid.Background>
                         <Image x:Name="InvasorFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Width="160" Height="150" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorBatalla.png"/>
-                        <TextBlock x:Name="TropaInvasorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="TropaInvasorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,210,0,0" Text="TROPAS" FontSize="40" TextAlignment="Center" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <TextBlock x:Name="NTropasInvasorTXT" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0" Text="10" FontSize="48" TextAlignment="Center" FontWeight="Bold" Foreground="#FFB81010" FontFamily="Arial Narrow"/>
-                        <TextBlock x:Name="AtacanteNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="AtacanteNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Cesar" FontSize="40" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <TextBlock x:Name="InvasorPuntosTituloTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,70,0" Text="P." FontSize="48" Foreground="#FFB81010" FontFamily="Arial Narrow"/>
                         <TextBlock x:Name="InvasorPuntosAtaqueTXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Text="0" FontSize="48" Foreground="White" FontFamily="Arial Narrow"/>
                         <Rectangle x:Name="InvasorFondo" Fill="#FFB81010" VerticalAlignment="Bottom" Height="75" Opacity="0.6"/>
-                        <TextBlock x:Name="AtacanteTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="Tibet" FontSize="48" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="AtacanteTerritorioNombreTXT" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Text="Tibet" FontSize="48" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                     </Grid>
                     <RelativePanel x:Name="PanelMensajeJugadorAtacante" Grid.Row="1" Width="750" Height="230" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed">
                         <RelativePanel.Background>
                             <SolidColorBrush Color="Black" Opacity="0.9"/>
                         </RelativePanel.Background>
-                        <TextBlock x:Name="txtMensajeJugadorAtacanteTitulo" Margin="0,10,0,0" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="GANASTE" TextAlignment="Center" FontSize="80" Foreground="White" FontFamily="Algerian"/>
+                        <TextBlock x:Name="txtMensajeJugadorAtacanteTitulo" Margin="0,10,0,0" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="GANASTE" TextAlignment="Center" FontSize="80" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                         <TextBlock x:Name="txtMensajeJugadorAtacante" Margin="0,100,0,0" TextWrapping="Wrap" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="DESPLIEGA TUS UNIDADES" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="White" FontFamily="Arial Narrow"/>
                         <TextBlock x:Name="txtContinuarJugadorAtacante" Margin="50,0,0,40" RelativePanel.AlignBottomWithPanel="True" Text="Continuar" FontSize="25" RelativePanel.AlignHorizontalCenterWithPanel="True" Foreground="White" FontWeight="SemiBold" FontFamily="Arial Narrow"/>
                         <Image Width="35" x:Name="imgContinuarJugadorAtacante" Height="35" Margin="0,0,100,40" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png"/>
@@ -596,42 +568,50 @@
                 <!---->
 
                         <!--FORTIFICACION-->
-                        <Grid x:Name="FortificacionGrid" Margin="300,200,300,0" Height="400" Grid.Row="1" BorderBrush="Black" Background="White" BorderThickness="1,1,1,1" Visibility="Collapsed">
+                        <Grid x:Name="MoverTropasGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,30,0,0" Height="650" Width="690" Visibility="Visible">
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.9"/>
+                            </Grid.Background>
                             <Grid.Resources>
                                 <SolidColorBrush x:Key="brush" Color="Azure" />
                             </Grid.Resources>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.4*" />
+                                <ColumnDefinition Width="0.*" />
+                                <ColumnDefinition Width="0.4*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
+                                <RowDefinition Height="90" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="300" />
+                                <RowDefinition Height="70" />
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Fortificación" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBlack"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Desde" VerticalAlignment="Bottom" FontSize="24"/>
-                            <TextBlock x:Name="FortiNombreOrigen" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tibet" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
-                            <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock x:Name="FortiNroUnidadesOrigen" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center" />
-                                <Image x:Name="FortiIzquierda" Source="ms-appx:///Assets/Images/Mando/Izquierda.png" Width="50" Height="50" />
+                            <TextBlock x:Name="TituloMoverTropas" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Moviendo Unidades" VerticalAlignment="Center" FontSize="60" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="White"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="desde" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold"/>
+                            <TextBlock x:Name="MoverUnidadesTerritorioOrigen" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tibet" VerticalAlignment="Bottom" FontSize="45" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+                            <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="0.3*" />
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="MoverUnidadesImgIzquierda" Grid.Column="0" Source="ms-appx:///Assets/Images/Mando/Izquierda1.png" Width="50" Height="50" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="MoverUnidadesTerritorioOrigenNUnidades" Text="00" Grid.Column="1" TextWrapping="Wrap" FontSize="55" Foreground="White" FontWeight="Bold" FontFamily="Arial Narrow" HorizontalAlignment="Center"/>
+                                <Image x:Name="MoverUnidadesImgDerecha" Grid.Column="2" Source="ms-appx:///Assets/Images/Mando/Derecha1.png" Width="50" Height="50" HorizontalAlignment="Left"/>
+                            </Grid>
+                            <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="hacia" VerticalAlignment="Top" FontSize="25" Foreground="White" FontWeight="Bold"/>
+                            <TextBlock x:Name="MoverUnidadesTerritorioDestino" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Heilongjiang" VerticalAlignment="Bottom" FontSize="45" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+                            <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock TextWrapping="Wrap" Text="-----" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Light"/>
+                                <TextBlock TextWrapping="Wrap" Text="►" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White"/>
                             </StackPanel>
-                            <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hacia" VerticalAlignment="Bottom" FontSize="24"/>
-                            <TextBlock x:Name="FortiNombreDestino" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Shangai" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
-                            <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock TextWrapping="Wrap" Text="----->" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Oblique"/>
+                            <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <TextBlock x:Name="MoverUnidadesTerritorioDestinoNUnidades" TextWrapping="Wrap" Text="10" FontSize="55" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Arial Narrow"/>
                             </StackPanel>
-                            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image x:Name="FortiDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha.png" Width="50" Height="50" />
-                                <TextBlock x:Name="FortiNroUnidadesDestino" TextWrapping="Wrap" Text="2" FontSize="40" VerticalAlignment="Center"/>
-                            </StackPanel>
-                            <TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Text="Presiona       para confirmar" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonEquis.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="Presiona        para cancelar" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <Image Width="30" Height="30" Margin="0,0,80,0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Images/Mando/BotonCirculo.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Image x:Name="MoverTropasImg" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Width="300" Height="300"/>
+                            <TextBlock Grid.Column="0" Grid.Row="4" Margin="50,0,0,0" Grid.ColumnSpan="3" Text="Continuar" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="25" FontFamily="Arial Narrow" FontWeight="SemiBold"/>
+                            <Image Width="35" Height="35" Margin="0,0,100,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                         <!---->
      

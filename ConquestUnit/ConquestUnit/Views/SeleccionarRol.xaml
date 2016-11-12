@@ -70,7 +70,7 @@
                     <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="Calibri" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2" Tapped="infoJugador_Tapped">
-                    <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="Algerian"/>
+                    <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                     <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="64" Source="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"/>
                 </StackPanel>
             </Grid>
@@ -83,11 +83,11 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Padding="50">
                     <Image x:Name="imgElegirMesa" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Pantallas/PC/RolMesa.png" Tapped="imgElegirMesa_Tapped"/>
-                    <TextBlock x:Name="lblMesa" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Mesa" FontSize="35" FontFamily="Algerian"/>
+                    <TextBlock x:Name="lblMesa" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Mesa" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
                 <StackPanel Padding="50">
                     <Image x:Name="imgElegirJugador" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png" Tapped="imgElegirJugador_Tapped"/>
-                    <TextBlock x:Name="lblJugador" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Jugador" FontSize="35" FontFamily="Algerian"/>
+                    <TextBlock x:Name="lblJugador" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Jugador" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

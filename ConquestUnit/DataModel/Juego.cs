@@ -4,8 +4,6 @@ namespace DataModel
 {
     public class Juego
     {
-        //public string FasedeJuegoActual;
-        //public List<int> NFichasParaDesplegar;
         public int FaseActual { get; set; }
         public int AccionActual { get; set; }
         public int TurnoActual { get; set; }

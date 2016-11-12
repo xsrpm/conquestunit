@@ -108,6 +108,7 @@ namespace ConquestUnit.Views
         public void Inicializar()
         {
             BatallaGrid.Visibility = Visibility.Collapsed;
+            MoverTropasGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
             Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
             {
@@ -333,6 +334,7 @@ namespace ConquestUnit.Views
             }
             XButtonGrid_Copy.Visibility = Visibility.Visible;
             AtacarBatallaTXT.Visibility = Visibility.Visible;
+            AtacarBatallaTXTImg.Visibility = Visibility.Visible;
             //Area Pregunta
             CabeceraGrid.Visibility = Visibility.Visible;
             PreguntaGrid.Visibility = Visibility.Collapsed;
@@ -342,10 +344,10 @@ namespace ConquestUnit.Views
             Opcion2Canvas.Visibility = Visibility.Collapsed;
             Opcion3Canvas.Visibility = Visibility.Collapsed;
             Opcion4Canvas.Visibility = Visibility.Collapsed;
-            Opcion1Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            Opcion2Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            Opcion3Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            Opcion4Canvas.Background = new SolidColorBrush(Colors.Transparent);
+            Opcion1CanvasColor.Color = Colors.Black;
+            Opcion2CanvasColor.Color = Colors.Black;
+            Opcion3CanvasColor.Color = Colors.Black;
+            Opcion4CanvasColor.Color = Colors.Black;
             Opcion1Jugador1.Visibility = Visibility.Collapsed;
             Opcion2Jugador1.Visibility = Visibility.Collapsed;
             Opcion3Jugador1.Visibility = Visibility.Collapsed;
@@ -397,6 +399,7 @@ namespace ConquestUnit.Views
             RightArrowBatallaGrid.Visibility = Visibility.Collapsed;
             XButtonGrid_Copy.Visibility = Visibility.Collapsed;
             AtacarBatallaTXT.Visibility = Visibility.Collapsed;
+            AtacarBatallaTXTImg.Visibility = Visibility.Collapsed;
 
             PreguntaGrid.Visibility = Visibility.Visible;
             txtTimerOpciones.Visibility = Visibility.Visible;
@@ -420,11 +423,30 @@ namespace ConquestUnit.Views
             CabeceraGrid.Visibility = Visibility.Collapsed;
             PreguntaGrid.Visibility = Visibility.Collapsed;
             MoverTropasGrid.Visibility = Visibility.Visible;
+            TituloMoverTropas.Text = Constantes.MOVER_TROPAS_MOVER;
             MoverUnidadesTerritorioOrigen.Text = objJuego.TerritorioAtaqueOrigen.NombreTerritorio;
             MoverUnidadesTerritorioOrigenNUnidades.Text = (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas - 1).ToString();
             MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             MoverUnidadesTerritorioDestinoNUnidades.Text = "1";
-            //MoverUnidadesNUnidades.Text = "1";
+            if (objJuego.TipoMapa == Constantes.MAPA_CHINA)
+            {
+                if (objJuego.TurnoActual == 0)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug1CHINA));
+                }
+                else if (objJuego.TurnoActual == 1)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug2CHINA));
+                }
+                else if (objJuego.TurnoActual == 2)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug3CHINA));
+                }
+                else if (objJuego.TurnoActual == 3)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug4CHINA));
+                }
+            }
             MoverUnidadesImgIzquierda.Visibility = Visibility.Collapsed;
             if (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas <= 2)
             {
@@ -537,7 +559,7 @@ namespace ConquestUnit.Views
                     {
                         if (objJuego.Opciones[i].EsRespuesta)
                         {
-                            ((Grid)FindName("Opcion" + (i + 1) + "Canvas")).Background = new SolidColorBrush(Colors.Green);//Convertidor.GetSolidColorBrush(Constantes.ColorCorrecto);
+                            ((SolidColorBrush)FindName("Opcion" + (i + 1) + "CanvasColor")).Color = Colors.Green;
                             if (respuestaAtacante != i)
                             {
                                 puntosAtacante = 0;
@@ -551,7 +573,7 @@ namespace ConquestUnit.Views
                         {
                             if (respuestaAtacante == i || respuestaDefensor == i)
                             {
-                                ((Grid)FindName("Opcion" + (i + 1) + "Canvas")).Background = new SolidColorBrush(Colors.Red);//Convertidor.GetSolidColorBrush(Constantes.ColorIncorrecto);
+                                ((SolidColorBrush)FindName("Opcion" + (i + 1) + "CanvasColor")).Color = Colors.Red;
                             }
                         }
                     }
@@ -628,7 +650,7 @@ namespace ConquestUnit.Views
                     {
                         if (objJuego.Opciones[i].EsRespuesta)
                         {
-                            ((Grid)FindName("Opcion" + (i + 1) + "Canvas")).Background = new SolidColorBrush(Colors.Green);//Convertidor.GetSolidColorBrush(Constantes.ColorCorrecto);
+                            ((SolidColorBrush)FindName("Opcion" + (i + 1) + "CanvasColor")).Color = Colors.Green;
                             if (respuestaAtacante != i)
                             {
                                 puntosAtacante = 0;
@@ -638,7 +660,7 @@ namespace ConquestUnit.Views
                         {
                             if (respuestaAtacante == i)
                             {
-                                ((Grid)FindName("Opcion" + (i + 1) + "Canvas")).Background = new SolidColorBrush(Colors.Red);//Convertidor.GetSolidColorBrush(Constantes.ColorIncorrecto);
+                                ((SolidColorBrush)FindName("Opcion" + (i + 1) + "CanvasColor")).Color = Colors.Red;
                             }
                         }
                     }
@@ -709,14 +731,14 @@ namespace ConquestUnit.Views
 
         public void MostrarOpciones()
         {
-            //Opcion1Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            //Opcion2Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            //Opcion3Canvas.Background = new SolidColorBrush(Colors.Transparent);
-            //Opcion4Canvas.Background = new SolidColorBrush(Colors.Transparent);
             Opcion1Canvas.Visibility = Visibility.Visible;
             Opcion2Canvas.Visibility = Visibility.Visible;
             Opcion3Canvas.Visibility = Visibility.Visible;
             Opcion4Canvas.Visibility = Visibility.Visible;
+            Opcion1CanvasColor.Color = Colors.Black;
+            Opcion2CanvasColor.Color = Colors.Black;
+            Opcion3CanvasColor.Color = Colors.Black;
+            Opcion4CanvasColor.Color = Colors.Black;
             Opcion1Jugador1.Visibility = Visibility.Collapsed;
             Opcion2Jugador1.Visibility = Visibility.Collapsed;
             Opcion3Jugador1.Visibility = Visibility.Collapsed;
@@ -788,6 +810,10 @@ namespace ConquestUnit.Views
             Opcion2Canvas.Visibility = Visibility.Collapsed;
             Opcion3Canvas.Visibility = Visibility.Collapsed;
             Opcion4Canvas.Visibility = Visibility.Collapsed;
+            Opcion1CanvasColor.Color = Colors.Black;
+            Opcion2CanvasColor.Color = Colors.Black;
+            Opcion3CanvasColor.Color = Colors.Black;
+            Opcion4CanvasColor.Color = Colors.Black;
             Opcion1Jugador1.Visibility = Visibility.Collapsed;
             Opcion2Jugador1.Visibility = Visibility.Collapsed;
             Opcion3Jugador1.Visibility = Visibility.Collapsed;
@@ -814,27 +840,55 @@ namespace ConquestUnit.Views
 
         public void IniciarFortificacion()
         {
-            FortificacionGrid.Visibility = Visibility.Visible;
-            FortiNombreOrigen.Text = objJuego.TerritorioFortificacionOrigen.NombreTerritorio;
-            FortiNroUnidadesOrigen.Text = objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas.ToString();
-            FortiNombreDestino.Text = objJuego.TerritorioFortificacionDestino.NombreTerritorio;
-            FortiNroUnidadesDestino.Text = objJuego.TerritorioFortificacionDestino.NUnidadesDeplegadas.ToString();
-            FortiIzquierda.Visibility = Visibility.Collapsed;
-            FortiDerecha.Visibility = Visibility.Visible;
+            MoverTropasGrid.Visibility = Visibility.Visible;
+            TituloMoverTropas.Text = Constantes.MOVER_TROPAS_FORTIFICACION;
+            MoverUnidadesTerritorioOrigen.Text = objJuego.TerritorioFortificacionOrigen.NombreTerritorio;
+            MoverUnidadesTerritorioOrigenNUnidades.Text = objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas.ToString();
+            MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioFortificacionDestino.NombreTerritorio;
+            MoverUnidadesTerritorioDestinoNUnidades.Text = objJuego.TerritorioFortificacionDestino.NUnidadesDeplegadas.ToString();
+            if (objJuego.TipoMapa == Constantes.MAPA_CHINA)
+            {
+                if (objJuego.TurnoActual == 0)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug1CHINA));
+                }
+                else if (objJuego.TurnoActual == 1)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug2CHINA));
+                }
+                else if (objJuego.TurnoActual == 2)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug3CHINA));
+                }
+                else if (objJuego.TurnoActual == 3)
+                {
+                    MoverTropasImg.Source = new BitmapImage(new Uri(Constantes.UnidadJug4CHINA));
+                }
+            }
+            MoverUnidadesImgIzquierda.Visibility = Visibility.Collapsed;
+            //if (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas <= 2)
+            //{
+            //    MoverUnidadesImgDerecha.Visibility = Visibility.Collapsed;
+            //}
+            //else
+            //{
+            //    MoverUnidadesImgDerecha.Visibility = Visibility.Visible;
+            //}
+            MoverUnidadesImgDerecha.Visibility = Visibility.Visible;
         }
 
         public void ModificarCantidadUnidadesMover(int direccion)
         {
-            int unidadesOrigen = int.Parse(FortiNroUnidadesOrigen.Text);
-            int unidadesDestino = int.Parse(FortiNroUnidadesDestino.Text);
+            int unidadesOrigen = int.Parse(MoverUnidadesTerritorioOrigenNUnidades.Text);
+            int unidadesDestino = int.Parse(MoverUnidadesTerritorioDestinoNUnidades.Text);
             if (direccion == Constantes.Controles.IZQUIERDA)
             {
                 if (unidadesOrigen + 1 > objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas)
                 {
                     return;
                 }
-                FortiNroUnidadesOrigen.Text = (unidadesOrigen + 1).ToString();
-                FortiNroUnidadesDestino.Text = (unidadesDestino - 1).ToString();
+                MoverUnidadesTerritorioOrigenNUnidades.Text = (unidadesOrigen + 1).ToString();
+                MoverUnidadesTerritorioDestinoNUnidades.Text = (unidadesDestino - 1).ToString();
                 unidadesOrigen++;
                 unidadesDestino--;
             }
@@ -844,25 +898,25 @@ namespace ConquestUnit.Views
                 {
                     return;
                 }
-                FortiNroUnidadesOrigen.Text = (unidadesOrigen - 1).ToString();
-                FortiNroUnidadesDestino.Text = (unidadesDestino + 1).ToString();
+                MoverUnidadesTerritorioOrigenNUnidades.Text = (unidadesOrigen - 1).ToString();
+                MoverUnidadesTerritorioDestinoNUnidades.Text = (unidadesDestino + 1).ToString();
                 unidadesOrigen--;
                 unidadesDestino++;
             }
             if (unidadesOrigen==1)
             {
-                FortiIzquierda.Visibility = Visibility.Visible;
-                FortiDerecha.Visibility = Visibility.Collapsed;
+                MoverUnidadesImgIzquierda.Visibility = Visibility.Visible;
+                MoverUnidadesImgDerecha.Visibility = Visibility.Collapsed;
             }
             else if (unidadesOrigen == objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas)
             {
-                FortiIzquierda.Visibility = Visibility.Collapsed;
-                FortiDerecha.Visibility = Visibility.Visible;
+                MoverUnidadesImgIzquierda.Visibility = Visibility.Collapsed;
+                MoverUnidadesImgDerecha.Visibility = Visibility.Visible;
             }
             else
             {
-                FortiIzquierda.Visibility = Visibility.Visible;
-                FortiDerecha.Visibility = Visibility.Visible;
+                MoverUnidadesImgIzquierda.Visibility = Visibility.Visible;
+                MoverUnidadesImgDerecha.Visibility = Visibility.Visible;
             }
         }
 
@@ -870,12 +924,12 @@ namespace ConquestUnit.Views
         {
             //Aca actualizar las unidades e fortificaocn
             var territorio = objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId];
-            ((TextBlock)this.FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
-            ((Image)this.FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
+            ((TextBlock)FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
+            ((Image)FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
 
-            territorio = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId];
-            ((TextBlock)this.FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
-            ((Image)this.FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
+            territorio = objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId];
+            ((TextBlock)FindName("UnidadCantidad" + territorio.NombreTerritorio)).Text = territorio.NUnidadesDeplegadas.ToString();
+            ((Image)FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
         }
 
         public async void IniciarSiguienteTurno()
@@ -955,7 +1009,7 @@ namespace ConquestUnit.Views
                                     //La unidad evoluciona?
                                     if (objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas >= Constantes.UnidadesMinimasParaEvolucionar)
                                     {
-                                        ((Image)FindName(objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Source =
+                                        ((Image)FindName("Unidad" + objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Source =
                                             new BitmapImage(new Uri(objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorTurnoActual).First().ImagenUnidadAgrupadora));
                                     }
 
@@ -1313,8 +1367,18 @@ namespace ConquestUnit.Views
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
                                     ActualizarDespuesDeBatalla();
 
-                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
+                                    if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas<=1)
+                                    {
+                                        objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
+                                        DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
+                                        objJuego.TerritorioAtaqueOrigen = null;
+                                    }
+                                    else
+                                    {
+                                        objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOATK;
+                                    }
                                     objJuego.TerritorioAtaqueDestino = null;
+                                    MoverTropasGrid.Visibility = Visibility.Collapsed;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
                                     objJuego.IpJugadorDefiende = "";
                                 }
@@ -1432,13 +1496,19 @@ namespace ConquestUnit.Views
                                 if (botonPresionado >= 0 && botonPresionado <= 7)
                                 {
                                     var territorioASeleccionar = Territorio[Convert.ToInt32(TerrSelec.Tag), botonPresionado];
-                                    if (objJuego.Territorios[Convert.ToInt32(territorioASeleccionar.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                    if (territorioASeleccionar!= null && objJuego.Territorios[Convert.ToInt32(territorioASeleccionar.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
                                     {
                                         MoverTerritorio(botonPresionado);
                                     }
                                 }
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
+                                    //Verificar que no es el mismo territorio
+                                    if (objJuego.TerritorioFortificacionOrigen.TerritorioId == objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].TerritorioId)
+                                    {
+                                        return;
+                                    }
+
                                     //Verificar que el territorio perteneza al jugador
                                     if (!objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
                                     {
@@ -1484,8 +1554,8 @@ namespace ConquestUnit.Views
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
                                     //Confirmar el movimiento de unidades para fortificacion
-                                    int unidadesOrigen = int.Parse(FortiNroUnidadesOrigen.Text);
-                                    int unidadesDestino = int.Parse(FortiNroUnidadesDestino.Text);
+                                    int unidadesOrigen = int.Parse(MoverUnidadesTerritorioOrigenNUnidades.Text);
+                                    int unidadesDestino = int.Parse(MoverUnidadesTerritorioDestinoNUnidades.Text);
                                     objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId].NUnidadesDeplegadas = unidadesOrigen;
                                     objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId].NUnidadesDeplegadas = unidadesDestino;
                                     
@@ -1498,8 +1568,8 @@ namespace ConquestUnit.Views
                                         objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidadAgrupadora;
                                     else
                                         objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidad;
-
-                                    FortificacionGrid.Visibility = Visibility.Collapsed;
+                                    ActualizarDespuesDeFortificacion();
+                                    MoverTropasGrid.Visibility = Visibility.Collapsed;
 
                                     //Finalizar Truno
                                     objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR;
@@ -1509,7 +1579,7 @@ namespace ConquestUnit.Views
                                 else if (botonPresionado == Constantes.Controles.CIRCULO)
                                 {
                                     //Cancelar la fortificacion actual
-                                    FortificacionGrid.Visibility = Visibility.Collapsed;
+                                    MoverTropasGrid.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.FORTIFICACION;
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOFOR;
                                     objJuego.TerritorioFortificacionDestino = null;
@@ -1521,7 +1591,7 @@ namespace ConquestUnit.Views
                             {
                                 if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
-                                    ActualizarDespuesDeFortificacion();
+                                    //ActualizarDespuesDeFortificacion();
                                     MensajeContinuar.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
                                     objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
@@ -1543,7 +1613,7 @@ namespace ConquestUnit.Views
                             {
                                 if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
-                                    ActualizarDespuesDeFortificacion();
+                                    //ActualizarDespuesDeFortificacion();
                                     MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
                                     objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;

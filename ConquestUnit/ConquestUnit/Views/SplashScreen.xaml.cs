@@ -56,7 +56,7 @@ namespace ConquestUnit.Views
             }
             else
             {
-                Frame.Navigate(typeof(MenuPrincipal));
+                Frame.Navigate(typeof(MesaEnEspera));
             }
         }
     }

@@ -28,14 +28,14 @@
         public static string ColorIncorrecto = "#FFFF0000";
 
         #region Asset Imagenes Unidades Jugadores
-        public static string UnidadJug1 = "ms-appx:///Assets/Unidades/China/Unidad Rojo.png";
-        public static string UnidadJug2 = "ms-appx:///Assets/Unidades/China/Unidad Verde.png";
-        public static string UnidadJug3 = "ms-appx:///Assets/Unidades/China/Unidad Azul.png";
-        public static string UnidadJug4 = "ms-appx:///Assets/Unidades/China/Unidad Amarillo.png";
-        public static string UnidadAgrupadoraJug1 = "ms-appx:///Assets/Unidades/China/IratoRojo.png";
-        public static string UnidadAgrupadoraJug2 = "ms-appx:///Assets/Unidades/China/IratoVerde.png";
-        public static string UnidadAgrupadoraJug3 = "ms-appx:///Assets/Unidades/China/IratoAzul.png";
-        public static string UnidadAgrupadoraJug4 = "ms-appx:///Assets/Unidades/China/IratoAmarillo.png";
+        public static string UnidadJug1CHINA = "ms-appx:///Assets/Unidades/China/Unidad Rojo.png";
+        public static string UnidadJug2CHINA = "ms-appx:///Assets/Unidades/China/Unidad Verde.png";
+        public static string UnidadJug3CHINA = "ms-appx:///Assets/Unidades/China/Unidad Azul.png";
+        public static string UnidadJug4CHINA = "ms-appx:///Assets/Unidades/China/Unidad Amarillo.png";
+        public static string UnidadAgrupadoraJug1CHINA = "ms-appx:///Assets/Unidades/China/IratoRojo.png";
+        public static string UnidadAgrupadoraJug2CHINA = "ms-appx:///Assets/Unidades/China/IratoVerde.png";
+        public static string UnidadAgrupadoraJug3CHINA = "ms-appx:///Assets/Unidades/China/IratoAzul.png";
+        public static string UnidadAgrupadoraJug4CHINA = "ms-appx:///Assets/Unidades/China/IratoAmarillo.png";
         #endregion
 
         #region Mensajes para unirse a la mesa
@@ -80,18 +80,16 @@
 
         public struct MensajesResultadoBatalla
         {
-            public const string GANASTE = "GANASTA";
+            public const string GANASTE = "GANASTE";
             public const string DERROTA = "DERROTA";
 
             public const string CONTINUAR_ATAQUE = "¿CONTINUAR EL ATAQUE?";
             public const string DESPLIEGA_UNIDADES = "DESPLIEGA TUS UNIDADES";
             public const string RESPONDER_SIGUIENTE_PREGUNTA = "RESPONDER SIGUIENTE PREGUNTA";
-
-            //public const string AtacanteResponderaSegundaPregunta = "Perdiste, pero aun puedes ganar.";
-            //public const string PierdeAtacante = "Perdiste el ataque.";
-            //public const string GanaDefensor = "Defendiste tu territorio satisfactoriamente.";
-            //public const string PierdeDefensor = "No lograste defender tu territorio.";
         }
+
+        public const string MOVER_TROPAS_MOVER = "MOVIENDO UNIDADES";
+        public const string MOVER_TROPAS_FORTIFICACION = "FORTIFICACION";
 
         public struct MensajesConfirmarContinuar
         {

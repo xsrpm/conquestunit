@@ -230,5 +230,10 @@ namespace ConquestUnit.Views
         {
             EnviarBotonPresionadoMesa(Constantes.Controles.ABAJODERECHA);
         }
+
+        private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ElegirMesa));
+        }
     }
 }
