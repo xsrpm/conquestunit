@@ -119,7 +119,7 @@ namespace ConquestUnit
             InsertarPregunta("¿En qué país de África es el español el idioma oficial?",
                             "Ghana", "Camerún", "Gabón", "Guinea Ecuatorial", context);
             InsertarPregunta("¿Cuál es la capital de Argelia?",
-                            "Argel", "Argel", "Arabia", "Colombo", context);
+                            "Argel", "Argela", "Arabia", "Colombo", context);
             InsertarPregunta("¿Dónde está la isla más joven del mundo, nacida en 2011 producto de una erupción volcánica?",
                             "En Yemen", "En Omán", "En la Polinesia Francesa", "En Australia", context);
             InsertarPregunta("¿En qué continente está la India?",
@@ -243,9 +243,9 @@ namespace ConquestUnit
             InsertarPregunta("¿En qué ciudad de Andalucía es típico el carnaval?",
                             "Cádiz", "Sevilla", "Granada", "Málaga", context);
             InsertarPregunta("¿Dónde se encuentran las Lagunas de Ruidera?",
-                            "Comunidad Valenciana", "Castilla la Mancha", "Galicia", "Castilla y Leon", context);
+                            "Castilla la Mancha","Comunidad Valenciana", "Galicia", "Castilla y Leon", context);
             InsertarPregunta("¿Dónde está la montaña de Jade?",
-                            "Taiwan", "Taiwan", "Corea del Sur", "China", context);
+                            "Taiwan", "Singapur", "Corea del Sur", "China", context);
             InsertarPregunta("¿Cuáles son los colores de la bandera de Bolivia?",
                             "Rojo,amarillo y verde", "Verde,azul y amarillo", "Rojo,naranja y verde", "Amarillo,verde y blanco", context);
             InsertarPregunta("¿Dónde están las líneas de Nazca?",
@@ -292,7 +292,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Dónde se jugará la Copa Mundial de Rugby en 2015?",
                             "Inglaterra", "Australia", "Escocia", "Gales", context);
             InsertarPregunta("¿Qué selección acumula mayor cantidad de expulsados en  mundiales de fútbol?",
-                            "Argentina", "Brasil", "Italia", "Italia", context);
+                            "Argentina", "Brasil", "Italia", "Camerún", context);
             InsertarPregunta("¿Quién inventó el arte marcial llamado Jeet Kune Do?",
                             "Bruce Lee", "David Carradine", "Kato Mimoko", "Ninguna es correcta", context);
             InsertarPregunta("¿De qué deporte es el longboard una de las modalidades?",
@@ -338,7 +338,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Quién ganó el mundial de fútbol del año 2002?",
                             "Brasil", "Italia", "España", "Francia", context);
             InsertarPregunta("¿A la selección de rugby de qué país se los conoce como Los Pumas?",
-                            "Argentina", "Sudáfrica", "Sudáfrica", "Gales", context);
+                            "Argentina", "Sudáfrica", "Australia", "Gales", context);
             InsertarPregunta("¿Cómo se llama el estadio del Universidad de Las Palmas?",
                             "Maspalomas", "Pedro Escartín", "Monumental", "Los pajaricos", context);
             InsertarPregunta("¿En cuál de estas situaciones se sacará una bandera amarilla, o incluso roja, en las carreras de coches?",
@@ -356,8 +356,8 @@ namespace ConquestUnit
             InsertarPregunta("¿Cómo se llama el primer sueco que jugó en el FC Barcelona?",
                             "Henrik Larsson", "Zlatan Larsson", "Henrik Ibrahimovic", "Zlatan Ibrahimovic", context);
             InsertarPregunta("¿De dónde viene el jugador Alexis Sánchez?",
-                            "Chile", "Chile", "España", "Moscú", context);
-            InsertarPregunta("¿Con qué sobrenomnre apodó el Presidente de la FIFA a Cristiano Ronaldo?",
+                            "Chile", "India", "España", "Moscú", context);
+            InsertarPregunta("¿Con qué sobrenombre apodó el Presidente de la FIFA a Cristiano Ronaldo?",
                             "El Comandante", "El Coloso", "El Chulito", "O Rei", context);
             InsertarPregunta("¿Quién quedó número 1 del mundo de tenis en 2008?",
                             "Rafael Nadal", "Roger Federer", "Novak Djokovic", "Carlos Moyá", context);
@@ -389,7 +389,7 @@ namespace ConquestUnit
                             "Sebastian Vettel", "Fernando Alonso", "Lewis Hamilton", "Kimi Raikkonen", context);
             InsertarPregunta("¿Quién preside la UEFA actualmente?",
                             "Michel Platini", "Alex Ferguson", "David Beckham", "Ángel María Villar", context);
-            InsertarPregunta("- ¿Cuántos cuadros tiene un tablero de ajedres?",
+            InsertarPregunta("¿Cuántos cuadros tiene un tablero de ajedres?",
                             "64", "36", "54", "81", context);
             InsertarPregunta("¿Cómo se llama la liga española de balonmano?",
                             "Asobal", "Liga Balonmano", "Balonbal", "Abobal", context);
@@ -397,7 +397,7 @@ namespace ConquestUnit
                             "Carlos Tévez", "Lionel Messi", "Cristiano Ronaldo", "Sergio Ramos", context);
             InsertarPregunta("¿Qué país fue el ganador de baloncesto en los Juegos Olímpicos de Londres 2012?",
                             "Estados Unidos", "España", "Japón", "Italia", context);
-            InsertarPregunta(" ¿Cuál fue el Mundial de fútbol que consagró a Diego Armando Maradona?",
+            InsertarPregunta("¿Cuál fue el Mundial de fútbol que consagró a Diego Armando Maradona?",
                             "México’86", "Argentina’76", "España’82", "Italia’90", context);
             InsertarPregunta("¿A qué edad ganó su primer mundial de Fórmula 1 el automovilista español Fernando Alonso?",
                             "21", "38", "22", "20", context);
@@ -449,7 +449,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cuál era la nacionalidad de Heri Cartier-Bresson, considerado por muchos el padre del fotoreportaje?",
                 "Francesa", "Británica", "Española", "Alemana", context);
             InsertarPregunta("¿Quién pintó el cuadro “El jardín de las delicias”?",
-                            "El Bosco", "Carvaggio", "Carvaggio", "Arcimboldo", context);
+                            "El Bosco", "Carvaggio", "Velázquez", "Arcimboldo", context);
             InsertarPregunta("¿Qué ciudades describe Italo Calvino en “Las ciudades invisibles”?",
                             "Ciudades imaginadas por Marco Polo", "Ciudades asiáticas", "Las que Marco Polo visitó en sus viajes", "Ciudades europeas", context);
             InsertarPregunta("¿Cuál es la ciudad fetiche del escritor Paul Auster?",
@@ -459,7 +459,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Quién vivía en el 221B de Backer Street?",
                             "Sherlock Holmes", "Truman Capote", "Philip Marlowe", "Arthur Conan Doyle", context);
             InsertarPregunta("¿Qué fotografía, sobre todo, Anne Geddes?",
-                            "Bebés", "Famosos", "Farolas", "Bebés", context);
+                            "Bebés", "Famosos", "Farolas", "Palomas", context);
             InsertarPregunta("¿A qué género pertenece la novela “La historia del ojo” de George Bataille?",
                             "Erótico", "Ciencia-ficción", "Negro", "Romántico", context);
             InsertarPregunta("¿Cuál de los siguientes artistas es una figura clave del dadaísmo y el surrealismo?",
@@ -516,7 +516,7 @@ namespace ConquestUnit
                             "La sopa", "El Pájaro Loco", "Los panqueques", "A Manolito", context);
             InsertarPregunta("¿A qué pintor pertenece la obra ‘Serpientes de agua’?",
                             "Gustave Klimt", "Vicent Van Gogh", "Pablo Picasso", "Roger Van der Weiden", context);
-            InsertarPregunta(" Arroz con leche me quiero…",
+            InsertarPregunta("Arroz con leche me quiero…",
                             "Casar", "Escapar", "Matar", "Cazar", context);
             InsertarPregunta("¿En qué está esculpida la Venus de Milo?",
                             "Mármol", "Bronce", "Piedra", "Madera", context);
@@ -581,7 +581,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Qué animal son los polacos en la novela gráfica sobre el Holocausto nazi ‘Maus’?",
                             "Cerdos", "Ratones", "Gatos", "Perros", context);
             InsertarPregunta("¿Quién escribió ‘ El modulor’?",
-                "Corbusier", "Aristófanes ", "Curant", "Tom Jones", context);
+                "Le Corbusier", "Aristófanes ", "Le Curant", "Tom Jones", context);
             InsertarPregunta("¿A qué músico argentino lo apodaban ” El Flaco”?",
                             "Luis Alberto Spinetta", "Gustavo Cerati", "Carlos Alberto García", "Carlos Solari", context);
             InsertarPregunta("¿Cómo se llama el arte japones de la papiroflexia?",
@@ -658,7 +658,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cuál es el cérvido de mayor tamaño?",
                             "El alce", "El corzo", "El ciervo", "El pudu", context);
             InsertarPregunta("¿Qué es el calostro?",
-                            "La primera leche materna", " Un hueso de la espina dorsal", "Una hormona", "Una parte del intestino grueso", context);
+                            "La primera leche materna", "Un hueso de la espina dorsal", "Una hormona", "Una parte del intestino grueso", context);
             InsertarPregunta("¿Cuál es el hueso más pequeño del cuerpo?",
                             "El estribo", "El yunque", "La falange", "Ninguna es correcta", context);
             InsertarPregunta("Dónde vive el delfín rosado?",
@@ -694,7 +694,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cuántos rayos gamma hay en una neurona?",
                             "Ninguno", "De dos a tres", "Uno", "Dos", context);
             InsertarPregunta("¿Qué es Plutón?",
-                            "Un satélite", "Un planeta", "Un plutoide", "Ninguna es correcta", context);
+                            "Un planeta", "Un satélite", "Un plutoide", "Ninguna es correcta", context);
             InsertarPregunta("¿En qué lugar del cuerpo se produce la insulina?",
                             "Páncreas", "Hígado", "Intestino", "Riñon", context);
             InsertarPregunta("¿Cómo se llama a los electrones que se encuentran en la última capa del átomo",
@@ -741,7 +741,7 @@ namespace ConquestUnit
                             "En el tobillo", "En el  brazo", "En la espalda", "En la rodilla", context);
             InsertarPregunta("¿Cuál es el símbolo del Sodio?",
                             "Na", "Mn", "Li", "Au", context);
-            InsertarPregunta(" ¿Cuál es el nombre común del ácido ascórbico? ",
+            InsertarPregunta("¿Cuál es el nombre común del ácido ascórbico? ",
                             "Vitamina C", "Ácido cítrico", "Vitamina B6", "Vitamina B12", context);
             InsertarPregunta("¿Cómo se llama la página web más famosa del mundo en la que se puede visualizar videos de todo tipo?",
                             "YouTube", "CineTube", "Glooge", "VideoTube", context);
@@ -752,7 +752,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Qué tipo de músculos realizan los movimientos voluntarios?",
                             "Estriados ", "Lisos", "Gordos", "Gruesos", context);
             InsertarPregunta("¿Qué son los “julios”?",
-                            "Magnitud para el calor del sol", "El mes más frío del invierno", "El mes más frío del invierno", "El mes más caluroso del verano", context);
+                            "Magnitud para el calor del sol", "Magnitud para el calor del sol", "El mes más frío del invierno", "El mes más caluroso del verano", context);
             InsertarPregunta("¿Cuál es la raíz cuadrada del 169?",
                             "13", "15", "14", "17", context);
             InsertarPregunta("¿De cuál de estas plantas se extrae la marihuana?",
@@ -787,22 +787,22 @@ namespace ConquestUnit
                             "Entre 70 y 100 kilos", "Entre 120 y 150 kilos", "Entre 50 y 70 kilos", "Entre 100 y 120 kilos", context);
             InsertarPregunta("¿Cuál de los siguientes nombres de compuestos representa al TNT? ",
                             "Trinitrotolueno", "Trinitrobenceno", "Trinitrofenol", "Trinitroglicerina", context);
-            InsertarPregunta("¿Cómo se llama el trastorno  alimenticio donde la pérdida de apetito es causada por un miedo morboso a la obesidad?",
+            InsertarPregunta("¿Cómo se llama el trastorno  alimentario donde la pérdida de apetito es causada por un miedo morboso a la obesidad?",
                             "Anorexia", "Bulimia", "Megarexia", "Vigorexia", context);
-            InsertarPregunta(" ¿Para qué sirve la prueba del carbono 14?",
+            InsertarPregunta("¿Para qué sirve la prueba del carbono 14?",
                             "Deducir la edad de un material", "Calcular los quilates del oro", "Calcular los electrones de un átomo", "Galvanizar un metal", context);
-            InsertarPregunta(" ¿Qué animal representa al Sistema Operativo Linux?",
+            InsertarPregunta("¿Qué animal representa al Sistema Operativo Linux?",
                             "Pingüino", "Panda", "León", "Leopardo", context);
             InsertarPregunta("¿Qué son los triglicéridos?",
                             "Lípidos", "Glúcidos", "Proteínas", "Vitaminas", context);
             InsertarPregunta("¿Qué es la hemofobia?",
-                            "", "Miedo al agua", "Miedo a las alturas", "Ninguna es correcta", context);
+                            "Miedo a la sangre", "Miedo al agua", "Miedo a las alturas", "Ninguna es correcta", context);
             InsertarPregunta("¿Cuál es el nombre del compuesto cuya fórmula es H2SO4?",
                             "Ácido sulfúrico", "Ácido sulfuroso", "Ácido sulfhídrico", "Anhídrido sulfuroso", context);
             InsertarPregunta("¿Qué líquido almacenan los cactus?",
                             "Agua", "Savia", "Vino", "Néctar", context);
             InsertarPregunta("¿El músculo que realiza una función contraria a otro es su…",
-                            "Ipsilateral", "Agonista", "Antagonista", "Contralateral", context);
+                            "Antagonista", "Agonista", "Ipsilateral", "Contralateral", context);
             InsertarPregunta("¿Cuál es la combinación de las teclas que copia texto en un PC?",
                             "ctrl + c", "ctrl + p", "ctrl + q", "ctrl + v", context);
             InsertarPregunta("¿Qué significa ARN?",
@@ -816,7 +816,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cuántos hidrógenos tiene la molécula de metano?",
                             "4", "10", "6", "8", context);
             InsertarPregunta("¿Cuál es el animal que tiene la presión más alta?",
-                            "Jirafa", "Conejo", "Serpiente", "Jirafa", context);
+                            "Jirafa", "Conejo", "Serpiente", "Elefante", context);
             InsertarPregunta("¿De qué color es el sudor de los hipopótamos?",
                             "Rojizo", "Amarillo", "Azul", "Verde", context);
             InsertarPregunta("¿Cómo se llama el líquido que expulsan los recién nacidos en lugar de las heces durante los primeros días?",
@@ -866,12 +866,12 @@ namespace ConquestUnit
             InsertarPregunta("¿Dónde se almacena la información genética del ser humano? ",
                 "ADN", "ADM", "ADÑ", "ARN", context);
             InsertarPregunta("¿Cuál de los siguientes números es mayor? ",
-                            "El número Pi", "El número e", "El número aíreo", "El cero", context);
+                            "El número Pi", "El número e", "El número aureo", "El cero", context);
             InsertarPregunta("¿Qué nervio es el VII par craneal?",
                             "Nervio facial", "Nervio abducens", "Nervio glosofaríngeo", "Nervio hipogloso", context);
             InsertarPregunta("¿Cómo se llama la técnica consistente en descender la temperatura del cuerpo humano por debajo de -190ºC?",
                             "Criogenización", "Congelación", "Shock", "Solidificación", context);
-            InsertarPregunta(" ¿Qué hay que ponerle a un vidrio para convertirlo en un espejo?",
+            InsertarPregunta("¿Qué hay que ponerle a un vidrio para convertirlo en un espejo?",
                             "Aluminio", "Mercurio", "Plomo", "Yodo", context);
             InsertarPregunta("¿Qué es un bit?",
                             "La unidad más pequeña de almacenamiento", "La escala musical que tiene un tiempo", "Un remix de algún dj.", "Bassic interface conection", context);
@@ -884,7 +884,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Qué significan las siglas ADN?",
                             "Ácido desoxirribonucleico", "Antigénico de Dieteninol", "Ácido Diosferoniclostico", "Antigénico Disfetinoleno", context);
             InsertarPregunta("¿Por qué tipo de elementos están formadas las sales binarias?",
-                            "Oxígeno e hidrogeno", "Un metal y un no metal", "Oxígeno y un metal", "Hidrógeno y un no metal", context);
+                            "Un metal y un no metal", "Oxígeno e hidrogeno", "Oxígeno y un metal", "Hidrógeno y un no metal", context);
             InsertarPregunta("¿Cuál es el componente principal del chocolate?",
                             "Cacao", "Leche", "Azúcar", "Chocolate", context);
             InsertarPregunta("¿Cuál es el músculo causante del espasmo muscular “Torticolis”?",
@@ -913,7 +913,7 @@ namespace ConquestUnit
                             "Tres", "Cuatro ", "Ninguno", "Dos", context);
             InsertarPregunta("¿Qué son los pugs?",
                             "Una raza de perro", "Una comida", "Un lugar", "Una tradicion regional", context);
-            InsertarPregunta("¿Qué mamífero volador le resulta fácil cazar?",
+            InsertarPregunta("¿El ciempiés gigante del Amazonas puede medir más de 30 centimetros y cuelga de las cuevas ¿Qué mamífero volador le resulta fácil cazar?",
                             "Murciélagos", "Mariposas", "Lagartos", "Águilas", context);
             InsertarPregunta("¿Cómo se llama el registro gráfico de la activa eléctrica del cerebro?",
                             "Electroencefalograma", "Electrocardiograma", "Electrocerebrograma", "Electroconductancia", context);
@@ -935,12 +935,12 @@ namespace ConquestUnit
                             "Aorta", "Carótida", "Yugular", "Subclavia", context);
             InsertarPregunta("¿Quién fue el Inventor de la dinamita?",
                             "Alfblack Nobel", "Heisenberg", "Antony Stark", "Walter White", context);
-            InsertarPregunta(" ¿Con qué nombre se conoce la energía producida por las partículas en movimiento?",
+            InsertarPregunta("¿Con qué nombre se conoce la energía producida por las partículas en movimiento?",
                             "Energía Cinética", "Energía Potencial", "Energía Solar ", "Energía Eólica", context);
             InsertarPregunta("¿Cómo llamamos a una lesión térmica o química de los tejidos?",
                             "Quemadura", "Inflamación", "Úlcera", "Hernia", context);
             InsertarPregunta("¿Cuál es la distribución de Linux más usada?",
-                            "Ubunto", "Debian", "Mint", "Fedora", context);
+                            "Ubuntu", "Debian", "Mint", "Fedora", context);
             InsertarPregunta("¿Qué droga de las denominadas ‘blandas’ es útil en el tratamiento del dolor?",
                             "Marihuana", "Anfetamina", "Cafeína", "Cocaína", context);
             InsertarPregunta("¿Cómo llamamos a la inflamación de la piel?",
