@@ -152,7 +152,7 @@ namespace ConquestUnit.Views
             btnFaseAtaque.IsEnabled = false;
             btnFaseFortificacion.IsEnabled = false;
 
-            //Cursor
+            //Visibilidad de Marker
             BlancoGridVisibilidad = new Windows.UI.Xaml.Visibility[9, 5] {
                 {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
                 {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
@@ -164,7 +164,6 @@ namespace ConquestUnit.Views
                 {0,0,0,Visibility.Collapsed,Visibility.Collapsed},
                 {0,0,0,0,0}
             };
-            TerrSelec = Huijiang;
             Seleccionar_Territorio(Huijiang);
         }
 
@@ -212,12 +211,13 @@ namespace ConquestUnit.Views
 
         private void Seleccionar_Territorio(Windows.UI.Xaml.Shapes.Path territorio)
         {
+            TerrSelec = territorio;
             //Despintar el territorio anterior
             if (objJuego.TerritorioAtaqueOrigen == null || objJuego.TerritorioFortificacionOrigen == null)
             {
                 TerrSelec.Fill = null;
             }
-            TerrSelec = territorio;
+            
             Thickness Centro_TerrSelec = new Thickness
             (
                 territorio.Margin.Left + territorio.Width / 2 - BlancoGrid.Width / 2,
@@ -1735,11 +1735,11 @@ namespace ConquestUnit.Views
 
         public void MostrarBlanco()
         {
-            Blanco.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 0];
-            XButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 1];
-            OButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 2];
-            DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 3];
-            UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 4];
+            Blanco.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 0];
+            XButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 1];
+            OButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 2];
+            DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 3];
+            UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 4];
         }
     }
 }

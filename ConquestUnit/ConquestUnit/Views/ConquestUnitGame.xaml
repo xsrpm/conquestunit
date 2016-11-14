@@ -181,18 +181,18 @@
                 <!---->
                 
                 <!--BOTONES-->
-                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Height="50" Margin="46,43,0,0" VerticalAlignment="Top">
-                    <Image x:Name="Blanco" Margin="17,0,17,0" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
-                    <Grid x:Name="DownArrowGrid" Margin="10,0,0,0" Height="15" Width="15" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Height="50" Margin="46,43,0,0" VerticalAlignment="Top" Width="55">
+                    <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
+                    <Grid x:Name="DownArrowGrid" Height="14" Width="14" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Abajo1.png" />
                     </Grid>
-                    <Grid x:Name="UpArrowGrid" Margin="10,0,0,0" Height="15" Width="15" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid x:Name="UpArrowGrid" Height="14" Width="14" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Arriba1.png" />
                     </Grid>
-                    <Grid x:Name="XButtonGrid" Margin="0,0,10,0" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/BotonEquis1.png" />
+                    <Grid x:Name="XButtonGrid" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/BotonEquis1.png" Width="14" Height="14" />
                     </Grid>
-                    <Grid x:Name="OButtonGrid" Margin="0,0,10,0" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Grid x:Name="OButtonGrid" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/BotonCirculo1.png" />
                     </Grid>
                 </Grid>
