@@ -62,18 +62,18 @@ namespace ConquestUnit.Views
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
             ////COMENTAR PARA PRUEBA
-            if (e.Parameter != null)
-            {
-                objJuego = (Juego)e.Parameter;
-            }
-            else
-            {
-                Helper.MensajeOk("No se pudo iniciar el juego.");
-            }
+            //if (e.Parameter != null)
+            //{
+            //    objJuego = (Juego)e.Parameter;
+            //}
+            //else
+            //{
+            //    Helper.MensajeOk("No se pudo iniciar el juego.");
+            //}
             ////
 
             ///DESCOMENTAR PARA PRUEBA
-            /*
+            
             objJuego = new Juego(Constantes.MAPA_CHINA);
             // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
             var jugador1 = new Jugador() { Conectado = true, Ip = "192.168.1.36", Nombre = "Roy" };
@@ -93,13 +93,13 @@ namespace ConquestUnit.Views
             GameLogic.LogicaInicio.RepartirTerritorio(objJuego);
             GameLogic.LogicaInicio.RepartirUnidadesEnTerritorios(objJuego);
             //Notificar a los jugadores el inicio del juego y quien comienza
-            foreach (var item in objJuego.JugadoresConectados)
-                await App.objSDK.UnicastPing(new HostName(item.Ip),
-                            Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
-                            objJuego.JugadoresConectados[0].Ip);
+            //foreach (var item in objJuego.JugadoresConectados)
+            //    await App.objSDK.UnicastPing(new HostName(item.Ip),
+            //                Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
+            //                objJuego.JugadoresConectados[0].Ip);
             //Definir la fase inicial del juego
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
-            */
+            
             ///
             Inicializar();
             IniciarSDK();
@@ -164,6 +164,7 @@ namespace ConquestUnit.Views
                 {0,0,0,Visibility.Collapsed,Visibility.Collapsed},
                 {0,0,0,0,0}
             };
+            TerrSelec = Huijiang;
             Seleccionar_Territorio(Huijiang);
         }
 
@@ -211,6 +212,11 @@ namespace ConquestUnit.Views
 
         private void Seleccionar_Territorio(Windows.UI.Xaml.Shapes.Path territorio)
         {
+            //Despintar el territorio anterior
+            if (objJuego.TerritorioAtaqueOrigen == null || objJuego.TerritorioFortificacionOrigen == null)
+            {
+                TerrSelec.Fill = null;
+            }
             TerrSelec = territorio;
             Thickness Centro_TerrSelec = new Thickness
             (
@@ -221,11 +227,33 @@ namespace ConquestUnit.Views
             );
 
             BlancoGrid.Margin = Centro_TerrSelec;
+            //Pintar el territorio anterior
+            if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null) {
+                int indiceSeleccionado = 0;
+                if (objJuego.TerritorioAtaqueOrigen != null)
+                {
+                    indiceSeleccionado = objJuego.TerritorioAtaqueOrigen.TerritorioId;
+                }
+                else //objJuego.TerritorioFortificacionOrigen != null
+                {
+                    indiceSeleccionado = objJuego.TerritorioFortificacionOrigen.TerritorioId;
+                }
+                if (TerrSelec.Name != objJuego.Territorios[indiceSeleccionado].NombreTerritorio)
+                {
+                    TerrSelec.Fill = new SolidColorBrush(Colors.WhiteSmoke);
+                }
+            }
+            else
+            {
+                TerrSelec.Fill = new SolidColorBrush(Colors.WhiteSmoke);
+            }
             MostrarBlanco();
             ActualizarCuadroInfoTerritorio();
 
             //Actual.Opacity = 0.5;
             //TerrSelec.Opacity = 1;
+            //Goldenrod
+            //WhiteSmoke
         }
 
         public async void DibujarJugadores()
@@ -315,6 +343,8 @@ namespace ConquestUnit.Views
         public void ActualizarNumeroUnidadesParaDespliegue()
         {
             GameLogic.DespliegueLogic.UnidadesDisponiblesDesplegarJugadorTurnoActual(objJuego);
+            lblUnidadesDesplegar.Visibility = Visibility.Visible;
+            txtNroUnidadesParaDespliegue.Visibility = Visibility.Visible;
             txtNroUnidadesParaDespliegue.Text = objJuego.UnidadesDisponiblesParaDesplegar.ToString();
         }
 
@@ -903,7 +933,7 @@ namespace ConquestUnit.Views
                 unidadesOrigen--;
                 unidadesDestino++;
             }
-            if (unidadesOrigen==1)
+            if (unidadesOrigen == 1)
             {
                 MoverUnidadesImgIzquierda.Visibility = Visibility.Visible;
                 MoverUnidadesImgDerecha.Visibility = Visibility.Collapsed;
@@ -932,6 +962,7 @@ namespace ConquestUnit.Views
             ((Image)FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
         }
 
+        // Implementar el mensaje de "LE TOCA A ..........."
         public async void IniciarSiguienteTurno()
         {
             foreach (var item in objJuego.JugadoresConectados)
@@ -945,7 +976,9 @@ namespace ConquestUnit.Views
             await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
                                         Constantes.MesaConumicaHABILITARControles);
             DibujarJugadorEnTurno();
+            ActualizarNumeroUnidadesParaDespliegue();
             //MOstrar mensaje de "TE TOCA"
+            ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
         private async void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
@@ -1041,6 +1074,8 @@ namespace ConquestUnit.Views
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                     btnFaseDespliegue.IsEnabled = false;
                                     btnFaseAtaque.IsEnabled = true;
+                                    lblUnidadesDesplegar.Visibility = Visibility.Collapsed;
+                                    txtNroUnidadesParaDespliegue.Visibility = Visibility.Collapsed;
                                 }
                             }
                             #endregion
@@ -1367,7 +1402,7 @@ namespace ConquestUnit.Views
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
                                     ActualizarDespuesDeBatalla();
 
-                                    if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas<=1)
+                                    if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas <= 1)
                                     {
                                         objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
                                         DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
@@ -1496,7 +1531,7 @@ namespace ConquestUnit.Views
                                 if (botonPresionado >= 0 && botonPresionado <= 7)
                                 {
                                     var territorioASeleccionar = Territorio[Convert.ToInt32(TerrSelec.Tag), botonPresionado];
-                                    if (territorioASeleccionar!= null && objJuego.Territorios[Convert.ToInt32(territorioASeleccionar.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
+                                    if (territorioASeleccionar != null && objJuego.Territorios[Convert.ToInt32(territorioASeleccionar.Tag)].IpJugadorPropietario.Equals(mensaje[1]))
                                     {
                                         MoverTerritorio(botonPresionado);
                                     }
@@ -1558,7 +1593,7 @@ namespace ConquestUnit.Views
                                     int unidadesDestino = int.Parse(MoverUnidadesTerritorioDestinoNUnidades.Text);
                                     objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId].NUnidadesDeplegadas = unidadesOrigen;
                                     objJuego.Territorios[objJuego.TerritorioFortificacionDestino.TerritorioId].NUnidadesDeplegadas = unidadesDestino;
-                                    
+
                                     var jugador = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorTurnoActual).First();
                                     if (objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId].NUnidadesDeplegadas >= Constantes.UnidadesMinimasParaEvolucionar)
                                         objJuego.Territorios[objJuego.TerritorioFortificacionOrigen.TerritorioId].ImagenUnidades = jugador.ImagenUnidadAgrupadora;
@@ -1698,80 +1733,6 @@ namespace ConquestUnit.Views
         }
         #endregion
 
-
-
-        #region BOTONES DEL TABLERO
-        private void BtnArr_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ARRIBA);
-        }
-
-        private void BtnIzq_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.IZQUIERDA);
-        }
-
-        private void BtnDer_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.DERECHA);
-        }
-
-        private void BtnAba_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ABAJO);
-        }
-
-        private void BtnArrIzq_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ARRIBAIZQUIERDA);
-        }
-
-        private void BtnArrDer_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ARRIBADERECHA);
-        }
-
-        private void BtnAbaIzq_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ABAJOIZQUIERDA);
-        }
-
-        private void BtnAbaDer_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MoverTerritorio(Constantes.Controles.ABAJODERECHA);
-        }
-
-        private void XButtonGrid_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-        private void BotonA_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void BotonB_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void BotonY_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void BotonX_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (objJuego.AccionActual == Constantes.AccionJuego.DESPLEGAR)
-            {
-                objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas += 1;
-                ((TextBlock)this.FindName("UnidadCantidad" + objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Text =
-                    objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas.ToString();
-                ActualizarNumeroTerritoriosInfo();
-            }
-        }
-        #endregion
-
         public void MostrarBlanco()
         {
             Blanco.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 0];
@@ -1780,7 +1741,5 @@ namespace ConquestUnit.Views
             DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 3];
             UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.FaseActual, 4];
         }
-
-
     }
 }
