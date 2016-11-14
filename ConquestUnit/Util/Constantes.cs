@@ -118,6 +118,7 @@
             public const int DESPLEGAR = 0;
             public const int DESPLEGAR_FIN_DESPLIGUE_CONFIRMAR = 1;
             public const int DESPLEGAR_FIN_DESPLIGUE_CONTINUAR = 2;
+
             public const int ELEGIRORIGENATK = 3;
             public const int ELEGIRDESTINOATK = 4;
             public const int CONFIRMARATAQUE = 5;
@@ -129,6 +130,7 @@
             public const int MOVERTROPAS = 11;
             public const int TERMINAR_ATAQUE = 12;
             public const int ATAQUE_FIN_ATAQUE_CONTINUAR = 13;
+
             public const int ELEGIRORIGENFOR = 14;
             public const int ELEGIRDESTINOFOR = 15;
             public const int CONFIRMAR_FORTIFICACION = 16;

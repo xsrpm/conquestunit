@@ -153,16 +153,29 @@ namespace ConquestUnit.Views
             btnFaseFortificacion.IsEnabled = false;
 
             //Visibilidad de Marker
-            BlancoGridVisibilidad = new Windows.UI.Xaml.Visibility[9, 5] {
-                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,0,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,0,0,0},
-                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,Visibility.Collapsed,0,0},
-                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,0,Visibility.Collapsed,Visibility.Collapsed},
-                {0,0,0,0,0}
+            BlancoGridVisibilidad = new Windows.UI.Xaml.Visibility[20, 5] {//Numero Acciones,Numero de Imagenes
+                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//DESPLEGAR
+                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//DESPLEGAR_FIN_DESPLIGUE_CONFIRMAR
+                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//DESPLEGAR_FIN_DESPLIGUE_CONTINUAR
+
+                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//ELEGIRORIGENATK
+                {0,0,0,Visibility.Collapsed,Visibility.Collapsed},//ELEGIRDESTINOATK 
+                {0,0,0,Visibility.Collapsed,Visibility.Collapsed},//CONFIRMARATAQUE
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//BATALLA_PRIMERA_PREGUNTA
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//CONFIRMAR_INICIO_SEGUNDA_PREGUNTA
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//BATALLA_SEGUNDA_PREGUNTA
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//DECIDIR_CONTINUAR_ATAQUE
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//CONFIRMAR_INICIO_MOVERTROPAS
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//MOVERTROPAS
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//TERMINAR_ATAQUE
+                {Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//ATAQUE_FIN_ATAQUE_CONTINUAR
+
+                {0,0,Visibility.Collapsed,0,0},//ELEGIRORIGENFOR
+                {0,0,Visibility.Collapsed,Visibility.Collapsed,Visibility.Collapsed},//ELEGIRDESTINOFOR
+                {0,0,0,Visibility.Collapsed,Visibility.Collapsed},//CONFIRMAR_FORTIFICACION
+                {0,0,0,0,0},//FORTIFICAR
+                {0,0,0,0,0},//FORTIFICAR_FIN_CONFIRMAR
+                {0,0,0,0,0}//FORTIFICAR_FIN_CONTINUAR
             };
             Seleccionar_Territorio(Huijiang);
         }

@@ -181,19 +181,20 @@
                 <!---->
                 
                 <!--BOTONES-->
-                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Height="50" Margin="46,43,0,0" VerticalAlignment="Top" Width="55">
+                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Margin="46,43,0,0" VerticalAlignment="Top" Width="63" Height="63">
                     <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
-                    <Grid x:Name="DownArrowGrid" Height="14" Width="14" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <Grid x:Name="DownArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Abajo1.png" />
+                        <Image x:Name="BotonAbajoBlanco" Source="ms-appx:///Assets/Images/Mando/Abajo1.png" Stretch="Fill"/>
                     </Grid>
-                    <Grid x:Name="UpArrowGrid" Height="14" Width="14" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Arriba1.png" />
+                    <Grid x:Name="UpArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image x:Name="BotonArribaBlanco" Source="ms-appx:///Assets/Images/Mando/Arriba1.png" Stretch="Fill"/>
                     </Grid>
-                    <Grid x:Name="XButtonGrid" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/BotonEquis1.png" Width="14" Height="14" />
+                    <Grid x:Name="XButtonGrid" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Image x:Name="BotonEquisBlanco" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Stretch="Fill"/>
                     </Grid>
-                    <Grid x:Name="OButtonGrid" Height="14" Width="14" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/BotonCirculo1.png" />
+                    <Grid x:Name="OButtonGrid" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Image x:Name="BotonCirculoBlanco" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Stretch="Fill"/>
                     </Grid>
                 </Grid>
                 <!---->
@@ -313,7 +314,7 @@
                         <ColumnDefinition Width="90" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="1" x:Name="btnTerminarFase" Text="Terminar&#x0a;Fase" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
-                    <Image Grid.Column="0" Source="ms-appx:////Assets/Images/Mando/BotonTriangulo1.png" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image x:Name="BotonTrianguloFase" Height="35" Source="ms-appx:///Assets/Images/Mando/BotonTriangulo1.png" Width="35"/>
                 </Grid>
 
                 <!--JUGADORES-->
