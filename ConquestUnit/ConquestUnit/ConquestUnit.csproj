@@ -133,12 +133,8 @@
     <None Include="ConquestUnit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Images\correcto2.png" />
-    <Content Include="Assets\Images\correcto.png" />
-    <Content Include="Assets\Images\active32x32.png" />
     <Content Include="Assets\Images\Icons\logo128x128.png" />
     <Content Include="Assets\Images\Icons\logo300x300.png" />
-    <Content Include="Assets\Images\inactive32x32.png" />
     <Content Include="Assets\Images\Mando\Abajo1.png" />
     <Content Include="Assets\Images\Mando\AbajoDerecha1.png" />
     <Content Include="Assets\Images\Mando\AbajoIzquierda1.png" />
@@ -152,7 +148,6 @@
     <Content Include="Assets\Images\Mando\Derecha1.png" />
     <Content Include="Assets\Images\Mando\Izquierda1.png" />
     <Content Include="Assets\Images\selector.png" />
-    <Content Include="Assets\Images\incorrecto.png" />
     <Content Include="Assets\Images\selector2.png" />
     <Content Include="Assets\Images\selector3.png" />
     <Content Include="Assets\Images\selector4.png" />

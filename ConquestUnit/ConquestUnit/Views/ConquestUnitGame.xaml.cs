@@ -40,6 +40,8 @@ namespace ConquestUnit.Views
         private Timer timerBatallaPrimeraPregunta;
         private int? contadorSegDuracionTimer;
         private Timer timerBatallaSegundaPregunta;
+        private int? contadorTimerSiguienteTurno;
+        private Timer timerSiguienteTurno;
         private int respuestaAtacante;
         private int respuestaDefensor;
 
@@ -55,6 +57,7 @@ namespace ConquestUnit.Views
             timerInicioBatalla = new Timer(timerInicioBatallaCallback, null, Timeout.Infinite, Timeout.Infinite);
             timerBatallaPrimeraPregunta = new Timer(timerBatallaPrimeraPreguntaCallback, null, Timeout.Infinite, Timeout.Infinite);
             timerBatallaSegundaPregunta = new Timer(timerBatallaSegundaPreguntaCallback, null, Timeout.Infinite, Timeout.Infinite);
+            timerSiguienteTurno = new Timer(timerSiguienteTurnoCallback, null, Timeout.Infinite, Timeout.Infinite);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -62,18 +65,18 @@ namespace ConquestUnit.Views
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
             ////COMENTAR PARA PRUEBA
-            //if (e.Parameter != null)
-            //{
-            //    objJuego = (Juego)e.Parameter;
-            //}
-            //else
-            //{
-            //    Helper.MensajeOk("No se pudo iniciar el juego.");
-            //}
+            if (e.Parameter != null)
+            {
+                objJuego = (Juego)e.Parameter;
+            }
+            else
+            {
+                Helper.MensajeOk("No se pudo iniciar el juego.");
+            }
             ////
 
             ///DESCOMENTAR PARA PRUEBA
-            
+            /*
             objJuego = new Juego(Constantes.MAPA_CHINA);
             // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
             var jugador1 = new Jugador() { Conectado = true, Ip = "192.168.1.36", Nombre = "Roy" };
@@ -99,7 +102,7 @@ namespace ConquestUnit.Views
             //                objJuego.JugadoresConectados[0].Ip);
             //Definir la fase inicial del juego
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
-            
+            */
             ///
             Inicializar();
             IniciarSDK();
@@ -177,6 +180,7 @@ namespace ConquestUnit.Views
                 {0,0,0,0,0},//FORTIFICAR_FIN_CONFIRMAR
                 {0,0,0,0,0}//FORTIFICAR_FIN_CONTINUAR
             };
+            TerrSelec = Huijiang;
             Seleccionar_Territorio(Huijiang);
         }
 
@@ -224,13 +228,28 @@ namespace ConquestUnit.Views
 
         private void Seleccionar_Territorio(Windows.UI.Xaml.Shapes.Path territorio)
         {
-            TerrSelec = territorio;
             //Despintar el territorio anterior
-            if (objJuego.TerritorioAtaqueOrigen == null || objJuego.TerritorioFortificacionOrigen == null)
+            if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null)
+            {
+                int indiceSeleccionado = 0;
+                if (objJuego.TerritorioAtaqueOrigen != null)
+                {
+                    indiceSeleccionado = objJuego.TerritorioAtaqueOrigen.TerritorioId;
+                }
+                else //objJuego.TerritorioFortificacionOrigen != null
+                {
+                    indiceSeleccionado = objJuego.TerritorioFortificacionOrigen.TerritorioId;
+                }
+                if (TerrSelec.Name != objJuego.Territorios[indiceSeleccionado].NombreTerritorio)
+                {
+                    TerrSelec.Fill = null;
+                }
+            }
+            else
             {
                 TerrSelec.Fill = null;
             }
-            
+            TerrSelec = territorio;
             Thickness Centro_TerrSelec = new Thickness
             (
                 territorio.Margin.Left + territorio.Width / 2 - BlancoGrid.Width / 2,
@@ -986,12 +1005,34 @@ namespace ConquestUnit.Views
                                             Constantes.MesaConumicaDESHABILITARControles);
                 }
             }
-            await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                        Constantes.MesaConumicaHABILITARControles);
             DibujarJugadorEnTurno();
             ActualizarNumeroUnidadesParaDespliegue();
-            //MOstrar mensaje de "TE TOCA"
             ///////////////////////////////////////////////////////////////////////////////////////////////
+            contadorTimerSiguienteTurno = null;
+            txtJugadorSiguienteTurno.Text = objJuego.JugadoresConectados[objJuego.TurnoActual].Nombre;
+            MensajeSiguienteTurno.Visibility = Visibility.Visible;
+            timerSiguienteTurno.Change(0, 1000 * 1);
+        }
+
+        public async void timerSiguienteTurnoCallback(object sender)
+        {
+            if (contadorTimerSiguienteTurno == null)
+            {
+                contadorTimerSiguienteTurno = 4;
+            }
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                contadorTimerSiguienteTurno--;
+                if (contadorTimerSiguienteTurno <= 0)
+                {
+                    timerSiguienteTurno.Change(Timeout.Infinite, Timeout.Infinite);
+                    contadorTimerSiguienteTurno = null;
+                    MensajeSiguienteTurno.Visibility = Visibility.Collapsed;
+                    //Habilitar controles del nuevo jugador en turno
+                    App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
+                                        Constantes.MesaConumicaHABILITARControles);
+                }
+            });
         }
 
         private async void MiMetodoReceptorMesaJuegoHelper(string strIp, string strMensaje)
@@ -1620,27 +1661,11 @@ namespace ConquestUnit.Views
                                     MoverTropasGrid.Visibility = Visibility.Collapsed;
 
                                     //Finalizar Truno
-                                    objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR;
-                                    txtMensajeContinuar.Text = Constantes.MensajesConfirmarContinuar.FortificarContinuar;
-                                    MensajeContinuar.Visibility = Visibility.Visible;
-                                }
-                                else if (botonPresionado == Constantes.Controles.CIRCULO)
-                                {
-                                    //Cancelar la fortificacion actual
-                                    MoverTropasGrid.Visibility = Visibility.Collapsed;
-                                    objJuego.FaseActual = Constantes.FaseJuego.FORTIFICACION;
-                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOFOR;
-                                    objJuego.TerritorioFortificacionDestino = null;
-                                }
-                            }
-                            #endregion
-                            #region Fortificar - Mensaje de Continuar
-                            else if (objJuego.AccionActual == Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR)
-                            {
-                                if (botonPresionado == Constantes.Controles.EQUIS)
-                                {
+                                    //objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR;
+                                    //txtMensajeContinuar.Text = Constantes.MensajesConfirmarContinuar.FortificarContinuar;
+                                    //MensajeContinuar.Visibility = Visibility.Visible;
                                     //ActualizarDespuesDeFortificacion();
-                                    MensajeContinuar.Visibility = Visibility.Collapsed;
+                                    //MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
                                     objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
                                     btnFaseFortificacion.IsEnabled = false;
@@ -1653,6 +1678,14 @@ namespace ConquestUnit.Views
                                     //Se acaba el turno del jugador
                                     GameLogic.TurnoLogic.TerminarTurnoComenzarNuevoTurno(objJuego);
                                     IniciarSiguienteTurno();
+                                }
+                                else if (botonPresionado == Constantes.Controles.CIRCULO)
+                                {
+                                    //Cancelar la fortificacion actual
+                                    MoverTropasGrid.Visibility = Visibility.Collapsed;
+                                    objJuego.FaseActual = Constantes.FaseJuego.FORTIFICACION;
+                                    objJuego.AccionActual = Constantes.AccionJuego.ELEGIRDESTINOFOR;
+                                    objJuego.TerritorioFortificacionDestino = null;
                                 }
                             }
                             #endregion

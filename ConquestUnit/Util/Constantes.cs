@@ -93,14 +93,14 @@
 
         public struct MensajesConfirmarContinuar
         {
-            public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
+            public const string DespliegueContinuar = "Se acabaron las unidades para desplegar";
             public const string DespliegueConfirmar = "¿Desea concluir la fase de Despliegue?";
 
             //public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
             public const string AtaqueConfirmar = "¿Desea concluir la fase de Ataque?";
 
-            public const string FortificarContinuar = "Termino la fase de ataque. Termino tu turno.";
-            public const string FortificarConfirmar = "¿Desea concluir la fase de Fortificacion?";
+            //public const string FortificarContinuar = "Termino la fase de ataque. Termino tu turno.";
+            public const string FortificarConfirmar = "¿Desea concluir la fase de Fortificación?";
         }
         #endregion
 

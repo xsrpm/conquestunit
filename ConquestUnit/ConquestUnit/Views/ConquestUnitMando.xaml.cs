@@ -18,9 +18,11 @@ namespace ConquestUnit.Views
     /// </summary>
     public sealed partial class ConquestUnitMando : Page
     {
+        private bool mandoActivo;
         public ConquestUnitMando()
         {
             this.InitializeComponent();
+            mandoActivo = false;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -32,9 +34,6 @@ namespace ConquestUnit.Views
                 var primerTurno = (bool)e.Parameter;
                 if (primerTurno)
                 {
-                    //Uri uri = new Uri("ms-appx:///Assets/Images/active32x32.png");
-                    //BitmapImage logoImage = new BitmapImage(uri);
-                    //imgActivo.Source = logoImage;
                     HabilitarControles();
                 }
                 else
@@ -125,10 +124,13 @@ namespace ConquestUnit.Views
 
         public async void EnviarBotonPresionadoMesa(int botonPresionado)
         {
-            await App.objSDK.UnicastPing(new HostName(App.objJugador.IpMesaConectada),
-                Constantes.JugadorPresionaBoton + Constantes.SEPARADOR +
-                App.objJugador.Ip + Constantes.SEPARADOR +
-                botonPresionado);
+            if (mandoActivo)
+            {
+                await App.objSDK.UnicastPing(new HostName(App.objJugador.IpMesaConectada),
+                    Constantes.JugadorPresionaBoton + Constantes.SEPARADOR +
+                    App.objJugador.Ip + Constantes.SEPARADOR +
+                    botonPresionado);
+            }
         }
 
         private void btnArriba_Tapped(object sender, TappedRoutedEventArgs e)
@@ -173,42 +175,16 @@ namespace ConquestUnit.Views
 
         public void HabilitarControles()
         {
+            mandoActivo = true;
             lblTurno.Text = "TURNO";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOACTIVO);
-
-            btnArriba.IsEnabled = true;
-            btnAbajoDerecha.IsEnabled = true;
-            btnIzquierda.IsEnabled = true;
-            btnAbajoIzquierda.IsEnabled = true;
-            btnAbajo.IsEnabled = true;
-            btnArribaDerecha.IsEnabled = true;
-            btnDerecha.IsEnabled = true;
-            btnArribaIzquierda.IsEnabled = true;
-
-            btnCuadrado.IsEnabled = true;
-            btnTriangulo.IsEnabled = true;
-            btnCirculo.IsEnabled = true;
-            btnEquis.IsEnabled = true;
         }
 
         public void DeshabilitarControles()
         {
+            mandoActivo = false;
             lblTurno.Text = "";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOINACTIVO);
-
-            btnArriba.IsEnabled = false;
-            btnAbajoDerecha.IsEnabled = false;
-            btnIzquierda.IsEnabled = false;
-            btnAbajoIzquierda.IsEnabled = false;
-            btnAbajo.IsEnabled = false;
-            btnArribaDerecha.IsEnabled = false;
-            btnDerecha.IsEnabled = false;
-            btnArribaIzquierda.IsEnabled = false;
-
-            btnCuadrado.IsEnabled = false;
-            btnTriangulo.IsEnabled = false;
-            btnCirculo.IsEnabled = false;
-            btnEquis.IsEnabled = false;
         }
 
         private void btnArribaIzquierda_Tapped(object sender, TappedRoutedEventArgs e)
