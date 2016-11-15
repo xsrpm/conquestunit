@@ -98,6 +98,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ConquestUnitGameRome.xaml.cs">
+      <DependentUpon>ConquestUnitGameRome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ConquestUnitGame.xaml.cs">
       <DependentUpon>ConquestUnitGame.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,7 @@
     <Content Include="Assets\Images\selector3.png" />
     <Content Include="Assets\Images\selector4.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
+    <Content Include="Assets\Mapa\Mapa_Roma _Trazos.png" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirmeDisable.png" />
@@ -207,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\ConquestUnitGameRome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ConquestUnitGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
