@@ -182,7 +182,7 @@
                 
                 <!--BOTONES-->
                 <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Margin="46,43,0,0" VerticalAlignment="Top" Width="63" Height="63">
-                    <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
+                    <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector4.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
                     <Grid x:Name="DownArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Abajo1.png" />
                         <Image x:Name="BotonAbajoBlanco" Source="ms-appx:///Assets/Images/Mando/Abajo1.png" Stretch="Fill"/>

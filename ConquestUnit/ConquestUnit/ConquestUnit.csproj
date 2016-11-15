@@ -153,6 +153,9 @@
     <Content Include="Assets\Images\Mando\Izquierda1.png" />
     <Content Include="Assets\Images\selector.png" />
     <Content Include="Assets\Images\incorrecto.png" />
+    <Content Include="Assets\Images\selector2.png" />
+    <Content Include="Assets\Images\selector3.png" />
+    <Content Include="Assets\Images\selector4.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
@@ -183,6 +186,7 @@
     <Content Include="Assets\Pantallas\Phone\Fondo.jpg" />
     <Content Include="Assets\Pantallas\Phone\IconoInformacion.png" />
     <Content Include="Assets\Pantallas\Phone\IconoJugador.png" />
+    <Content Include="Assets\Images\selector1.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\SplashScreenPC.jpg" />
     <Content Include="Assets\SplashScreenSmartphone.jpg" />
