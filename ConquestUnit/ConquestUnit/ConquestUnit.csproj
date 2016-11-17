@@ -155,6 +155,7 @@
     <Content Include="Assets\Images\selector3.png" />
     <Content Include="Assets\Images\selector4.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
+    <Content Include="Assets\Mapa\Mapa Roma.png" />
     <Content Include="Assets\Mapa\Mapa_Roma _Trazos.png" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
