@@ -41,7 +41,7 @@ namespace ConquestUnit.Views
                 App.context.InitDatabase(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(2));
+            await Task.Delay(TimeSpan.FromSeconds(0));
 
             if (App.DetectPlatform() == Platform.WindowsPhone)
             {
@@ -56,7 +56,7 @@ namespace ConquestUnit.Views
             }
             else
             {
-                Frame.Navigate(typeof(SeleccionarRol));
+                Frame.Navigate(typeof(MesaEnEspera));
             }
         }
     }
