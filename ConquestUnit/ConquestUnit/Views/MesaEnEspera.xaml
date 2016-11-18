@@ -12,10 +12,30 @@
             <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
         </Grid.Background>
         <StackPanel x:Name="myStackPanel" Height="300" VerticalAlignment="Top">
-            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/logo128x128.png"/>
+            <!--<Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Width="128" Height="128" Source="ms-appx:///Assets/Images/Icons/logo128x128.png"/>-->
             <TextBlock x:Name="lblTexto" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="CÓDIGO DE MESA" FontSize="40" VerticalAlignment="Top" FontFamily="Arial"/>
             <TextBlock x:Name="lblCodigoMesa" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" FontSize="60" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
             <TextBlock x:Name="lblInformacion" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="CÓDIGO DE INGRESO PARA JUGADORES" FontSize="25" VerticalAlignment="Top" FontFamily="Arial"/>
+
+            <Grid x:Name="Mapas" Margin="0,0,0,0" Height="200" Width="600">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="mapaChina" Grid.Column="0" Grid.Row="0" Source="ms-appx:///Assets/Mapa/Mapa China.png" Stretch="Uniform"/>
+                <Viewbox Height="50" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+                    <RadioButton x:Name="rdbChina" Content="CHINA" Grid.Column="0" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17"/>
+                </Viewbox>
+                <Image x:Name="mapaRoma" Grid.Column="1" Grid.Row="0" Source="ms-appx:///Assets/Mapa/Mapa_Roma _Trazos.png" Stretch="Uniform"/>
+                <Viewbox Height="50" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+                    <RadioButton x:Name="rdbRoma" Content="ROMA" Grid.Column="1" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17"/>
+                </Viewbox>
+            </Grid>
+
         </StackPanel>
         <StackPanel x:Name="myRelativePanel" Margin="0,300,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">

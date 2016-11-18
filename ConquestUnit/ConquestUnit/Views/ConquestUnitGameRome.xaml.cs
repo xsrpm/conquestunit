@@ -113,36 +113,36 @@ namespace ConquestUnit.Views
             BatallaGrid.Visibility = Visibility.Collapsed;
             MoverTropasGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
-            Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
-            {
-                {Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
-                {Huijiang,Qinghai,Sichuan,Yunnan,null,null,null,null },//Tibet
-                {Gansu,Gansu,Gansu,Sichuan,Tibet,Tibet,Tibet,Huijiang},//Qinghai
-                {Gansu,Shaanxi,Hubei,Guizhou,Yunnan,Yunnan,Tibet,Qinghai},//Sichuan
-                {Sichuan,Sichuan,Guizhou,Guangxi,null,null,null,Tibet },//Yunnan
-                {Sichuan,Sichuan,Hunan,Guangxi,Guangxi,Yunnan,Yunnan,Sichuan },//Guizhou
+            //Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+            //{
+                //{Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
+                //{Huijiang,Qinghai,Sichuan,Yunnan,null,null,null,null },//Tibet
+                //{Gansu,Gansu,Gansu,Sichuan,Tibet,Tibet,Tibet,Huijiang},//Qinghai
+                //{Gansu,Shaanxi,Hubei,Guizhou,Yunnan,Yunnan,Tibet,Qinghai},//Sichuan
+                //{Sichuan,Sichuan,Guizhou,Guangxi,null,null,null,Tibet },//Yunnan
+                //{Sichuan,Sichuan,Hunan,Guangxi,Guangxi,Yunnan,Yunnan,Sichuan },//Guizhou
 
-                {null,Heilongjiang,Heilongjiang,Mongolia,Mongolia,Huijiang,Huijiang,null },//Uliassutai
-                {Uliassutai,Heilongjiang,Zhili,Shanxi,Shaanxi,Gansu,Uliassutai,Uliassutai },//Mongolia
-                {Mongolia,Mongolia,Shaanxi,Sichuan,Qinghai,Qinghai,Qinghai,Huijiang},//Gansu
-                {Mongolia,Shanxi,Menan,Hubei,Sichuan,Sichuan,Gansu,Gansu },//Shaanxi
-                {Mongolia,Zhili,Zhili,Menan,Menan,Shaanxi,Shaanxi,Mongolia },//Shanxi
-                { Menan,Anhu,Anhu,Ilangxi,Hunan,Sichuan,Sichuan,Shaanxi },//Hubei
+                //{null,Heilongjiang,Heilongjiang,Mongolia,Mongolia,Huijiang,Huijiang,null },//Uliassutai
+                //{Uliassutai,Heilongjiang,Zhili,Shanxi,Shaanxi,Gansu,Uliassutai,Uliassutai },//Mongolia
+                //{Mongolia,Mongolia,Shaanxi,Sichuan,Qinghai,Qinghai,Qinghai,Huijiang},//Gansu
+                //{Mongolia,Shanxi,Menan,Hubei,Sichuan,Sichuan,Gansu,Gansu },//Shaanxi
+                //{Mongolia,Zhili,Zhili,Menan,Menan,Shaanxi,Shaanxi,Mongolia },//Shanxi
+                //{ Menan,Anhu,Anhu,Ilangxi,Hunan,Sichuan,Sichuan,Shaanxi },//Hubei
 
-                { null,null,Jilin,Jilin,Mongolia,Uliassutai,Uliassutai,null },//Heilongjiang
-                { Heilongjiang,null,null,null,null,Shengjing,Mongolia,Heilongjiang },//Jilin
-                { Mongolia,Jilin,null,null,null,null,Zhili,Zhili },//Shengjing
-                { Mongolia,Mongolia,Shengjing,Shandong,Menan,Shaanxi,Shanxi,Mongolia },//Zhili
-                { null,null,null,null,null,Menan,Zhili,Zhili },//Shandong
-                { Zhili,Shandong,Anhu,Anhu,Hubei,Hubei,Shaanxi,Shanxi },//Menan
+                //{ null,null,Jilin,Jilin,Mongolia,Uliassutai,Uliassutai,null },//Heilongjiang
+                //{ Heilongjiang,null,null,null,null,Shengjing,Mongolia,Heilongjiang },//Jilin
+                //{ Mongolia,Jilin,null,null,null,null,Zhili,Zhili },//Shengjing
+                //{ Mongolia,Mongolia,Shengjing,Shandong,Menan,Shaanxi,Shanxi,Mongolia },//Zhili
+                //{ null,null,null,null,null,Menan,Zhili,Zhili },//Shandong
+                //{ Zhili,Shandong,Anhu,Anhu,Hubei,Hubei,Shaanxi,Shanxi },//Menan
 
-                { Guizhou,Hunan,null,null,null,null,Yunnan,Guizhou},//Guangxi
-                { Hubei,Hubei,Ilangxi,null,Guangxi,Guangxi,Guizhou,Sichuan },//Hunan
-                { Anhu,Zhelang,Fcohou,Fcohou,null,null,Hunan,Hubei },//Ilangxi
-                { Zhelang,Zhelang,null,null,null,null,Ilangxi,Ilangxi },//Fcohou
-                { null,null,null,null,Fcohou,Fcohou,Ilangxi,Anhu },//Zhelang
-                { null,null,null,Zhelang,Ilangxi,Hubei,Menan,Menan }//Anhu
-            };
+                //{ Guizhou,Hunan,null,null,null,null,Yunnan,Guizhou},//Guangxi
+                //{ Hubei,Hubei,Ilangxi,null,Guangxi,Guangxi,Guizhou,Sichuan },//Hunan
+                //{ Anhu,Zhelang,Fcohou,Fcohou,null,null,Hunan,Hubei },//Ilangxi
+                //{ Zhelang,Zhelang,null,null,null,null,Ilangxi,Ilangxi },//Fcohou
+                //{ null,null,null,null,Fcohou,Fcohou,Ilangxi,Anhu },//Zhelang
+                //{ null,null,null,Zhelang,Ilangxi,Hubei,Menan,Menan }//Anhu
+            //};
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();
             DibujarJugadorEnTurno();
@@ -180,8 +180,8 @@ namespace ConquestUnit.Views
                 {0,0,0,0,0},//FORTIFICAR_FIN_CONFIRMAR
                 {0,0,0,0,0}//FORTIFICAR_FIN_CONTINUAR
             };
-            TerrSelec = Huijiang;
-            Seleccionar_Territorio(Huijiang);
+            //TerrSelec = Huijiang;
+            //Seleccionar_Territorio(Huijiang);
         }
 
         public void ActualizarDespuesDeBatalla()
