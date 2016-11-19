@@ -158,14 +158,14 @@ namespace ConquestUnit.Views
                 Mapa_Roma.Visibility = Visibility.Visible;
                 Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
                 {
-                {null,CaesarAugusta,CaesarAugusta,CaesarAugusta,Tingitana,null,null,null},//Lusitania
+                {null,Augusta,Augusta,Augusta,Tingitana,null,null,null},//Lusitania
                 {Aquitania,Alpina,Sardinia,Tingitana,Tingitana,Lusitania,Lusitania,Lusitania },//CaesarAugusta
-                {Flavia,Frisia,Alpina,Alpina,CaesarAugusta,CaesarAugusta,null,Flavia},//Aquitania
-                {Frisia,Roma,Roma,Sardinia,CaesarAugusta,CaesarAugusta,Aquitania,Aquitania},//Alpina
+                {Flavia,Frisia,Alpina,Alpina,Augusta,Augusta,null,Flavia},//Aquitania
+                {Frisia,Roma,Roma,Sardinia,Augusta,Augusta,Aquitania,Aquitania},//Alpina
                 {null,null,Pannonia,Pannonia,Alpina,Aquitania,Aquitania,Flavia},//Frisia
                 {null,null,Frisia,Frisia,Aquitania,null,null,null},//Flavia
 
-                {Lusitania,CaesarAugusta,Carthago,Carthago,null,null,null,Lusitania },//Tingitana
+                {Lusitania,Augusta,Carthago,Carthago,null,null,null,Lusitania },//Tingitana
                 {Sardinia,Roma,Libya,Libya,null,Tingitana,Tingitana,null },//Carthago
                 {null,Cyrene,Cyrene,Cyrene,null,Carthago,Carthago,Carthago},//Libya
                 {null,Arcadia,Arcadia,Arcadia,null,Libya,Libya,Libya},//Cyrene
@@ -179,7 +179,7 @@ namespace ConquestUnit.Views
                 {Capadocia,Mesopotania,null,null,Salutaris,null,Lydia,Lydia },//Siria
                 {Siria,Siria,null,null,null,Arcadia,Arcadia,null },//Salutaris
 
-                {Roma,Roma,Roma,Carthago,Carthago,Carthago,CaesarAugusta,Alpina},//Sardinia
+                {Roma,Roma,Roma,Carthago,Carthago,Carthago,Augusta,Alpina},//Sardinia
                 {Pannonia,Pannonia,Dalmatia,Dalmatia,Carthago,Carthago,Sardinia,Alpina },//Roma
                 {Pannonia,Moesia,Moesia,Peloponense,null,Roma,Roma,Pannonia },//Dalmatia
                 {null,null,Libya,Lydia,Peloponense,Dalmatia,Pannonia,Pannonia },//Moesia
@@ -225,7 +225,7 @@ namespace ConquestUnit.Views
                 {0,0,0,0,0}//FORTIFICAR_FIN_CONTINUAR
             };
 
-            Seleccionar_Territorio(TerrSelec);
+            //Seleccionar_Territorio(TerrSelec);
         }
 
         public void ActualizarDespuesDeBatalla()
@@ -272,8 +272,6 @@ namespace ConquestUnit.Views
 
         private void Seleccionar_Territorio(Windows.UI.Xaml.Shapes.Path territorio)
         {
-            TerrSelec = territorio;
-
             //Despintar el territorio anterior
             if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null)
             {
@@ -295,7 +293,7 @@ namespace ConquestUnit.Views
             {
                 TerrSelec.Fill = null;
             }
-            
+            TerrSelec = territorio;
             Thickness Centro_TerrSelec = new Thickness
             (
                 territorio.Margin.Left + territorio.Width / 2 - BlancoGrid.Width / 2,
@@ -931,7 +929,7 @@ namespace ConquestUnit.Views
         {
             territorio.Fill = Convertidor.GetSolidColorBrush(objJuego.JugadorTurnoActual().Color);
             territorio.Stroke = new SolidColorBrush(Colors.Goldenrod);
-            territorio.StrokeThickness = 4;
+            territorio.StrokeThickness = 5;
         }
 
         public void DesmarcarTerritorio(Path territorio)
@@ -1524,7 +1522,6 @@ namespace ConquestUnit.Views
                                     else
                                         objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidad;
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ColorUnidades = jugador.Color;
-                                    objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = jugador.ImagenUnidad;
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].IpJugadorPropietario = jugador.Ip;
                                     objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NombreJugadorPropietario = jugador.Nombre;
                                     ActualizarDespuesDeBatalla();
