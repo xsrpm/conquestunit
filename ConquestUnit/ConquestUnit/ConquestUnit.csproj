@@ -98,14 +98,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ConquestUnitGameRome.xaml.cs">
-      <DependentUpon>ConquestUnitGameRome.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ConquestUnitGame.xaml.cs">
       <DependentUpon>ConquestUnitGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConquestUnitMando.xaml.cs">
       <DependentUpon>ConquestUnitMando.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Creditos.xaml.cs">
+      <DependentUpon>Creditos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ElegirMesa.xaml.cs">
       <DependentUpon>ElegirMesa.xaml</DependentUpon>
@@ -216,15 +216,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\ConquestUnitGameRome.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ConquestUnitGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ConquestUnitMando.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Creditos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

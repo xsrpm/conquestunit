@@ -87,7 +87,7 @@
             
             <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonJugar.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
             <Image x:Name="btnComoJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonComoJugar.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
-            <Image x:Name="btnCreditos" Source="ms-appx:///Assets/Pantallas/Phone/BotonCreditos.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5"/>
+            <Image x:Name="btnCreditos" Source="ms-appx:///Assets/Pantallas/Phone/BotonCreditos.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Tapped="btnCreditos_Tapped"/>
 
         </Grid>
     </Grid>

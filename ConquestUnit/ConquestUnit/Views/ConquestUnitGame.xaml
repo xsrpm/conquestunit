@@ -619,7 +619,7 @@
                 <!---->
                 
                 <!--BATALLA-->
-                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="720" VerticalAlignment="Bottom" Width="1280" Margin="0,-4,-20,4">
+                <Grid x:Name="BatallaGrid" HorizontalAlignment="Right" Height="720" VerticalAlignment="Bottom" Width="1280" Margin="0,-4,-20,4" Visibility="Collapsed">
                     <Grid.Background>
                         <ImageBrush ImageSource="ms-appx:///Assets/Pantallas/PC/FondoHumo.png" Opacity="0.8"/>
                     </Grid.Background>

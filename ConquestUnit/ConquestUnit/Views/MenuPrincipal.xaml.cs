@@ -76,5 +76,10 @@ namespace ConquestUnit.Views
                 Helper.MensajeOk(ex.Message);
             }
         }
+
+        private void btnCreditos_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Creditos));
+        }
     }
 }
