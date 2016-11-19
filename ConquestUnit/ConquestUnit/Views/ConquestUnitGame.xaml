@@ -58,131 +58,131 @@
                 <!---->
         
         <!--UNIDADES-->
-                <Grid Height="63"  Width="55" Margin="320,238,905,419" >
+                <Grid Height="63"  Width="55" Margin="300,257,925,400" >
                     <Image x:Name="UnidadHuijiang" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
-                    <Ellipse x:Name="UnidadElipseHuijiang" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadHuijiang" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <Ellipse x:Name="UnidadElipseHuijiang" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="19" Height="19"/>
+                    <TextBlock x:Name="UnidadCantidadHuijiang" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="337,428,888,229" >
+                <Grid Height="63"  Width="55" Margin="367,450,858,207" >
                     <Image x:Name="UnidadTibet" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseTibet" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadTibet" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadTibet" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="457,372,768,285" >
                     <Image x:Name="UnidadQinghai" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseQinghai" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadQinghai" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadQinghai" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="563,461,662,196" >
                     <Image x:Name="UnidadSichuan" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseSichuan" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadSichuan" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadSichuan" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="536,575,689,82" >
+                <Grid Height="63"  Width="55" Margin="548,565,677,92" >
                     <Image x:Name="UnidadYunnan" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseYunnan" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadYunnan" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12"/>
+                    <TextBlock x:Name="UnidadCantidadYunnan" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="630,523,595,134" >
                     <Image x:Name="UnidadGuizhou" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseGuizhou" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadGuizhou" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadGuizhou" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="595,214,630,443" >
+                <Grid Height="63"  Width="55" Margin="575,185,650,472" >
                     <Image x:Name="UnidadUliassutai" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseUliassutai" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadUliassutai" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadUliassutai" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="628,283,597,374" >
+                <Grid Height="63"  Width="55" Margin="638,283,587,374" >
                     <Image x:Name="UnidadMongolia" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseMongolia" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadMongolia" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadMongolia" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="591,360,634,297" >
+                <Grid Height="63"  Width="55" Margin="575,360,650,297" >
                     <Image x:Name="UnidadGansu" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseGansu" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadGansu" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadGansu" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="652,394,573,263" >
                     <Image x:Name="UnidadShaanxi" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseShaanxi" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadShaanxi" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadShaanxi" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="698,337,527,320" >
                     <Image x:Name="UnidadShanxi" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseShanxi" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadShanxi" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadShanxi" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="706,452,519,205" >
                     <Image x:Name="UnidadHubei" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseHubei" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadHubei" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadHubei" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="835,91,390,566" >
+                <Grid Height="63"  Width="55" Margin="865,88,360,569" >
                     <Image x:Name="UnidadHeilongjiang" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseHeilongjiang" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadHeilongjiang" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadHeilongjiang" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
-                <Grid Height="63"  Width="55" Margin="946,149,279,508" >
+                <Grid Height="63"  Width="55" Margin="915,165,310,492" >
                     <Image x:Name="UnidadJilin" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseJilin" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadJilin" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadJilin" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="835,262,390,395" >
                     <Image x:Name="UnidadShengjing" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseShengjing" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadShengjing" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadShengjing" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="754,283,471,374" >
                     <Image x:Name="UnidadZhili" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseZhili" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadZhili" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadZhili" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="772,351,453,306" >
                     <Image x:Name="UnidadShandong" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseShandong" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadShandong" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadShandong" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="728,394,497,263" >
                     <Image x:Name="UnidadMenan" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseMenan" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadMenan" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadMenan" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="660,575,565,82" >
                     <Image x:Name="UnidadGuangxi" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseGuangxi" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadGuangxi" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadGuangxi" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="708,512,517,145" >
                     <Image x:Name="UnidadHunan" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseHunan" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadHunan" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadHunan" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="761,514,464,143" >
                     <Image x:Name="UnidadIlangxi" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseIlangxi" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadIlangxi" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadIlangxi" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="811,537,414,120" >
                     <Image x:Name="UnidadFcohou" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseFcohou" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadFcohou" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadFcohou" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="830,469,395,188" >
                     <Image x:Name="UnidadZhelang" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseZhelang" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadZhelang" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadZhelang" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <Grid Height="63"  Width="55" Margin="783,433,442,224" >
                     <Image x:Name="UnidadAnhu" Width="55" Height="55" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
                     <Ellipse x:Name="UnidadElipseAnhu" Stroke="Black" Fill="#FFB3BFB3" HorizontalAlignment="Right" Height="19" VerticalAlignment="Bottom" Width="19"/>
-                    <TextBlock x:Name="UnidadCantidadAnhu" Text="0" Margin="0,0,2,3" TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Right" Height="15" VerticalAlignment="Bottom" Width="14" FontSize="12" />
+                    <TextBlock x:Name="UnidadCantidadAnhu" Text="0" Margin="0,0,2,1" FontWeight="Bold" HorizontalAlignment="Right" Width="15" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="13" />
                 </Grid>
                 <!---->
                 
                 <!--BOTONES-->
                 <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Margin="46,43,0,0" VerticalAlignment="Top" Width="63" Height="63">
-                    <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector4.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
+                    <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
                     <Grid x:Name="DownArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Abajo1.png" />
                         <Image x:Name="BotonAbajoBlanco" Source="ms-appx:///Assets/Images/Mando/Abajo1.png" Stretch="Fill"/>
@@ -257,7 +257,7 @@
                     <Image Width="25" Height="25" Margin="0,0,60,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Grid.Column="1" Grid.Row="1"/>
                 </Grid>
 
-                <!--Mensaje Continuar-->
+                <!--Mensaje Continuar Cancelar-->
                 <Grid Name="MensajeContinuarCancelar" Margin="367,315,0,0" Visibility="Collapsed">
                     <Grid.Background>
                         <SolidColorBrush Color="Black" Opacity="0.85"/>
@@ -279,10 +279,10 @@
                     <Image Width="25" Height="25" Margin="0,0,58,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Grid.Column="2" Grid.Row="1"/>
                 </Grid>
 
-                <!--Mensaje Continuar-->
+                <!--Mensaje Siguiente Turno-->
                 <Grid Name="MensajeSiguienteTurno" Margin="450,305,0,0" Visibility="Collapsed">
                     <Grid.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.85"/>
+                        <SolidColorBrush x:Name="MensajeSiguienteTurnoColor" Color="Black" Opacity="0.85"/>
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="80" />
@@ -293,7 +293,7 @@
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
                     <Image Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Grid.Column="0" Grid.RowSpan="2" Height="75" Width="75" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBlock Text="Es el turno de" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontFamily="Arial Narrow" FontSize="24"/>
+                    <TextBlock x:Name="txtSiguienteTurnoMensaje" Text="Es el turno de" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontFamily="Arial Narrow" FontSize="24"/>
                     <TextBlock x:Name="txtJugadorSiguienteTurno" Text="PAPA BENED" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="40"/>
                 </Grid>
 
@@ -639,6 +639,15 @@
      
             </RelativePanel>
             
+        </Grid>
+        <Grid x:Name="GridVictoria" Height="500" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Image Source="ms-appx:///Assets/Pantallas/PC/Victoria.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtJugadorGanador" Text="Roy" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+            <Button x:Name="btnMenuPrincipal" Content="Volver al Menu Principal" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="50" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.8"/>
+                </Button.Background>
+            </Button>
         </Grid>
     </Grid>
 </Page>

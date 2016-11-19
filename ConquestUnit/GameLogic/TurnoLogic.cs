@@ -12,26 +12,20 @@ namespace GameLogic
             {
                 turnoIndice = 0;
             }
+            for (int i = turnoIndice; i < objJuego.JugadoresConectados.Count; i++)
+            {
+                if (objJuego.JugadoresConectados[i].Activo)
+                {
+                    turnoIndice = i;
+                    break;
+                }
+                if (i == objJuego.JugadoresConectados.Count - 1)
+                {
+                    i = 0;
+                }
+            }
             objJuego.TurnoActual = turnoIndice;
             objJuego.IpJugadorTurnoActual = objJuego.JugadoresConectados[turnoIndice].Ip;
-            //for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
-            //{
-            //    if (objJuego.JugadoresConectados[i].Ip==objJuego.IpJugadorTurnoActual)
-            //    {
-            //        if (i== objJuego.JugadoresConectados.Count-1)
-            //        {
-            //            objJuego.IpJugadorTurnoActual = objJuego.JugadoresConectados[0].Ip;
-            //            objJuego.TurnoActual = 0;
-
-            //        }
-            //        else
-            //        {
-            //            objJuego.IpJugadorTurnoActual = objJuego.JugadoresConectados[i].Ip;
-            //            objJuego.TurnoActual = i;
-            //        }
-            //        break;
-            //    }
-            //}
         }
     }
 }

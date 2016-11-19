@@ -42,6 +42,8 @@ namespace ConquestUnit.Views
         private Timer timerBatallaSegundaPregunta;
         private int? contadorTimerSiguienteTurno;
         private Timer timerSiguienteTurno;
+        private int? contadorTimerDerrotaJugador;
+        private Timer timerDerrotaJugador;
         private int respuestaAtacante;
         private int respuestaDefensor;
 
@@ -58,6 +60,7 @@ namespace ConquestUnit.Views
             timerBatallaPrimeraPregunta = new Timer(timerBatallaPrimeraPreguntaCallback, null, Timeout.Infinite, Timeout.Infinite);
             timerBatallaSegundaPregunta = new Timer(timerBatallaSegundaPreguntaCallback, null, Timeout.Infinite, Timeout.Infinite);
             timerSiguienteTurno = new Timer(timerSiguienteTurnoCallback, null, Timeout.Infinite, Timeout.Infinite);
+            timerDerrotaJugador = new Timer(timerDerrotaJugadorCallback, null, Timeout.Infinite, Timeout.Infinite);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -145,11 +148,12 @@ namespace ConquestUnit.Views
             };
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();
-            DibujarJugadorEnTurno();
+            IniciarSiguienteTurno();
+            //DibujarJugadorEnTurno();
             DibujarUnidadesTerritorioEnElMapa();
             ActualizarNumeroTerritoriosInfo();
             ActualizarNumeroContinentesInfo();
-            ActualizarNumeroUnidadesParaDespliegue();
+            //ActualizarNumeroUnidadesParaDespliegue();
 
             btnFaseDespliegue.IsEnabled = true;
             btnFaseAtaque.IsEnabled = false;
@@ -260,7 +264,8 @@ namespace ConquestUnit.Views
 
             BlancoGrid.Margin = Centro_TerrSelec;
             //Pintar el territorio anterior
-            if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null) {
+            if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null)
+            {
                 int indiceSeleccionado = 0;
                 if (objJuego.TerritorioAtaqueOrigen != null)
                 {
@@ -379,7 +384,6 @@ namespace ConquestUnit.Views
             txtNroUnidadesParaDespliegue.Text = objJuego.UnidadesDisponiblesParaDesplegar.ToString();
         }
 
-        //Cuando se muestra el Grid de Ataque
         public async void InicializarGridBatallaAtaque()
         {
             //Area combo de Ataque
@@ -451,7 +455,6 @@ namespace ConquestUnit.Views
             InvasorPuntosDefensaTXT.Text = "0";
         }
 
-        //Cuando inicia la batalla, se muestra la pregunta
         public void IniciarBatalla()
         {
             esPrimeraPregunta = true;
@@ -473,7 +476,6 @@ namespace ConquestUnit.Views
             timerInicioBatalla.Change(0, 1000 * 1);
         }
 
-        // MOVER TROPASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
         public void IniciarMoverTropas()
         {
             PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
@@ -860,7 +862,6 @@ namespace ConquestUnit.Views
             }
         }
 
-        //Cuando inicia la batalla, se muestra la pregunta
         public void IniciarSegundaPregunta()
         {
             esPrimeraPregunta = false;
@@ -996,7 +997,6 @@ namespace ConquestUnit.Views
             ((Image)FindName("Unidad" + territorio.NombreTerritorio)).Source = new BitmapImage(new Uri(territorio.ImagenUnidades));
         }
 
-        // Implementar el mensaje de "LE TOCA A ..........."
         public async void IniciarSiguienteTurno()
         {
             foreach (var item in objJuego.JugadoresConectados)
@@ -1011,6 +1011,8 @@ namespace ConquestUnit.Views
             ActualizarNumeroUnidadesParaDespliegue();
             ///////////////////////////////////////////////////////////////////////////////////////////////
             contadorTimerSiguienteTurno = null;
+            MensajeSiguienteTurnoColor.Color = Colors.Black;
+            txtSiguienteTurnoMensaje.Text = "Es el turno de";
             txtJugadorSiguienteTurno.Text = objJuego.JugadoresConectados[objJuego.TurnoActual].Nombre;
             MensajeSiguienteTurno.Visibility = Visibility.Visible;
             timerSiguienteTurno.Change(0, 1000 * 1);
@@ -1035,6 +1037,39 @@ namespace ConquestUnit.Views
                                         Constantes.MesaConumicaHABILITARControles);
                 }
                 Seleccionar_Territorio(TerrSelec);
+            });
+        }
+
+        public async void timerDerrotaJugadorCallback(object sender)
+        {
+            if (contadorTimerDerrotaJugador == null)
+            {
+                contadorTimerDerrotaJugador = 4;
+            }
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                contadorTimerDerrotaJugador--;
+                if (contadorTimerDerrotaJugador <= 0)
+                {
+                    timerDerrotaJugador.Change(Timeout.Infinite, Timeout.Infinite);
+                    contadorTimerDerrotaJugador = null;
+                    MensajeSiguienteTurno.Visibility = Visibility.Collapsed;
+                    //Verificar si el atacante ha ganado
+                    if (objJuego.Territorios.Where(x => x.IpJugadorPropietario == objJuego.IpJugadorTurnoActual).Count() == 24)
+                    {
+                        //Mostrar cartel de victoria y fin de juego
+                        txtJugadorGanador.Text = objJuego.JugadorTurnoActual().Nombre;
+                        App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
+                                            Constantes.MesaConumicaVICTORIAFinDelJuego);
+                        GridVictoria.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        //Habilitar controles del nuevo jugador en turno
+                        App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
+                                            Constantes.MesaConumicaHABILITARControles);
+                    }
+                }
             });
         }
 
@@ -1470,6 +1505,25 @@ namespace ConquestUnit.Views
                                     objJuego.TerritorioAtaqueDestino = null;
                                     MoverTropasGrid.Visibility = Visibility.Collapsed;
                                     BatallaGrid.Visibility = Visibility.Collapsed;
+
+                                    //Verificar si el defensor ya no tiene territorios
+                                    //Desntro del tiemer se verifica si el atacante ha ganado
+                                    if (objJuego.Territorios.Where(x => x.IpJugadorPropietario == objJuego.IpJugadorDefiende).Count() == 0)
+                                    {
+                                        //Mostrar cartel de derrota y Notificar el jugador
+                                        await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
+                                            Constantes.MesaConumicaDESHABILITARControles);
+                                        await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
+                                            Constantes.MesaConumicaDERROTAFinDelJuego);
+                                        objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First().Activo = false;
+                                        txtSiguienteTurnoMensaje.Text = "Jugador eliminado";
+                                        txtJugadorSiguienteTurno.Text = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First().Nombre;
+                                        MensajeSiguienteTurnoColor.Color = Colors.Red;
+                                        contadorTimerDerrotaJugador = null;
+                                        MensajeSiguienteTurno.Visibility = Visibility.Visible;
+                                        timerDerrotaJugador.Change(0, 1000 * 1);
+                                    }
+
                                     objJuego.IpJugadorDefiende = "";
                                 }
                             }
@@ -1787,6 +1841,11 @@ namespace ConquestUnit.Views
             OButtonGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 2];
             DownArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 3];
             UpArrowGrid.Visibility = BlancoGridVisibilidad[objJuego.AccionActual, 4];
+        }
+
+        private void btnMenuPrincipal_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPrincipal));
         }
     }
 }

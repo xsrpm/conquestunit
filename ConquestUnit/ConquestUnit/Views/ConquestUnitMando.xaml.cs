@@ -22,25 +22,13 @@ namespace ConquestUnit.Views
         public ConquestUnitMando()
         {
             this.InitializeComponent();
-            mandoActivo = false;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
             //El jugador es primer turno
-            if (e.Parameter != null)
-            {
-                var primerTurno = (bool)e.Parameter;
-                if (primerTurno)
-                {
-                    HabilitarControles();
-                }
-                else
-                {
-                    DeshabilitarControles();
-                }
-            }
+            mandoActivo = false;
             IniciarSDK();
         }
 
@@ -60,6 +48,18 @@ namespace ConquestUnit.Views
                     else if (strMensaje.Trim().Contains(Constantes.MesaConumicaDESHABILITARControles))
                     {
                         DeshabilitarControles();
+                    }
+                    #endregion
+                    #region Victoria
+                    else if (strMensaje.Trim().Contains(Constantes.MesaConumicaVICTORIAFinDelJuego))
+                    {
+                        Victoria();
+                    }
+                    #endregion
+                    #region Derrota
+                    else if (strMensaje.Trim().Contains(Constantes.MesaConumicaDERROTAFinDelJuego))
+                    {
+                        Derrota();
                     }
                     #endregion
                 }
@@ -121,6 +121,23 @@ namespace ConquestUnit.Views
             }
         }
         #endregion
+
+        public void Victoria()
+        {
+            DeshabilitarControles();
+            panelDireccional.Visibility = Visibility.Collapsed;
+            panelComandos.Visibility = Visibility.Collapsed;
+            btnMensaje.Content = "VICTORIA";
+            GridMensajeFinJuego.Visibility = Visibility.Visible;
+        }
+        public void Derrota()
+        {
+            DeshabilitarControles();
+            panelDireccional.Visibility = Visibility.Collapsed;
+            panelComandos.Visibility = Visibility.Collapsed;
+            btnMensaje.Content = "FIN DEL JUEGO";
+            GridMensajeFinJuego.Visibility = Visibility.Visible;
+        }
 
         public async void EnviarBotonPresionadoMesa(int botonPresionado)
         {
@@ -210,6 +227,11 @@ namespace ConquestUnit.Views
         private void btnRegresar_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(ElegirMesa));
+        }
+
+        private void btnMenuPrincipal_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPrincipal));
         }
     }
 }

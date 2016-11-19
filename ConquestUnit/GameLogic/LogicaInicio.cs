@@ -324,6 +324,13 @@ namespace GameLogic
             objJuego.TurnoActual = 0;
             objJuego.IpJugadorTurnoActual = objJuego.JugadoresConectados[0].Ip;
             objJuego.IpJugadorDefiende = "";
+            //for (int i = 0; i < objJuego.Territorios.Count-1; i++)
+            //{
+            //    objJuego.Territorios[i].ColorUnidades = objJuego.JugadorTurnoActual().Color;
+            //    objJuego.Territorios[i].ImagenUnidades = objJuego.JugadorTurnoActual().ImagenUnidad;
+            //    objJuego.Territorios[i].IpJugadorPropietario = objJuego.JugadorTurnoActual().Ip;
+            //    objJuego.Territorios[i].NombreJugadorPropietario = objJuego.JugadorTurnoActual().Nombre;
+            //}
         }
     }
 }
