@@ -272,6 +272,8 @@ namespace ConquestUnit.Views
 
         private void Seleccionar_Territorio(Windows.UI.Xaml.Shapes.Path territorio)
         {
+            TerrSelec = territorio;
+
             //Despintar el territorio anterior
             if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null)
             {
@@ -293,7 +295,7 @@ namespace ConquestUnit.Views
             {
                 TerrSelec.Fill = null;
             }
-            TerrSelec = territorio;
+            
             Thickness Centro_TerrSelec = new Thickness
             (
                 territorio.Margin.Left + territorio.Width / 2 - BlancoGrid.Width / 2,
