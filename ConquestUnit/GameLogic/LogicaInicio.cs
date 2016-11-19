@@ -10,29 +10,36 @@ namespace GameLogic
         public static void InicializarTurnos(Juego juego)
         {
             Helper.Shuffle<Jugador>(juego.JugadoresConectados);
-            if (juego.JugadoresConectados.Count >= 1)
+            if (juego.TipoMapa == Constantes.MAPA_CHINA)
             {
-                juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
-                juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1CHINA;
-                juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1CHINA;
-            }
-            if (juego.JugadoresConectados.Count >= 2)
-            {
-                juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
-                juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2CHINA;
-                juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2CHINA;
-            }
-            if (juego.JugadoresConectados.Count >= 3)
-            {
-                juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
-                juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3CHINA;
-                juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3CHINA;
-            }
-            if (juego.JugadoresConectados.Count >= 4)
-            {
-                juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
-                juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4CHINA;
-                juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4CHINA;
+                if (juego.JugadoresConectados.Count >= 1)
+                {
+                    juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
+                    juego.JugadoresConectados[0].ColorPastel = Constantes.ColorPastelJug1;
+                    juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1CHINA;
+                    juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1CHINA;
+                }
+                if (juego.JugadoresConectados.Count >= 2)
+                {
+                    juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
+                    juego.JugadoresConectados[1].ColorPastel = Constantes.ColorPastelJug2;
+                    juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2CHINA;
+                    juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2CHINA;
+                }
+                if (juego.JugadoresConectados.Count >= 3)
+                {
+                    juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
+                    juego.JugadoresConectados[2].ColorPastel = Constantes.ColorPastelJug3;
+                    juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3CHINA;
+                    juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3CHINA;
+                }
+                if (juego.JugadoresConectados.Count >= 4)
+                {
+                    juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
+                    juego.JugadoresConectados[3].ColorPastel = Constantes.ColorPastelJug4;
+                    juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4CHINA;
+                    juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4CHINA;
+                }
             }
         }
 

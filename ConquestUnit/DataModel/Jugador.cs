@@ -8,6 +8,7 @@
         public string ImagenUnidad { get; set; }
         public string ImagenUnidadAgrupadora { get; set; }
         public string Color { get; set; }
+        public string ColorPastel { get; set; }
         //Para saber si el jugador está conectado
         public bool Conectado { get; set; }
         public string IpMesaConectada { get; set; }

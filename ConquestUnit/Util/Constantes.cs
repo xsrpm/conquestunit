@@ -16,12 +16,18 @@
         public static int DELAY = 500;
 
         public static string MAPA_CHINA = "CHINA";
+        public static string MAPA_ROMA = "ROMA";
 
         #region Color Jugadores
         public static string ColorJug1 = "FFB81010";
         public static string ColorJug2 = "FF508A11";
         public static string ColorJug3 = "FF2E507E";
         public static string ColorJug4 = "FFBBC60F";
+
+        public static string ColorPastelJug1 = "FFE7A383";
+        public static string ColorPastelJug2 = "FFCCCA76";
+        public static string ColorPastelJug3 = "FFB3BFB3";
+        public static string ColorPastelJug4 = "FFD9C086";
         #endregion
 
         public static string ColorCorrecto = "#FF00FF00";
