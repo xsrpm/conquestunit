@@ -38,21 +38,14 @@ namespace ConquestUnit.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
-            rdbChina.IsChecked = true;
             IniciarSDK();
+            rdbChina.IsChecked = true;
+            objJuego.TipoMapa = Constantes.MAPA.CHINA;
         }
 
         private async void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (rdbChina.IsChecked==true)
-            {
-                objJuego.TipoMapa = Constantes.MAPA_CHINA;
-            }
-            else
-            {
-                objJuego.TipoMapa = Constantes.MAPA_ROMA;
-            }
-            btnJugar.Visibility = Visibility.Collapsed; //btnJugar.IsEnabled = false;
+            btnJugar.Visibility = Visibility.Collapsed;
             // Definir los turnos de los jugadores,
             // los cuales será igual a la lista de jugadores de la mesa
             // pero en desorden
@@ -347,12 +340,14 @@ namespace ConquestUnit.Views
         {
             rdbChina.IsChecked = true;
             rdbRoma.IsChecked = false;
+            objJuego.TipoMapa = Constantes.MAPA.CHINA;
         }
 
         private void rdbRoma_Tapped(object sender, TappedRoutedEventArgs e)
         {
             rdbChina.IsChecked = false;
             rdbRoma.IsChecked = true;
+            objJuego.TipoMapa = Constantes.MAPA.ROMA;
         }
     }
 }

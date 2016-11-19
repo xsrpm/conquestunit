@@ -113,36 +113,37 @@ namespace ConquestUnit.Views
             BatallaGrid.Visibility = Visibility.Collapsed;
             MoverTropasGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
-            //Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
-            //{
-                //{Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
-                //{Huijiang,Qinghai,Sichuan,Yunnan,null,null,null,null },//Tibet
-                //{Gansu,Gansu,Gansu,Sichuan,Tibet,Tibet,Tibet,Huijiang},//Qinghai
-                //{Gansu,Shaanxi,Hubei,Guizhou,Yunnan,Yunnan,Tibet,Qinghai},//Sichuan
-                //{Sichuan,Sichuan,Guizhou,Guangxi,null,null,null,Tibet },//Yunnan
-                //{Sichuan,Sichuan,Hunan,Guangxi,Guangxi,Yunnan,Yunnan,Sichuan },//Guizhou
-
-                //{null,Heilongjiang,Heilongjiang,Mongolia,Mongolia,Huijiang,Huijiang,null },//Uliassutai
-                //{Uliassutai,Heilongjiang,Zhili,Shanxi,Shaanxi,Gansu,Uliassutai,Uliassutai },//Mongolia
-                //{Mongolia,Mongolia,Shaanxi,Sichuan,Qinghai,Qinghai,Qinghai,Huijiang},//Gansu
-                //{Mongolia,Shanxi,Menan,Hubei,Sichuan,Sichuan,Gansu,Gansu },//Shaanxi
-                //{Mongolia,Zhili,Zhili,Menan,Menan,Shaanxi,Shaanxi,Mongolia },//Shanxi
-                //{ Menan,Anhu,Anhu,Ilangxi,Hunan,Sichuan,Sichuan,Shaanxi },//Hubei
-
-                //{ null,null,Jilin,Jilin,Mongolia,Uliassutai,Uliassutai,null },//Heilongjiang
-                //{ Heilongjiang,null,null,null,null,Shengjing,Mongolia,Heilongjiang },//Jilin
-                //{ Mongolia,Jilin,null,null,null,null,Zhili,Zhili },//Shengjing
-                //{ Mongolia,Mongolia,Shengjing,Shandong,Menan,Shaanxi,Shanxi,Mongolia },//Zhili
-                //{ null,null,null,null,null,Menan,Zhili,Zhili },//Shandong
-                //{ Zhili,Shandong,Anhu,Anhu,Hubei,Hubei,Shaanxi,Shanxi },//Menan
-
-                //{ Guizhou,Hunan,null,null,null,null,Yunnan,Guizhou},//Guangxi
-                //{ Hubei,Hubei,Ilangxi,null,Guangxi,Guangxi,Guizhou,Sichuan },//Hunan
-                //{ Anhu,Zhelang,Fcohou,Fcohou,null,null,Hunan,Hubei },//Ilangxi
-                //{ Zhelang,Zhelang,null,null,null,null,Ilangxi,Ilangxi },//Fcohou
-                //{ null,null,null,null,Fcohou,Fcohou,Ilangxi,Anhu },//Zhelang
-                //{ null,null,null,Zhelang,Ilangxi,Hubei,Menan,Menan }//Anhu
-            //};
+            Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+            {
+                //Regiuon 3
+                {null,CaesarAugusta,CaesarAugusta,CaesarAugusta,Tingitana,null,null,null},//Lusitania
+                {Aquitania,Alpina,Sardinia,Tingitana,Tingitana,Lusitania,Lusitania,Lusitania },//CaesarAugusta
+                {Flavia,Frisia,Alpina,Alpina,CaesarAugusta,CaesarAugusta,null,Flavia},//Aquitania
+                {Frisia,Roma,Roma,Sardinia,CaesarAugusta,CaesarAugusta,Aquitania,Aquitania},//Alpina
+                {null,null,Pannonia,Pannonia,Alpina,Aquitania,Aquitania,Flavia},//Frisia
+                {null,null,Frisia,Frisia,Aquitania,null,null,null},//Flavia
+                //Regiuon 2
+                {Lusitania,CaesarAugusta,Carthago,Carthago,null,null,null,Lusitania },//Tingitana
+                {Sardinia,Roma,Libya,Libya,null,Tingitana,Tingitana,null },//Carthago
+                {null,Cyrene,Cyrene,Cyrene,null,Carthago,Carthago,Carthago},//Libya
+                {null,Arcadia,Arcadia,Arcadia,null,Libya,Libya,Libya},//Cyrene
+                {null,Salutaris,Salutaris,Thebaida,Thebaida,Cyrene,Cyrene,Cyrene},//Arcadia
+                {Arcadia,Arcadia,null,null,null,null,null,Arcadia },//Thebaida
+                //Regiuon 4
+                {Moesia,Capadocia,Siria,Siria,null,Peloponense,Peloponense,Moesia },//Lydia
+                {null,Armenia,Armenia,Siria,Lydia,Lydia,Lydia,null },//Capadocia
+                {null,null,null,Mesopotania,Mesopotania,Capadocia,Capadocia,null },//Armenia
+                {Armenia,null,null,null,Siria,Siria,Siria,Armenia },//Mesopotania
+                {Capadocia,Mesopotania,null,null,Salutaris,null,Lydia,Lydia },//Siria
+                {Siria,Siria,null,null,null,Arcadia,Arcadia,null },//Salutaris
+                //Regiuon 1
+                {Roma,Roma,Roma,Carthago,Carthago,Carthago,CaesarAugusta,Alpina},//Sardinia
+                {Pannonia,Pannonia,Dalmatia,Dalmatia,Carthago,Carthago,Sardinia,Alpina },//Roma
+                {Pannonia,Moesia,Moesia,Peloponense,null,Roma,Roma,Pannonia },//Dalmatia
+                {null,null,Libya,Lydia,Peloponense,Dalmatia,Pannonia,Pannonia },//Moesia
+                {null,null,Moesia,Dalmatia,Roma,Roma,Frisia,Frisia },//Pannonia
+                {Moesia,Moesia,Lydia,Lydia,null,null,Dalmatia,Dalmatia }//Peloponense
+            };
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();
             DibujarJugadorEnTurno();
@@ -490,7 +491,7 @@ namespace ConquestUnit.Views
             MoverUnidadesTerritorioOrigenNUnidades.Text = (objJuego.TerritorioAtaqueOrigen.NUnidadesDeplegadas - 1).ToString();
             MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             MoverUnidadesTerritorioDestinoNUnidades.Text = "1";
-            if (objJuego.TipoMapa == Constantes.MAPA_CHINA)
+            if (objJuego.TipoMapa == Constantes.MAPA.CHINA)
             {
                 if (objJuego.TurnoActual == 0)
                 {
@@ -908,7 +909,7 @@ namespace ConquestUnit.Views
             MoverUnidadesTerritorioOrigenNUnidades.Text = objJuego.TerritorioFortificacionOrigen.NUnidadesDeplegadas.ToString();
             MoverUnidadesTerritorioDestino.Text = objJuego.TerritorioFortificacionDestino.NombreTerritorio;
             MoverUnidadesTerritorioDestinoNUnidades.Text = objJuego.TerritorioFortificacionDestino.NUnidadesDeplegadas.ToString();
-            if (objJuego.TipoMapa == Constantes.MAPA_CHINA)
+            if (objJuego.TipoMapa == Constantes.MAPA.CHINA)
             {
                 if (objJuego.TurnoActual == 0)
                 {

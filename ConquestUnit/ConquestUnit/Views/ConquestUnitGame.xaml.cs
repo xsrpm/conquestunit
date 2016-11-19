@@ -80,16 +80,16 @@ namespace ConquestUnit.Views
 
             ///DESCOMENTAR PARA PRUEBA
             /*
-            objJuego = new Juego(Constantes.MAPA_CHINA);
+            objJuego = new Juego(Constantes.MAPA.ROMA);
             // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
-            var jugador1 = new Jugador() { Conectado = true, Ip = "192.168.1.36", Nombre = "Roy" };
-            var jugador2 = new Jugador() { Conectado = true, Ip = "192.168.1.38", Nombre = "Cesar" };
-            var jugador3 = new Jugador() { Conectado = true, Ip = "192.168.0.8", Nombre = "Joel" };
-            var jugador4 = new Jugador() { Conectado = true, Ip = "192.168.0.9", Nombre = "Christian" };
+            var jugador1 = new Jugador() { Activo = true, Ip = "192.168.1.36", Nombre = "Roy" };
+            var jugador2 = new Jugador() { Activo = true, Ip = "192.168.1.38", Nombre = "Cesar" };
+            var jugador3 = new Jugador() { Activo = true, Ip = "192.168.0.8", Nombre = "Joel" };
+            var jugador4 = new Jugador() { Activo = true, Ip = "192.168.0.9", Nombre = "Christian" };
             objJuego.JugadoresConectados.Add(jugador1);
             objJuego.JugadoresConectados.Add(jugador2);
             objJuego.JugadoresConectados.Add(jugador3);
-            //objJuego.JugadoresConectados.Add(jugador4);
+            objJuego.JugadoresConectados.Add(jugador4);
             // Definir los turnos de los jugadores,
             // los cuales será igual a la lista de jugadores de la mesa
             // pero en desorden
@@ -107,8 +107,8 @@ namespace ConquestUnit.Views
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
             */
             ///
-            Inicializar();
             IniciarSDK();
+            Inicializar();
         }
 
         public void Inicializar()
@@ -116,8 +116,12 @@ namespace ConquestUnit.Views
             BatallaGrid.Visibility = Visibility.Collapsed;
             MoverTropasGrid.Visibility = Visibility.Collapsed;
             //Inicializar Mapa
-            Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+            if (objJuego.TipoMapa == Constantes.MAPA.CHINA)
             {
+                Mapa_China.Visibility = Visibility.Visible;
+                Mapa_Roma.Visibility = Visibility.Collapsed;
+                Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+                {
                 {Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
                 {Huijiang,Qinghai,Sichuan,Yunnan,null,null,null,null },//Tibet
                 {Gansu,Gansu,Gansu,Sichuan,Tibet,Tibet,Tibet,Huijiang},//Qinghai
@@ -145,15 +149,51 @@ namespace ConquestUnit.Views
                 { Zhelang,Zhelang,null,null,null,null,Ilangxi,Ilangxi },//Fcohou
                 { null,null,null,null,Fcohou,Fcohou,Ilangxi,Anhu },//Zhelang
                 { null,null,null,Zhelang,Ilangxi,Hubei,Menan,Menan }//Anhu
-            };
+                };
+                TerrSelec = Huijiang;
+            }
+            else if (objJuego.TipoMapa == Constantes.MAPA.ROMA)
+            {
+                Mapa_China.Visibility = Visibility.Collapsed;
+                Mapa_Roma.Visibility = Visibility.Visible;
+                Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+                {
+                {null,CaesarAugusta,CaesarAugusta,CaesarAugusta,Tingitana,null,null,null},//Lusitania
+                {Aquitania,Alpina,Sardinia,Tingitana,Tingitana,Lusitania,Lusitania,Lusitania },//CaesarAugusta
+                {Flavia,Frisia,Alpina,Alpina,CaesarAugusta,CaesarAugusta,null,Flavia},//Aquitania
+                {Frisia,Roma,Roma,Sardinia,CaesarAugusta,CaesarAugusta,Aquitania,Aquitania},//Alpina
+                {null,null,Pannonia,Pannonia,Alpina,Aquitania,Aquitania,Flavia},//Frisia
+                {null,null,Frisia,Frisia,Aquitania,null,null,null},//Flavia
+
+                {Lusitania,CaesarAugusta,Carthago,Carthago,null,null,null,Lusitania },//Tingitana
+                {Sardinia,Roma,Libya,Libya,null,Tingitana,Tingitana,null },//Carthago
+                {null,Cyrene,Cyrene,Cyrene,null,Carthago,Carthago,Carthago},//Libya
+                {null,Arcadia,Arcadia,Arcadia,null,Libya,Libya,Libya},//Cyrene
+                {null,Salutaris,Salutaris,Thebaida,Thebaida,Cyrene,Cyrene,Cyrene},//Arcadia
+                {Arcadia,Arcadia,null,null,null,null,null,Arcadia },//Thebaida
+
+                {Moesia,Capadocia,Siria,Siria,null,Peloponense,Peloponense,Moesia },//Lydia
+                {null,Armenia,Armenia,Siria,Lydia,Lydia,Lydia,null },//Capadocia
+                {null,null,null,Mesopotania,Mesopotania,Capadocia,Capadocia,null },//Armenia
+                {Armenia,null,null,null,Siria,Siria,Siria,Armenia },//Mesopotania
+                {Capadocia,Mesopotania,null,null,Salutaris,null,Lydia,Lydia },//Siria
+                {Siria,Siria,null,null,null,Arcadia,Arcadia,null },//Salutaris
+
+                {Roma,Roma,Roma,Carthago,Carthago,Carthago,CaesarAugusta,Alpina},//Sardinia
+                {Pannonia,Pannonia,Dalmatia,Dalmatia,Carthago,Carthago,Sardinia,Alpina },//Roma
+                {Pannonia,Moesia,Moesia,Peloponense,null,Roma,Roma,Pannonia },//Dalmatia
+                {null,null,Libya,Lydia,Peloponense,Dalmatia,Pannonia,Pannonia },//Moesia
+                {null,null,Moesia,Dalmatia,Roma,Roma,Frisia,Frisia },//Pannonia
+                {Moesia,Moesia,Lydia,Lydia,null,null,Dalmatia,Dalmatia }//Peloponense
+                };
+                TerrSelec = Lusitania;
+            }
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();
             IniciarSiguienteTurno();
-            //DibujarJugadorEnTurno();
             DibujarUnidadesTerritorioEnElMapa();
             ActualizarNumeroTerritoriosInfo();
             ActualizarNumeroContinentesInfo();
-            //ActualizarNumeroUnidadesParaDespliegue();
 
             btnFaseDespliegue.IsEnabled = true;
             btnFaseAtaque.IsEnabled = false;
@@ -184,8 +224,8 @@ namespace ConquestUnit.Views
                 {0,0,0,0,0},//FORTIFICAR_FIN_CONFIRMAR
                 {0,0,0,0,0}//FORTIFICAR_FIN_CONTINUAR
             };
-            TerrSelec = Huijiang;
-            Seleccionar_Territorio(Huijiang);
+
+            Seleccionar_Territorio(TerrSelec);
         }
 
         public void ActualizarDespuesDeBatalla()
@@ -286,11 +326,6 @@ namespace ConquestUnit.Views
             }
             MostrarBlanco();
             ActualizarCuadroInfoTerritorio();
-
-            //Actual.Opacity = 0.5;
-            //TerrSelec.Opacity = 1;
-            //Goldenrod
-            //WhiteSmoke
         }
 
         public async void DibujarJugadores()

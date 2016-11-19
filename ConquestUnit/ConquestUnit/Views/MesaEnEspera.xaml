@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
         </Grid.Background>
-        <StackPanel x:Name="myStackPanel" Margin="0,0,0,0" Height="420" VerticalAlignment="Top">
+        <StackPanel x:Name="myStackPanel" Margin="0,0,0,0" Height="460" VerticalAlignment="Top">
             <Grid x:Name="headerGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -46,7 +46,7 @@
                 <Viewbox Height="45" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
                     <RadioButton x:Name="rdbChina" Content="CHINA" Grid.Column="0" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17" Tapped="rdbChina_Tapped"/>
                 </Viewbox>
-                <Image x:Name="mapaRoma" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Source="ms-appx:///Assets/Mapa/Mapa_Roma _Trazos.png" Stretch="Uniform" Tapped="rdbRoma_Tapped"/>
+                <Image x:Name="mapaRoma" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Source="ms-appx:///Assets/Mapa/Mapa Roma.png" Stretch="Uniform" Tapped="rdbRoma_Tapped"/>
                 <Viewbox Height="45" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
                     <RadioButton x:Name="rdbRoma" Content="ROMA" Grid.Column="1" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17" Tapped="rdbRoma_Tapped"/>
                 </Viewbox>
