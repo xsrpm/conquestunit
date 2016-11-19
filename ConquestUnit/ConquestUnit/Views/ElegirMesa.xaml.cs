@@ -138,7 +138,7 @@ namespace ConquestUnit.Views
                         prConectando.IsActive = false;
 
                         //Reenviar a la pantalla de Jugador esperando el inicio del juego
-                        Juego objMesa = new Juego(mensaje[3]);
+                        Juego objMesa = new Juego(int.Parse(mensaje[3]));
                         objMesa.Ip = mensaje[1];
                         objMesa.JuegoID = mensaje[2];
 

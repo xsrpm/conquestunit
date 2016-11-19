@@ -10,7 +10,8 @@ namespace GameLogic
         public static void InicializarTurnos(Juego juego)
         {
             Helper.Shuffle<Jugador>(juego.JugadoresConectados);
-            if (juego.TipoMapa == Constantes.MAPA_CHINA)
+            #region China
+            if (juego.TipoMapa == Constantes.MAPA.CHINA)
             {
                 if (juego.JugadoresConectados.Count >= 1)
                 {
@@ -41,12 +42,46 @@ namespace GameLogic
                     juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4CHINA;
                 }
             }
+            #endregion
+            #region Roma
+            else if (juego.TipoMapa == Constantes.MAPA.ROMA)
+            {
+                if (juego.JugadoresConectados.Count >= 1)
+                {
+                    juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
+                    juego.JugadoresConectados[0].ColorPastel = Constantes.ColorPastelJug1;
+                    juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1ROMA;
+                    juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1ROMA;
+                }
+                if (juego.JugadoresConectados.Count >= 2)
+                {
+                    juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
+                    juego.JugadoresConectados[1].ColorPastel = Constantes.ColorPastelJug2;
+                    juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2ROMA;
+                    juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2ROMA;
+                }
+                if (juego.JugadoresConectados.Count >= 3)
+                {
+                    juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
+                    juego.JugadoresConectados[2].ColorPastel = Constantes.ColorPastelJug3;
+                    juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3ROMA;
+                    juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3ROMA;
+                }
+                if (juego.JugadoresConectados.Count >= 4)
+                {
+                    juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
+                    juego.JugadoresConectados[3].ColorPastel = Constantes.ColorPastelJug4;
+                    juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4ROMA;
+                    juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4ROMA;
+                }
+            }
+            #endregion
         }
 
         public static void InicializarTerritorios(Juego juego)
         {
             #region Territorios China
-            if (juego.TipoMapa == Constantes.MAPA_CHINA)
+            if (juego.TipoMapa == Constantes.MAPA.CHINA)
             {
                 juego.Territorios = new List<Territorio>(){
                     new Territorio() { TerritorioId = 0, NombreTerritorio="Huijiang", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
@@ -73,6 +108,37 @@ namespace GameLogic
                     new Territorio() { TerritorioId = 21, NombreTerritorio="Fcohou", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
                     new Territorio() { TerritorioId = 22, NombreTerritorio="Zhelang", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
                     new Territorio() { TerritorioId = 23, NombreTerritorio="Anhu", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 }
+                };
+            }
+            #endregion
+            #region Territorios Roma
+            if (juego.TipoMapa == Constantes.MAPA.ROMA)
+            {
+                juego.Territorios = new List<Territorio>(){
+                    new Territorio() { TerritorioId = 0, NombreTerritorio="Lusitania", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 1, NombreTerritorio="CaesarAugusta", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 2, NombreTerritorio="Aquitania", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 3, NombreTerritorio="Alpina", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 4, NombreTerritorio="Frisia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 5, NombreTerritorio="Flavia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 6, NombreTerritorio="Tingitana", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 7, NombreTerritorio="Carthago", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 8, NombreTerritorio="Libya", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 9, NombreTerritorio="Cyrene", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 10, NombreTerritorio="Arcadia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 11, NombreTerritorio="Thebaida", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 12, NombreTerritorio="Lydia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 13, NombreTerritorio="Capadocia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 14, NombreTerritorio="Armenia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 15, NombreTerritorio="Mesopotania", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 16, NombreTerritorio="Siria", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 17, NombreTerritorio="Salutaris", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 18, NombreTerritorio="Sardinia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 19, NombreTerritorio="Roma", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 20, NombreTerritorio="Dalmatia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 21, NombreTerritorio="Moesia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 22, NombreTerritorio="Pannonia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 23, NombreTerritorio="Peloponense", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 }
                 };
             }
             #endregion

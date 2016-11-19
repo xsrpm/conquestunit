@@ -153,7 +153,6 @@
     <Content Include="Assets\Images\selector.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
     <Content Include="Assets\Mapa\Mapa Roma.png" />
-    <Content Include="Assets\Mapa\Mapa_Roma _Trazos.png" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirmeDisable.png" />

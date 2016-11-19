@@ -106,7 +106,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridMensajeFinJuego" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Visible">
+        <Grid x:Name="GridMensajeFinJuego" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Collapsed">
             <Button x:Name="btnMensaje" Content="Fin del juego" Margin="0,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
                 <Button.Background>
                     <SolidColorBrush Color="Black" Opacity="1"/>

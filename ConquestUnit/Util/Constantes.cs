@@ -15,8 +15,11 @@
         public static string STREAM_SERVICE_PORT = "22110";
         public static int DELAY = 500;
 
-        public static string MAPA_CHINA = "CHINA";
-        public static string MAPA_ROMA = "ROMA";
+        public struct MAPA
+        {
+            public const int CHINA = 1;
+            public const int ROMA = 2;
+        }
 
         #region Color Jugadores
         public static string ColorJug1 = "FFB81010";
@@ -42,6 +45,15 @@
         public static string UnidadAgrupadoraJug2CHINA = "ms-appx:///Assets/Unidades/China/IratoVerde.png";
         public static string UnidadAgrupadoraJug3CHINA = "ms-appx:///Assets/Unidades/China/IratoAzul.png";
         public static string UnidadAgrupadoraJug4CHINA = "ms-appx:///Assets/Unidades/China/IratoAmarillo.png";
+
+        public static string UnidadJug1ROMA = "ms-appx:///Assets/Unidades/Roma/Unidad Rojo.png";
+        public static string UnidadJug2ROMA = "ms-appx:///Assets/Unidades/Roma/Unidad Verde.png";
+        public static string UnidadJug3ROMA = "ms-appx:///Assets/Unidades/Roma/Unidad Azul.png";
+        public static string UnidadJug4ROMA = "ms-appx:///Assets/Unidades/Roma/Unidad Amarillo.png";
+        public static string UnidadAgrupadoraJug1ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaRojo.png";
+        public static string UnidadAgrupadoraJug2ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaVerde.png";
+        public static string UnidadAgrupadoraJug3ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaAzul.png";
+        public static string UnidadAgrupadoraJug4ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaAmarillo.png";
         #endregion
 
         #region Mensajes para unirse a la mesa
@@ -104,10 +116,8 @@
             public const string DespliegueContinuar = "Se acabaron las unidades para desplegar";
             public const string DespliegueConfirmar = "¿Desea concluir la fase de Despliegue?";
 
-            //public const string DespliegueContinuar = "Ya no quedan Unidades. Se pasará al Ataque.";
             public const string AtaqueConfirmar = "¿Desea concluir la fase de Ataque?";
 
-            //public const string FortificarContinuar = "Termino la fase de ataque. Termino tu turno.";
             public const string FortificarConfirmar = "¿Desea concluir la fase de Fortificación?";
         }
         #endregion

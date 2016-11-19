@@ -28,14 +28,14 @@ namespace DataModel
         public string Ip { get; set; }
         public List<Jugador> JugadoresConectados { get; set; }
         public List<Territorio> Territorios { get; set; }
-        public string TipoMapa { get; set; }
+        public int TipoMapa { get; set; }
 
         public Juego()
         {
             JugadoresConectados = new List<Jugador>();
         }
 
-        public Juego(string tipoMapa)
+        public Juego(int tipoMapa)
         {
             JugadoresConectados = new List<Jugador>();
             TipoMapa = tipoMapa;

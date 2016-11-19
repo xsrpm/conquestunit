@@ -34,7 +34,6 @@ namespace Util
             return textfile;
         }
 
-
         // read a text file from the app's local folder
         public static async Task<string> ReadTextFile(string _filename)
         {
