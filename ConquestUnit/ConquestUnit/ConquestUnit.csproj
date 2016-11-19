@@ -198,6 +198,14 @@
     <Content Include="Assets\Unidades\China\Unidad Azul.png" />
     <Content Include="Assets\Unidades\China\Unidad Rojo.png" />
     <Content Include="Assets\Unidades\China\Unidad Verde.png" />
+    <Content Include="Assets\Unidades\Roma\CatapultaAmarillo.png" />
+    <Content Include="Assets\Unidades\Roma\CatapultaAzul.png" />
+    <Content Include="Assets\Unidades\Roma\CatapultaRojo.png" />
+    <Content Include="Assets\Unidades\Roma\CatapultaVerde.png" />
+    <Content Include="Assets\Unidades\Roma\Unidad Amarillo.png" />
+    <Content Include="Assets\Unidades\Roma\Unidad Azul.png" />
+    <Content Include="Assets\Unidades\Roma\Unidad Rojo.png" />
+    <Content Include="Assets\Unidades\Roma\Unidad Verde.png" />
     <Content Include="lib\SynapseSDK.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
