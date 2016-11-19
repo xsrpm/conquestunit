@@ -116,7 +116,7 @@ namespace GameLogic
             {
                 juego.Territorios = new List<Territorio>(){
                     new Territorio() { TerritorioId = 0, NombreTerritorio="Lusitania", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
-                    new Territorio() { TerritorioId = 1, NombreTerritorio="CaesarAugusta", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 1, NombreTerritorio="Augusta", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
                     new Territorio() { TerritorioId = 2, NombreTerritorio="Aquitania", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
                     new Territorio() { TerritorioId = 3, NombreTerritorio="Alpina", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
                     new Territorio() { TerritorioId = 4, NombreTerritorio="Frisia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
