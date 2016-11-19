@@ -84,17 +84,7 @@ namespace ConquestUnit.Views
                     else if (strMensaje.Trim().Contains(Constantes.MesaIndicaJuegoInicia))
                     {
                         // Inicio del juego
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
-                        //mensaje[0] => Acción (MesaIndicaJuegoInicia)
-                        //mensaje[1] => objJugador.Ip primer turno
-                        if (mensaje.Length != 2)
-                            return;
-
-                        //Verificar si es el jugador del primer turno
-                        if (mensaje[1].Equals(App.objJugador.Ip))
-                            this.Frame.Navigate(typeof(ConquestUnitMando), true);
-                        else
-                            this.Frame.Navigate(typeof(ConquestUnitMando), false);
+                        this.Frame.Navigate(typeof(ConquestUnitMando));
                     }
                     #endregion
                 }

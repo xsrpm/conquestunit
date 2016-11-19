@@ -56,6 +56,8 @@
         public static string MesaConumicaHABILITARControles = "MesaConumicaHABILITARControles";
         public static string MesaConumicaDESHABILITARControles = "MesaConumicaDESHABILITARControles";
         public static string JugadorPresionaBoton = "JugadorPresionaBoton";
+        public static string MesaConumicaVICTORIAFinDelJuego = "MesaConumicaVICTORIAFinDelJuego";
+        public static string MesaConumicaDERROTAFinDelJuego = "MesaConumicaDERROTAFinDelJuego";
         public struct Controles
         {
             public const int ARRIBA = 0;

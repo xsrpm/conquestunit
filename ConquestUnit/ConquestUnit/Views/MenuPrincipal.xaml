@@ -40,21 +40,21 @@
                         <Setter Target="myStackPanel.Height" Value="430"></Setter>
                         <Setter Target="btnJugar.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnJugar.VerticalAlignment" Value="Center"></Setter>
-                        <!--<Setter Target="btnJugar.Height" Value="100"></Setter>
-                        <Setter Target="btnJugar.Width" Value="300"></Setter>-->
+                        <Setter Target="btnJugar.Height" Value="230"></Setter>
+                        <Setter Target="btnJugar.Width" Value="415"></Setter>
                         <Setter Target="btnJugar.Margin" Value="0,0,0,-50"></Setter>
                         <Setter Target="btnJugar.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonJugar.png"></Setter>
                         <Setter Target="btnComoJugar.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnComoJugar.(Grid.Column)" Value="0"></Setter>
-                        <!--<Setter Target="btnComoJugar.Height" Value="200"></Setter>-->
-                        <!--<Setter Target="btnComoJugar.Width" Value="330"></Setter>-->
+                        <Setter Target="btnComoJugar.Height" Value="230"></Setter>
+                        <Setter Target="btnComoJugar.Width" Value="415"></Setter>
                         <Setter Target="btnComoJugar.Margin" Value="0,0,0,-50"></Setter>
                         <Setter Target="btnComoJugar.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonComoJugar.png"></Setter>
                         <Setter Target="btnCreditos.(Grid.Row)" Value="4"></Setter>
                         <Setter Target="btnCreditos.(Grid.Column)" Value="2"></Setter>
                         <Setter Target="btnCreditos.VerticalAlignment" Value="Center"></Setter>
-                        <!--<Setter Target="btnCreditos.Height" Value="100"></Setter>
-                        <Setter Target="btnCreditos.Width" Value="300"></Setter>-->
+                        <Setter Target="btnCreditos.Height" Value="230"></Setter>
+                        <Setter Target="btnCreditos.Width" Value="415"></Setter>
                         <Setter Target="btnCreditos.Margin" Value="0,0,0,-50"></Setter>
                         <Setter Target="btnCreditos.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonCreditos.png"></Setter>
                     </VisualState.Setters>
@@ -84,11 +84,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
-            <!--<Button x:Name="btnJugar" Content="Jugar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="120" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
-            <Button x:Name="btnComoJugar" Content="Como Jugar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="105" Grid.Column="1" Grid.Row="4"/>
-            <Button x:Name="btnCreditos" Content="Creditos" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="105" Grid.Column="1" Grid.Row="5"/>-->
-
+            
             <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonJugar.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="3" Tapped="btnJugar_Tapped"/>
             <Image x:Name="btnComoJugar" Source="ms-appx:///Assets/Pantallas/Phone/BotonComoJugar.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
             <Image x:Name="btnCreditos" Source="ms-appx:///Assets/Pantallas/Phone/BotonCreditos.png" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5"/>
