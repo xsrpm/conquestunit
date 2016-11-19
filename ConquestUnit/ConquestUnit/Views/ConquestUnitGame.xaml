@@ -229,9 +229,12 @@
                         </Button.Background>
                     </Button>
 
-                    <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock x:Name="lblUnidadesDesplegar" Text="Unidades a desplegar:" FontSize="23" FontFamily="Arial"/>
-                        <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text="0" FontSize="23" FontWeight="Bold" FontFamily="Arial" Foreground="#FF9E1D14"/>
+                    <StackPanel x:Name="PanelUnidadesParaDesplegar" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Padding="20,2,20,2">
+                        <StackPanel.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.7"/>
+                        </StackPanel.Background>
+                        <TextBlock Text="Unidades a desplegar:&#160;&#160;" FontSize="20" FontFamily="Arial Narrow" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text=" 0" FontSize="25" FontWeight="Bold" FontFamily="Arial Narrow" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Grid>
 
@@ -255,25 +258,25 @@
                 </Grid>
 
                 <!--Mensaje Continuar-->
-                <Grid Name="MensajeContinuarCancelar" Margin="367,300,0,0" Visibility="Collapsed">
+                <Grid Name="MensajeContinuarCancelar" Margin="367,315,0,0" Visibility="Collapsed">
                     <Grid.Background>
                         <SolidColorBrush Color="Black" Opacity="0.85"/>
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="76" />
-                        <ColumnDefinition Width="470" />
+                        <ColumnDefinition Width="235" />
+                        <ColumnDefinition Width="235" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
-                        <RowDefinition Height="35" />
-                        <RowDefinition Height="35" />
+                        <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
                     <Image Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Grid.Column="0" Grid.RowSpan="3" Height="75" Width="75" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="txtMensajeContinuarCancelar" Text="¿Desea concluir la fase de Fortificación?" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontFamily="Arial Narrow" FontSize="24"/>
+                    <TextBlock x:Name="txtMensajeContinuarCancelar" Text="¿Desea concluir la fase de Fortificación?" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontFamily="Arial Narrow" FontSize="24"/>
                     <TextBlock Text="Continuar" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="60,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" FontWeight="SemiBold" FontFamily="Arial Narrow" FontSize="20"/>
                     <Image Width="25" Height="25" Margin="0,0,60,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Grid.Column="1" Grid.Row="1"/>
-                    <TextBlock Text="Cancelar" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="58,0,0,0" Grid.Column="1" Grid.Row="2" Foreground="White" FontWeight="SemiBold" FontFamily="Arial Narrow" FontSize="20"/>
-                    <Image Width="25" Height="25" Margin="0,0,58,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock Text="Cancelar" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="58,0,0,0" Grid.Column="2" Grid.Row="1" Foreground="White" FontWeight="SemiBold" FontFamily="Arial Narrow" FontSize="20"/>
+                    <Image Width="25" Height="25" Margin="0,0,58,0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Grid.Column="2" Grid.Row="1"/>
                 </Grid>
 
                 <!--Mensaje Continuar-->
@@ -627,7 +630,8 @@
                             <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
                                 <TextBlock x:Name="MoverUnidadesTerritorioDestinoNUnidades" TextWrapping="Wrap" Text="10" FontSize="55" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Arial Narrow"/>
                             </StackPanel>
-                            <Image x:Name="MoverTropasImg" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Width="300" Height="300"/>
+                            <Image x:Name="MoverTropasOrigen" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Grid.Column="0" Grid.Row="3" Width="300" Height="300"/>
+                            <Image x:Name="MoverTropasDestino" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Grid.Column="3" Grid.Row="3" Width="300" Height="300"/>
                             <TextBlock Grid.Column="0" Grid.Row="4" Margin="50,0,0,0" Grid.ColumnSpan="3" Text="Continuar" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="25" FontFamily="Arial Narrow" FontWeight="SemiBold"/>
                             <Image Width="35" Height="35" Margin="0,0,100,0" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>

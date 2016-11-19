@@ -22,7 +22,6 @@ namespace ConquestUnit.Views
     public sealed partial class MesaEnEspera : Page
     {
         // Parametrizacion del mapa seleccionado
-        string Mapa_Elegido;
         Juego objJuego;
         //private Timer timer;
         //private int intervaloTimer;
@@ -39,12 +38,20 @@ namespace ConquestUnit.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
-            Mapa_Elegido = Constantes.MAPA_CHINA;
+            rdbChina.IsChecked = true;
             IniciarSDK();
         }
 
         private async void btnJugar_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            if (rdbChina.IsChecked==true)
+            {
+                objJuego.TipoMapa = Constantes.MAPA_CHINA;
+            }
+            else
+            {
+                objJuego.TipoMapa = Constantes.MAPA_ROMA;
+            }
             btnJugar.Visibility = Visibility.Collapsed; //btnJugar.IsEnabled = false;
             // Definir los turnos de los jugadores,
             // los cuales será igual a la lista de jugadores de la mesa
@@ -157,7 +164,7 @@ namespace ConquestUnit.Views
                     #endregion
                 }
                 //Habilitar o deshabilitar el boton de Jugar
-                btnJugar.Visibility = Visibility.Visible; //btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
+                btnJugar.Visibility = (objJuego.JugadoresConectados.Count >= 2 ? Visibility.Visible : Visibility.Collapsed);
             }
             catch (Exception ex)
             {
@@ -295,7 +302,7 @@ namespace ConquestUnit.Views
 
                 if (App.objSDK.SocketIsConnected)
                 {
-                    objJuego = new Juego(Mapa_Elegido);
+                    objJuego = new Juego();
                     objJuego.Ip = App.objSDK.MyIP.ToString();
                     //GENERAR NUMERO UNICO DE LA MESA
                     var numeroMesa = App.objSDK.MyIP.ToString().Split('.');
@@ -337,59 +344,16 @@ namespace ConquestUnit.Views
         }
         #endregion
 
-        //public async void timerCallback(object state)
-        //{
-        //    // do some work not connected with UI
-        //    Stopwatch watch = new Stopwatch();
-        //    watch.Start();
-        //    App.objSDK.clearDeviceCollection();
-        //    await App.objSDK.MulticastPing();
-        //    await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-        //    {
-        //        //lblTexto.Text = Guid.NewGuid().ToString() + "/" + listaDevices.Count + "/";
-        //        //foreach (var item in listaDevices)
-        //        //{
-        //        //    lblTexto.Text += (("-") + item.IP);
-        //        //}
-        //        if (objJuego.JugadoresConectados.Count > 0)
-        //        {
-        //            // do some work on UI here;
-        //            var huboCambio = false;
-        //            var listaDevices = App.objSDK.getDeviceCollection();
+        private void rdbChina_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            rdbChina.IsChecked = true;
+            rdbRoma.IsChecked = false;
+        }
 
-        //            foreach (var dispositivo in listaDevices)
-        //            {
-        //                for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
-        //                {
-        //                    if (objJuego.JugadoresConectados[i].Ip.Equals(dispositivo.IP))
-        //                    {
-        //                        objJuego.JugadoresConectados.RemoveAt(i);
-        //                        huboCambio = true;
-        //                        break;
-        //                    }
-        //                }
-        //                if (objJuego.JugadoresConectados.Count == 0)
-        //                {
-        //                    break;
-        //                }
-        //            }
-        //            if (huboCambio)
-        //            {
-        //                //Mostrar datos de los jugadores en pantalla
-        //                MostrarDatosJugadoresEnPantalla();
-        //                //Habilitar o deshabilitar el boton de Jugar
-        //                btnJugar.IsEnabled = (objJuego.JugadoresConectados.Count >= 2 ? true : false);
-        //            }
-        //            //lblTexto.Text = "Conectados: ";
-        //            //foreach (var item in objJuego.JugadoresConectados)
-        //            //{
-        //            //lblTexto.Text = lblTexto.Text + "-" + item.Nombre;
-        //            //}
-
-        //        }
-        //        // lblTexto.Text = Guid.NewGuid().ToString();
-        //    });
-        //    timer.Change(Math.Max(0, intervaloTimer - (int)watch.ElapsedMilliseconds), Timeout.Infinite);
-        //}
+        private void rdbRoma_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            rdbChina.IsChecked = false;
+            rdbRoma.IsChecked = true;
+        }
     }
 }

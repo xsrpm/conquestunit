@@ -30,10 +30,20 @@ namespace DataModel
         public List<Territorio> Territorios { get; set; }
         public string TipoMapa { get; set; }
 
+        public Juego()
+        {
+            JugadoresConectados = new List<Jugador>();
+        }
+
         public Juego(string tipoMapa)
         {
             JugadoresConectados = new List<Jugador>();
             TipoMapa = tipoMapa;
+        }
+
+        public Jugador JugadorTurnoActual()
+        {
+            return JugadoresConectados[TurnoActual];
         }
     }
 }
