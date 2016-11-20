@@ -136,6 +136,7 @@
     <None Include="ConquestUnit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\Corona.png" />
     <Content Include="Assets\Images\Icons\logo128x128.png" />
     <Content Include="Assets\Images\Icons\logo300x300.png" />
     <Content Include="Assets\Images\Mando\Abajo1.png" />

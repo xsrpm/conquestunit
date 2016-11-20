@@ -121,6 +121,6 @@
         </Grid>
 
         <Image x:Name="logo" Grid.Column="2" Margin="22,0,23,25" Grid.Row="2" Source="ms-appx:///Assets/Images/Icons/logo128x128.png" Stretch="Fill" d:LayoutOverrides="TopPosition, BottomPosition"/>
-        <Button x:Name="btnRegresar" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="btnRegresar_Tapped" Height="60" Content="Regresar" BorderThickness="1" FontSize="30" Background="Black" Foreground="White"/>
+        <Button x:Name="btnRegresar" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="btnRegresar_Tapped" Height="60" Content="Regresar" BorderThickness="1" FontSize="30" Background="Black" Foreground="White" Visibility="Collapsed"/>
     </Grid>
 </Page>

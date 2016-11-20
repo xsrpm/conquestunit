@@ -821,15 +821,33 @@
             </RelativePanel>
             
         </Grid>
-        <Grid x:Name="GridVictoria" Height="500" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
-            <Image Source="ms-appx:///Assets/Pantallas/PC/Victoria.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBlock x:Name="txtJugadorGanador" Text="Roy" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
-            <Button x:Name="btnMenuPrincipal" Content="Volver al Menu Principal" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="50" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
+        <Grid x:Name="GridVictoria" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="90" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.9"/>
+                </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="140" />
+                <RowDefinition Height="20" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="VICTORIA" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="75" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+                        <TextBlock x:Name="txtJugadorGanador" Text="PAPA BENEDICTO" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="50" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+                        <Image Source="ms-appx:///Assets/Images/Corona.png" Grid.Row="3" Width="70" Height="70" VerticalAlignment="Top"/>
+                        <Image x:Name="imgJugadorGanador" Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" Grid.Row="3" Width="100" Height="100" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Button x:Name="btnMenuPrincipal" Content="Volver al Menu Principal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
                 <Button.Background>
                     <SolidColorBrush Color="Black" Opacity="0.8"/>
                 </Button.Background>
             </Button>
         </Grid>
-                            
-    </Grid>
+
+        </Grid>
 </Page>
