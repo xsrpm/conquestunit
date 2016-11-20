@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush x:Name="Fondo" Stretch="Fill" ImageSource="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
         </Grid.Background>
-        <Grid>
+        <Grid x:Name="GridJuego">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition Height="720" />
@@ -182,7 +182,7 @@
                 <!---->
                 
                 <!--MAPA ROMA-->
-                <RelativePanel x:Name="Mapa_Roma" d:IsHidden="True">
+                <RelativePanel x:Name="Mapa_Roma">
                     <Image x:Name="Assets_Mapa_Roma_png" Height="720" Source="ms-appx:///Assets/Mapa/Mapa Roma.png" Stretch="Fill" HorizontalAlignment="Left" Width="1280" VerticalAlignment="Top"/>
 
                     <Path x:Name="Lusitania" Data="M235.625,366.25 L234.375,368.125 L232.875,370.375 L232,371.5 L229.875,372.75 L227.375,372.25 L224.75,371.875 L221.25,373.625 L219.25,376.25 L218.125,379.25 L219.875,382.5 L220.25,386.25 L222,390.25 L222.875,394.375 L223,398.375 C223,398.375 223.75,401.75 223.625,402.25 C223.5,402.75 223.875,406.375 223.875,406.375 L223.75,410.5 L224.25,413.25 L225.625,415.25 L225.625,419.375 L224.875,427.625 L223.75,432.625 L222.375,437.5 L222,441.25 C222,441.25 221.375,445.625 220.875,446.375 C220.375,447.125 218.5,451.125 218.5,451.125 L217.375,453.875 L214.625,457.125 L214.125,461.25 L213.625,466.25 L214.375,467.75 L217.125,467.375 L219.5,466.75 L221.125,467.375 L220.375,469.25 L218.25,471.875 L218.5,474.125 L220.75,475.875 L222.5,477.125 L222.25,480.875 L221.5,482.75 L221.625,487.375 L222,501.375 L223.5,502 L225.5,502 L228.75,502.25 L232.125,503 L235.125,504.25 L238.5,504.875 L241.875,504.25 L245.25,502.125 L250,501.125 L254.375,502.375 L258.75,505 L261.625,507.875 L263.375,511.375 L263.875,513.75 L265.5,515.875 L267.375,519.25 L270.25,521.75 L273.5,523.25 L277.375,522.875 L279.875,522.5 L282.5,520.5 L284.5,519.25 L286.375,517.375 L289,516.25 L291.875,516 L294,514.375 L296.25,512.5 L298.25,509.75 L300.875,509.875 L306,510.125 L309.75,510 L314.25,509.75 L318.375,509.5 L320.625,509.125 L323.75,509 L326.5,508.875 L329.875,509 L333.125,508.875 L335,507.75 L336.625,505.125 L337.125,503.5 L335.875,502.875 L334,502.25 L332,502.25 L330.375,501.375 L328,500.625 L326.125,499.75 L324,498.625 L321.875,497.25 L319.625,496 L317.625,494.125 L316.125,492 L314.75,489.625 L314.375,486.375 L314.75,482.75 L315.125,480.5 L315.125,478.75 L314,476.625 L312.75,475.125 L311,474 L308.25,473.5 L306,472.625 L303.875,472.125 L302.125,470.5 L300.875,469.5 L298.125,469.25 L296,468.625 L292.5,467.875 L289.5,467.625 L288.625,466.25 L288.5,462.25 L288.375,458.875 L289.125,457.75 L290.25,455.375 L291,453.75 L291.5,451.625 L292,450.375 L294,448.25 L295.625,446.25 L297.25,443.75 L297.5,441.125 L296.375,440 L294.625,438.5 L292.625,435.75 L292.125,429 L291.5,427.375 L289.75,424.875 L287.625,422.75 L286,420.5 L284.375,419 L283,418.625 L281.75,419.25 L280.875,420 L279,420.125 L277.875,419.625 L276.75,417.875 L276.25,416.125 L275.25,414.375 L274,414.25 L272.75,414 L272.75,412.75 L273.625,411.375 L274.625,410.375 L276,410.125 L277.625,410 L278.75,408.875 L281,406.625 L282.5,404.5 L284.125,402.375 L285.875,400.875 L287.875,400 L289.5,397.625 L291.125,395.5 L292.25,394.375 L292.25,388.875 L292.5,383.375 L292.625,379.125 L292.5,374.5 L292.5,371.5 L289.75,371.625 L286.75,371.125 L282.625,369 L278.625,367.625 L273.5,367.25 L267.125,367.625 L262,367.875 L256.625,368.125 L253.125,368.125 L251.125,367.625 L248.375,367.125 L246.625,365.125 L242.75,364.625 L237.625,365 z" HorizontalAlignment="Left" Height="159.625" Margin="212,361.875,0,0" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" VerticalAlignment="Top" Width="124.5" Opacity="0.5" Tag="0"/>
@@ -360,7 +360,7 @@
                 <!---->
                 
                 <!--BOTONES FASES-->
-                <Grid Margin="400,0,0,0">
+                <Grid x:Name="GridFasesJuego" Margin="400,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
@@ -458,7 +458,7 @@
                 </Grid>
 
                 <!--INFO Territorio Seleccionado-->
-                <Grid Margin="10,205,0,0">
+                <Grid x:Name="GridTerritorioSeleccionado" Margin="10,205,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="110" />
                     </Grid.ColumnDefinitions>
@@ -492,7 +492,33 @@
                     <Rectangle x:Name="JuegoJugadorTurnoActualColor" Grid.Column="0" Grid.Row="9" Width="40" Height="40" Fill="#FFB81010" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
 
-                <Grid Margin="1130,650,0,0" Height="50">
+                <Grid x:Name="GridLeyendaSeleccionar" Margin="826,650,64,0" Height="50">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5" />
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="90" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" x:Name="txtSelecion" Text="Seleccion" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" TextAlignment="Center" Margin="0,15,0,15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image x:Name="BotonEquisSeleccion" Height="35" Width="35" Margin="0" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png"/>
+
+                </Grid>
+
+                <Grid x:Name="GridLeyendaCancelar" Margin="966,650,129,0" Height="50">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5" />
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="90" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" x:Name="txtCancelar" Text="Cancelar" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" TextAlignment="Center" Margin="0,15,0,15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image x:Name="BotonCirculoCancelar" Height="35" Width="35" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png"/>
+
+                </Grid>
+
+                <Grid x:Name="GridLeyendaTerminarFase" Margin="1106,650,24,0" Height="50">
                     <Grid.Background>
                         <SolidColorBrush Color="Black" Opacity="0.5" />
                     </Grid.Background>
@@ -505,7 +531,7 @@
                 </Grid>
 
                 <!--JUGADORES-->
-                <Grid Margin="1150,100,0,0">
+                <Grid x:Name="GridJugadores" Margin="1150,100,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
@@ -683,8 +709,8 @@
                                 <SolidColorBrush x:Name="Opcion1CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion1TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold" Margin="36,7,35,6" Grid.RowSpan="2"/>
-                            <Path x:Name="Opcion1Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0.5,0,0" Stretch="Fill" UseLayoutRounding="False" Width="32.5" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2"/>
-                            <Path x:Name="Opcion1Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.333,0.001,-23.833" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition">
+                            <Path x:Name="Opcion1Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0.5,0,0" Stretch="Fill" UseLayoutRounding="False" Width="32.5" d:LayoutOverrides="TopPosition, BottomPosition" Grid.RowSpan="2" Stroke="White" StrokeThickness="3"/>
+                            <Path x:Name="Opcion1Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.333,0.001,-23.833" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition" Stroke="White" StrokeThickness="3">
                                 <Path.RenderTransform>
                                     <CompositeTransform Rotation="180"/>
                                 </Path.RenderTransform>
@@ -698,8 +724,8 @@
                                 <SolidColorBrush x:Name="Opcion2CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion2TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
-                            <Path x:Name="Opcion2Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,0.666" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment"/>
-                            <Path x:Name="Opcion2Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.333,0.001,0.167" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition">
+                            <Path x:Name="Opcion2Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,0.666" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Stroke="White" StrokeThickness="3"/>
+                            <Path x:Name="Opcion2Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.333,0.001,0.167" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition" Stroke="White" StrokeThickness="3">
                                 <Path.RenderTransform>
                                     <CompositeTransform Rotation="180"/>
                                 </Path.RenderTransform>
@@ -713,8 +739,8 @@
                                 <SolidColorBrush x:Name="Opcion3CanvasColor" Color="Black" Opacity="0.6"/>
                             </Grid.Background>
                             <TextBlock x:Name="Opcion3TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
-                            <Path x:Name="Opcion3Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,1.166" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment"/>
-                            <Path x:Name="Opcion3Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.416,-0.249,0.084" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition">
+                            <Path x:Name="Opcion3Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,1.166" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Stroke="White" StrokeThickness="3"/>
+                            <Path x:Name="Opcion3Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0.416,-0.249,0.084" Stretch="Fill" UseLayoutRounding="False" Width="32.5" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition" Stroke="White" StrokeThickness="3">
                                 <Path.RenderTransform>
                                     <CompositeTransform Rotation="180"/>
                                 </Path.RenderTransform>
@@ -729,8 +755,8 @@
                             </Grid.Background>
                             <TextBlock x:Name="Opcion4TXT" TextWrapping="Wrap" Text="Arroz, judías verdes, carne de pollo y conejo" VerticalAlignment="Center" Width="600" FontSize="26" Foreground="White" FontWeight="SemiBold"/>
 
-                            <Path x:Name="Opcion4Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,1.166" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment"/>
-                            <Path x:Name="Opcion4Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0,0.002,0.5" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="47.5" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
+                            <Path x:Name="Opcion4Jugador1" Data="M-0.250004,0.5 C30.75,23 32.2505,23.5834 32.2505,23.5834 L-0.250004,47.3334 z" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,1.166" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="46.834" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Stroke="White" StrokeThickness="3"/>
+                            <Path x:Name="Opcion4Jugador2" Data="M-0.250004,0.5 C30.75,23 32.2505,24.25 32.2505,24.25 L-0.250004,48 z" Fill="Red" HorizontalAlignment="Right" Margin="0,0,0.002,0.5" Stretch="Fill" UseLayoutRounding="False" Width="32.5" Height="47.5" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Stroke="White" StrokeThickness="3">
                                 <Path.RenderTransform>
                                     <CompositeTransform Rotation="180"/>
                                 </Path.RenderTransform>
