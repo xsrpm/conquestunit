@@ -59,7 +59,8 @@ namespace ConquestUnit.Views
             //Notificar a los jugadores el inicio del juego y quien comienza
             foreach (var item in objJuego.JugadoresConectados)
                 await App.objSDK.UnicastPing(new HostName(item.Ip),
-                            Constantes.MesaIndicaJuegoInicia);
+                            Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
+                            item.Color);
 
             //Definir la fase inicial del juego
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);

@@ -27,8 +27,13 @@ namespace ConquestUnit.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-            //El jugador es primer turno
             mandoActivo = false;
+            //El color del jugador
+            if (e != null)
+            {
+                var color = e.Parameter.ToString();
+                TonalidadMando.Stroke = Convertidor.GetSolidColorBrush(color);
+            }
             IniciarSDK();
         }
 

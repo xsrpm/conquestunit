@@ -341,21 +341,8 @@
                 <!---->
                 
                 <!--BOTONES-->
-                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Margin="46,43,0,0" VerticalAlignment="Top" Width="63" Height="63">
+                <Grid x:Name="BlancoGrid" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="40" Height="40">
                     <Image x:Name="Blanco" Source="ms-appx:///Assets/Images/selector.png" Stretch="Fill" Width="40" Height="40" Opacity="0.8"/>
-                    <Grid x:Name="DownArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                        <Image Stretch="Fill" Source="ms-appx:////Assets/Images/Mando/Abajo1.png" />
-                        <Image x:Name="BotonAbajoBlanco" Source="ms-appx:///Assets/Images/Mando/Abajo1.png" Stretch="Fill"/>
-                    </Grid>
-                    <Grid x:Name="UpArrowGrid" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Image x:Name="BotonArribaBlanco" Source="ms-appx:///Assets/Images/Mando/Arriba1.png" Stretch="Fill"/>
-                    </Grid>
-                    <Grid x:Name="XButtonGrid" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                        <Image x:Name="BotonEquisBlanco" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png" Stretch="Fill"/>
-                    </Grid>
-                    <Grid x:Name="OButtonGrid" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <Image x:Name="BotonCirculoBlanco" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png" Stretch="Fill"/>
-                    </Grid>
                 </Grid>
                 <!---->
                 
@@ -393,7 +380,7 @@
                         <StackPanel.Background>
                             <SolidColorBrush Color="Black" Opacity="0.7"/>
                         </StackPanel.Background>
-                        <TextBlock Text="Unidades a desplegar:&#160;&#160;" FontSize="20" FontFamily="Arial Narrow" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Text="Unidades a desplegar:&#160;&#160;" FontSize="20" FontFamily="Arial Narrow" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="White"/>
                         <TextBlock x:Name="txtNroUnidadesParaDespliegue" Text=" 0" FontSize="25" FontWeight="Bold" FontFamily="Arial Narrow" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Grid>

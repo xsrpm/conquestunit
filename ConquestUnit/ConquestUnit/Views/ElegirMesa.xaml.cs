@@ -106,9 +106,9 @@ namespace ConquestUnit.Views
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Helper.MensajeOk(ex.Message);
+                //Helper.MensajeOk(ex.Message);
             }
             prConectando.IsActive = false;
             prConectando.Visibility = Visibility.Collapsed;

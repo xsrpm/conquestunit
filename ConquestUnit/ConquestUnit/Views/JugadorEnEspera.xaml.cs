@@ -84,7 +84,10 @@ namespace ConquestUnit.Views
                     else if (strMensaje.Trim().Contains(Constantes.MesaIndicaJuegoInicia))
                     {
                         // Inicio del juego
-                        this.Frame.Navigate(typeof(ConquestUnitMando));
+                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
+                        //mensaje[0] => Acción (MesaIndicaJuegoInicia)
+                        //mensaje[1] => color
+                        this.Frame.Navigate(typeof(ConquestUnitMando), mensaje[1]);
                     }
                     #endregion
                 }
