@@ -38,6 +38,8 @@
             <ColumnDefinition Width=".1*"/>
         </Grid.ColumnDefinitions>
 
+        <Rectangle x:Name="TonalidadMando" Fill="#FF2828EA" Stroke="Black" d:LayoutOverrides="TopPosition, BottomPosition" Grid.ColumnSpan="5" Grid.RowSpan="3" Opacity="0.4"/>
+
         <StackPanel x:Name="panelEncendido" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,40,0,0" Width="150" Background="#FFFF0437" d:LayoutOverrides="TopMargin, BottomMargin" HorizontalAlignment="Center" CornerRadius="7">
             <TextBlock x:Name="lblTurno" Text="" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
         </StackPanel>
