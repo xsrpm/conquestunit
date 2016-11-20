@@ -1094,6 +1094,7 @@ namespace ConquestUnit.Views
                     {
                         //Mostrar cartel de victoria y fin de juego
                         txtJugadorGanador.Text = objJuego.JugadorTurnoActual().Nombre;
+                        imgJugadorGanador.Source = new BitmapImage(new Uri(objJuego.JugadorTurnoActual().ImagenUnidad));
                         App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
                                             Constantes.MesaConumicaVICTORIAFinDelJuego);
                         GridVictoria.Visibility = Visibility.Visible;
