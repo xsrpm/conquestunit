@@ -166,5 +166,18 @@
 
         public static int UnidadesMinimasParaEvolucionar = 5;
         #endregion
+
+        //https://www.onlinevideoconverter.com/
+        //http://mp3cut.net/es/
+        public struct Media
+        {
+            public struct Music
+            {
+                //https://www.youtube.com/watch?v=oNSl2YxeDBQ
+                public const string MusicaIntro = @"ms-appx:///Assets/Musica/FatalFightIntro.mp3";
+                //https://www.youtube.com/watch?v=kthxycmF25M
+                public const string MusicaConquestUnit = @"ms-appx:///Assets/Musica/GoT-IceAndFire.mp3";
+            }
+        }
     }
 }

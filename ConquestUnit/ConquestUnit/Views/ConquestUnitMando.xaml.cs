@@ -132,7 +132,8 @@ namespace ConquestUnit.Views
             DeshabilitarControles();
             panelDireccional.Visibility = Visibility.Collapsed;
             panelComandos.Visibility = Visibility.Collapsed;
-            btnMensaje.Content = "VICTORIA";
+            panelEncendido.Visibility = Visibility.Collapsed;
+            btnMensaje.Content = "GANASTE";
             GridMensajeFinJuego.Visibility = Visibility.Visible;
         }
         public void Derrota()
@@ -140,7 +141,8 @@ namespace ConquestUnit.Views
             DeshabilitarControles();
             panelDireccional.Visibility = Visibility.Collapsed;
             panelComandos.Visibility = Visibility.Collapsed;
-            btnMensaje.Content = "FIN DEL JUEGO";
+            panelEncendido.Visibility = Visibility.Collapsed;
+            btnMensaje.Content = "DERROTA";
             GridMensajeFinJuego.Visibility = Visibility.Visible;
         }
 

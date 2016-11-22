@@ -92,6 +92,7 @@
                 <ProgressRing x:Name="prConectando" Width="20" Height="20" Margin="0,5,0,0" IsActive="False" Visibility="Collapsed"/>
                 <TextBlock x:Name="lblConectando" Text="Conectando..." Foreground="Gray" Visibility="Collapsed"/>
             </StackPanel>
+            <MediaElement x:Name="demoMedia" Visibility="Collapsed"></MediaElement>
         </RelativePanel>
     </Grid>
 </Page>
