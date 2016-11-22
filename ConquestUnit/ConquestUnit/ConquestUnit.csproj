@@ -157,8 +157,13 @@
     <Content Include="Assets\Musica\FatalFightIntro.mp3" />
     <Content Include="Assets\Musica\GoT-IceAndFire.mp3" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
+    <Content Include="Assets\Pantallas\PC\BotonComoJugar1.png" />
+    <Content Include="Assets\Pantallas\PC\BotonCreditos1.png" />
+    <Content Include="Assets\Pantallas\PC\BotonJugar1.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirmeDisable.png" />
+    <Content Include="Assets\Pantallas\PC\FlechaMover.png" />
+    <Content Include="Assets\Pantallas\PC\FlechaMover1.png" />
     <Content Include="Assets\Pantallas\PC\IconoEspada.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorMapa.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorBatalla.png" />

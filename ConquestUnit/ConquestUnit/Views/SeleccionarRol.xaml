@@ -37,12 +37,12 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".2*" />
-                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width=".17*" />
+                    <ColumnDefinition Width=".83*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel x:Name="PanelRegresar" Margin="20,20,100,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Tapped="btnAtras_Tapped">
+                <StackPanel x:Name="PanelRegresar" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Tapped="btnAtras_Tapped">
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"/>
-                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="Calibri" />
+                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2" Tapped="infoJugador_Tapped">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
@@ -54,7 +54,7 @@
         </StackPanel>
         
         <StackPanel x:Name="myRelativePanel" Margin="0,320,0,0" HorizontalAlignment="Center" Orientation="Vertical">
-            <TextBlock x:Name="lblTexto" Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" FontFamily="Arial"/>
+            <TextBlock x:Name="lblTexto" Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Padding="50">
                     <Image x:Name="imgElegirMesa" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Pantallas/PC/RolMesa.png" Tapped="imgElegirMesa_Tapped"/>
