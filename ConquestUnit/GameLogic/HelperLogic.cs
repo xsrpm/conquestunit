@@ -44,6 +44,12 @@ namespace GameLogic
             return continente1 + continente2 + continente3 + continente4;
         }
 
+        public static int NroUnidadesJugador(Juego objJuego, string ipJugador)
+        {
+            //Obtner el numero de unidades desplegadas
+            return objJuego.Territorios.Where(x => x.IpJugadorPropietario.Equals(ipJugador)).Sum(x=>x.NUnidadesDeplegadas);
+        }
+
         public static Pregunta ObtenerPreguntaAleatoria(ConquestUnitContext context)
         {
             var preguntas = context.conn.Table<Pregunta>();

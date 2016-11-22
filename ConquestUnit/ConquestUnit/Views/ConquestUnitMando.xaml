@@ -115,7 +115,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="btnMenuPrincipal" Content="Volver al Menu Principal" Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
+            <Button x:Name="btnMenuPrincipal" Content="Volver al Menú Principal" Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
                 <Button.Background>
                     <SolidColorBrush Color="Black" Opacity="0.8"/>
                 </Button.Background>

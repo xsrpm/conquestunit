@@ -64,7 +64,10 @@ namespace ConquestUnit.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-
+            ConquestUnitMusic.SetPlaybackSource(Windows.Media.Core.MediaSource.CreateFromUri(new Uri(Constantes.Media.Music.MusicaConquestUnit)));
+            ConquestUnitMusic.IsLooping = true;
+            ConquestUnitMusic.Volume = 1;
+            ConquestUnitMusic.Play();
             ////COMENTAR PARA PRUEBA
             if (e.Parameter != null)
             {
@@ -192,6 +195,7 @@ namespace ConquestUnit.Views
             DibujarUnidadesTerritorioEnElMapa();
             ActualizarNumeroTerritoriosInfo();
             ActualizarNumeroContinentesInfo();
+            ActualizarNumeroUnidadesInfo();
 
             btnFaseDespliegue.IsEnabled = true;
             btnFaseAtaque.IsEnabled = false;
@@ -219,6 +223,7 @@ namespace ConquestUnit.Views
 
             ActualizarNumeroTerritoriosInfo();
             ActualizarNumeroContinentesInfo();
+            ActualizarNumeroUnidadesInfo();
         }
 
         public void ActualizarCuadroInfoTerritorio()
@@ -379,6 +384,21 @@ namespace ConquestUnit.Views
                 ((TextBlock)this.FindName("Jugador" + (i + 1) + "Continentes")).Text =
                     GameLogic.HelperLogic.NroContinentesJugador(objJuego, objJuego.JugadoresConectados[i].Ip).ToString();
             }
+        }
+
+        public void ActualizarNumeroUnidadesInfo()
+        {
+            for (int i = 0; i < objJuego.JugadoresConectados.Count; i++)
+            {
+                ((TextBlock)this.FindName("Jugador" + (i + 1) + "Unidades")).Text =
+                    GameLogic.HelperLogic.NroUnidadesJugador(objJuego, objJuego.JugadoresConectados[i].Ip).ToString();
+            }
+        }
+
+        public void ActualizarNumeroUnidadesJugadorEnTurnoInfo()
+        {
+            ((TextBlock)this.FindName("Jugador" + (objJuego.TurnoActual + 1) + "Unidades")).Text =
+                    GameLogic.HelperLogic.NroUnidadesJugador(objJuego, objJuego.JugadoresConectados[objJuego.TurnoActual].Ip).ToString();
         }
 
         public void ActualizarNumeroUnidadesParaDespliegue()
@@ -1133,7 +1153,7 @@ namespace ConquestUnit.Views
                                     ((TextBlock)this.FindName("UnidadCantidad" + objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NombreTerritorio)).Text =
                                         objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas.ToString();
                                     objJuego.UnidadesDisponiblesParaDesplegar--;
-                                    //ActualizarNumeroTerritoriosInfo();
+                                    ActualizarNumeroUnidadesJugadorEnTurnoInfo();
                                     txtNroUnidadesParaDespliegue.Text = objJuego.UnidadesDisponiblesParaDesplegar.ToString();
                                     MapaTerritorioSeleccionadoUnidades.Text = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)].NUnidadesDeplegadas.ToString();
                                     //La unidad evoluciona?

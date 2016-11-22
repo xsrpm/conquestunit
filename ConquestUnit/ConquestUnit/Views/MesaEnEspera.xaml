@@ -52,26 +52,26 @@
                 </Viewbox>
             </Grid>
         </StackPanel>
-        <StackPanel x:Name="myRelativePanel" Margin="0,390,0,0" HorizontalAlignment="Center">
+        <StackPanel x:Name="myRelativePanel" Margin="0,390,0,0" HorizontalAlignment="Center" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <StackPanel Padding="50">
+                <StackPanel Padding="50,50,50,10">
                     <Image x:Name="imgJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
                     <TextBlock x:Name="lblJugador1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
-                <StackPanel Padding="50">
+                <StackPanel Padding="50,50,50,10">
                     <Image x:Name="imgJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
                     <TextBlock x:Name="lblJugador2" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
-                <StackPanel Padding="50">
+                <StackPanel Padding="50,50,50,10">
                     <Image x:Name="imgJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
                     <TextBlock x:Name="lblJugador3" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
-                <StackPanel Padding="50">
+                <StackPanel Padding="50,50,50,10">
                     <Image x:Name="imgJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="128" Height="128" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"/>
                     <TextBlock x:Name="lblJugador4" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Esperando..." FontSize="20" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
             </StackPanel>
-            <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/PC/BotonJugar.png" Width="150" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Tapped="btnJugar_Tapped"/>
+            <Image x:Name="btnJugar" Source="ms-appx:///Assets/Pantallas/PC/BotonJugar.png" Width="150" HorizontalAlignment="Center" Margin="0,0,0,0" Tapped="btnJugar_Tapped"/>
         </StackPanel>
         <!--TEXTOS HELPER PARA ALMACENAR LA IP DE LOS JUGADORES-->
         <TextBlock x:Name="lblIpJugador1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="0.0.0.0" VerticalAlignment="Top" Visibility="Collapsed"/>
