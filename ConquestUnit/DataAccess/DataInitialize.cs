@@ -131,7 +131,7 @@ namespace ConquestUnit
             InsertarPregunta("¿Cúales son las ciudades autónomas de España?",
                             "Ceuta y Melilla", "Melilla y Alhucemas", "Melilla y Nador", "Ceuta y Villa Sanjurjo", context);
             InsertarPregunta("¿Cúal es la capital de Alemania?",
-                            "Berlín", "Múnich", "Múnich", "Dublin", context);
+                            "Berlín", "Múnich", "Hamburgo", "Dublin", context);
             InsertarPregunta("¿Dónde está la ciudad de Mostar?",
                             "Bosnia y Herzegovina", "Serbia", "Montenegro", "Croacia", context);
             InsertarPregunta("¿De dónde es capital Thimbu?",
