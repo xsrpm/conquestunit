@@ -160,6 +160,8 @@
     <Content Include="Assets\Pantallas\PC\BotonJugar1.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirme.png" />
     <Content Include="Assets\Pantallas\PC\BotonUnirmeDisable.png" />
+    <Content Include="Assets\Pantallas\PC\FlechaMover.png" />
+    <Content Include="Assets\Pantallas\PC\FlechaMover1.png" />
     <Content Include="Assets\Pantallas\PC\IconoEspada.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorMapa.png" />
     <Content Include="Assets\Pantallas\PC\IconoJugadorBatalla.png" />
