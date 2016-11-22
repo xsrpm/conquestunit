@@ -157,7 +157,7 @@ namespace ConquestUnit.Views
                 Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
                 {
                 {null,Augusta,Augusta,Augusta,Tingitana,null,null,null},//Lusitania
-                {Aquitania,Alpina,Sardinia,Tingitana,Tingitana,Lusitania,Lusitania,Lusitania },//CaesarAugusta
+                {Aquitania,Alpina,Sardinia,Tingitana,Tingitana,Lusitania,Lusitania,Lusitania },//Augusta
                 {Flavia,Frisia,Alpina,Alpina,Augusta,Augusta,null,Flavia},//Aquitania
                 {Frisia,Roma,Roma,Sardinia,Augusta,Augusta,Aquitania,Aquitania},//Alpina
                 {null,null,Pannonia,Pannonia,Alpina,Aquitania,Aquitania,Flavia},//Frisia
@@ -180,7 +180,7 @@ namespace ConquestUnit.Views
                 {Roma,Roma,Roma,Carthago,Carthago,Carthago,Augusta,Alpina},//Sardinia
                 {Pannonia,Pannonia,Dalmatia,Dalmatia,Carthago,Carthago,Sardinia,Alpina },//Roma
                 {Pannonia,Moesia,Moesia,Peloponense,null,Roma,Roma,Pannonia },//Dalmatia
-                {null,null,Libya,Lydia,Peloponense,Dalmatia,Pannonia,Pannonia },//Moesia
+                {null,null,Lydia,Lydia,Peloponense,Dalmatia,Pannonia,Pannonia },//Moesia
                 {null,null,Moesia,Dalmatia,Roma,Roma,Frisia,Frisia },//Pannonia
                 {Moesia,Moesia,Lydia,Lydia,null,null,Dalmatia,Dalmatia }//Peloponense
                 };
