@@ -31,38 +31,45 @@
                         <Setter Target="PanelRegresar.Margin" Value="20"></Setter>
                         <Setter Target="btnAtrasImage.Width" Value="150"></Setter>
 
-                        <Setter Target="imgLogo.Width" Value="250"></Setter>
-                        <Setter Target="imgLogo.Height" Value="250"></Setter>
-                        
+                        <Setter Target="VentanaPanel.Orientation" Value="Horizontal"></Setter>
+                        <Setter Target="CreditosPanel.Margin" Value="100,0,0,0"></Setter>
+
+                        <Setter Target="imgLogo.Width" Value="300"></Setter>
+                        <Setter Target="imgLogo.Height" Value="300"></Setter>
+
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-    
+
         <StackPanel x:Name="PanelRegresar" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnAtras_Tapped" Margin="0" Padding="10,10,0,0">
             <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/Phone/BotonRegresar.png" Width="70"/>
             <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="14" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" />
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
-            <Image x:Name="imgLogo" Height="175" Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Margin="0,0,0,0" VerticalAlignment="Top"/>
-            <TextBlock Text="El videojuego Conquest Unit " TextAlignment="Center" d:LayoutOverrides="Width" Height="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"/>
-            <TextBlock Text="fue elaborado en el curso de" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            <TextBlock Text="Taller de Proyecto." TextAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Text="Desarrollado por alumnos de" TextAlignment="Center" Height="20" VerticalAlignment="Top" d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-            <TextBlock Text="Ingenieria de Software" TextAlignment="Center" Height="20" VerticalAlignment="Top" FontWeight="Bold" d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-            <TextBlock Text="de la Universidad Peruana de" TextAlignment="Center" Height="20" VerticalAlignment="Top" d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-            <TextBlock Text="Ciencias Aplicadas" TextAlignment="Center" Height="20" VerticalAlignment="Top" d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-            <TextBlock Text="PROGRAMADORES" TextAlignment="Center" Height="20" VerticalAlignment="Top" d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-            <TextBlock Text="César Palma" TextAlignment="Center" Height="20" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock Text="Roy Taza" TextAlignment="Center" Height="20" VerticalAlignment="Top" FontWeight="Bold"/>
-            <TextBlock Text="DISEÑADOR" TextAlignment="Center" Height="20" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
-            <TextBlock Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            <TextBlock Text="ASESOR" TextAlignment="Center" Height="20" d:LayoutOverrides="VerticalAlignment"/>
-            <TextBlock Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
-            <TextBlock Text="MÚSICA" TextAlignment="Center" Height="20" d:LayoutOverrides="VerticalAlignment"/>
-            <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
-            <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
+        <StackPanel x:Name="VentanaPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel x:Name="imgLogoPanel" Margin="0,0" Orientation="Vertical" VerticalAlignment="Center">
+                <Image x:Name="imgLogo" Height="175" Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Margin="0,0,0,0" VerticalAlignment="Top" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition"/>
+            </StackPanel>
+            <StackPanel x:Name="CreditosPanel" Orientation="Vertical" Margin="0,20,0,0">
+                <TextBlock Text="El videojuego Conquest Unit " TextAlignment="Center" />
+                <TextBlock Text="fue elaborado en el curso de" TextAlignment="Center"/>
+                <TextBlock Text="Taller de Proyecto." TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="Desarrollado por alumnos de" TextAlignment="Center" />
+                <TextBlock Text="Ingenieria de Software" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="de la Universidad Peruana de" TextAlignment="Center"/>
+                <TextBlock Text="Ciencias Aplicadas" TextAlignment="Center"/>
+                <TextBlock Text="PROGRAMADORES" TextAlignment="Center"/>
+                <TextBlock Text="César Palma" TextAlignment="Center" FontWeight="Bold" />
+                <TextBlock Text="Roy Taza" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="DISEÑADOR" TextAlignment="Center"/>
+                <TextBlock Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="ASESOR" TextAlignment="Center"/>
+                <TextBlock Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="MÚSICA" TextAlignment="Center"/>
+                <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
