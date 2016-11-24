@@ -31,7 +31,8 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel x:Name="myStackPanel" Height="320" VerticalAlignment="Top">
+        <StackPanel>
+        <StackPanel x:Name="myStackPanel" VerticalAlignment="Top">
             <Grid x:Name="headerGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -46,25 +47,26 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2" Tapped="infoJugador_Tapped">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
-                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="64" Source="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"/>
+                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Center" Stretch="UniformToFill" Width="64" Height="64" Source="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"/>
                 </StackPanel>
             </Grid>
             
-            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-90,0,0" Width="256" Height="256" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>
+            <Image x:Name="imgLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-115,0,0" Width="225" Height="225" Source="ms-appx:///Assets/Images/Icons/logo300x300.png"/>
         </StackPanel>
         
-        <StackPanel x:Name="myRelativePanel" Margin="0,320,0,0" HorizontalAlignment="Center" Orientation="Vertical">
-            <TextBlock x:Name="lblTexto" Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
+        <StackPanel x:Name="myRelativePanel" Margin="0,25,0,0" HorizontalAlignment="Center" Orientation="Vertical">
+            <TextBlock Text="Seleccione su rol" HorizontalAlignment="Center" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
             <StackPanel Orientation="Horizontal">
-                <StackPanel Padding="50">
+                <StackPanel Padding="0,25,50,0">
                     <Image x:Name="imgElegirMesa" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Pantallas/PC/RolMesa.png" Tapped="imgElegirMesa_Tapped"/>
                     <TextBlock x:Name="lblMesa" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Mesa" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
-                <StackPanel Padding="50">
+                    <StackPanel Padding="0,25,50,0">
                     <Image x:Name="imgElegirJugador" HorizontalAlignment="Center" Height="256" Width="256" Margin="0,0,0,0" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png" Tapped="imgElegirJugador_Tapped"/>
                     <TextBlock x:Name="lblJugador" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Jugador" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
                 </StackPanel>
             </StackPanel>
+        </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

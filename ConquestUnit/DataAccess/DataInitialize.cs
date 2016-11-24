@@ -18,7 +18,7 @@ namespace ConquestUnit
             preguntas = new List<Pregunta>();
             opciones = new List<Opcion>();
 
-            InsertarPregunta("¿Que ingiere una planta ademas de  luz solar, agua y nutrients de la tierra para usar en la fotosintesis ?",
+            InsertarPregunta("¿Que ingiere una planta ademas de  luz solar, agua y nutrients de la tierra para usar en la fotosintesis?",
                 "Dioxido de Carbono", "Tierra", "Oxigeno", "Insectos", context);
             InsertarPregunta("En el futbol, ¿Quien puede anotar goles?",
                 "Todos ellos", "Los mediocampistas", "Los delanteros", "Los defenzas", context);
@@ -913,7 +913,7 @@ namespace ConquestUnit
                             "Tres", "Cuatro ", "Ninguno", "Dos", context);
             InsertarPregunta("¿Qué son los pugs?",
                             "Una raza de perro", "Una comida", "Un lugar", "Una tradicion regional", context);
-            InsertarPregunta("¿El ciempiés gigante del Amazonas puede medir más de 30 centimetros y cuelga de las cuevas ¿Qué mamífero volador le resulta fácil cazar?",
+            InsertarPregunta("¿Qué mamífero volador le resulta fácil cazar?",
                             "Murciélagos", "Mariposas", "Lagartos", "Águilas", context);
             InsertarPregunta("¿Cómo se llama el registro gráfico de la activa eléctrica del cerebro?",
                             "Electroencefalograma", "Electrocardiograma", "Electrocerebrograma", "Electroconductancia", context);

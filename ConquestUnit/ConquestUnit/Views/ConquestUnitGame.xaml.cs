@@ -447,9 +447,7 @@ namespace ConquestUnit.Views
             Opcion4Jugador2.Visibility = Visibility.Collapsed;
             //Area Atacante
             var atacante = objJuego.JugadorTurnoActual();
-            PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
-            //txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-            //imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
+            PanelMensajeResultadoBatalla.Visibility = Visibility.Collapsed;
             AtacanteTerritorioNombreTXT.Text = objJuego.TerritorioAtaqueOrigen.NombreTerritorio;
             AtacanteNombreTXT.Text = atacante.Nombre;
             InvasorFondo.Fill = Convertidor.GetSolidColorBrush(atacante.Color);
@@ -464,7 +462,6 @@ namespace ConquestUnit.Views
             InvasorPuntosAtaqueTXT.Text = "0";
             //Area Defensor
             var defensor = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First();
-            //PanelMensajeJugadorDefensor.Visibility = Visibility.Collapsed;
             DefensorTerritorioNombreTXT.Text = objJuego.TerritorioAtaqueDestino.NombreTerritorio;
             DefensorNombreTXT.Text = defensor.Nombre;
             DefensorFondo.Fill = Convertidor.GetSolidColorBrush(defensor.Color);
@@ -502,7 +499,7 @@ namespace ConquestUnit.Views
 
         public void IniciarMoverTropas()
         {
-            PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
+            PanelMensajeResultadoBatalla.Visibility = Visibility.Collapsed;
             //Mostrar grilla de mover tropas!!!!!!!!!!!!!!!!!!!!!!!
             CabeceraGrid.Visibility = Visibility.Collapsed;
             PreguntaGrid.Visibility = Visibility.Collapsed;
@@ -674,9 +671,12 @@ namespace ConquestUnit.Views
 
                     //Gano el atacante
                     CabeceraGrid.Visibility = Visibility.Collapsed;
-                    PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
+                    PanelMensajeResultadoBatalla.Visibility = Visibility.Visible;
+                    txtResultadoBatallaPuntosAtacante.Text = puntosAtacante.ToString();
+                    txtResultadoBatallaPuntosDefensor.Text = puntosDefensor.ToString();
                     if (puntosAtacante > puntosDefensor)
                     {
+                        txtResultadoBatallaComparador.Text = ">";
                         objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
                         NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas.ToString();
                         ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
@@ -686,19 +686,17 @@ namespace ConquestUnit.Views
                         else
                             objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = defensor.ImagenUnidad;
                         //Mostrar el mensaje de victoria del Atacante
-                        txtMensajeJugadorAtacanteTitulo.Text = Constantes.MensajesResultadoBatalla.GANASTE;
+                        txtResultadoBatallaTitulo.Text = Constantes.MensajesResultadoBatalla.Titulo.GANA_EL_ATACANTE;
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
-                            txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.DESPLIEGA_UNIDADES;
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.DESPLEGAR;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Collapsed;
                             objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_INICIO_MOVERTROPAS;
                         }
                         else
                         {
-                            txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.CONTINUAR_ATAQUE;
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Visible;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Visible;
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.CONTINUAR_ATAQUE;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Visible;
                             objJuego.AccionActual = Constantes.AccionJuego.DECIDIR_CONTINUAR_ATAQUE;
                         }
                     }
@@ -706,10 +704,18 @@ namespace ConquestUnit.Views
                     else
                     {
                         //Mostrar el mensaje que el atacante puede responder 1 pregunta más
-                        txtMensajeJugadorAtacanteTitulo.Text = Constantes.MensajesResultadoBatalla.DERROTA;
-                        txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.RESPONDER_SIGUIENTE_PREGUNTA;
-                        txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-                        imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
+                        txtResultadoBatallaTitulo.Text = Constantes.MensajesResultadoBatalla.Titulo.GANA_EL_DEFENSOR;
+                        if (puntosAtacante == puntosDefensor)
+                        {
+                            txtResultadoBatallaComparador.Text = "=";
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.DEFENSOR_GANA_PRIMERA_PREGUNTA_IGUAL;
+                        }
+                        else
+                        {
+                            txtResultadoBatallaComparador.Text = "<";
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.DEFENSOR_GANA_PRIMERA_PREGUNTA_MAYOR;
+                        }
+                        btnResultadoBatallaCancelar.Visibility = Visibility.Collapsed;
                         objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_INICIO_SEGUNDA_PREGUNTA;
                     }
                 }
@@ -756,9 +762,13 @@ namespace ConquestUnit.Views
 
                     //Gano el atacante
                     CabeceraGrid.Visibility = Visibility.Collapsed;
-                    PanelMensajeJugadorAtacante.Visibility = Visibility.Visible;
+                    PanelMensajeResultadoBatalla.Visibility = Visibility.Visible;
+                    txtResultadoBatallaPuntosAtacante.Text = puntosAtacante.ToString();
+                    txtResultadoBatallaPuntosDefensor.Text = puntosDefensor.ToString();
+                    txtResultadoBatallaTitulo.Text = Constantes.MensajesResultadoBatalla.Titulo.GANA_EL_ATACANTE;
                     if (puntosAtacante > puntosDefensor)
                     {
+                        txtResultadoBatallaComparador.Text = ">";
                         objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas -= int.Parse(txtComboAtk.Text);
                         NTropasDefensorTXT.Text = objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas.ToString();
                         ((TextBlock)this.FindName("UnidadCantidad" + objJuego.TerritorioAtaqueDestino.NombreTerritorio)).Text = objJuego.TerritorioAtaqueDestino.NUnidadesDeplegadas.ToString();
@@ -768,19 +778,17 @@ namespace ConquestUnit.Views
                         else
                             objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].ImagenUnidades = defensor.ImagenUnidad;
                         //Mostrar el mensaje de victoria del Atacante
-                        txtMensajeJugadorAtacanteTitulo.Text = Constantes.MensajesResultadoBatalla.GANASTE;
+                        txtResultadoBatallaTitulo.Text = Constantes.MensajesResultadoBatalla.Titulo.GANA_EL_ATACANTE;
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueDestino.TerritorioId].NUnidadesDeplegadas == 0)
                         {
-                            txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.DESPLIEGA_UNIDADES;
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.DESPLEGAR_CON_SEGUNDA_PREGUNTA;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Collapsed;
                             objJuego.AccionActual = Constantes.AccionJuego.CONFIRMAR_INICIO_MOVERTROPAS;
                         }
                         else
                         {
-                            txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.CONTINUAR_ATAQUE;
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Visible;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Visible;
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.CONTINUAR_ATAQUE_CON_SEGUNDA_PREGUNTA;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Visible;
                             objJuego.AccionActual = Constantes.AccionJuego.DECIDIR_CONTINUAR_ATAQUE;
                         }
                     }
@@ -796,19 +804,28 @@ namespace ConquestUnit.Views
                         else
                             objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].ImagenUnidades = atacante.ImagenUnidad;
                         //Mostrar el mensaje de victoria del DEFENSOR
-                        txtMensajeJugadorAtacanteTitulo.Text = Constantes.MensajesResultadoBatalla.DERROTA;
+                        txtResultadoBatallaTitulo.Text = Constantes.MensajesResultadoBatalla.Titulo.GANA_EL_DEFENSOR;
+                        if (puntosAtacante == puntosDefensor)
+                        {
+                            txtResultadoBatallaComparador.Text = "=";
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.ATACANTE_PIERDE_SEGUNDA_PREGUNTA_IGUAL;
+                        }
+                        else
+                        {
+                            txtResultadoBatallaComparador.Text = "<";
+                            txtResultadoBatallaMensaje.Text = Constantes.MensajesResultadoBatalla.Mensaje.ATACANTE_PIERDE_SEGUNDA_PREGUNTA_MAYOR;
+                        }
+
                         if (objJuego.Territorios[objJuego.TerritorioAtaqueOrigen.TerritorioId].NUnidadesDeplegadas <= 1)
                         {
-                            txtMensajeJugadorAtacante.Text = "";
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Collapsed;
+                            txtResultadoBatallaMensaje.Text += Constantes.MensajesResultadoBatalla.Mensaje.ATACANTE_PIERDE_SEGUNDA_PREGUNTA_NO_SE_PUEDE_CONTINUAR_ATACANDO;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Collapsed;
                             objJuego.AccionActual = Constantes.AccionJuego.TERMINAR_ATAQUE;
                         }
                         else
                         {
-                            txtMensajeJugadorAtacante.Text = Constantes.MensajesResultadoBatalla.CONTINUAR_ATAQUE;
-                            txtCancelarJugadorAtacante.Visibility = Visibility.Visible;
-                            imgCancelarJugadorAtacante.Visibility = Visibility.Visible;
+                            txtResultadoBatallaMensaje.Text += Constantes.MensajesResultadoBatalla.Mensaje.ATACANTE_PIERDE_SEGUNDA_PREGUNTA_PREGUNTAR_CONTINUAR_ATAQUE;
+                            btnResultadoBatallaCancelar.Visibility = Visibility.Collapsed;
                             objJuego.AccionActual = Constantes.AccionJuego.DECIDIR_CONTINUAR_ATAQUE;
                         }
                     }
@@ -889,7 +906,7 @@ namespace ConquestUnit.Views
         public void IniciarSegundaPregunta()
         {
             esPrimeraPregunta = false;
-            PanelMensajeJugadorAtacante.Visibility = Visibility.Collapsed;
+            PanelMensajeResultadoBatalla.Visibility = Visibility.Collapsed;
             CabeceraGrid.Visibility = Visibility.Visible;
 
             Opcion1Canvas.Visibility = Visibility.Collapsed;
@@ -1033,7 +1050,6 @@ namespace ConquestUnit.Views
             }
             DibujarJugadorEnTurno();
             ActualizarNumeroUnidadesParaDespliegue();
-            ///////////////////////////////////////////////////////////////////////////////////////////////
             contadorTimerSiguienteTurno = null;
             MensajeSiguienteTurnoColor.Color = Colors.Black;
             txtSiguienteTurnoMensaje.Text = "Es el turno de";
@@ -1295,7 +1311,6 @@ namespace ConquestUnit.Views
                                 {
                                     //El jugador cancela la seleccion se destino de ataque
                                     objJuego.AccionActual = Constantes.AccionJuego.ELEGIRORIGENATK;
-                                    //((Path)FindName(objJuego.TerritorioOrigenAtaque.NombreTerritorio)).Opacity = 0;
                                     DesmarcarTerritorio((Path)FindName(objJuego.TerritorioAtaqueOrigen.NombreTerritorio));
                                     objJuego.TerritorioAtaqueOrigen = null;
                                 }
@@ -1321,7 +1336,10 @@ namespace ConquestUnit.Views
                                 //Se confirma el ataque
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
+                                    // Habilitar controles adicionalmente hace vibrar el Windows Phone
                                     await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
+                                        Constantes.MesaConumicaHABILITARControles);
+                                    await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
                                         Constantes.MesaConumicaHABILITARControles);
                                     IniciarBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.BATALLA_PRIMERA_PREGUNTA;
@@ -1640,7 +1658,6 @@ namespace ConquestUnit.Views
                                     //Marcar territorio como origen Fortificacion
                                     objJuego.TerritorioFortificacionOrigen = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
                                     objJuego.TerritorioFortificacionDestino = null;
-                                    //TerrSelec.Opacity = 1;
                                     MarcarTerritorio(TerrSelec);
 
                                     //Cambiar a accion elegir destino Fotificacion
@@ -1740,11 +1757,6 @@ namespace ConquestUnit.Views
                                     MoverTropasGrid.Visibility = Visibility.Collapsed;
 
                                     //Finalizar Truno
-                                    //objJuego.AccionActual = Constantes.AccionJuego.FORTIFICAR_FIN_CONTINUAR;
-                                    //txtMensajeContinuar.Text = Constantes.MensajesConfirmarContinuar.FortificarContinuar;
-                                    //MensajeContinuar.Visibility = Visibility.Visible;
-                                    //ActualizarDespuesDeFortificacion();
-                                    //MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
                                     objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;
                                     btnFaseFortificacion.IsEnabled = false;

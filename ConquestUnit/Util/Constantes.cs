@@ -100,12 +100,29 @@
 
         public struct MensajesResultadoBatalla
         {
-            public const string GANASTE = "GANASTE";
-            public const string DERROTA = "DERROTA";
+            public struct Titulo
+            {
+                public const string GANA_EL_ATACANTE = "GANA EL ATACANTE";
+                public const string GANA_EL_DEFENSOR = "DERROTA, GANA EL DEFENSOR";
+            }
 
-            public const string CONTINUAR_ATAQUE = "¿CONTINUAR EL ATAQUE?";
-            public const string DESPLIEGA_UNIDADES = "DESPLIEGA TUS UNIDADES";
-            public const string RESPONDER_SIGUIENTE_PREGUNTA = "RESPONDER SIGUIENTE PREGUNTA";
+            public struct Mensaje
+            {
+                public const string DESPLEGAR = "DEFENSOR no respondió o marcó opción incorrecta\r\nTerritorio conquistado, el ATACANTE desplegará sus unidades";
+                public const string DESPLEGAR_CON_SEGUNDA_PREGUNTA = "ATACANTE obtuvo más puntos que el DEFENSOR\r\nTerritorio conquistado, el ATACANTE desplegará sus unidades";
+
+                public const string CONTINUAR_ATAQUE = "DEFENSOR no respondió o marcó opción incorrecta\r\nEl territorio enemigo aún tiene unidades\r\n¿CONTINUAR el Ataque?";
+                public const string CONTINUAR_ATAQUE_CON_SEGUNDA_PREGUNTA = "ATACANTE obtuvo más puntos que el DEFENSOR\r\nEl territorio enemigo aún tiene unidades\r\n¿CONTINUAR el Ataque?";
+
+                public const string DEFENSOR_GANA_PRIMERA_PREGUNTA_IGUAL = "Empate, entonces gana el DEFENSOR\r\nSe formulará 1 preguntá más al ATACANTE\r\nSólo el ATACANTE responderá la siguiente pregunta";
+                public const string DEFENSOR_GANA_PRIMERA_PREGUNTA_MAYOR = "ATACANTE no respondió o marcó opción incorrecta\r\nSe formulará 1 preguntá más al ATACANTE\r\nSólo el ATACANTE responderá la siguiente pregunta";
+
+                public const string ATACANTE_PIERDE_SEGUNDA_PREGUNTA_IGUAL = "Empate, entonces gana el DEFENSOR\r\n";
+                public const string ATACANTE_PIERDE_SEGUNDA_PREGUNTA_MAYOR = "ATACANTE no respondió o marcó opción incorrecta\r\n";
+
+                public const string ATACANTE_PIERDE_SEGUNDA_PREGUNTA_NO_SE_PUEDE_CONTINUAR_ATACANDO = "El ATACANTE no posee unidades suficientes para continuar el ataque";
+                public const string ATACANTE_PIERDE_SEGUNDA_PREGUNTA_PREGUNTAR_CONTINUAR_ATAQUE = "Hay unidades disponibles para atacar\r\n¿CONTINUAR el Ataque?";
+            }
         }
 
         public const string MOVER_TROPAS_MOVER = "MOVIENDO UNIDADES";

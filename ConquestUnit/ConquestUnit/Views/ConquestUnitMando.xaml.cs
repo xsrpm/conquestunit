@@ -1,8 +1,10 @@
 ﻿using SynapseSDK;
 using System;
 using Util;
+using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
 using Windows.Networking;
+using Windows.Phone.Devices.Notification;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -202,6 +204,11 @@ namespace ConquestUnit.Views
             mandoActivo = true;
             lblTurno.Text = "TURNO";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOACTIVO);
+            if (App.DetectPlatform() == Platform.WindowsPhone)
+            {
+                var vibration = VibrationDevice.GetDefault();
+                vibration.Vibrate(TimeSpan.FromMilliseconds(500));
+            }
         }
 
         public void DeshabilitarControles()
