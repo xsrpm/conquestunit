@@ -18,7 +18,6 @@
                         <AdaptiveTrigger MinWindowHeight="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="pcState">
@@ -28,33 +27,24 @@
                     <VisualState.Setters>
                         <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png"></Setter>
                         <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"></Setter>
-                        <Setter Target="lblRegresar.FontSize" Value="35"></Setter>
-                        <Setter Target="PanelRegresar.Margin" Value="20,20,100,0"></Setter>
+                        <Setter Target="lblRegresar.FontSize" Value="30"></Setter>
+                        <Setter Target="PanelRegresar.Margin" Value="20"></Setter>
+                        <Setter Target="btnAtrasImage.Width" Value="150"></Setter>
 
                         <Setter Target="imgLogo.Width" Value="250"></Setter>
                         <Setter Target="imgLogo.Height" Value="250"></Setter>
-                        <Setter Target="myStackPanel.Height" Value="125"></Setter>
-                        <Setter Target="FilaRegresar.Height" Value="140"></Setter>
+                        
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel x:Name="myStackPanel" Height="100" VerticalAlignment="Top">
-            <Grid x:Name="headerGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition x:Name="FilaRegresar" Height="70" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".2*" />
-                    <ColumnDefinition Width=".8*"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel x:Name="PanelRegresar" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Tapped="btnAtras_Tapped">
-                    <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/Phone/BotonRegresar.png"/>
-                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="14" FontFamily="Calibri" />
-                </StackPanel>
-            </Grid>
+    
+        <StackPanel x:Name="PanelRegresar" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnAtras_Tapped" Margin="0" Padding="10,10,0,0">
+            <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/Phone/BotonRegresar.png" Width="70"/>
+            <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="14" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" />
         </StackPanel>
-        <StackPanel Margin="0,100,0,-2" Orientation="Vertical" d:LayoutOverrides="HorizontalAlignment, LeftPosition, RightPosition, TopPosition, BottomPosition">
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
             <Image x:Name="imgLogo" Height="175" Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Margin="0,0,0,0" VerticalAlignment="Top"/>
             <TextBlock Text="El videojuego Conquest Unit " TextAlignment="Center" d:LayoutOverrides="Width" Height="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"/>
             <TextBlock Text="fue elaborado en el curso de" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center"/>
@@ -70,6 +60,9 @@
             <TextBlock Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             <TextBlock Text="ASESOR" TextAlignment="Center" Height="20" d:LayoutOverrides="VerticalAlignment"/>
             <TextBlock Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock Text="MÚSICA" TextAlignment="Center" Height="20" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Width="130" Height="20" d:LayoutOverrides="VerticalAlignment"/>
         </StackPanel>
     </Grid>
 </Page>
