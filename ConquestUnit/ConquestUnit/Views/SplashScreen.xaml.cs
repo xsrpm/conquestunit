@@ -34,10 +34,6 @@ namespace ConquestUnit.Views
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
-            ConquestUnitIntro.SetPlaybackSource(Windows.Media.Core.MediaSource.CreateFromUri(new Uri(Constantes.Media.Music.MusicaIntro)));
-            ConquestUnitIntro.Volume = 0.5;
-            ConquestUnitIntro.Play();
-
             //Inicializando
             App.objJugador = await LocalStorage.ObtenerDatosJugador();
             if (App.DetectPlatform() == Platform.Windows)

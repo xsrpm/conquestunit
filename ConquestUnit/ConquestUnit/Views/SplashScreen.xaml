@@ -23,6 +23,5 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <MediaElement x:Name="ConquestUnitIntro" Visibility="Collapsed" />
     </Grid>
 </Page>

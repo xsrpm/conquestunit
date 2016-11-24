@@ -154,8 +154,6 @@
     <Content Include="Assets\Images\selector.png" />
     <Content Include="Assets\Mapa\Mapa China.png" />
     <Content Include="Assets\Mapa\Mapa Roma.png" />
-    <Content Include="Assets\Musica\FatalFightIntro.mp3" />
-    <Content Include="Assets\Musica\GoT-IceAndFire.mp3" />
     <Content Include="Assets\Musica\Tales of Dragonia.mp3" />
     <Content Include="Assets\Pantallas\PC\BotonCerrarMesa.png" />
     <Content Include="Assets\Pantallas\PC\BotonComoJugar1.png" />

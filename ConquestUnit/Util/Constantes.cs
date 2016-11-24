@@ -190,10 +190,8 @@
         {
             public struct Music
             {
-                //https://www.youtube.com/watch?v=oNSl2YxeDBQ
-                public const string MusicaIntro = @"ms-appx:///Assets/Musica/FatalFightIntro.mp3";
                 //https://www.youtube.com/watch?v=kthxycmF25M
-                public const string MusicaConquestUnit = @"ms-appx:///Assets/Musica/GoT-IceAndFire.mp3";
+                public const string MusicaConquestUnit = @"ms-appx:///Assets/Musica/Tales of Dragonia.mp3";
             }
         }
     }
