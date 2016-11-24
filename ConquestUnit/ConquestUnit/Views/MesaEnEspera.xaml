@@ -17,12 +17,12 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".2*" />
-                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width=".23*" />
+                    <ColumnDefinition Width=".77*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel x:Name="PanelRegresar" Margin="20,20,100,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Tapped="btnRegresar_Tapped">
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"/>
-                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="Calibri" />
+                    <TextBlock x:Name="lblRegresar" HorizontalAlignment="Center" Text="REGRESAR" FontSize="33" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontSize="35" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
