@@ -33,9 +33,26 @@
 
                         <Setter Target="VentanaPanel.Orientation" Value="Horizontal"></Setter>
                         <Setter Target="CreditosPanel.Margin" Value="100,0,0,0"></Setter>
-
+                        <Setter Target="CreditosPanel.Width" Value="300"></Setter>
+                        
                         <Setter Target="imgLogo.Width" Value="300"></Setter>
                         <Setter Target="imgLogo.Height" Value="300"></Setter>
+
+                        <Setter Target="txt1.FontSize" Value="20"></Setter>
+                        <Setter Target="txt2.FontSize" Value="20"></Setter>
+                        <Setter Target="txt3.FontSize" Value="20"></Setter>
+                        <Setter Target="txt4.FontSize" Value="20"></Setter>
+                        <Setter Target="txt5.FontSize" Value="20"></Setter>
+                        <Setter Target="txt6.FontSize" Value="20"></Setter>
+                        <Setter Target="txt7.FontSize" Value="20"></Setter>
+                        <Setter Target="txt8.FontSize" Value="20"></Setter>
+                        <Setter Target="txt9.FontSize" Value="20"></Setter>
+                        <Setter Target="txt10.FontSize" Value="20"></Setter>
+                        <Setter Target="txt11.FontSize" Value="20"></Setter>
+                        <Setter Target="txt12.FontSize" Value="20"></Setter>
+                        <Setter Target="txt13.FontSize" Value="20"></Setter>
+                        <Setter Target="txt14.FontSize" Value="20"></Setter>
+                        <Setter Target="txt15.FontSize" Value="20"></Setter>
 
                     </VisualState.Setters>
                 </VisualState>
@@ -51,24 +68,22 @@
             <StackPanel x:Name="imgLogoPanel" Margin="0,0" Orientation="Vertical" VerticalAlignment="Center">
                 <Image x:Name="imgLogo" Height="175" Source="ms-appx:///Assets/Images/Icons/logo300x300.png" Margin="0,0,0,0" VerticalAlignment="Top" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition"/>
             </StackPanel>
-            <StackPanel x:Name="CreditosPanel" Orientation="Vertical" Margin="0,20,0,0">
-                <TextBlock Text="El videojuego Conquest Unit " TextAlignment="Center" />
-                <TextBlock Text="fue elaborado en el curso de" TextAlignment="Center"/>
-                <TextBlock Text="Taller de Proyecto." TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="Desarrollado por alumnos de" TextAlignment="Center" />
-                <TextBlock Text="Ingenieria de Software" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="de la Universidad Peruana de" TextAlignment="Center"/>
-                <TextBlock Text="Ciencias Aplicadas" TextAlignment="Center"/>
-                <TextBlock Text="PROGRAMADORES" TextAlignment="Center"/>
-                <TextBlock Text="César Palma" TextAlignment="Center" FontWeight="Bold" />
-                <TextBlock Text="Roy Taza" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="DISEÑADOR" TextAlignment="Center"/>
-                <TextBlock Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="ASESOR" TextAlignment="Center"/>
-                <TextBlock Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="MÚSICA" TextAlignment="Center"/>
-                <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
+            <StackPanel x:Name="CreditosPanel" Orientation="Vertical" Margin="0,20,0,0" Width="200">
+                <TextBlock x:Name="txt1" Text="El videojuego Conquest Unit fue elaborado en el curso de" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
+                <TextBlock x:Name="txt2" Text="Taller de Proyecto." TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt3" Text="Desarrollado por alumnos de" TextAlignment="Center" />
+                <TextBlock x:Name="txt4" Text="Ingenieria de Software" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt5" Text="de la Universidad Peruana de Ciencias Aplicadas" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
+                <TextBlock x:Name="txt6" Text="PROGRAMADORES" TextAlignment="Center" Margin="0,10,0,0"/>
+                <TextBlock x:Name="txt7" Text="César Palma" TextAlignment="Center" FontWeight="Bold" />
+                <TextBlock x:Name="txt8" Text="Roy Taza" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt9" Text="DISEÑADOR" TextAlignment="Center"/>
+                <TextBlock x:Name="txt10" Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt11" Text="ASESOR" TextAlignment="Center"/>
+                <TextBlock x:Name="txt12" Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt13" Text="MÚSICA" TextAlignment="Center"/>
+                <TextBlock x:Name="txt14" Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt15" Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
     </Grid>
