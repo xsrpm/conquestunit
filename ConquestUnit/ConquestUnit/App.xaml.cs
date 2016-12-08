@@ -32,13 +32,6 @@ namespace ConquestUnit
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            //Inicializando
-            if (DetectPlatform() == Platform.Windows)
-            {
-                context = new ConquestUnitContext();
-                context.InitDatabase(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
-            }
-            Task.Run(async () => { objJugador = await LocalStorage.ObtenerDatosJugador(); }).Wait();
         }
 
         /// <summary>

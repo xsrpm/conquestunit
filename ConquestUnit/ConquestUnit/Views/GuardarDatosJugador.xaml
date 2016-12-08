@@ -34,7 +34,7 @@
                         <Setter Target="lblRegresar.FontSize" Value="35"></Setter>
                         <Setter Target="PanelRegresar.Margin" Value="20,20,100,0"></Setter>
                         <Setter Target="lblNombreJugador.FontSize" Value="35"></Setter>
-                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/StoreLogo.png"></Setter>
+                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Images/Icons/logo128x128.png"></Setter>
                         <Setter Target="imgJugador.Width" Value="64"></Setter>
                         <Setter Target="imgJugador.Height" Value="64"></Setter>
                         <Setter Target="imgFoto.Margin" Value="0,14,0,0"></Setter>
@@ -79,7 +79,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20" Grid.Row="1" Grid.Column="2">
                     <TextBlock x:Name="lblNombreJugador" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Bienvenido" Padding="5" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
-                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Source="ms-appx:///Assets/Images/Icons/user32x32.png"/>
+                    <Image x:Name="imgJugador" HorizontalAlignment="Right" VerticalAlignment="Center" Width="32" Height="32" Source="ms-appx:///Assets/Images/Icons/user32x32.png"/>
                 </StackPanel>
             </Grid>
             <Image x:Name="imgFoto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,22,0,0" Width="200" Height="200" Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png" Tapped="imgFoto_Tapped"/>
