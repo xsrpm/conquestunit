@@ -53,7 +53,8 @@
                         <Setter Target="txt13.FontSize" Value="20"></Setter>
                         <Setter Target="txt14.FontSize" Value="20"></Setter>
                         <Setter Target="txt15.FontSize" Value="20"></Setter>
-
+                        <Setter Target="txt16.FontSize" Value="15"></Setter>
+                        <Setter Target="txt17.FontSize" Value="20"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -82,8 +83,10 @@
                 <TextBlock x:Name="txt11" Text="ASESOR" TextAlignment="Center"/>
                 <TextBlock x:Name="txt12" Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold"/>
                 <TextBlock x:Name="txt13" Text="MÚSICA" TextAlignment="Center"/>
-                <TextBlock x:Name="txt14" Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock x:Name="txt15" Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt14" Text="Tales of Dragonia" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt15" Text="Fantasy Medieval Music" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt16" Text="por" TextAlignment="Center" FontWeight="Bold" FontSize="13"/>
+                <TextBlock x:Name="txt17" Text="BrunuhVille" TextAlignment="Center" FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
     </Grid>

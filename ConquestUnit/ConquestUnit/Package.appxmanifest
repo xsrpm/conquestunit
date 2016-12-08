@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="7d6358e0-10a4-4556-86d8-43c1cf94b7d7" Publisher="CN=Roy-PC" Version="1.0.0.0" />
+  <Identity Name="13204EscueladeIngenierade.ConquestUnit" Publisher="CN=BA869065-7E18-4773-89AB-9D7D49398EB9" Version="1.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="7d6358e0-10a4-4556-86d8-43c1cf94b7d7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>ConquestUnit</DisplayName>
-    <PublisherDisplayName>Roy-PC</PublisherDisplayName>
+    <DisplayName>Conquest Unit</DisplayName>
+    <PublisherDisplayName>Escuela de Ingeniería de Sistemas y Computación</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ConquestUnit.App">
-      <uap:VisualElements DisplayName="ConquestUnit" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ConquestUnit" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+      <uap:VisualElements DisplayName="Conquest Unit" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Conquest Unit" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Conquest Unit">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000" />
       </uap:VisualElements>
