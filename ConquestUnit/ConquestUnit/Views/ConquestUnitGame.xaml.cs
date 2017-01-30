@@ -121,6 +121,7 @@ namespace ConquestUnit.Views
             {
                 Mapa_China.Visibility = Visibility.Visible;
                 Mapa_Roma.Visibility = Visibility.Collapsed;
+                Mapa_NorteAmerica.Visibility = Visibility.Collapsed;
                 Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
                 {
                 {Uliassutai,Uliassutai,Gansu,Qinghai,Tibet,null,null,null},//Huijiang
@@ -157,6 +158,7 @@ namespace ConquestUnit.Views
             {
                 Mapa_China.Visibility = Visibility.Collapsed;
                 Mapa_Roma.Visibility = Visibility.Visible;
+                Mapa_NorteAmerica.Visibility = Visibility.Collapsed;
                 Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
                 {
                 {null,Augusta,Augusta,Augusta,Tingitana,null,null,null},//Lusitania
@@ -188,6 +190,42 @@ namespace ConquestUnit.Views
                 {Moesia,Moesia,Lydia,Lydia,null,null,Dalmatia,Dalmatia }//Peloponense
                 };
                 TerrSelec = Lusitania;
+            }
+            else if (objJuego.TipoMapa == Constantes.MAPA.NORTEAMERICA) {
+                Mapa_China.Visibility = Visibility.Collapsed;
+                Mapa_Roma.Visibility = Visibility.Collapsed;
+                Mapa_NorteAmerica.Visibility = Visibility.Visible;
+                Territorio = new Windows.UI.Xaml.Shapes.Path[24, 8]
+                {
+                {PendArtica,PendArtica,Yukon,Columbia,Columbia,null,null,null},//Doyon
+                {null,null,Yukon,Yukon,Doyon,Doyon,null,null },//PendArtica
+                {PendArtica,TerritNores,TerritNores,Columbia,Columbia,Columbia,Doyon,PendArtica},//Yukon
+                {Numavut,Numavut,Numavut,Manitoba,Alberta,Columbia,Yukon,Yukon},//TerritNores
+                {Yukon,TerritNores,Alberta,Montana,California,null,null,Doyon},//Columbia
+                {TerritNores,TerritNores,Manitoba,Montana,Montana,Montana,Columbia,Columbia},//Alberta
+
+                {Columbia,Montana,Utah,Sonora,Sonora,null,null,null },//California
+                {Montana,Dakota,Texas,Sonora,Sonora,Sonora,California,Montana },//Utah
+                {Utah,Texas,Monterrey,Monterrey,Guerrero,null,null,California},//Sonora
+                {Texas,Texas,null,Guerrero,Guerrero,Guerrero,Sonora,Sonora},//Monterrey
+                {Monterrey,null,Yucatan,null,null,null,null,Sonora},//Guerrero
+                {null,null,null,null,null,null,Guerrero,Guerrero },//Yucatan
+
+                {Alberta,Manitoba,Dakota,Utah,Utah,California,California,Columbia },//Montana
+                {Manitoba,Ontario,Ohio,Texas,Texas,Utah,Montana,Manitoba },//Dakota
+                {Dakota,Ohio,Kentucky,null,null,Monterrey,Sonora,Utah },//Texas
+                {Ontario,Ontario,NuevaYork,Kentucky,Kentucky,Texas,Dakota,Dakota },//Ohio
+                {Ohio,NuevaYork,null,null,null,Texas,Texas,Ohio },//Kentucky
+                {Quebec,Quebec,null,null,Kentucky,Kentucky,Ohio,Ontario },//NuevaYork
+
+                {null,null,null,Quebec,Quebec,Quebec,null,null},//Labrador
+                {Labrador,Labrador,null,NuevaYork,NuevaYork,Ontario,Ontario,null },//Quebec
+                {null,null,Quebec,NuevaYork,Ohio,Dakota,Manitoba,Manitoba },//Ontario
+                {Numavut,null,Ontario,Dakota,Dakota,Montana,Alberta,TerritNores },//Manitoba
+                {Victoria,null,null,null,Manitoba,TerritNores,TerritNores,Victoria },//Numavut
+                {null,null,Numavut,Numavut,Numavut,null,null,null }//Victoria
+                };
+                TerrSelec = Dakota;
             }
             //Dibujar unidades y Cantidad de unidades
             DibujarJugadores();

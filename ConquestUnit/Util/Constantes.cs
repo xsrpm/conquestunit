@@ -19,6 +19,7 @@
         {
             public const int CHINA = 1;
             public const int ROMA = 2;
+            public const int NORTEAMERICA = 3;
         }
 
         #region Color Jugadores
