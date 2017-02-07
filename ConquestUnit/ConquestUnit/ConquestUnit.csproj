@@ -212,6 +212,14 @@
     <Content Include="Assets\Unidades\China\Unidad Azul.png" />
     <Content Include="Assets\Unidades\China\Unidad Rojo.png" />
     <Content Include="Assets\Unidades\China\Unidad Verde.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Caballo Amarillo.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Caballo Azul.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Caballo Rojo.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Caballo Verde.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Unidad Amarillo.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Unidad Azul.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Unidad Rojo.png" />
+    <Content Include="Assets\Unidades\NorteAmerica\Unidad Verde.png" />
     <Content Include="Assets\Unidades\Roma\CatapultaAmarillo.png" />
     <Content Include="Assets\Unidades\Roma\CatapultaAzul.png" />
     <Content Include="Assets\Unidades\Roma\CatapultaRojo.png" />
@@ -304,6 +312,7 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
