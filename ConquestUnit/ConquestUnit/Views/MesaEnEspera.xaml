@@ -33,12 +33,13 @@
             <TextBlock x:Name="lblCodigoMesa" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" FontSize="60" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"/>
             <TextBlock x:Name="lblInformacion" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="CÓDIGO DE INGRESO PARA JUGADORES" FontSize="25" VerticalAlignment="Top" FontFamily="Arial"/>
 
-            <Grid x:Name="Mapas" Margin="0,20,0,0" Height="170" Width="600">
+            <Grid x:Name="Mapas" Margin="0,20,0,0" Height="170" Width="900">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="125" />
                     <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
                     <ColumnDefinition Width="300" />
                     <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
@@ -49,6 +50,10 @@
                 <Image x:Name="mapaRoma" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Source="ms-appx:///Assets/Mapa/Mapa Roma.png" Stretch="Uniform" Tapped="rdbRoma_Tapped"/>
                 <Viewbox Height="45" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
                     <RadioButton x:Name="rdbRoma" Content="ROMA" Grid.Column="1" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17" Tapped="rdbRoma_Tapped"/>
+                </Viewbox>
+                <Image x:Name="mapaNorteAmerica" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Source="ms-appx:///Assets/Mapa/Mapa Norteamerica.png" Stretch="Uniform" Tapped="rdbNorteAmerica_Tapped"/>
+                <Viewbox Height="45" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">
+                    <RadioButton x:Name="rdbNorteAmerica" Content="NORTEAMERICA" Grid.Column="2" Grid.Row="1" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" FontSize="17" Tapped="rdbNorteAmerica_Tapped"/>
                 </Viewbox>
             </Grid>
         </StackPanel>

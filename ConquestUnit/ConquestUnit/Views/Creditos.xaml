@@ -49,6 +49,7 @@
                         <Setter Target="txt9.FontSize" Value="20"></Setter>
                         <Setter Target="txt10.FontSize" Value="20"></Setter>
                         <Setter Target="txt11.FontSize" Value="20"></Setter>
+                        <Setter Target="txt18.FontSize" Value="20"></Setter>
                         <Setter Target="txt12.FontSize" Value="20"></Setter>
                         <Setter Target="txt13.FontSize" Value="20"></Setter>
                         <Setter Target="txt14.FontSize" Value="20"></Setter>
@@ -78,8 +79,9 @@
                 <TextBlock x:Name="txt6" Text="PROGRAMADORES" TextAlignment="Center" Margin="0,10,0,0"/>
                 <TextBlock x:Name="txt7" Text="César Palma" TextAlignment="Center" FontWeight="Bold" />
                 <TextBlock x:Name="txt8" Text="Roy Taza" TextAlignment="Center" FontWeight="Bold"/>
-                <TextBlock x:Name="txt9" Text="DISEÑADOR" TextAlignment="Center"/>
+                <TextBlock x:Name="txt9" Text="DISEÑADORES" TextAlignment="Center"/>
                 <TextBlock x:Name="txt10" Text="Christian Moscol" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="txt18" Text="Maria Gracia Lengua" TextAlignment="Center" FontWeight="Bold"/>
                 <TextBlock x:Name="txt11" Text="ASESOR" TextAlignment="Center"/>
                 <TextBlock x:Name="txt12" Text="Alfredo Barrientos" TextAlignment="Center" FontWeight="Bold"/>
                 <TextBlock x:Name="txt13" Text="MÚSICA" TextAlignment="Center"/>

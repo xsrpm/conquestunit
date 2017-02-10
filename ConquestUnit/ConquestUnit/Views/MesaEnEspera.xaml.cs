@@ -341,6 +341,7 @@ namespace ConquestUnit.Views
         {
             rdbChina.IsChecked = true;
             rdbRoma.IsChecked = false;
+            rdbNorteAmerica.IsChecked = false;
             objJuego.TipoMapa = Constantes.MAPA.CHINA;
         }
 
@@ -348,7 +349,16 @@ namespace ConquestUnit.Views
         {
             rdbChina.IsChecked = false;
             rdbRoma.IsChecked = true;
+            rdbNorteAmerica.IsChecked = false;
             objJuego.TipoMapa = Constantes.MAPA.ROMA;
+        }
+
+        private void rdbNorteAmerica_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            rdbChina.IsChecked = false;
+            rdbRoma.IsChecked = false;
+            rdbNorteAmerica.IsChecked = true;
+            objJuego.TipoMapa = Constantes.MAPA.NORTEAMERICA;
         }
     }
 }

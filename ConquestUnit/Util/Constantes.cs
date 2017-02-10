@@ -55,6 +55,15 @@
         public static string UnidadAgrupadoraJug2ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaVerde.png";
         public static string UnidadAgrupadoraJug3ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaAzul.png";
         public static string UnidadAgrupadoraJug4ROMA = "ms-appx:///Assets/Unidades/Roma/CatapultaAmarillo.png";
+
+        public static string UnidadJug1NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Unidad Rojo.png";
+        public static string UnidadJug2NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Unidad Verde.png";
+        public static string UnidadJug3NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Unidad Azul.png";
+        public static string UnidadJug4NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Unidad Amarillo.png";
+        public static string UnidadAgrupadoraJug1NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Caballo Rojo.png";
+        public static string UnidadAgrupadoraJug2NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Caballo Verde.png";
+        public static string UnidadAgrupadoraJug3NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Caballo Azul.png";
+        public static string UnidadAgrupadoraJug4NORTEAMERICA = "ms-appx:///Assets/Unidades/NorteAmerica/Caballo Amarillo.png";
         #endregion
 
         #region Mensajes para unirse a la mesa

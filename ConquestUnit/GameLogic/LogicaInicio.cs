@@ -76,6 +76,39 @@ namespace GameLogic
                 }
             }
             #endregion
+            #region NorteAmerica
+            else if (juego.TipoMapa == Constantes.MAPA.NORTEAMERICA)
+            {
+                if (juego.JugadoresConectados.Count >= 1)
+                {
+                    juego.JugadoresConectados[0].Color = Constantes.ColorJug1;
+                    juego.JugadoresConectados[0].ColorPastel = Constantes.ColorPastelJug1;
+                    juego.JugadoresConectados[0].ImagenUnidad = Constantes.UnidadJug1NORTEAMERICA;
+                    juego.JugadoresConectados[0].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug1NORTEAMERICA;
+                }
+                if (juego.JugadoresConectados.Count >= 2)
+                {
+                    juego.JugadoresConectados[1].Color = Constantes.ColorJug2;
+                    juego.JugadoresConectados[1].ColorPastel = Constantes.ColorPastelJug2;
+                    juego.JugadoresConectados[1].ImagenUnidad = Constantes.UnidadJug2NORTEAMERICA;
+                    juego.JugadoresConectados[1].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug2NORTEAMERICA;
+                }
+                if (juego.JugadoresConectados.Count >= 3)
+                {
+                    juego.JugadoresConectados[2].Color = Constantes.ColorJug3;
+                    juego.JugadoresConectados[2].ColorPastel = Constantes.ColorPastelJug3;
+                    juego.JugadoresConectados[2].ImagenUnidad = Constantes.UnidadJug3NORTEAMERICA;
+                    juego.JugadoresConectados[2].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug3NORTEAMERICA;
+                }
+                if (juego.JugadoresConectados.Count >= 4)
+                {
+                    juego.JugadoresConectados[3].Color = Constantes.ColorJug4;
+                    juego.JugadoresConectados[3].ColorPastel = Constantes.ColorPastelJug4;
+                    juego.JugadoresConectados[3].ImagenUnidad = Constantes.UnidadJug4NORTEAMERICA;
+                    juego.JugadoresConectados[3].ImagenUnidadAgrupadora = Constantes.UnidadAgrupadoraJug4NORTEAMERICA;
+                }
+            }
+            #endregion
         }
 
         public static void InicializarTerritorios(Juego juego)
@@ -139,6 +172,40 @@ namespace GameLogic
                     new Territorio() { TerritorioId = 21, NombreTerritorio="Moesia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
                     new Territorio() { TerritorioId = 22, NombreTerritorio="Pannonia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
                     new Territorio() { TerritorioId = 23, NombreTerritorio="Peloponense", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 }
+                };
+            }
+            #endregion
+            #region Territorios Roma
+            if (juego.TipoMapa == Constantes.MAPA.NORTEAMERICA)
+            {
+                juego.Territorios = new List<Territorio>(){
+                    new Territorio() { TerritorioId = 0, NombreTerritorio="Doyon", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 1, NombreTerritorio="PendArtica", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 2, NombreTerritorio="Yukon", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 3, NombreTerritorio="TerritNores", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 4, NombreTerritorio="Columbia", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+                    new Territorio() { TerritorioId = 5, NombreTerritorio="Alberta", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION3 },
+
+                    new Territorio() { TerritorioId = 6, NombreTerritorio="California", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 7, NombreTerritorio="Utah", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 8, NombreTerritorio="Sonora", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 9, NombreTerritorio="Monterrey", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 10, NombreTerritorio="Guerrero", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+                    new Territorio() { TerritorioId = 11, NombreTerritorio="Yucatan", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION4 },
+
+                    new Territorio() { TerritorioId = 12, NombreTerritorio="Montana", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 13, NombreTerritorio="Dakota", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 14, NombreTerritorio="Texas", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 15, NombreTerritorio="Ohio", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 16, NombreTerritorio="Kentucky", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+                    new Territorio() { TerritorioId = 17, NombreTerritorio="NuevaYork", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION1 },
+
+                    new Territorio() { TerritorioId = 18, NombreTerritorio="Labrador", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 19, NombreTerritorio="Quebec", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 20, NombreTerritorio="Ontario", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 21, NombreTerritorio="Manitoba", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 22, NombreTerritorio="Numavut", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 },
+                    new Territorio() { TerritorioId = 23, NombreTerritorio="Victoria", NUnidadesDeplegadas = 0, NroRegion= Constantes.Region.REGION2 }
                 };
             }
             #endregion
