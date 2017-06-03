@@ -202,7 +202,7 @@ namespace ConquestUnit.Views
         public void HabilitarControles()
         {
             mandoActivo = true;
-            lblTurno.Text = "TURNO";
+            lblTurno.Text = "En Turno";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOACTIVO);
             if (App.DetectPlatform() == Platform.WindowsPhone)
             {
@@ -214,7 +214,7 @@ namespace ConquestUnit.Views
         public void DeshabilitarControles()
         {
             mandoActivo = false;
-            lblTurno.Text = "";
+            lblTurno.Text = "Esperando Turno...";
             panelEncendido.Background = Convertidor.GetSolidColorBrush(Constantes.COLORMANDOINACTIVO);
         }
 
