@@ -68,7 +68,7 @@ namespace ConquestUnit.Views
             ConquestUnitMusic.IsLooping = true;
             ConquestUnitMusic.Volume = 1;
             ConquestUnitMusic.Play();
-            ////COMENTAR PARA PRUEBA
+
             if (e.Parameter != null)
             {
                 objJuego = (Juego)e.Parameter;
@@ -77,37 +77,7 @@ namespace ConquestUnit.Views
             {
                 Helper.MensajeOk("No se pudo iniciar el juego.");
             }
-            ////
 
-            ///DESCOMENTAR PARA PRUEBA
-            /*
-            objJuego = new Juego(Constantes.MAPA.ROMA);
-            // INCIALIZACION DE PRUEBA --- el objeto juego viene de parametro "e"
-            var jugador1 = new Jugador() { Activo = true, Ip = "192.168.1.36", Nombre = "Roy" };
-            var jugador2 = new Jugador() { Activo = true, Ip = "192.168.1.38", Nombre = "Cesar" };
-            var jugador3 = new Jugador() { Activo = true, Ip = "192.168.0.8", Nombre = "Joel" };
-            var jugador4 = new Jugador() { Activo = true, Ip = "192.168.0.9", Nombre = "Christian" };
-            objJuego.JugadoresConectados.Add(jugador1);
-            objJuego.JugadoresConectados.Add(jugador2);
-            objJuego.JugadoresConectados.Add(jugador3);
-            objJuego.JugadoresConectados.Add(jugador4);
-            // Definir los turnos de los jugadores,
-            // los cuales será igual a la lista de jugadores de la mesa
-            // pero en desorden
-            GameLogic.LogicaInicio.InicializarTurnos(objJuego);
-            // Repartir los territorios
-            GameLogic.LogicaInicio.InicializarTerritorios(objJuego);
-            GameLogic.LogicaInicio.RepartirTerritorio(objJuego);
-            GameLogic.LogicaInicio.RepartirUnidadesEnTerritorios(objJuego);
-            //Notificar a los jugadores el inicio del juego y quien comienza
-            //foreach (var item in objJuego.JugadoresConectados)
-            //    await App.objSDK.UnicastPing(new HostName(item.Ip),
-            //                Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
-            //                objJuego.JugadoresConectados[0].Ip);
-            //Definir la fase inicial del juego
-            GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
-            */
-            ///
             IniciarSDK();
             Inicializar();
         }
@@ -191,7 +161,8 @@ namespace ConquestUnit.Views
                 };
                 TerrSelec = Lusitania;
             }
-            else if (objJuego.TipoMapa == Constantes.MAPA.NORTEAMERICA) {
+            else if (objJuego.TipoMapa == Constantes.MAPA.NORTEAMERICA)
+            {
                 Mapa_China.Visibility = Visibility.Collapsed;
                 Mapa_Roma.Visibility = Visibility.Collapsed;
                 Mapa_NorteAmerica.Visibility = Visibility.Visible;
@@ -293,7 +264,7 @@ namespace ConquestUnit.Views
                 {
                     indiceSeleccionado = objJuego.TerritorioAtaqueOrigen.TerritorioId;
                 }
-                else //objJuego.TerritorioFortificacionOrigen != null
+                else
                 {
                     indiceSeleccionado = objJuego.TerritorioFortificacionOrigen.TerritorioId;
                 }
@@ -324,7 +295,7 @@ namespace ConquestUnit.Views
                 {
                     indiceSeleccionado = objJuego.TerritorioAtaqueOrigen.TerritorioId;
                 }
-                else //objJuego.TerritorioFortificacionOrigen != null
+                else
                 {
                     indiceSeleccionado = objJuego.TerritorioFortificacionOrigen.TerritorioId;
                 }
@@ -704,8 +675,8 @@ namespace ConquestUnit.Views
                     InvasorPuntosDefensaTXT.Text = puntosDefensor.ToString();
 
                     //Desactivar los controles del defensor
-                    App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
-                        Constantes.MesaConumicaDESHABILITARControles);
+                    App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorDefiende));
+                    App.objSDK.StreamPing(Constantes.MesaConumicaDESHABILITARControles);
 
                     //Gano el atacante
                     CabeceraGrid.Visibility = Visibility.Collapsed;
@@ -1082,8 +1053,8 @@ namespace ConquestUnit.Views
             {
                 if (!item.Ip.Equals(objJuego.IpJugadorTurnoActual))
                 {
-                    await App.objSDK.UnicastPing(new HostName(item.Ip),
-                                            Constantes.MesaConumicaDESHABILITARControles);
+                    await App.objSDK.ConnectStreamSocket(new HostName(item.Ip));
+                    await App.objSDK.StreamPing(Constantes.MesaConumicaDESHABILITARControles);
                 }
             }
             DibujarJugadorEnTurno();
@@ -1111,8 +1082,8 @@ namespace ConquestUnit.Views
                     contadorTimerSiguienteTurno = null;
                     MensajeSiguienteTurno.Visibility = Visibility.Collapsed;
                     //Habilitar controles del nuevo jugador en turno
-                    App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                        Constantes.MesaConumicaHABILITARControles);
+                    App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
+                    App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
                 }
                 Seleccionar_Territorio(TerrSelec);
             });
@@ -1138,15 +1109,15 @@ namespace ConquestUnit.Views
                         //Mostrar cartel de victoria y fin de juego
                         txtJugadorGanador.Text = objJuego.JugadorTurnoActual().Nombre;
                         imgJugadorGanador.Source = new BitmapImage(new Uri(objJuego.JugadorTurnoActual().ImagenUnidad));
-                        App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                            Constantes.MesaConumicaVICTORIAFinDelJuego);
+                        App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
+                        App.objSDK.StreamPing(Constantes.MesaConumicaVICTORIAFinDelJuego);
                         GridVictoria.Visibility = Visibility.Visible;
                     }
                     else
                     {
                         //Habilitar controles del nuevo jugador en turno
-                        App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                            Constantes.MesaConumicaHABILITARControles);
+                        App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
+                        App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
                     }
                 }
             });
@@ -1298,7 +1269,7 @@ namespace ConquestUnit.Views
                                     //Marcar territorio como origen ataque
                                     objJuego.TerritorioAtaqueOrigen = objJuego.Territorios[Convert.ToInt32(TerrSelec.Tag)];
                                     objJuego.TerritorioAtaqueDestino = null;
-                                    //TerrSelec.Opacity = 1;
+
                                     MarcarTerritorio(TerrSelec);
 
                                     //Cambiar a accion elegir destino ataque
@@ -1375,10 +1346,12 @@ namespace ConquestUnit.Views
                                 else if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
                                     // Habilitar controles adicionalmente hace vibrar el Windows Phone
-                                    await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
-                                        Constantes.MesaConumicaHABILITARControles);
-                                    await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                        Constantes.MesaConumicaHABILITARControles);
+                                    await App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorDefiende));
+                                    await App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
+
+                                    await App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
+                                    await App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
+
                                     IniciarBatalla();
                                     objJuego.AccionActual = Constantes.AccionJuego.BATALLA_PRIMERA_PREGUNTA;
                                 }
@@ -1591,10 +1564,12 @@ namespace ConquestUnit.Views
                                     if (objJuego.Territorios.Where(x => x.IpJugadorPropietario == objJuego.IpJugadorDefiende).Count() == 0)
                                     {
                                         //Mostrar cartel de derrota y Notificar el jugador
-                                        await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorTurnoActual),
-                                            Constantes.MesaConumicaDESHABILITARControles);
-                                        await App.objSDK.UnicastPing(new HostName(objJuego.IpJugadorDefiende),
-                                            Constantes.MesaConumicaDERROTAFinDelJuego);
+                                        await App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
+                                        await App.objSDK.StreamPing(Constantes.MesaConumicaDESHABILITARControles);
+
+                                        await App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorDefiende));
+                                        await App.objSDK.StreamPing(Constantes.MesaConumicaDERROTAFinDelJuego);
+
                                         objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First().Activo = false;
                                         txtSiguienteTurnoMensaje.Text = "Jugador eliminado";
                                         txtJugadorSiguienteTurno.Text = objJuego.JugadoresConectados.Where(x => x.Ip == objJuego.IpJugadorDefiende).First().Nombre;
@@ -1823,7 +1798,6 @@ namespace ConquestUnit.Views
                             {
                                 if (botonPresionado == Constantes.Controles.EQUIS)
                                 {
-                                    //ActualizarDespuesDeFortificacion();
                                     MensajeContinuarCancelar.Visibility = Visibility.Collapsed;
                                     objJuego.FaseActual = Constantes.FaseJuego.DESPLIEGUE;
                                     objJuego.AccionActual = Constantes.AccionJuego.DESPLEGAR;

@@ -97,18 +97,11 @@ namespace ConquestUnit.Views
                             App.objJugador.Ip + Constantes.SEPARADOR +
                             App.objJugador.Nombre + Constantes.SEPARADOR +
                             strBytes);
-                        //await App.objSDK.UnicastPing(new HostName(objDevice.IP),
-                        //    Constantes.UnirseEnviameConfirmacion + Constantes.SEPARADOR +
-                        //    mesaSeleccionada + Constantes.SEPARADOR +
-                        //    App.objJugador.Ip + Constantes.SEPARADOR +
-                        //    App.objJugador.Nombre + Constantes.SEPARADOR +
-                        //    strBytes);
                     }
                 }
             }
             catch (Exception)
             {
-                //Helper.MensajeOk(ex.Message);
             }
             prConectando.IsActive = false;
             prConectando.Visibility = Visibility.Collapsed;
@@ -135,7 +128,11 @@ namespace ConquestUnit.Views
                         if (mensaje.Length != 4)
                             return;
 
-                        prConectando.IsActive = false;
+                        txtMesaId.IsEnabled = false;
+                        btnUnirme.Visibility = Visibility.Collapsed;
+                        prConectando.IsActive = true;
+                        prConectando.Visibility = Visibility.Visible;
+                        lblConectando.Visibility = Visibility.Visible;
 
                         //Reenviar a la pantalla de Jugador esperando el inicio del juego
                         Juego objMesa = new Juego(int.Parse(mensaje[3]));

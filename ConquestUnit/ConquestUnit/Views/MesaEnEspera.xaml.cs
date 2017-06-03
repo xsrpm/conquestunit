@@ -23,16 +23,11 @@ namespace ConquestUnit.Views
     {
         // Parametrizacion del mapa seleccionado
         Juego objJuego;
-        //private Timer timer;
-        //private int intervaloTimer;
 
         public MesaEnEspera()
         {
             this.InitializeComponent();
-            btnJugar.Visibility = Visibility.Collapsed;//btnJugar.IsEnabled = false;
-            // http://stackoverflow.com/questions/12796148/working-with-system-threading-timer-in-c-sharp
-            //intervaloTimer = 1000 * 3;
-            //timer = new Timer(timerCallback, null, intervaloTimer, Timeout.Infinite);
+            btnJugar.Visibility = Visibility.Collapsed;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -58,9 +53,11 @@ namespace ConquestUnit.Views
 
             //Notificar a los jugadores el inicio del juego y quien comienza
             foreach (var item in objJuego.JugadoresConectados)
-                await App.objSDK.UnicastPing(new HostName(item.Ip),
-                            Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
-                            item.Color);
+            {
+                await App.objSDK.ConnectStreamSocket(new HostName(item.Ip));
+                await App.objSDK.StreamPing(Constantes.MesaIndicaJuegoInicia + Constantes.SEPARADOR +
+                    item.Color);
+            }
 
             //Definir la fase inicial del juego
             GameLogic.LogicaInicio.IniciarVariablesInicioJuego(objJuego);
@@ -73,10 +70,12 @@ namespace ConquestUnit.Views
         {
             //Notificar a los dispositivos que se está cerrando la mesa
             foreach (var item in objJuego.JugadoresConectados)
-                await App.objSDK.UnicastPing(new HostName(item.Ip),
-                            Constantes.MesaIndicaSeCierra);
+            {
+                await App.objSDK.ConnectStreamSocket(new HostName(item.Ip));
+                await App.objSDK.StreamPing(Constantes.MesaIndicaSeCierra);
+            }
             App.objSDK.setObjMetodoReceptorString = null;
-            //timer.Change(Timeout.Infinite, Timeout.Infinite);
+
             this.Frame.Navigate(typeof(SeleccionarRol));
         }
 
@@ -108,8 +107,8 @@ namespace ConquestUnit.Views
                             return;
 
                         //Notificar al nuevo jugador que se ha unido a la mesa
-                        await App.objSDK.UnicastPing(new HostName(mensaje[2]),
-                            Constantes.ConfirmacionUnirseMesa + Constantes.SEPARADOR +
+                        await App.objSDK.ConnectStreamSocket(new HostName(mensaje[2]));
+                        await App.objSDK.StreamPing(Constantes.ConfirmacionUnirseMesa + Constantes.SEPARADOR +
                             objJuego.Ip + Constantes.SEPARADOR +
                             objJuego.JuegoID + Constantes.SEPARADOR +
                             objJuego.TipoMapa);

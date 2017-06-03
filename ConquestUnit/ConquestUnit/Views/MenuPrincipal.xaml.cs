@@ -17,8 +17,6 @@ namespace ConquestUnit.Views
     /// </summary>
     public sealed partial class MenuPrincipal : Page
     {
-        //MainCore objSDK;
-
         public MenuPrincipal()
         {
             this.InitializeComponent();

@@ -99,7 +99,7 @@ namespace ConquestUnit.Views
                     bimgBitmapImage.SetSource(fileStream);
                     imgFoto.Source = bimgBitmapImage;
                 }
-                //btnGuardar.Focus(FocusState.Programmatic);
+
                 lblTexto.Focus(FocusState.Programmatic);
             }
             catch (Exception ex)

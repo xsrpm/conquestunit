@@ -49,7 +49,6 @@ namespace ConquestUnit.Views
                     IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
                     bimgBitmapImage.SetSource(fileStream);
                     imgJugador.Source = bimgBitmapImage;
-                    //imgFoto.Source = bimgBitmapImage;
                 }
             }
             IniciarSDK();
@@ -59,9 +58,11 @@ namespace ConquestUnit.Views
         {
             //Notificar a la mesa que se está saliendo de la espera
             if (objMesa != null)
-                await App.objSDK.UnicastPing(new HostName(objMesa.Ip),
-                            Constantes.JugadorSaleMesa + Constantes.SEPARADOR +
-                            App.objJugador.Ip);
+            {
+                await App.objSDK.ConnectStreamSocket(new HostName(objMesa.Ip));
+                await App.objSDK.StreamPing(Constantes.JugadorSaleMesa + Constantes.SEPARADOR +
+                    App.objJugador.Ip);
+            }
             App.objSDK.setObjMetodoReceptorString = null;
 
             this.Frame.Navigate(typeof(ElegirMesa));

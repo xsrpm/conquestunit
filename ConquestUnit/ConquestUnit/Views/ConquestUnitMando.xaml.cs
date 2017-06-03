@@ -97,6 +97,7 @@ namespace ConquestUnit.Views
                 {
                     App.objJugador.Ip = App.objSDK.MyIP.ToString();
                     App.objSDK.setObjMetodoReceptorString = MiMetodoReceptorJugadorJuego;
+                    App.objSDK.ConnectStreamSocket(new HostName(App.objJugador.IpMesaConectada));
                 }
                 else
                 {
@@ -152,8 +153,7 @@ namespace ConquestUnit.Views
         {
             if (mandoActivo)
             {
-                await App.objSDK.UnicastPing(new HostName(App.objJugador.IpMesaConectada),
-                    Constantes.JugadorPresionaBoton + Constantes.SEPARADOR +
+                await App.objSDK.StreamPing(Constantes.JugadorPresionaBoton + Constantes.SEPARADOR +
                     App.objJugador.Ip + Constantes.SEPARADOR +
                     botonPresionado);
             }
