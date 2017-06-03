@@ -18,111 +18,177 @@
                         <AdaptiveTrigger MinWindowWidth="770"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="btnMensaje.FontSize" Value="80"></Setter>
-                        <Setter Target="btnMenuPrincipal.FontSize" Value="50"></Setter>
                         <Setter Target="logo.Source" Value="ms-appx:///Assets/Images/Icons/logo300x300.png"></Setter>
+
+                        <Setter Target="btnMensaje.Margin" Value="0,30,0,50" />
+                        <Setter Target="btnMensaje.FontSize" Value="150" />
+                        <Setter Target="btnMenuPrincipal.FontSize" Value="40" />
+                        <Setter Target="lblTurno.FontSize" Value="28" />
+
+                        <Setter Target="lblBienvenido.FontSize" Value="40" />
+                        <Setter Target="imgJugador.Width" Value="90" />
+
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".2*" />
-            <RowDefinition Height=".5*"/>
-            <RowDefinition Height=".3*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".1*"/>
-            <ColumnDefinition Width=".3*"/>
-            <ColumnDefinition Width=".2*"/>
-            <ColumnDefinition Width=".3*"/>
-            <ColumnDefinition Width=".1*"/>
-        </Grid.ColumnDefinitions>
-
         <Rectangle x:Name="TonalidadMando" Stroke="Red" StrokeThickness="7" d:LayoutOverrides="TopPosition, BottomPosition" Grid.ColumnSpan="5" Grid.RowSpan="3" Opacity="0.4"/>
 
-        <StackPanel x:Name="panelEncendido" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,40,0,0" Width="150" Background="#FFFF0437" d:LayoutOverrides="TopMargin, BottomMargin" HorizontalAlignment="Center" CornerRadius="7">
-            <TextBlock x:Name="lblTurno" Text="" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
-        </StackPanel>
-
-        <Grid x:Name="panelDireccional" Grid.Row="1" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".33*"/>
-                <RowDefinition Height=".33*"/>
-                <RowDefinition Height=".33*"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="Cabecera" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".33*"/>
-                <ColumnDefinition Width=".33*"/>
-                <ColumnDefinition Width=".33*"/>
+                <ColumnDefinition Width=".60*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".60*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="btnArribaIzquierda" Height="60" Width="60" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Tapped="btnArribaIzquierda_Tapped" Background="{x:Null}" Margin="0,0,0,-1" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/ArribaIzquierda1.png"/>
-            </Button>
-            <Button x:Name="btnArriba" Height="60" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Tapped="btnArriba_Tapped" Margin="0.333,0,2.333,-1" d:LayoutOverrides="LeftPosition, RightPosition" Width="60" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/Arriba1.png"/>
-            </Button>
-            <Button x:Name="btnArribaDerecha" Height="60" Width="60" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Tapped="btnArribaDerecha_Tapped" Margin="-0.333,0,0,-1" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/ArribaDerecha1.png"/>
-            </Button>
-            <Button x:Name="btnIzquierda" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Tapped="btnIzquierda_Tapped" Margin="0,0,0,-2" d:LayoutOverrides="TopPosition, BottomPosition" Width="60" Height="60" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/Izquierda1.png"/>
-            </Button>
-            <Button x:Name="btnAbajoIzquierda" Height="60" Width="60" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Tapped="btnAbajoIzquierda_Tapped" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/AbajoIzquierda1.png"/>
-            </Button>
-            <Button x:Name="btnAbajo" Height="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Tapped="btnAbajo_Tapped" Margin="1,0,2,0" d:LayoutOverrides="LeftPosition, RightPosition" Width="60" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/Abajo1.png"/>
-            </Button>
-            <Button x:Name="btnDerecha" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Tapped="btnDerecha_Tapped" Margin="0,0,0,-2" d:LayoutOverrides="TopPosition, BottomPosition" Width="60" Height="60" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/Derecha1.png"/>
-            </Button>
-            <Button x:Name="btnAbajoDerecha" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnAbajoDerecha_Tapped" Height="60" Width="60" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/AbajoDerecha1.png"/>
-            </Button>
+            <StackPanel
+                x:Name="panelRegresar"
+                Grid.Column="0"
+                Margin="15,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Tapped="imgAtras_Tapped"
+                Visibility="Collapsed">
+                <Image
+                    x:Name="imgAtras"
+                    Source="ms-appx:///Assets/Phone/Buttons/Regresar.png" />
+                <TextBlock
+                    x:Name="lblRegresar"
+                    HorizontalAlignment="Center"
+                    FontFamily="ms-appx:///Assets/Fonts/BigNoodleTitling.ttf#BigNoodleTitling"
+                    FontSize="20"
+                    Text="Regresar" />
+            </StackPanel>
+            <StackPanel
+                x:Name="panelEncendido"
+                Grid.Column="1"
+                Margin="50,0"
+                Padding="0"
+                VerticalAlignment="Center"
+                Background="Yellow"
+                CornerRadius="2">
+
+                <TextBlock
+                    x:Name="lblTurno"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="15"
+                    FontWeight="Bold"
+                    Text="Esperando inicio de juego..." />
+            </StackPanel>
+            <StackPanel
+                x:Name="panelInfoJugador"
+                Grid.Column="2"
+                Margin="15"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <TextBlock
+                    x:Name="lblBienvenido"
+                    Padding="0,0,5,0"
+                    VerticalAlignment="Center"
+                    FontFamily="ms-appx:///Assets/Fonts/Algerian.ttf#Algerian"
+                    FontSize="20"
+                    Text="Bienvenido" />
+                <Image x:Name="imgJugador" Width="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png"/>
+            </StackPanel>
+
         </Grid>
 
-        <Grid x:Name="panelComandos" Grid.Row="1" Grid.Column="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".33*"/>
-                <RowDefinition Height=".33*"/>
-                <RowDefinition Height=".33*"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="mainPanel" VerticalAlignment="center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".33*"/>
-                <ColumnDefinition Width=".33*"/>
-                <ColumnDefinition Width=".33*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="btnTriangulo" Height="60" Width="60" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Tapped="btnTriangulo_Tapped" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/BotonTriangulo1.png"/>
-            </Button>
-            <Button x:Name="btnCuadrado" Height="60" Width="60" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Tapped="btnCuadrado_Tapped" Background="{x:Null}" BorderThickness="0">
-                <Image Source="ms-appx:///Assets/Images/Mando/BotonCuadrado1.png"/>
-            </Button>
-            <Button x:Name="btnEquis" Height="60" Width="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Tapped="btnEquis_Tapped" Background="{x:Null}" BorderThickness="0" >
-                <Image Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png"/>
-            </Button>
-            <Button x:Name="btnCirculo" Width="60" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Tapped="btnCirculo_Tapped" Background="{x:Null}" BorderThickness="0" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="TopPosition, BottomPosition">
-                <Image Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png"/>
-            </Button>
+            <Grid x:Name="panelDireccional" Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".33*"/>
+                    <RowDefinition Height=".33*"/>
+                    <RowDefinition Height=".33*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".33*"/>
+                    <ColumnDefinition Width=".33*"/>
+                    <ColumnDefinition Width=".33*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnArribaIzquierda" Grid.Row="0" Grid.Column="0" Tapped="btnArribaIzquierda_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgArribaIzquierda" Source="ms-appx:///Assets/Images/Mando/ArribaIzquierda1.png"/>
+                </Button>
+                <Button x:Name="btnArriba" Grid.Row="0" Grid.Column="1" Tapped="btnArriba_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgArriba" Source="ms-appx:///Assets/Images/Mando/Arriba1.png"/>
+                </Button>
+                <Button x:Name="btnArribaDerecha" Grid.Row="0" Grid.Column="2" Tapped="btnArribaDerecha_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgArribaDerecha" Source="ms-appx:///Assets/Images/Mando/ArribaDerecha1.png"/>
+                </Button>
+                <Button x:Name="btnIzquierda" Grid.Row="1" Grid.Column="0" Tapped="btnIzquierda_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgIzquierda" Source="ms-appx:///Assets/Images/Mando/Izquierda1.png"/>
+                </Button>
+                <Button x:Name="btnAbajoIzquierda" Grid.Row="2" Grid.Column="0" Tapped="btnAbajoIzquierda_Tapped" Background="{x:Null}" >
+                    <Image x:Name="imgAbajoIzquierda" Source="ms-appx:///Assets/Images/Mando/AbajoIzquierda1.png"/>
+                </Button>
+                <Button x:Name="btnAbajo" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Tapped="btnAbajo_Tapped" Background="{x:Null}" >
+                    <Image x:Name="imgAbajo" Source="ms-appx:///Assets/Images/Mando/Abajo1.png"/>
+                </Button>
+                <Button x:Name="btnDerecha" Grid.Row="1" Grid.Column="2" Tapped="btnDerecha_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgDerecha" Source="ms-appx:///Assets/Images/Mando/Derecha1.png"/>
+                </Button>
+                <Button x:Name="btnAbajoDerecha" Grid.Row="2" Grid.Column="2" Tapped="btnAbajoDerecha_Tapped"  Background="{x:Null}">
+                    <Image x:Name="imgAbajoDerecha" Source="ms-appx:///Assets/Images/Mando/AbajoDerecha1.png"/>
+                </Button>
+            </Grid>
+
+            <Grid x:Name="panelComandos" Grid.Row="0" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".33*"/>
+                    <RowDefinition Height=".33*"/>
+                    <RowDefinition Height=".33*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".33*"/>
+                    <ColumnDefinition Width=".33*"/>
+                    <ColumnDefinition Width=".33*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnTriangulo" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Tapped="btnTriangulo_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgTriangulo" Source="ms-appx:///Assets/Images/Mando/BotonTriangulo1.png"/>
+                </Button>
+                <Button x:Name="btnCuadrado" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Tapped="btnCuadrado_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgCuadrado" Source="ms-appx:///Assets/Images/Mando/BotonCuadrado1.png"/>
+                </Button>
+                <Button x:Name="btnEquis" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Tapped="btnEquis_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgEquis" Source="ms-appx:///Assets/Images/Mando/BotonEquis1.png"/>
+                </Button>
+                <Button x:Name="btnCirculo" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Tapped="btnCirculo_Tapped" Background="{x:Null}">
+                    <Image x:Name="imgCirculo" Source="ms-appx:///Assets/Images/Mando/BotonCirculo1.png"/>
+                </Button>
+            </Grid>
+
+            <Grid x:Name="GridMensajeFinJuego" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Collapsed">
+                <Button x:Name="btnMensaje" Content="Fin del juego" Margin="0,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
+                    <Button.Background>
+                        <SolidColorBrush Color="Black" Opacity="1"/>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name="btnMenuPrincipal" Content="Volver al Menú Principal" Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
+                    <Button.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.8"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+
         </Grid>
-
-        <Grid x:Name="GridMensajeFinJuego" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Collapsed">
-            <Button x:Name="btnMensaje" Content="Fin del juego" Margin="0,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian">
-                <Button.Background>
-                    <SolidColorBrush Color="Black" Opacity="1"/>
-                </Button.Background>
-            </Button>
-
-            <Button x:Name="btnMenuPrincipal" Content="Volver al Menú Principal" Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" Tapped="btnMenuPrincipal_Tapped">
-                <Button.Background>
-                    <SolidColorBrush Color="Black" Opacity="0.8"/>
-                </Button.Background>
-            </Button>
+        <Grid x:Name="logoPanel" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".8*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="logo" Grid.Column="2" Grid.Row="1" Source="ms-appx:///Assets/Images/Icons/logo128x128.png"/>
+            <Button x:Name="btnRegresar" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="btnRegresar_Tapped" Height="60" Content="Regresar" BorderThickness="1" FontSize="30" Background="Black" Foreground="White" Visibility="Collapsed"/>
         </Grid>
-
-        <Image x:Name="logo" Grid.Column="2" Margin="22,0,23,25" Grid.Row="2" Source="ms-appx:///Assets/Images/Icons/logo128x128.png" Stretch="Fill" d:LayoutOverrides="TopPosition, BottomPosition"/>
-        <Button x:Name="btnRegresar" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="btnRegresar_Tapped" Height="60" Content="Regresar" BorderThickness="1" FontSize="30" Background="Black" Foreground="White" Visibility="Collapsed"/>
     </Grid>
 </Page>
