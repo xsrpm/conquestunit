@@ -228,7 +228,6 @@
     <Content Include="Assets\Unidades\Roma\Unidad Azul.png" />
     <Content Include="Assets\Unidades\Roma\Unidad Rojo.png" />
     <Content Include="Assets\Unidades\Roma\Unidad Verde.png" />
-    <Content Include="lib\SynapseSDK.dll" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
