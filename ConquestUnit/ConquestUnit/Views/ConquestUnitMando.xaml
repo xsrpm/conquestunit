@@ -47,7 +47,6 @@
                 Margin="15,0,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
-                Tapped="imgAtras_Tapped"
                 Visibility="Collapsed">
                 <Image
                     x:Name="imgAtras"
