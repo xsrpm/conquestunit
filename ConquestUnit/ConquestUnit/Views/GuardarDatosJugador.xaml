@@ -28,8 +28,6 @@
                     <VisualState.Setters>
                         <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png"></Setter>
                         <Setter Target="myStackPanel.Orientation" Value="Vertical"></Setter>
-                        <!--<Setter Target="btnAtras.Width" Value="64"></Setter>
-                        <Setter Target="btnAtras.Height" Value="64"></Setter>-->
                         <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png"></Setter>
                         <Setter Target="lblRegresar.FontSize" Value="35"></Setter>
                         <Setter Target="PanelRegresar.Margin" Value="20,20,100,0"></Setter>
@@ -41,12 +39,9 @@
                         <Setter Target="imgFoto.Width" Value="300"></Setter>
                         <Setter Target="imgFoto.Height" Value="300"></Setter>
                         <Setter Target="txtNombreImg.Source" Value="ms-appx:///Assets/Pantallas/Phone/FondoNombre.png"></Setter>
-                        <!--<Setter Target="txtNombreImg.Height" Value="100"></Setter>
-                        <Setter Target="txtNombreImg.Width" Value="100"></Setter>-->
                         <Setter Target="lblTexto.FontSize" Value="35"></Setter>
                         <Setter Target="lblTexto.Margin" Value="0,30,0,0"></Setter>
                         <Setter Target="txtNombre.FontSize" Value="35"></Setter>
-                        <!--<Setter Target="txtNombre.Margin" Value="0,15,0,0"></Setter>-->
                         <Setter Target="btnGuardar.Height" Value="60"></Setter>
                         <Setter Target="btnGuardar.Width" Value="130"></Setter>
                         <Setter Target="btnGuardar.Margin" Value="0,25,0,0"></Setter>

@@ -5,10 +5,12 @@ using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
 using Windows.Networking;
 using Windows.Phone.Devices.Notification;
+using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,7 +28,7 @@ namespace ConquestUnit.Views
             this.InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
             mandoActivo = false;
@@ -35,6 +37,20 @@ namespace ConquestUnit.Views
             {
                 var color = e.Parameter.ToString();
                 TonalidadMando.Stroke = Convertidor.GetSolidColorBrush(color);
+            }
+            if (App.objJugador != null)
+            {
+                if (App.objJugador.Nombre != null)
+                {
+                    lblBienvenido.Text = App.objJugador.Nombre;
+                }
+                if (App.objJugador.Imagen != null)
+                {
+                    BitmapImage bimgBitmapImage = new BitmapImage();
+                    IRandomAccessStream fileStream = await Convertidor.ConvertImageToStream(App.objJugador.Imagen);
+                    bimgBitmapImage.SetSource(fileStream);
+                    imgJugador.Source = bimgBitmapImage;
+                }
             }
             IniciarSDK();
         }
@@ -246,6 +262,11 @@ namespace ConquestUnit.Views
         private void btnMenuPrincipal_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(MenuPrincipal));
+        }
+
+        private void imgJugador_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            IniciarSDK();
         }
     }
 }

@@ -675,8 +675,7 @@ namespace ConquestUnit.Views
                     InvasorPuntosDefensaTXT.Text = puntosDefensor.ToString();
 
                     //Desactivar los controles del defensor
-                    App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorDefiende));
-                    App.objSDK.StreamPing(Constantes.MesaConumicaDESHABILITARControles);
+                    EnviarMensajeJugador(objJuego.IpJugadorDefiende, Constantes.MesaConumicaDESHABILITARControles);
 
                     //Gano el atacante
                     CabeceraGrid.Visibility = Visibility.Collapsed;
@@ -1082,8 +1081,7 @@ namespace ConquestUnit.Views
                     contadorTimerSiguienteTurno = null;
                     MensajeSiguienteTurno.Visibility = Visibility.Collapsed;
                     //Habilitar controles del nuevo jugador en turno
-                    App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
-                    App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
+                    EnviarMensajeJugador(objJuego.IpJugadorTurnoActual, Constantes.MesaConumicaHABILITARControles);
                 }
                 Seleccionar_Territorio(TerrSelec);
             });
@@ -1109,15 +1107,13 @@ namespace ConquestUnit.Views
                         //Mostrar cartel de victoria y fin de juego
                         txtJugadorGanador.Text = objJuego.JugadorTurnoActual().Nombre;
                         imgJugadorGanador.Source = new BitmapImage(new Uri(objJuego.JugadorTurnoActual().ImagenUnidad));
-                        App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
-                        App.objSDK.StreamPing(Constantes.MesaConumicaVICTORIAFinDelJuego);
+                        EnviarMensajeJugador(objJuego.IpJugadorTurnoActual, Constantes.MesaConumicaVICTORIAFinDelJuego);
                         GridVictoria.Visibility = Visibility.Visible;
                     }
                     else
                     {
                         //Habilitar controles del nuevo jugador en turno
-                        App.objSDK.ConnectStreamSocket(new HostName(objJuego.IpJugadorTurnoActual));
-                        App.objSDK.StreamPing(Constantes.MesaConumicaHABILITARControles);
+                        EnviarMensajeJugador(objJuego.IpJugadorTurnoActual, Constantes.MesaConumicaHABILITARControles);
                     }
                 }
             });
@@ -1885,6 +1881,64 @@ namespace ConquestUnit.Views
         private void btnMenuPrincipal_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(MenuPrincipal));
+        }
+
+        private async void EnviarMensajeJugador(string ip, string mensaje)
+        {
+            await App.objSDK.ConnectStreamSocket(new HostName(ip));
+            await App.objSDK.StreamPing(mensaje);
+        }
+
+        private void Jugador1Imagen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            IniciarSDK();
+            if (objJuego.IpJugadorTurnoActual == objJuego.JugadoresConectados[0].Ip)
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[0].Ip, Constantes.MesaConumicaHABILITARControles);
+            }
+            else
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[0].Ip, Constantes.MesaConumicaDESHABILITARControles);
+            }
+        }
+
+        private void Jugador2Imagen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            IniciarSDK();
+            if (objJuego.IpJugadorTurnoActual == objJuego.JugadoresConectados[1].Ip)
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[1].Ip, Constantes.MesaConumicaHABILITARControles);
+            }
+            else
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[1].Ip, Constantes.MesaConumicaDESHABILITARControles);
+            }
+        }
+
+        private void Jugador3Imagen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            IniciarSDK();
+            if (objJuego.IpJugadorTurnoActual == objJuego.JugadoresConectados[2].Ip)
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[2].Ip, Constantes.MesaConumicaHABILITARControles);
+            }
+            else
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[2].Ip, Constantes.MesaConumicaDESHABILITARControles);
+            }
+        }
+
+        private void Jugador4Imagen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            IniciarSDK();
+            if (objJuego.IpJugadorTurnoActual == objJuego.JugadoresConectados[3].Ip)
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[3].Ip, Constantes.MesaConumicaHABILITARControles);
+            }
+            else
+            {
+                EnviarMensajeJugador(objJuego.JugadoresConectados[3].Ip, Constantes.MesaConumicaDESHABILITARControles);
+            }
         }
     }
 }

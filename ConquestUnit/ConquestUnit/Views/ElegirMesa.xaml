@@ -159,9 +159,7 @@
                         <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png" />
                         <Setter Target="lblRegresar.FontSize" Value="35" />
                         <Setter Target="PanelRegresar.Margin" Value="20,20,100,0" />
-                        <!--<Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Images/Icons/back64x64.png"></Setter>-->
                         <Setter Target="lblNombreJugador.FontSize" Value="35" />
-                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Pantallas/PC/IconoJugador.png" />
                         <Setter Target="imgJugador.Width" Value="64" />
                         <Setter Target="imgJugador.Height" Value="64" />
                         <Setter Target="imgLogo.Margin" Value="0,14,0,0" />

@@ -88,7 +88,7 @@
                     FontFamily="ms-appx:///Assets/Fonts/Algerian.ttf#Algerian"
                     FontSize="20"
                     Text="Bienvenido" />
-                <Image x:Name="imgJugador" Width="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png"/>
+                <Image x:Name="imgJugador" Width="32" Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png" Tapped="imgJugador_Tapped"/>
             </StackPanel>
 
         </Grid>

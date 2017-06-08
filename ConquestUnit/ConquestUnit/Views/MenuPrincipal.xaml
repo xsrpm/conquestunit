@@ -29,7 +29,6 @@
                         <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png"></Setter>
                         <Setter Target="txtBienvenido.FontSize" Value="35"></Setter>
                         
-                        <Setter Target="imgJugador.Source" Value="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"></Setter>
                         <Setter Target="imgJugador.Width" Value="64"></Setter>
                         <Setter Target="imgJugador.Height" Value="64"></Setter>
                         

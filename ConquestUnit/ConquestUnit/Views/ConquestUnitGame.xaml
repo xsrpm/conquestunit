@@ -714,7 +714,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="Jugador1Nombre" Text="Roy" Grid.Row="0" FontSize="17" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#B81010"/>
-                        <Image x:Name="Jugador1Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador1Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" Tapped="Jugador1Imagen_Tapped" />
                         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador1Territorios" Text="Territorios: " FontSize="14" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
                             <TextBlock x:Name="Jugador1Territorios" Text="0" FontSize="14" FontWeight="SemiBold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#B81010"/>
@@ -741,7 +741,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="Jugador2Nombre" Text="PAPA BENED" Grid.Row="0" FontSize="17" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#508A11"/>
-                        <Image x:Name="Jugador2Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador2Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" Tapped="Jugador2Imagen_Tapped" />
                         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador2Territorios"  Text="Territorios: " FontSize="14" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
                             <TextBlock x:Name="Jugador2Territorios" Text="0" FontSize="14" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#508A11"/>
@@ -768,7 +768,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="Jugador3Nombre" Text="Joel" Grid.Row="0" FontSize="17" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#2E507E"/>
-                        <Image x:Name="Jugador3Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador3Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" Tapped="Jugador3Imagen_Tapped" />
                         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador3Territorios"  Text="Territorios: " FontSize="14" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
                             <TextBlock x:Name="Jugador3Territorios" Text="0" FontSize="14" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#2E507E"/>
@@ -795,7 +795,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="Jugador4Nombre" Text="Joel" Grid.Row="0" FontSize="17" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#BCC60F"/>
-                        <Image x:Name="Jugador4Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Image x:Name="Jugador4Imagen" Grid.Row="1" Width="50" Height="50" Source="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" VerticalAlignment="Center" HorizontalAlignment="Center" Tapped="Jugador4Imagen_Tapped" />
                         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock x:Name="lblJugador4Territorios"  Text="Territorios: " FontSize="14" FontFamily="Arial Narrow" Foreground="White" FontWeight="SemiBold"/>
                             <TextBlock x:Name="Jugador4Territorios" Text="0" FontSize="14" FontWeight="Bold" FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian" Foreground="#BCC60F"/>

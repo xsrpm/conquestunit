@@ -28,7 +28,7 @@ namespace ConquestUnit.Views
             {
                 if (App.objJugador.Nombre != null)
                 {
-                    lblNombreJugador.Text = lblNombreJugador.Text + " " + App.objJugador.Nombre;
+                    lblNombreJugador.Text = App.objJugador.Nombre;
                     perfilCreado = true;
                 }
                 if (App.objJugador.Imagen != null)

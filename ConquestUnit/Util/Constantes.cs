@@ -4,7 +4,7 @@
     {
         public static string FILE_NOMBRE_JUGADOR = "nombreJugador.txt";
         public static string FILE_IMAGEN_JUGADOR = "imagenJugador.txt";
-        public static string SEPARADOR = ";#;#";
+        public static string SEPARADOR = ";#";
         public static string MessageDialogTitle = "Conquest Unit";
 
         public static string IconoJugador = "ms-appx:///Assets/Pantallas/PC/RolJugador.png";
@@ -67,19 +67,19 @@
         #endregion
 
         #region Mensajes para unirse a la mesa
-        public static string UnirseEnviameConfirmacion = "UnirseEnviameConfirmacion";
-        public static string ConfirmacionUnirseMesa = "ConfirmacionUnirseMesa";
-        public static string JugadorSaleMesa = "JugadorSaleMesa";
-        public static string MesaIndicaSeCierra = "MesaIndicaSeCierra";
-        public static string MesaIndicaJuegoInicia = "MesaIndicaJuegoInicia";
+        public static string UnirseEnviameConfirmacion = "UEC";
+        public static string ConfirmacionUnirseMesa = "CUM";
+        public static string JugadorSaleMesa = "JSM";
+        public static string MesaIndicaSeCierra = "MISC";
+        public static string MesaIndicaJuegoInicia = "MIJI";
         #endregion
 
         #region Mensajes de Juego
-        public static string MesaConumicaHABILITARControles = "MesaConumicaHABILITARControles";
-        public static string MesaConumicaDESHABILITARControles = "MesaConumicaDESHABILITARControles";
-        public static string JugadorPresionaBoton = "JugadorPresionaBoton";
-        public static string MesaConumicaVICTORIAFinDelJuego = "MesaConumicaVICTORIAFinDelJuego";
-        public static string MesaConumicaDERROTAFinDelJuego = "MesaConumicaDERROTAFinDelJuego";
+        public static string MesaConumicaHABILITARControles = "MCHC";
+        public static string MesaConumicaDESHABILITARControles = "MCDC";
+        public static string JugadorPresionaBoton = "JPB";
+        public static string MesaConumicaVICTORIAFinDelJuego = "MCVF";
+        public static string MesaConumicaDERROTAFinDelJuego = "MCDF";
         public struct Controles
         {
             public const int ARRIBA = 0;
@@ -135,8 +135,8 @@
             }
         }
 
-        public const string MOVER_TROPAS_MOVER = "MOVIENDO UNIDADES";
-        public const string MOVER_TROPAS_FORTIFICACION = "FORTIFICACION";
+        public const string MOVER_TROPAS_MOVER = "MU";
+        public const string MOVER_TROPAS_FORTIFICACION = "F";
 
         public struct MensajesConfirmarContinuar
         {
@@ -149,7 +149,7 @@
         }
         #endregion
 
-        public static string SIN_IMAGEN = "Ninguno";
+        public static string SIN_IMAGEN = "NN";
 
         public struct FaseJuego
         {
@@ -194,13 +194,10 @@
         public static int UnidadesMinimasParaEvolucionar = 5;
         #endregion
 
-        //https://www.onlinevideoconverter.com/
-        //http://mp3cut.net/es/
         public struct Media
         {
             public struct Music
             {
-                //https://www.youtube.com/watch?v=kthxycmF25M
                 public const string MusicaConquestUnit = @"ms-appx:///Assets/Musica/Tales of Dragonia.mp3";
             }
         }

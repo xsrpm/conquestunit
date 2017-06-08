@@ -29,7 +29,7 @@ namespace ConquestUnit.Views
             {
                 if (App.objJugador.Nombre != null)
                 {
-                    txtBienvenido.Text = txtBienvenido.Text + " " + App.objJugador.Nombre;
+                    txtBienvenido.Text = App.objJugador.Nombre;
                 }
                 if (App.objJugador.Imagen != null)
                 {
