@@ -53,6 +53,8 @@ namespace ConquestUnit.Views
                 }
             }
             IniciarSDK();
+
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
         }
 
         private void MiMetodoReceptorJugadorJuegoHelper(string strIp, string strMensaje)
@@ -167,6 +169,9 @@ namespace ConquestUnit.Views
 
         public async void EnviarBotonPresionadoMesa(int botonPresionado)
         {
+            pageMando.IsEnabled = false;
+            pageMando.IsEnabled = true;
+
             if (mandoActivo)
             {
                 await App.objSDK.StreamPing(Constantes.JugadorPresionaBoton + Constantes.SEPARADOR +
@@ -268,5 +273,58 @@ namespace ConquestUnit.Views
         {
             IniciarSDK();
         }
+
+        private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
+        {
+            switch (args.VirtualKey)
+            {
+                //Direccionales
+                case Windows.System.VirtualKey.A:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.IZQUIERDA);
+                    break;
+                case Windows.System.VirtualKey.W:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ARRIBA);
+                    break;
+                case Windows.System.VirtualKey.D:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.DERECHA);
+                    break;
+                case Windows.System.VirtualKey.X:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ABAJO);
+                    break;
+                case Windows.System.VirtualKey.Q:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ARRIBAIZQUIERDA);
+                    break;
+                case Windows.System.VirtualKey.E:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ARRIBADERECHA);
+                    break;
+                case Windows.System.VirtualKey.Z:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ABAJOIZQUIERDA);
+                    break;
+                case Windows.System.VirtualKey.C:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.ABAJODERECHA);
+                    break;
+                //Botones accion
+                case Windows.System.VirtualKey.J:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.CUADRADO);
+                    break;
+                case Windows.System.VirtualKey.I:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.TRIANGULO);
+                    break;
+                case Windows.System.VirtualKey.L:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.CIRCULO);
+                    break;
+                case Windows.System.VirtualKey.K:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.EQUIS);
+                    break;
+                //Acciones
+                case Windows.System.VirtualKey.Enter:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.EQUIS);
+                    break;
+                case Windows.System.VirtualKey.Space:
+                    EnviarBotonPresionadoMesa(Constantes.Controles.EQUIS);
+                    break;
+            }
+        }
+
     }
 }
