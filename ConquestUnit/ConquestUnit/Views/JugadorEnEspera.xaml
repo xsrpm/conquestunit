@@ -28,7 +28,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     Margin="10,0,0,0"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Tapped="btnAtras_Tapped">
                     <Image x:Name="btnAtrasImage" Source="ms-appx:///Assets/Pantallas/Phone/BotonRegresar.png" />
@@ -40,9 +40,10 @@
                         Text="REGRESAR" />
                 </StackPanel>
                 <StackPanel
+                    x:Name="panelinfoJugador"
                     Grid.Row="1"
                     Grid.Column="2"
-                    Margin="20"
+                    Margin="10"
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">
                     <TextBlock
@@ -53,24 +54,25 @@
                         FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                         Text="Bienvenido"
                         TextWrapping="Wrap" />
+                    <Image
+                        x:Name="imgLogo"
+                        Width="60"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Source="ms-appx:///Assets/Images/Icons/logo128x128.png" />
                 </StackPanel>
             </Grid>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image
-                x:Name="imgLogo"
-                Width="100"
-                Height="100"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Source="ms-appx:///Assets/Images/Icons/logo128x128.png" />
+
             <TextBlock
                 x:Name="lblCodigo"
                 Margin="0,10,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 FontFamily="Arial"
-                Text="Codigo de mesa"
+                Text="Código de mesa"
                 TextWrapping="Wrap" />
             <TextBlock
                 x:Name="lblMesaId"
@@ -84,7 +86,6 @@
             <Image
                 x:Name="imgJugador"
                 Width="128"
-                Height="128"
                 Margin="0,20,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
@@ -92,7 +93,7 @@
             <RelativePanel x:Name="myRelativePanel">
                 <TextBlock
                     x:Name="lblNombre"
-                    Margin="0,-5,0,0"
+                    Margin="0,5,0,0"
                     VerticalAlignment="Top"
                     FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
@@ -129,13 +130,60 @@
                         <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png" />
                         <Setter Target="lblRegresar.FontSize" Value="35" />
                         <Setter Target="lblNombreJugador.FontSize" Value="35" />
-                        <Setter Target="imgLogo.Margin" Value="0,-10,0,0" />
-                        <Setter Target="imgLogo.Width" Value="150" />
-                        <Setter Target="imgLogo.Height" Value="150" />
-                        <Setter Target="lblCodigo.FontSize" Value="35" />
-                        <Setter Target="lblMesaId.FontSize" Value="50" />
+                        <Setter Target="imgLogo.Width" Value="110" />
+                        <Setter Target="imgLogo.Height" Value="110" />
+                        <Setter Target="lblCodigo.FontSize" Value="50" />
+                        <Setter Target="lblMesaId.FontSize" Value="60" />
                         <Setter Target="lblNombre.FontSize" Value="35" />
                         <Setter Target="lblTextoEsperando.FontSize" Value="35" />
+                        <Setter Target="panelinfoJugador.Margin" Value="20" />
+                        <Setter Target="imgJugador.Width" Value="200" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="fullhdState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1920" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+                        <Setter Target="lblNombreJugador.FontSize" Value="55" />
+                        <Setter Target="lblNombreJugador.Padding" Value="20" />
+
+                        <Setter Target="lblRegresar.FontSize" Value="55" />
+                        <Setter Target="imgLogo.Width" Value="190" />
+                        <Setter Target="imgLogo.Height" Value="190" />
+
+                        <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png" />
+                        <Setter Target="btnAtrasImage.Width" Value="300" />
+
+                        <Setter Target="PanelRegresar.Margin" Value="50,40,0,0" />
+
+                        <Setter Target="lblCodigo.FontSize" Value="75" />
+                        <Setter Target="lblMesaId.FontSize" Value="85" />
+
+                        <Setter Target="imgJugador.Width" Value="350" />
+                        <Setter Target="lblNombre.FontSize" Value="50" />
+                        <Setter Target="lblNombre.Margin" Value="10" />
+
+                        <Setter Target="lblTextoEsperando.FontSize" Value="50" />
+
+                        <!--
+
+
+                        <Setter Target="lblSeleccion.FontSize" Value="55" />
+                        <Setter Target="imgElegirMesa.Width" Value="350" />
+                        <Setter Target="imgElegirJugador.Width" Value="350" />
+
+                        <Setter Target="lblMesa.FontSize" Value="50" />
+                        <Setter Target="lblJugador.FontSize" Value="50" />
+
+                        <Setter Target="panelInfoJugador.Margin" Value="40" />
+
+
+                        <Setter Target="panelImgElegirMesa.Padding" Value="50,50,50,0" />
+                        <Setter Target="panelImgElegirJugador.Padding" Value="50,50,50,0" />
+                        -->
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

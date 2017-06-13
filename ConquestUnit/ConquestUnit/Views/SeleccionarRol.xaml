@@ -41,6 +41,7 @@
                         Text="REGRESAR" />
                 </StackPanel>
                 <StackPanel
+                    x:Name="panelInfoJugador"
                     Grid.Row="1"
                     Grid.Column="2"
                     Margin="20"
@@ -49,7 +50,7 @@
                     Tapped="infoJugador_Tapped">
                     <TextBlock
                         x:Name="lblNombreJugador"
-                        Padding="5"
+                        Padding="15"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
@@ -58,8 +59,7 @@
                         TextWrapping="Wrap" />
                     <Image
                         x:Name="imgJugador"
-                        Width="64"
-                        Height="64"
+                        Width="100"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Source="ms-appx:///Assets/Pantallas/PC/IconoJugador.png"
@@ -79,8 +79,10 @@
                 Height="225"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Source="ms-appx:///Assets/Images/Icons/logo300x300.png" />
+                Source="ms-appx:///Assets/Images/Icons/logo300x300.png"
+                Visibility="Collapsed" />
             <TextBlock
+                x:Name="lblSeleccion"
                 HorizontalAlignment="Center"
                 FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                 FontSize="35"
@@ -89,35 +91,29 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <StackPanel Padding="25,25,25,0">
+                <StackPanel x:Name="panelImgElegirMesa" Padding="25,25,25,0">
                     <Image
                         x:Name="imgElegirMesa"
                         Width="256"
-                        Height="256"
-                        Margin="0,0,0,0"
                         HorizontalAlignment="Center"
                         Source="ms-appx:///Assets/Pantallas/PC/RolMesa.png"
                         Tapped="imgElegirMesa_Tapped" />
                     <TextBlock
                         x:Name="lblMesa"
-                        Margin="0,0,0,0"
                         HorizontalAlignment="Center"
                         FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                         FontSize="35"
                         Text="Mesa" />
                 </StackPanel>
-                <StackPanel Padding="25,25,25,0">
+                <StackPanel x:Name="panelImgElegirJugador" Padding="25,25,25,0">
                     <Image
                         x:Name="imgElegirJugador"
                         Width="256"
-                        Height="256"
-                        Margin="0,0,0,0"
                         HorizontalAlignment="Center"
                         Source="ms-appx:///Assets/Pantallas/PC/RolJugador.png"
                         Tapped="imgElegirJugador_Tapped" />
                     <TextBlock
                         x:Name="lblJugador"
-                        Margin="0,0,0,0"
                         HorizontalAlignment="Center"
                         FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                         FontSize="35"
@@ -125,22 +121,35 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
-                <VisualState x:Name="phoneState">
+                <VisualState x:Name="fullhdState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="0" />
+                        <AdaptiveTrigger MinWindowWidth="1920" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="myStackPanel.Orientation" Value="Vertical" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="tabletState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="720" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="myStackPanel.Orientation" Value="Vertical" />
+                        <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+                        <Setter Target="lblNombreJugador.FontSize" Value="55" />
+                        <Setter Target="lblNombreJugador.Padding" Value="10" />
+
+                        <Setter Target="imgJugador.Width" Value="150" />
+
+                        <Setter Target="lblRegresar.FontSize" Value="55" />
+
+                        <Setter Target="lblSeleccion.FontSize" Value="55" />
+                        <Setter Target="imgElegirMesa.Width" Value="350" />
+                        <Setter Target="imgElegirJugador.Width" Value="350" />
+
+                        <Setter Target="lblMesa.FontSize" Value="50" />
+                        <Setter Target="lblJugador.FontSize" Value="50" />
+
+                        <Setter Target="panelInfoJugador.Margin" Value="40" />
+                        <Setter Target="PanelRegresar.Margin" Value="40,30,0,0" />
+
+                        <Setter Target="panelImgElegirMesa.Padding" Value="50,50,50,0" />
+                        <Setter Target="panelImgElegirJugador.Padding" Value="50,50,50,0" />
+
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
