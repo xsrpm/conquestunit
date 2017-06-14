@@ -43,6 +43,7 @@
                         Text="REGRESAR" />
                 </StackPanel>
                 <StackPanel
+                    x:Name="panelInfoJugador"
                     Grid.Row="1"
                     Grid.Column="2"
                     Margin="20"
@@ -60,7 +61,6 @@
                     <Image
                         x:Name="imgJugador"
                         Width="32"
-                        Height="32"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Source="ms-appx:///Assets/Pantallas/Phone/IconoJugador.png" />
@@ -79,6 +79,7 @@
                     Margin="0,30,0,0"
                     VerticalAlignment="Top"
                     FontFamily="Arial"
+                    FontSize="20"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Text="Ingresa el código de la mesa"
                     TextWrapping="Wrap" />
@@ -95,7 +96,7 @@
                     x:Name="txtMesaId"
                     Width="144"
                     Margin="-100,15,0,0"
-                    Background="Transparent"
+                    Background="{x:Null}"
                     BorderBrush="Transparent"
                     FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                     FontSize="30"
@@ -106,7 +107,7 @@
                     MaxLength="6"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     RelativePanel.Below="lblTexto"
-                    Text=""
+                    Text="123456"
                     TextAlignment="Center"
                     TextWrapping="Wrap" />
                 <Image
@@ -154,25 +155,53 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
-                        <!--<Setter Target="btnAtras.Width" Value="64"></Setter>
-                        <Setter Target="btnAtras.Height" Value="64"></Setter>-->
                         <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png" />
                         <Setter Target="lblRegresar.FontSize" Value="35" />
                         <Setter Target="PanelRegresar.Margin" Value="20,20,100,0" />
                         <Setter Target="lblNombreJugador.FontSize" Value="35" />
-                        <Setter Target="imgJugador.Width" Value="64" />
-                        <Setter Target="imgJugador.Height" Value="64" />
-                        <Setter Target="imgLogo.Margin" Value="0,14,0,0" />
+                        <Setter Target="lblNombreJugador.Padding" Value="15" />
+                        <Setter Target="imgJugador.Width" Value="100" />
                         <Setter Target="imgLogo.Width" Value="300" />
                         <Setter Target="imgLogo.Height" Value="300" />
                         <Setter Target="lblTexto.FontSize" Value="35" />
                         <Setter Target="lblTexto.Margin" Value="0,30,0,0" />
                         <Setter Target="txtNombreImg.Source" Value="ms-appx:///Assets/Pantallas/Phone/FondoNombre.png" />
+                        <Setter Target="txtNombreImg.Width" Value="250" />
+                        <Setter Target="txtNombreImg.Height" Value="70" />
                         <Setter Target="txtMesaId.FontSize" Value="35" />
-                        <Setter Target="txtMesaId.Margin" Value="-100,15,0,0" />
-                        <Setter Target="btnUnirme.Height" Value="80" />
-                        <Setter Target="btnUnirme.Width" Value="150" />
-                        <Setter Target="btnUnirme.Margin" Value="200,10,0,0" />
+                        <Setter Target="txtMesaId.Width" Value="200" />
+                        <Setter Target="btnUnirme.Height" Value="100" />
+                        <Setter Target="btnUnirme.Width" Value="200" />
+                        <Setter Target="btnUnirme.Margin" Value="350,5,0,0" />
+                        <Setter Target="btnUnirme.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonUnirme.png" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="fullhdState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1920" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Fondo.ImageSource" Value="ms-appx:///Assets/Pantallas/PC/Fondo.png" />
+                        <Setter Target="btnAtrasImage.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonRegresar.png" />
+                        <Setter Target="lblRegresar.FontSize" Value="55" />
+                        <Setter Target="PanelRegresar.Margin" Value="20,20,100,0" />
+                        <Setter Target="lblNombreJugador.FontSize" Value="55" />
+                        <Setter Target="lblNombreJugador.Padding" Value="25" />
+                        <Setter Target="imgJugador.Width" Value="150" />
+                        <Setter Target="imgLogo.Margin" Value="0,14,0,0" />
+                        <Setter Target="imgLogo.Width" Value="500" />
+                        <Setter Target="imgLogo.Height" Value="500" />
+                        <Setter Target="lblTexto.FontSize" Value="45" />
+                        <Setter Target="lblTexto.Margin" Value="0,30,0,0" />
+                        <Setter Target="txtNombreImg.Source" Value="ms-appx:///Assets/Pantallas/Phone/FondoNombre.png" />
+                        <Setter Target="txtNombreImg.Width" Value="300" />
+                        <Setter Target="txtNombreImg.Height" Value="80" />
+                        <Setter Target="txtMesaId.FontSize" Value="45" />
+                        <Setter Target="txtMesaId.Width" Value="250" />
+                        <Setter Target="btnUnirme.Height" Value="120" />
+                        <Setter Target="btnUnirme.Width" Value="300" />
+                        <Setter Target="btnUnirme.Margin" Value="440,0,0,0" />
                         <Setter Target="btnUnirme.Source" Value="ms-appx:///Assets/Pantallas/PC/BotonUnirme.png" />
                     </VisualState.Setters>
                 </VisualState>
