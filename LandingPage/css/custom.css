@@ -1,0 +1,29 @@
+.h1-logo {
+    font-size: 32px;
+}
+
+.img-logo {
+    margin-top: -10px;
+    height: 30px;
+    width: 30px;
+}
+
+/*Borde Logo*/
+.w3_navigation_pos h1 a {
+    border: 3px solid #ff0000;
+}
+
+/*Color Hover Menu*/
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ff0000;
+}
+
+.div-descarga {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.img-descarga {
+    max-width: 325px; 
+    width: 100%;
+}
