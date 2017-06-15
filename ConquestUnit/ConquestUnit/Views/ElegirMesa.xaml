@@ -107,7 +107,7 @@
                     MaxLength="6"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     RelativePanel.Below="lblTexto"
-                    Text="123456"
+                    Text=""
                     TextAlignment="Center"
                     TextWrapping="Wrap" />
                 <Image
