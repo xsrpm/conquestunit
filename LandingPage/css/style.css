@@ -519,7 +519,7 @@ input[type="submit"],input[type="reset"],.w3ls_footer_grid_leftl,.w3ls_footer_gr
 /*-- services --*/
 /*-- services --*/
 .services{
-	background:url(../images/service.jpg) no-repeat center;
+	background:url(../images/juega/fondo.png) no-repeat center;
 	background-size:cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
@@ -617,7 +617,7 @@ a.hi-icon img {
 	top: 0;
 	left: 0;
 	padding: 0;
-	box-shadow: 0 0 0 3px #fff;
+	box-shadow: 0 0 0 3px #000;
 	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
 	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
 	transition: transform 0.2s, opacity 0.2s;
@@ -634,8 +634,8 @@ a.hi-icon img {
 }
 
 .hi-icon-effect-9a .hi-icon:hover {
-	box-shadow: 0 0 0 6px #fff;
-	color: #fff;
+	box-shadow: 0 0 0 6px #000;
+	color: #000;
 }
 /*-- //services --*/
 /*-- //services-bottom --*/
