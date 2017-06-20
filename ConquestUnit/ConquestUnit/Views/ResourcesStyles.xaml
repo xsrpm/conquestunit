@@ -62,6 +62,7 @@
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
+
     </Style>
     <Style x:Key="ButtonFases" TargetType="Button">
         <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
@@ -102,6 +103,37 @@
         <Setter Property="Padding" Value="3" />
         <Setter Property="Background" Value="#000000" />
         <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    <Style x:Key="TextBlockJugadorNombre" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="#B81010" />
+    </Style>
+    <Style x:Key="ImageJugadorImagen" TargetType="Image">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Source" Value="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" />
+    </Style>
+    <Style x:Key="StackPanelHorizontalCenter" TargetType="StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+    <Style x:Key="TextBLockInfoText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial Narrow" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style
+        x:Key="TextBLocklblJugador"
+        BasedOn="{StaticResource TextBLockInfoText}"
+        TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
     </Style>
 
 </ResourceDictionary>
