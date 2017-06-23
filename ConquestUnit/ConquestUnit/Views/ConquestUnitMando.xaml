@@ -293,9 +293,9 @@
         </Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
-                <VisualState x:Name="pcState">
+                <VisualState x:Name="tabletState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
+                        <AdaptiveTrigger MinWindowWidth="770" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="logo.Source" Value="ms-appx:///Assets/Images/Icons/logo300x300.png" />
