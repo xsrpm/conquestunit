@@ -1295,7 +1295,7 @@
             <!--  FIN MAPA ROMA  -->
 
             <!--  MAPA NORTEAMERICA  -->
-            <Grid x:Name="Mapa_NorteAmerica" d:IsHidden="True">
+            <Grid x:Name="Mapa_NorteAmerica">
                 <Image
                     x:Name="Assets_Mapa_Norteamerica_png"
                     Source="ms-appx:///Assets/Mapa/Mapa Norteamerica.png"
@@ -2136,7 +2136,7 @@
                         <TextBlock x:Name="UnidadCantidadNuevaYork" Style="{StaticResource TextBlockUnidad}" />
                     </Grid>
                 </Grid>
-                <Grid x:Name="GridLabrador">
+                <Grid x:Name="GrdLabrador">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="259.792*" />
                         <RowDefinition Height="98.375*" />
