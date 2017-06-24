@@ -98,18 +98,12 @@
         <Setter Property="Foreground" Value="White" />
     </Style>
 
-    <Style x:Key="GridJugador" TargetType="Grid">
-        <Setter Property="Padding" Value="3" />
-        <Setter Property="Background" Value="#000000" />
-        <Setter Property="Opacity" Value="0.8" />
-    </Style>
     <Style x:Key="TextBlockJugadorNombre" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
         <Setter Property="FontSize" Value="17" />
         <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="#B81010" />
     </Style>
     <Style x:Key="ImageJugadorImagen" TargetType="Image">
         <Setter Property="Width" Value="50" />
