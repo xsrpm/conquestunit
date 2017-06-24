@@ -15,7 +15,6 @@
         <Setter Property="UseLayoutRounding" Value="False" />
         <Setter Property="Stretch" Value="Fill" />
         <Setter Property="Stroke" Value="Black" />
-        <Setter Property="Fill" Value="#FFBD1B1B" />
         <Setter Property="Grid.Row" Value="1" />
         <Setter Property="Grid.Column" Value="1" />
     </Style>

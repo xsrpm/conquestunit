@@ -15,20 +15,9 @@
                 Stretch="Fill" />
         </Grid.Background>
         <Grid x:Name="GridJuego">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition Height="720" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="1280" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="1" Grid.Column="1">
                 <!--  MAPA CHINA  -->
-                <Grid x:Name="Mapa_China" d:IsHidden="True">
+                <Grid x:Name="Mapa_China">
                     <Image
                         x:Name="Assets_Mapa_China_png"
                         Source="ms-appx:///Assets/Mapa/Mapa China.png"
@@ -114,7 +103,7 @@
                             Style="{StaticResource PathRegion}"
                             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
                     </Grid>
-                    <Grid x:Name="GridHuijiang">
+                    <Grid x:Name="GrdHuijiang">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="133.199*" />
                             <RowDefinition Height="267.241*" />
@@ -136,7 +125,7 @@
                             <TextBlock x:Name="UnidadCantidadHuijiang" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridTibet">
+                    <Grid x:Name="GrdTibet">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="344.439*" />
                             <RowDefinition Height="211.939*" />
@@ -164,7 +153,7 @@
                             <TextBlock x:Name="UnidadCantidadTibet" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridQinghai">
+                    <Grid x:Name="GrdQinghai">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="341.733*" />
                             <RowDefinition Height="136.39*" />
@@ -186,7 +175,7 @@
                             <TextBlock x:Name="UnidadCantidadQinghai" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridSichuan">
+                    <Grid x:Name="GrdSichuan">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="430.375*" />
                             <RowDefinition Height="144.375*" />
@@ -208,7 +197,7 @@
                             <TextBlock x:Name="UnidadCantidadSichuan" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridYunnan">
+                    <Grid x:Name="GrdYunnan">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="522.875*" />
                             <RowDefinition Height="144*" />
@@ -230,7 +219,7 @@
                             <TextBlock x:Name="UnidadCantidadYunnan" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridGuizhou">
+                    <Grid x:Name="GrdGuizhou">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="525*" />
                             <RowDefinition Height="80.75*" />
@@ -252,7 +241,7 @@
                             <TextBlock x:Name="UnidadCantidadGuizhou" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridUliassutai">
+                    <Grid x:Name="GrdUliassutai">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="87.701*" />
                             <RowDefinition Height="220.009*" />
@@ -274,7 +263,7 @@
                             <TextBlock x:Name="UnidadCantidadUliassutai" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridMongolia">
+                    <Grid x:Name="GrdMongolia">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="188.558*" />
                             <RowDefinition Height="191.43*" />
@@ -296,7 +285,7 @@
                             <TextBlock x:Name="UnidadCantidadMongolia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridGansu">
+                    <Grid x:Name="GrdGansu">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="276.712*" />
                             <RowDefinition Height="189.768*" />
@@ -318,7 +307,7 @@
                             <TextBlock x:Name="UnidadCantidadGansu" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridShaanxi">
+                    <Grid x:Name="GrdShaanxi">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="340.875*" />
                             <RowDefinition Height="138.5*" />
@@ -340,7 +329,7 @@
                             <TextBlock x:Name="UnidadCantidadShaanxi" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridShanxi">
+                    <Grid x:Name="GrdShanxi">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="294.125*" />
                             <RowDefinition Height="137*" />
@@ -362,7 +351,7 @@
                             <TextBlock x:Name="UnidadCantidadShanxi" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridHubei">
+                    <Grid x:Name="GrdHubei">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="452.875*" />
                             <RowDefinition Height="73.25*" />
@@ -384,7 +373,7 @@
                             <TextBlock x:Name="UnidadCantidadHubei" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridHeilongjiang">
+                    <Grid x:Name="GrdHeilongjiang">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="26.125*" />
                             <RowDefinition Height="185.417*" />
@@ -406,7 +395,7 @@
                             <TextBlock x:Name="UnidadCantidadHeilongjiang" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridJilin">
+                    <Grid x:Name="GrdJilin">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40.375*" />
                             <RowDefinition Height="260.25*" />
@@ -428,7 +417,7 @@
                             <TextBlock x:Name="UnidadCantidadJilin" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridShengjing">
+                    <Grid x:Name="GrdShengjing">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="261.75*" />
                             <RowDefinition Height="78.5*" />
@@ -450,7 +439,7 @@
                             <TextBlock x:Name="UnidadCantidadShengjing" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridZhili">
+                    <Grid x:Name="GrdZhili">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="243.375*" />
                             <RowDefinition Height="174.75*" />
@@ -472,7 +461,7 @@
                             <TextBlock x:Name="UnidadCantidadZhili" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridShandong">
+                    <Grid x:Name="GrdShandong">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="353.875*" />
                             <RowDefinition Height="69.375*" />
@@ -494,7 +483,7 @@
                             <TextBlock x:Name="UnidadCantidadShandong" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridMenan">
+                    <Grid x:Name="GrdMenan">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="383.625*" />
                             <RowDefinition Height="99.1255*" />
@@ -516,7 +505,7 @@
                             <TextBlock x:Name="UnidadCantidadMenan" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridGuangxi">
+                    <Grid x:Name="GrdGuangxi">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="572.25*" />
                             <RowDefinition Height="87.375*" />
@@ -538,7 +527,7 @@
                             <TextBlock x:Name="UnidadCantidadGuangxi" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridHunan">
+                    <Grid x:Name="GrdHunan">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="507.75*" />
                             <RowDefinition Height="92.75*" />
@@ -560,7 +549,7 @@
                             <TextBlock x:Name="UnidadCantidadHunan" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridIlangxi">
+                    <Grid x:Name="GrdIlangxi">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="501.5*" />
                             <RowDefinition Height="98.875*" />
@@ -582,7 +571,7 @@
                             <TextBlock x:Name="UnidadCantidadIlangxi" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridFcohou">
+                    <Grid x:Name="GrdFcohou">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="527.25*" />
                             <RowDefinition Height="84.375*" />
@@ -604,7 +593,7 @@
                             <TextBlock x:Name="UnidadCantidadFcohou" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridZhelang">
+                    <Grid x:Name="GrdZhelang">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="474.875*" />
                             <RowDefinition Height="68.25*" />
@@ -626,7 +615,7 @@
                             <TextBlock x:Name="UnidadCantidadZhelang" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridAnhu">
+                    <Grid x:Name="GrdAnhu">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="421.125*" />
                             <RowDefinition Height="94.5*" />
@@ -653,7 +642,7 @@
                 <!--  FIN MAPA CHINA  -->
 
                 <!--  MAPA ROMA  -->
-                <Grid x:Name="Mapa_Roma">
+                <Grid x:Name="Mapa_Roma" d:IsHidden="True">
                     <Image
                         x:Name="Assets_Mapa_Roma_png"
                         Source="ms-appx:///Assets/Mapa/Mapa Roma.png"
@@ -778,7 +767,7 @@
                             Style="{StaticResource PathRegion}"
                             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
                     </Grid>
-                    <Grid x:Name="GridLusitania" d:IsHidden="True">
+                    <Grid x:Name="GrdLusitania">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="362*" />
                             <RowDefinition Height="161*" />
@@ -800,7 +789,7 @@
                             <TextBlock x:Name="UnidadCantidadLusitania" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridAugusta" d:IsHidden="True">
+                    <Grid x:Name="GrdAugusta" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="183*" />
                             <RowDefinition Height="68*" />
@@ -822,7 +811,7 @@
                             <TextBlock x:Name="UnidadCantidadAugusta" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdAquitania">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="230*" />
                             <RowDefinition Height="153*" />
@@ -845,12 +834,12 @@
                             d:IsHidden="True"
                             Style="{StaticResource GridUnidad}"
                             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-                            <Image x:Name="UnidadAquitaniaa" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadAquitania" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseAquitania" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadAquitania" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdAlpina" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="139*" />
                             <RowDefinition Height="54*" />
@@ -872,7 +861,7 @@
                             <TextBlock x:Name="UnidadCantidadAlpina" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdFrisia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="149*" />
                             <RowDefinition Height="150*" />
@@ -894,7 +883,7 @@
                             <TextBlock x:Name="UnidadCantidadFrisia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdFlavia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120*" />
                             <RowDefinition Height="113*" />
@@ -916,7 +905,7 @@
                             <TextBlock x:Name="UnidadCantidadFlavia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdTingitana" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="504*" />
                             <RowDefinition Height="85*" />
@@ -939,7 +928,7 @@
                             <TextBlock x:Name="UnidadCantidadTingitana" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdCarthago" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="459*" />
                             <RowDefinition Height="113*" />
@@ -962,7 +951,7 @@
                             <TextBlock x:Name="UnidadCantidadCarthago" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdLibya"  d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="530*" />
                             <RowDefinition Height="57*" />
@@ -985,7 +974,7 @@
                             <TextBlock x:Name="UnidadCantidadLibya" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdCyrene" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="364*" />
                             <RowDefinition Height="71*" />
@@ -1007,7 +996,7 @@
                             <TextBlock x:Name="UnidadCantidadCyrene" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdArcadia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="330*" />
                             <RowDefinition Height="83*" />
@@ -1029,7 +1018,7 @@
                             <TextBlock x:Name="UnidadCantidadArcadia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdThebaida" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="383*" />
                             <RowDefinition Height="60*" />
@@ -1051,7 +1040,7 @@
                             <TextBlock x:Name="UnidadCantidadThebaida" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdLydia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="83*" />
                             <RowDefinition Height="45*" />
@@ -1073,7 +1062,7 @@
                             <TextBlock x:Name="UnidadCantidadLydia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdCapadocia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="103*" />
                             <RowDefinition Height="58*" />
@@ -1095,7 +1084,7 @@
                             <TextBlock x:Name="UnidadCantidadCapadocia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdArmenia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="66*" />
                             <RowDefinition Height="71*" />
@@ -1123,7 +1112,7 @@
                             <TextBlock x:Name="UnidadCantidadArmenia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdMesopotania"  d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="236*" />
                             <RowDefinition Height="89*" />
@@ -1145,7 +1134,7 @@
                             <TextBlock x:Name="UnidadCantidadMesopotania" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdSiria" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="34*" />
                             <RowDefinition Height="17*" />
@@ -1167,7 +1156,7 @@
                             <TextBlock x:Name="UnidadCantidadSiria" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdSalutaris" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="395*" />
                             <RowDefinition Height="141*" />
@@ -1189,7 +1178,7 @@
                             <TextBlock x:Name="UnidadCantidadSalutaris" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdSardinia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="9*" />
                             <RowDefinition Height="2*" />
@@ -1211,7 +1200,7 @@
                             <TextBlock x:Name="UnidadCantidadSardinia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdRoma" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="264*" />
                             <RowDefinition Height="167*" />
@@ -1233,7 +1222,7 @@
                             <TextBlock x:Name="UnidadCantidadRoma" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdDalmatia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="278*" />
                             <RowDefinition Height="105*" />
@@ -1255,7 +1244,7 @@
                             <TextBlock x:Name="UnidadCantidadDalmatia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdMoesia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="168*" />
                             <RowDefinition Height="161*" />
@@ -1277,7 +1266,7 @@
                             <TextBlock x:Name="UnidadCantidadMoesia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdPannonia" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="205*" />
                             <RowDefinition Height="81*" />
@@ -1299,7 +1288,7 @@
                             <TextBlock x:Name="UnidadCantidadPannonia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid d:IsHidden="True">
+                    <Grid x:Name="GrdPeloponense" d:IsHidden="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="104*" />
                             <RowDefinition Height="37*" />
@@ -1770,7 +1759,7 @@
                             Stroke="#FFB81010"
                             Style="{StaticResource PathRegion}" />
                     </Grid>
-                    <Grid x:Name="GridDoyon">
+                    <Grid x:Name="GrdDoyon">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="139.875*" />
                             <RowDefinition Height="98.875*" />
@@ -1792,7 +1781,7 @@
                             <TextBlock x:Name="UnidadCantidadDoyon" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridPendArtica">
+                    <Grid x:Name="GrdPendArtica">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="107.5*" />
                             <RowDefinition Height="82.25*" />
@@ -1814,7 +1803,7 @@
                             <TextBlock x:Name="UnidadCantidadPendArtica" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridYukon">
+                    <Grid x:Name="GrdYukon">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="171.833*" />
                             <RowDefinition Height="101.5*" />
@@ -1836,7 +1825,7 @@
                             <TextBlock x:Name="UnidadCantidadYukon" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridTerritNores">
+                    <Grid x:Name="GrdTerritNores">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="173.165*" />
                             <RowDefinition Height="122.125*" />
@@ -1858,7 +1847,7 @@
                             <TextBlock x:Name="UnidadCantidadTerritNores" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridColumbia">
+                    <Grid x:Name="GrdColumbia">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="236.5*" />
                             <RowDefinition Height="133*" />
@@ -1880,7 +1869,7 @@
                             <TextBlock x:Name="UnidadCantidadColumbia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridAlberta">
+                    <Grid x:Name="GrdAlberta">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="276.333*" />
                             <RowDefinition Height="104.125*" />
@@ -1902,7 +1891,7 @@
                             <TextBlock x:Name="UnidadCantidadAlberta" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridCalifornia">
+                    <Grid x:Name="GrdCalifornia">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="360.833*" />
                             <RowDefinition Height="164.5*" />
@@ -1924,7 +1913,7 @@
                             <TextBlock x:Name="UnidadCantidadCalifornia" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridUtah">
+                    <Grid x:Name="GrdUtah">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="438.333*" />
                             <RowDefinition Height="104.25*" />
@@ -1946,7 +1935,7 @@
                             <TextBlock x:Name="UnidadCantidadUtah" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridSonora">
+                    <Grid x:Name="GrdSonora">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="522.25*" />
                             <RowDefinition Height="103.5*" />
@@ -1968,7 +1957,7 @@
                             <TextBlock x:Name="UnidadCantidadSonora" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridMonterrey">
+                    <Grid x:Name="GrdMonterrey">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="564.375*" />
                             <RowDefinition Height="76.625*" />
@@ -1990,7 +1979,7 @@
                             <TextBlock x:Name="UnidadCantidadMonterrey" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridGuerrero">
+                    <Grid x:Name="GrdGuerrero">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="621.167*" />
                             <RowDefinition Height="74.25*" />
@@ -2012,7 +2001,7 @@
                             <TextBlock x:Name="UnidadCantidadGuerrero" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridYucatan">
+                    <Grid x:Name="GrdYucatan">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="643.792*" />
                             <RowDefinition Height="56.125*" />
@@ -2034,7 +2023,7 @@
                             <TextBlock x:Name="UnidadCantidadYucatan" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridMontana">
+                    <Grid x:Name="GrdMontana">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="366*" />
                             <RowDefinition Height="92.875*" />
@@ -2056,7 +2045,7 @@
                             <TextBlock x:Name="UnidadCantidadMontana" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridDakota">
+                    <Grid x:Name="GrdDakota">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="387.5*" />
                             <RowDefinition Height="85.75*" />
@@ -2078,7 +2067,7 @@
                             <TextBlock x:Name="UnidadCantidadDakota" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridTexas">
+                    <Grid x:Name="GrdTexas">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="466.375*" />
                             <RowDefinition Height="130.5*" />
@@ -2100,7 +2089,7 @@
                             <TextBlock x:Name="UnidadCantidadTexas" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridOhio">
+                    <Grid x:Name="GrdOhio">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="407.833*" />
                             <RowDefinition Height="91.125*" />
@@ -2122,7 +2111,7 @@
                             <TextBlock x:Name="UnidadCantidadOhio" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridKentucky">
+                    <Grid x:Name="GrdKentucky">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="464.125*" />
                             <RowDefinition Height="139.75*" />
@@ -2144,7 +2133,7 @@
                             <TextBlock x:Name="UnidadCantidadKentucky" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridNuevaYork">
+                    <Grid x:Name="GrdNuevaYork">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="387*" />
                             <RowDefinition Height="82.125*" />
@@ -2183,12 +2172,12 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNLabrador" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadLabrador" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseLabrador" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadLabrador" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridQuebec">
+                    <Grid x:Name="GrdQuebec">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="318.375*" />
                             <RowDefinition Height="99.625*" />
@@ -2205,12 +2194,12 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNQuebec" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadQuebec" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseQuebec" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadQuebec" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridOntario">
+                    <Grid x:Name="GrdOntario">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="323.042*" />
                             <RowDefinition Height="127.875*" />
@@ -2227,12 +2216,12 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNOntario" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadOntario" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseOntario" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadOntario" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridManitoba">
+                    <Grid x:Name="GrdManitoba">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="289.625*" />
                             <RowDefinition Height="101.875*" />
@@ -2249,12 +2238,12 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNManitoba" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadManitoba" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseManitoba" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadManitoba" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridNumavut">
+                    <Grid x:Name="GrdNumavut">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="164.748*" />
                             <RowDefinition Height="134.042*" />
@@ -2271,12 +2260,12 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNNumavut" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadNumavut" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseNumavut" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadNumavut" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
                     </Grid>
-                    <Grid x:Name="GridVictoria1">
+                    <Grid x:Name="GrdVictoria">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="89.209*" />
                             <RowDefinition Height="122.375*" />
@@ -2293,7 +2282,7 @@
                             Style="{StaticResource PathTerritorio}"
                             Tag="0" />
                         <Grid Style="{StaticResource GridUnidad}">
-                            <Image x:Name="UnidadNVictoria" Style="{StaticResource ImageUnidad}" />
+                            <Image x:Name="UnidadVictoria" Style="{StaticResource ImageUnidad}" />
                             <Ellipse x:Name="UnidadElipseVictoria" Style="{StaticResource EllipseUnidad}" />
                             <TextBlock x:Name="UnidadCantidadVictoria" Style="{StaticResource TextBlockUnidad}" />
                         </Grid>
@@ -2621,6 +2610,12 @@
                             x:Name="UnidadGrid1"
                             Grid.Row="0"
                             Style="{StaticResource GridJugador}">
+                        <Grid.Background>
+                            <SolidColorBrush
+                                x:Name="UnidadGrid1Fondo"
+                                Opacity="0.8"
+                                Color="#000000" />
+                            </Grid.Background>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -2972,10 +2967,10 @@
                 <!--  MARKER  -->
                 <Grid
                     x:Name="BlancoGrid"
+                    Grid.Row="1"
+                    Grid.Column="1"
                     Width="40"
-                    Height="40"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top">
+                    Height="40">
                     <Image
                         x:Name="Blanco"
                         Opacity="0.8"
@@ -4219,7 +4214,6 @@
 
             </Grid>
 
-        </Grid>
         <Grid
             x:Name="GridVictoria"
             Width="500"
@@ -4265,7 +4259,7 @@
                     Grid.Row="3"
                     Width="70"
                     VerticalAlignment="Top"
-                    Source="ms-appx:///Assets/Images/Corona.png" />
+                    Source="ms-appx:///Assets/Images/Corona.png" Canvas.ZIndex="1" />
                 <Image
                     x:Name="imgJugadorGanador"
                     Grid.Row="3"
@@ -4296,8 +4290,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <!--  GridVictoria  -->
-                        <Setter Target="GridJuego.RowDefinitions[1].Height" Value="1080" />
-                        <Setter Target="GridJuego.ColumnDefinitions[1].Width" Value="1920" />
                         <Setter Target="GridVictoria.Width" Value="750" />
                         <Setter Target="GridVictoria.Height" Value="660" />
                         <Setter Target="lblGanaste.FontSize" Value="100" />
@@ -4309,33 +4301,16 @@
                         <!--  GridJuego  -->
 
                         <!--  Mapa Norteamerica  -->
+                        <!--
                         <Setter Target="Assets_Mapa_Norteamerica_png.Width" Value="1920" />
                         <Setter Target="Assets_Mapa_Norteamerica_png.Height" Value="1080" />
-
-                        <Setter Target="Doyon.Margin" Value="330,209.813" />
-                        <Setter Target="Doyon.Width" Value="316.125" />
-                        <Setter Target="Doyon.Height" Value="148.313" />
-                        <Setter Target="PendArtica.Margin" Value="465.375,161.25" />
-                        <Setter Target="PendArtica.Width" Value="215.813" />
-                        <Setter Target="PendArtica.Height" Value="123.375" />
-                        <Setter Target="Yukon.Margin" Value="559.751,257.75" />
-                        <Setter Target="Yukon.Width" Value="159,188" />
-                        <Setter Target="Yukon.Height" Value="152.25" />
-                        <Setter Target="TerritNores.Margin" Value="691.185,259.748" />
-                        <Setter Target="TerritNores.Width" Value="215,126" />
-                        <Setter Target="TerritNores.Height" Value="183.186" />
-                        <Setter Target="Columbia.Margin" Value="548.25,354.75" />
-                        <Setter Target="Columbia.Width" Value="177.938" />
-                        <Setter Target="Columbia.Height" Value="199,5" />
-                        <Setter Target="Alberta.Margin" Value="677.063,414.5" />
-                        <Setter Target="Alberta.Width" Value="147" />
-                        <Setter Target="Alberta.Height" Value="156.188" />
-
+-->
 
                         <!--  Mapa Roma  -->
+                        <!--
                         <Setter Target="Assets_Mapa_Roma_png.Width" Value="1920" />
                         <Setter Target="Assets_Mapa_Roma_png.Height" Value="1080" />
-
+-->
 
                         <!--  Blanco Grid-  -->
                         <Setter Target="BlancoGrid.Width" Value="60" />
