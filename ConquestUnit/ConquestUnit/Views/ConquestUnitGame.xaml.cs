@@ -277,16 +277,17 @@ namespace ConquestUnit.Views
             {
                 TerrSelec.Fill = null;
             }
-            TerrSelec = territorio;
-            Thickness Centro_TerrSelec = new Thickness
-            (
-                territorio.Margin.Left + territorio.Width / 2 - BlancoGrid.Width / 2,
-                territorio.Margin.Top + territorio.Height / 2 - BlancoGrid.Height / 2,
-                0,
-                0
-            );
 
-            BlancoGrid.Margin = Centro_TerrSelec;
+            Grid GrdTerritorioTmp;
+            if (BlancoGrid.Parent != null) {
+                GrdTerritorioTmp = (Grid)BlancoGrid.Parent;
+                GrdTerritorioTmp.Children.Remove(BlancoGrid);
+            }
+            TerrSelec = territorio;
+            GrdTerritorioTmp = (Grid)this.FindName("Grd" + TerrSelec.Name);
+
+            GrdTerritorioTmp.Children.Add(BlancoGrid);
+
             //Pintar el territorio anterior
             if (objJuego.TerritorioAtaqueOrigen != null || objJuego.TerritorioFortificacionOrigen != null)
             {

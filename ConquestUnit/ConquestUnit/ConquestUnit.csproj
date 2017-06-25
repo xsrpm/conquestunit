@@ -95,7 +95,6 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Algerian.ttf" />
     <None Include="ConquestUnit_StoreKey.pfx" />
-    <None Include="Design\projectGuides.guides" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +272,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ResourcesStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Views\SeleccionarRol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -301,17 +305,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SynapseSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\SynapseSDK.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Design\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SynapseSDK">
+      <HintPath>..\..\Libraries\SynapseSDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -135,8 +135,8 @@
             }
         }
 
-        public const string MOVER_TROPAS_MOVER = "MU";
-        public const string MOVER_TROPAS_FORTIFICACION = "F";
+        public const string MOVER_TROPAS_MOVER = "M0VIENDO UNIDADES";
+        public const string MOVER_TROPAS_FORTIFICACION = "FORTIFICACION";
 
         public struct MensajesConfirmarContinuar
         {

@@ -236,11 +236,13 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
                 <Button
                     x:Name="btnMensaje"
-                    Margin="0,25,0,0"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Top"
                     Content="Fin del juego"
                     FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
                     FontSize="40"
@@ -249,10 +251,9 @@
                         <SolidColorBrush Opacity="1" Color="Black" />
                     </Button.Background>
                 </Button>
-
                 <Button
                     x:Name="btnMenuPrincipal"
-                    Margin="0,50,0,0"
+                    Grid.Row="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Content="Volver al Menú Principal"
@@ -289,13 +290,13 @@
                 FontSize="30"
                 Foreground="White"
                 Tapped="btnRegresar_Tapped"
-                Visibility="Collapsed" />
+                Visibility="Collapsed"/>
         </Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
-                <VisualState x:Name="pcState">
+                <VisualState x:Name="tabletState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
+                        <AdaptiveTrigger MinWindowWidth="770" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="logo.Source" Value="ms-appx:///Assets/Images/Icons/logo300x300.png" />

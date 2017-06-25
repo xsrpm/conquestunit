@@ -1,0 +1,132 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConquestUnit.Views">
+
+    <Style x:Key="GridUnidad" TargetType="Grid">
+        <Setter Property="Width" Value="55" />
+        <Setter Property="Height" Value="63" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="1" />
+    </Style>
+
+    <Style x:Key="PathTerritorio" TargetType="Path">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="1" />
+    </Style>
+
+    <Style x:Key="ImageUnidad" TargetType="Image">
+        <Setter Property="Width" Value="55" />
+        <Setter Property="Height" Value="55" />
+        <Setter Property="Source" Value="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
+    </Style>
+    <Style x:Key="EllipseUnidad" TargetType="Ellipse">
+        <Setter Property="Width" Value="19" />
+        <Setter Property="Height" Value="19" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Fill" Value="#FFB3BFB3" />
+        <Setter Property="Stroke" Value="Black" />
+    </Style>
+    <Style x:Key="TextBlockUnidad" TargetType="TextBlock">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Margin" Value="0,0,2,1" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Text" Value="0" />
+    </Style>
+    <Style x:Key="PathRegion" TargetType="Path">
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="StrokeLineJoin" Value="Round" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+
+
+    <Style x:Key="TextBlockFases" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+
+    </Style>
+    <Style x:Key="ButtonFases" TargetType="Button">
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="#000000" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+
+
+    <Style x:Key="PanelUnidadesDesplegar" TargetType="StackPanel">
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Grid.ColumnSpan" Value="3" />
+        <Setter Property="Padding" Value="20,2,20,2" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    <Style x:Key="TextBlockUnidadesDesplegar" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Arial Narrow" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style x:Key="TextBlockNroUnidadesDesplegar" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Arial Narrow" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style x:Key="TextBlockJugadorNombre" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Algerian.ttf#Algerian" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="ImageJugadorImagen" TargetType="Image">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Source" Value="ms-appx:///Assets/Pantallas/PC/IconoJugadorMapa.png" />
+    </Style>
+    <Style x:Key="StackPanelHorizontalCenter" TargetType="StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+    <Style x:Key="TextBLockInfoText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial Narrow" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style
+        x:Key="TextBLocklblJugador"
+        BasedOn="{StaticResource TextBLockInfoText}"
+        TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+</ResourceDictionary>
