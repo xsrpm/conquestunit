@@ -3948,6 +3948,7 @@
                         <Image
                             x:Name="FlechaMover"
                             Grid.Column="1"
+                            Height="120"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Source="ms-appx:///Assets/Pantallas/PC/FlechaMover1.png" />
@@ -4079,74 +4080,98 @@
 
         </Grid>
 
-        <Grid
-            x:Name="GridVictoria"
-            Width="500"
-            Height="440"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Visibility="Collapsed">
+        <Grid x:Name="GridVictoriaAlign">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="390*" />
+                <ColumnDefinition Width="500*" />
+                <ColumnDefinition Width="390*" />
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition Height="0.257*" />
+                <RowDefinition Height="140*" />
+                <RowDefinition Height="440*" />
+                <RowDefinition Height="140*" />
             </Grid.RowDefinitions>
-            <Grid x:Name="GridMessage" Grid.Row="0">
-                <Grid.Background>
-                    <SolidColorBrush Opacity="0.9" Color="Black" />
-                </Grid.Background>
+            <Grid
+                x:Name="GridVictoria"
+                Grid.Row="1"
+                Grid.Column="1"
+                Visibility="Collapsed">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5.71*" />
-                    <RowDefinition Height="28.57*" />
-                    <RowDefinition Height="20.0*" />
-                    <RowDefinition Height="40.0*" />
-                    <RowDefinition Height="5.71*" />
+                    <RowDefinition />
+                    <RowDefinition Height="0.257*" />
                 </Grid.RowDefinitions>
-                <TextBlock
-                    x:Name="lblGanaste"
+                <Grid x:Name="GridMessage" Grid.Row="0">
+                    <Grid.Background>
+                        <SolidColorBrush Opacity="0.9" Color="Black" />
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5.71*" />
+                        <RowDefinition Height="28.57*" />
+                        <RowDefinition Height="21.0*" />
+                        <RowDefinition Height="39.0*" />
+                        <RowDefinition Height="5.71*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        x:Name="lblGanaste"
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
+                        FontSize="75"
+                        Foreground="White"
+                        Text="GANASTE" />
+                    <TextBlock
+                        x:Name="txtJugadorGanador"
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
+                        FontSize="50"
+                        Foreground="White"
+                        Text="PAPA BENEDICTO" />
+                    <Grid Grid.Row="3" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="216*" />
+                            <ColumnDefinition Width="70*" />
+                            <ColumnDefinition Width="214*" />
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            x:Name="imgCorona"
+                            Grid.Column="1"
+                            Width="70"
+                            Canvas.ZIndex="1"
+                            Source="ms-appx:///Assets/Images/Corona.png" />
+                    </Grid>
+                    <Grid Grid.Row="3" VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="198*" />
+                            <ColumnDefinition Width="100*" />
+                            <ColumnDefinition Width="202*" />
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            x:Name="imgJugadorGanador"
+                            Grid.Column="1"
+                            Width="100"
+                            Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
+                    </Grid>
+
+                </Grid>
+                <Button
+                    x:Name="btnMenuPrincipal"
                     Grid.Row="1"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
-                    FontSize="75"
+                    VerticalAlignment="Center"
+                    Content="Volver al Menú Principal"
+                    FontSize="40"
                     Foreground="White"
-                    Text="GANASTE" />
-                <TextBlock
-                    x:Name="txtJugadorGanador"
-                    Grid.Row="2"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    FontFamily="ms-appx:///Assets/Algerian.ttf#Algerian"
-                    FontSize="50"
-                    Foreground="White"
-                    Text="PAPA BENEDICTO" />
-                <Image
-                    x:Name="imgCorona"
-                    Grid.Row="3"
-                    Width="70"
-                    VerticalAlignment="Top"
-                    Canvas.ZIndex="1"
-                    Source="ms-appx:///Assets/Images/Corona.png" />
-                <Image
-                    x:Name="imgJugadorGanador"
-                    Grid.Row="3"
-                    Width="100"
-                    VerticalAlignment="Bottom"
-                    Source="ms-appx:///Assets/Unidades/China/Unidad Rojo.png" />
+                    Tapped="btnMenuPrincipal_Tapped">
+                    <Button.Background>
+                        <SolidColorBrush Opacity="0.8" Color="Black" />
+                    </Button.Background>
+                </Button>
             </Grid>
-            <Button
-                x:Name="btnMenuPrincipal"
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="Volver al Menú Principal"
-                FontSize="40"
-                Foreground="White"
-                Tapped="btnMenuPrincipal_Tapped">
-                <Button.Background>
-                    <SolidColorBrush Opacity="0.8" Color="Black" />
-                </Button.Background>
-            </Button>
         </Grid>
+
         <MediaElement x:Name="ConquestUnitMusic" Visibility="Collapsed" />
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -4334,6 +4359,8 @@
                         <Setter Target="MoverUnidadesTerritorioDestinoNUnidades.FontSize" Value="80" />
                         <Setter Target="imgAContinuarFortificacion.Width" Value="50" />
                         <Setter Target="lblAContinuarFortificacion.FontSize" Value="40" />
+                        <Setter Target="FlechaMover.Height" Value="200" />
+
 
                     </VisualState.Setters>
                 </VisualState>
