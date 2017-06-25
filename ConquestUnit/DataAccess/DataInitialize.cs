@@ -326,7 +326,7 @@ namespace ConquestUnit
             InsertarPregunta("¿De qué nacionalidad es el entrenador de fútbol Tata Martino?",
                             "Argentina", "Italia", "España", "Brasil", context);
             InsertarPregunta(" ¿En cuál de estos deportes no hay árbitro?",
-                            "Ultimate", "Ultimate", "Basketball", "Volleyball", context);
+                            "Ultimate", "Tenis", "Basketball", "Volleyball", context);
             InsertarPregunta("¿Cuál es el país de origen del futbolista Lionel Messi?",
                             "Argentina", "España", "Brasil", "Chile", context);
             InsertarPregunta("¿Cómo se llama la cantera del FC Barcelona?",
