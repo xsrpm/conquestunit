@@ -74,18 +74,17 @@ namespace ConquestUnit.Views
             {
                 if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
                 {
+                    var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region La mesa indica se cierra
-                    if (strMensaje.Trim().Contains(Constantes.MesaIndicaSeCierra))
+                    if (mensaje[0] == Constantes.MesaIndicaSeCierra)
                     {
                         Helper.MensajeOk("La mesa se ha cerrado");
                         this.Frame.Navigate(typeof(ElegirMesa));
                     }
                     #endregion
                     #region La mesa que el juega ha iniciado
-                    else if (strMensaje.Trim().Contains(Constantes.MesaIndicaJuegoInicia))
+                    else if (mensaje[0] == Constantes.MesaIndicaJuegoInicia)
                     {
-                        // Inicio del juego
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (MesaIndicaJuegoInicia)
                         //mensaje[1] => color
                         this.Frame.Navigate(typeof(ConquestUnitMando), mensaje[1]);

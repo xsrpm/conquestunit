@@ -116,11 +116,10 @@ namespace ConquestUnit.Views
             {
                 if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
                 {
+                    var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region Jugador recibe la confirmacion que se ha unido a la mesa
-                    if (strMensaje.Trim().Contains(Constantes.ConfirmacionUnirseMesa))
+                    if (mensaje[0] == Constantes.ConfirmacionUnirseMesa)
                     {
-                        // Se recibe la confirmación de parte de la mesa que se unido satisfactoriamente
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (ConfirmacionUnirseMesa)
                         //mensaje[1] => objMesa.Ip
                         //mensaje[2] => objMesa.MesaID
@@ -140,6 +139,28 @@ namespace ConquestUnit.Views
                         objMesa.JuegoID = mensaje[2];
 
                         this.Frame.Navigate(typeof(JugadorEnEspera), objMesa);
+                    }
+                    #endregion
+                    #region Jugador recibe la confirmacion que se ha unido a la mesa - Juego
+                    else if (mensaje[0] == Constantes.ConfirmacionUnirseMesaJuego)
+                    {
+                        //mensaje[0] => Acción (ConfirmacionUnirseMesa)
+                        //mensaje[1] => objMesa.Ip
+                        //mensaje[2] => jugador.Color
+                        //mensaje[3] => flagTurno
+                        if (mensaje.Length != 4)
+                            return;
+
+                        txtMesaId.IsEnabled = false;
+                        btnUnirme.Visibility = Visibility.Collapsed;
+                        prConectando.IsActive = true;
+                        prConectando.Visibility = Visibility.Visible;
+                        lblConectando.Visibility = Visibility.Visible;
+
+                        //Reenviar al mando
+                        App.objJugador.IpMesaConectada = mensaje[1];
+
+                        this.Frame.Navigate(typeof(ConquestUnitMando), mensaje[2] + mensaje[3]);
                     }
                     #endregion
                 }

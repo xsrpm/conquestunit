@@ -1,5 +1,6 @@
 ﻿using SynapseSDK;
 using System;
+using System.Threading;
 using Util;
 using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
@@ -23,6 +24,8 @@ namespace ConquestUnit.Views
     public sealed partial class ConquestUnitMando : Page
     {
         private bool mandoActivo;
+        private Timer timerMantenerConexion;
+
         public ConquestUnitMando()
         {
             this.InitializeComponent();
@@ -35,8 +38,21 @@ namespace ConquestUnit.Views
             //El color del jugador
             if (e != null)
             {
-                var color = e.Parameter.ToString();
+                var param = e.Parameter.ToString();
+                var color = param.Substring(0,8);
                 TonalidadMando.Stroke = Convertidor.GetSolidColorBrush(color);
+
+                if (param.Length > 8)
+                {
+                    if (param.Substring(8,1) == "1")
+                    {
+                        HabilitarControles();
+                    }
+                    else
+                    {
+                        DeshabilitarControles();
+                    }
+                }
             }
             if (App.objJugador != null)
             {
@@ -55,6 +71,16 @@ namespace ConquestUnit.Views
             IniciarSDK();
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
+            
+            timerMantenerConexion = new Timer(timerMantenerConexionCallback, null, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(Constantes.KeepAlive));
+        }
+
+        private async void timerMantenerConexionCallback(object state)
+        {
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                IniciarSDK();
+            });
         }
 
         private void MiMetodoReceptorJugadorJuegoHelper(string strIp, string strMensaje)
@@ -63,26 +89,27 @@ namespace ConquestUnit.Views
             {
                 if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
                 {
+                    var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region La mesa indica habilitar los controles
-                    if (strMensaje.Trim().Contains(Constantes.MesaConumicaHABILITARControles))
+                    if (mensaje[0] == Constantes.MesaConumicaHABILITARControles)
                     {
                         HabilitarControles();
                     }
                     #endregion
                     #region La mesa indica deshabilitar los controles
-                    else if (strMensaje.Trim().Contains(Constantes.MesaConumicaDESHABILITARControles))
+                    else if (mensaje[0] == Constantes.MesaConumicaDESHABILITARControles)
                     {
                         DeshabilitarControles();
                     }
                     #endregion
                     #region Victoria
-                    else if (strMensaje.Trim().Contains(Constantes.MesaConumicaVICTORIAFinDelJuego))
+                    else if (mensaje[0] == Constantes.MesaConumicaVICTORIAFinDelJuego)
                     {
                         Victoria();
                     }
                     #endregion
                     #region Derrota
-                    else if (strMensaje.Trim().Contains(Constantes.MesaConumicaDERROTAFinDelJuego))
+                    else if (mensaje[0] == Constantes.MesaConumicaDERROTAFinDelJuego)
                     {
                         Derrota();
                     }
