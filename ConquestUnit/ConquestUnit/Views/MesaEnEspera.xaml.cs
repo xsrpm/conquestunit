@@ -85,11 +85,10 @@ namespace ConquestUnit.Views
             {
                 if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
                 {
+                    var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region Jugador se une
-                    if (strMensaje.Trim().Contains(Constantes.UnirseEnviameConfirmacion))
+                    if (mensaje[0] == Constantes.UnirseEnviameConfirmacion)
                     {
-                        // Dispositivo se está agregando a la sala
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (UnirseEnviameConfirmacion)
                         //mensaje[1] => mesaSeleccionada
                         //mensaje[2] => objJugador.Ip
@@ -129,10 +128,8 @@ namespace ConquestUnit.Views
                     }
                     #endregion
                     #region Jugador se retira
-                    else if (strMensaje.Trim().Contains(Constantes.JugadorSaleMesa))
+                    else if (mensaje[0] == Constantes.JugadorSaleMesa)
                     {
-                        // Jugador se retira de la mesa estando en la pantalla de espera de inicio de juego
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (JugadorSaleMesa)
                         //mensaje[1] => objJugador.Ip
                         if (mensaje.Length != 2)

@@ -44,12 +44,13 @@ namespace ConquestUnit.Views
         private Timer timerDerrotaJugador;
         private int respuestaAtacante;
         private int respuestaDefensor;
+        private Timer timerMantenerConexion;
 
         private int auxAccionJuegoAnterior;
 
         private int puntosAtacante;
         private int puntosDefensor;
-
+        
         public ConquestUnitGame()
         {
             this.InitializeComponent();
@@ -80,7 +81,19 @@ namespace ConquestUnit.Views
 
             IniciarSDK();
             Inicializar();
+            
+            timerMantenerConexion = new Timer(timerMantenerConexionCallback, null, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(Constantes.KeepAlive));
         }
+
+        #region Revision de conexion
+        private async void timerMantenerConexionCallback(object state)
+        {
+            await App.UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                IniciarSDK();
+            });
+        }
+        #endregion
 
         public void Inicializar()
         {
@@ -279,7 +292,8 @@ namespace ConquestUnit.Views
             }
 
             Grid GrdTerritorioTmp;
-            if (BlancoGrid.Parent != null) {
+            if (BlancoGrid.Parent != null)
+            {
                 GrdTerritorioTmp = (Grid)BlancoGrid.Parent;
                 GrdTerritorioTmp.Children.Remove(BlancoGrid);
             }
@@ -1126,12 +1140,11 @@ namespace ConquestUnit.Views
             {
                 if (!string.IsNullOrEmpty(strIp) && !string.IsNullOrEmpty(strMensaje))
                 {
+                    var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region El jugador ha presiona una tecla
-                    if (strMensaje.Trim().Contains(Constantes.JugadorPresionaBoton))
+                    if (mensaje[0] == Constantes.JugadorPresionaBoton)
                     {
                         #region Se recibe el mensaje (boton presionado)
-                        // Se recibe la confirmación de parte de la mesa que se unido satisfactoriamente
-                        var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                         //mensaje[0] => Acción (JugadorPresionaBoton)
                         //mensaje[1] => objJugador.Ip
                         //mensaje[2] => botonPresionado
@@ -1818,6 +1831,35 @@ namespace ConquestUnit.Views
                             #endregion
                         }
                         #endregion
+                    }
+                    #endregion
+                    #region Jugador se une al juego iniciado
+                    else if (mensaje[0] == Constantes.UnirseEnviameConfirmacion)
+                    {
+                        //mensaje[0] => Acción (UnirseEnviameConfirmacion)
+                        //mensaje[1] => mesaSeleccionada
+                        //mensaje[2] => objJugador.Ip
+                        //mensaje[3] => objJugador.Nombre
+                        //mensaje[4] => strBytes (imagen del jugador)
+                        if (mensaje.Length != 5)
+                            return;
+
+                        //Verificar que es la mesa seleccionada
+                        if (mensaje[1] != objJuego.JuegoID)
+                            return;
+
+                        var jugador = objJuego.JugadoresConectados.FirstOrDefault(x => x.Ip == mensaje[2]);
+                        //Verificar que el jugador se encuentraba en el juego
+                        if (jugador == null)
+                            return;
+
+                        //Notificar al nuevo jugador que se ha unido a la mesa
+                        await App.objSDK.ConnectStreamSocket(new HostName(mensaje[2]));
+                        await App.objSDK.StreamPing(Constantes.ConfirmacionUnirseMesaJuego + Constantes.SEPARADOR +
+                            objJuego.Ip + Constantes.SEPARADOR +
+                            objJuego.JuegoID + Constantes.SEPARADOR +
+                            objJuego.TipoMapa + Constantes.SEPARADOR +
+                            jugador.Color);
                     }
                     #endregion
                 }

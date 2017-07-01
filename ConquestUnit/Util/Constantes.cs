@@ -15,6 +15,8 @@
         public static string STREAM_SERVICE_PORT = "22110";
         public static int DELAY = 500;
 
+        public const int KeepAlive = 4;
+
         public struct MAPA
         {
             public const int CHINA = 1;
@@ -69,6 +71,7 @@
         #region Mensajes para unirse a la mesa
         public static string UnirseEnviameConfirmacion = "UEC";
         public static string ConfirmacionUnirseMesa = "CUM";
+        public static string ConfirmacionUnirseMesaJuego = "CUMJ";
         public static string JugadorSaleMesa = "JSM";
         public static string MesaIndicaSeCierra = "MISC";
         public static string MesaIndicaJuegoInicia = "MIJI";
