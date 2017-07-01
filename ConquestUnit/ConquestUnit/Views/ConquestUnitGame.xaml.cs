@@ -50,7 +50,7 @@ namespace ConquestUnit.Views
 
         private int puntosAtacante;
         private int puntosDefensor;
-        
+
         public ConquestUnitGame()
         {
             this.InitializeComponent();
@@ -81,7 +81,7 @@ namespace ConquestUnit.Views
 
             IniciarSDK();
             Inicializar();
-            
+
             timerMantenerConexion = new Timer(timerMantenerConexionCallback, null, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(Constantes.KeepAlive));
         }
 
@@ -1853,13 +1853,13 @@ namespace ConquestUnit.Views
                         if (jugador == null)
                             return;
 
+                        var flagTurno = objJuego.IpJugadorTurnoActual == jugador.Ip ? "1" : "0";
                         //Notificar al nuevo jugador que se ha unido a la mesa
                         await App.objSDK.ConnectStreamSocket(new HostName(mensaje[2]));
                         await App.objSDK.StreamPing(Constantes.ConfirmacionUnirseMesaJuego + Constantes.SEPARADOR +
                             objJuego.Ip + Constantes.SEPARADOR +
-                            objJuego.JuegoID + Constantes.SEPARADOR +
-                            objJuego.TipoMapa + Constantes.SEPARADOR +
-                            jugador.Color);
+                            jugador.Color + Constantes.SEPARADOR +
+                            flagTurno);
                     }
                     #endregion
                 }

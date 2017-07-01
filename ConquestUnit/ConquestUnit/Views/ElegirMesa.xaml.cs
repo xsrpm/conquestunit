@@ -118,7 +118,7 @@ namespace ConquestUnit.Views
                 {
                     var mensaje = strMensaje.Split(new string[] { Constantes.SEPARADOR }, StringSplitOptions.None);
                     #region Jugador recibe la confirmacion que se ha unido a la mesa
-                    if (mensaje[0] ==Constantes.ConfirmacionUnirseMesa)
+                    if (mensaje[0] == Constantes.ConfirmacionUnirseMesa)
                     {
                         //mensaje[0] => Acción (ConfirmacionUnirseMesa)
                         //mensaje[1] => objMesa.Ip
@@ -146,10 +146,9 @@ namespace ConquestUnit.Views
                     {
                         //mensaje[0] => Acción (ConfirmacionUnirseMesa)
                         //mensaje[1] => objMesa.Ip
-                        //mensaje[2] => objMesa.MesaID
-                        //mensaje[3] => objMesa.TipoMapa
-                        //mensaje[4] => jugador.Color
-                        if (mensaje.Length != 5)
+                        //mensaje[2] => jugador.Color
+                        //mensaje[3] => flagTurno
+                        if (mensaje.Length != 4)
                             return;
 
                         txtMesaId.IsEnabled = false;
@@ -158,14 +157,10 @@ namespace ConquestUnit.Views
                         prConectando.Visibility = Visibility.Visible;
                         lblConectando.Visibility = Visibility.Visible;
 
-                        //Reenviar a la pantalla de Jugador esperando el inicio del juego
-                        Juego objMesa = new Juego(int.Parse(mensaje[3]));
-                        objMesa.Ip = mensaje[1];
-                        objMesa.JuegoID = mensaje[2];
-
+                        //Reenviar al mando
                         App.objJugador.IpMesaConectada = mensaje[1];
 
-                        this.Frame.Navigate(typeof(ConquestUnitMando), mensaje[4]);
+                        this.Frame.Navigate(typeof(ConquestUnitMando), mensaje[2] + mensaje[3]);
                     }
                     #endregion
                 }

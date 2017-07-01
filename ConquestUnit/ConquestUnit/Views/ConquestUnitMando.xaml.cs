@@ -38,8 +38,21 @@ namespace ConquestUnit.Views
             //El color del jugador
             if (e != null)
             {
-                var color = e.Parameter.ToString();
+                var param = e.Parameter.ToString();
+                var color = param.Substring(0,8);
                 TonalidadMando.Stroke = Convertidor.GetSolidColorBrush(color);
+
+                if (param.Length > 8)
+                {
+                    if (param.Substring(8,1) == "1")
+                    {
+                        HabilitarControles();
+                    }
+                    else
+                    {
+                        DeshabilitarControles();
+                    }
+                }
             }
             if (App.objJugador != null)
             {
